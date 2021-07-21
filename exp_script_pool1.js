@@ -738,18 +738,6 @@ timeline.push(multi_choice_Q4);
 timeline.push(confidence);
 
 
-
-var multi_choice_Q5 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: '',
-    questions: [
-        { prompt: "<p> What were the rules of the game when you were on the road? <br> If you do not know for sure, please make your best guess.</p>", name: 'Q5P1', options: Q5P1_options, required: true },
-    ],
-};
-timeline.push(multi_choice_Q5);
-timeline.push(confidence);
-
 var multi_choice_Q6 = {
     type: 'survey-multi-choice',
     button_label: 'Next',
