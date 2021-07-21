@@ -160,6 +160,10 @@ var instruction = {
         '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_g.png" />\n' +
         '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_g.png" />\n' +
         '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_001_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_002_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_003_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_004_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_005_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_006_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_007_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_008_g.png" />\n' +
         '        <br>\n' +
         '    </p>\n' +
 
@@ -174,10 +178,8 @@ var instruction = {
         '        <br>\n' +
 
         '    <p>\n' +
-        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_001_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_002_g.png" />\n' +
-        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_003_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_004_g.png" />\n' +
-        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_005_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_006_g.png" />\n' +
-        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_007_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_008_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/IF_001_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/IF_002_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/IF_003_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/IF_004_g.png" />\n' +
         '\n' +
         '        <br>\n' +
         '    </p>\n' +
