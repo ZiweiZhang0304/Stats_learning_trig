@@ -134,7 +134,7 @@ repo_site + 'img/Stim/FT_001_w.png', repo_site + 'img/Stim/FT_002_w.png', repo_s
 repo_site + 'img/Stim/FT_004_w.png', repo_site + 'img/Stim/FT_005_w.png', repo_site + 'img/Stim/FT_006_w.png',
 repo_site + 'img/Stim/FT_007_w.png', repo_site + 'img/Stim/FT_008_w.png', repo_site + 'img/Stim/FT_009_w.png',
 repo_site + 'img/Stim/IF_001_w.png',repo_site + 'img/Stim/IF_002_w.png',repo_site + 'img/Stim/IF_003_w.png',repo_site + 'img/Stim/IF_004_w.png',
-repo_site +'img/Stim/fixation.png']
+repo_site +'img/Stim/gray_bdot.png']
 
 /* -----Instructions----- */
 var instruction = {
@@ -737,31 +737,6 @@ var multi_choice_Q4 = {
 timeline.push(multi_choice_Q4);
 timeline.push(confidence);
 
-var feature = lr_feature_list[feature_index];
-
-var option1_road_key = allowed_keys_road[road_key_index];
-var option2_road_key = allowed_keys_road[1-road_key_index];
-
-var option1_mountain_key = allowed_keys_mountain[mountain_key_index];
-var option2_mountain_key = allowed_keys_mountain[1-mountain_key_index];
-
-console.log(feature)
-console.log(option1_road_key)
-console.log(option1_mountain_key)
-
-if (feature == 'color') //If current feature is color
-    {
-        var Q5P1_options = [`If the gem was warm-tones (yellow or orange), press ${option1_road_key}. If the gem was cool-toned (light or dark blue), press ${option2_road_key}.`,
-            `If the gem was warm-tones (yellow or orange), press ${option2_road_key}. If the gem was cool-toned (light or dark blue), press ${option1_road_key}.`];
-        var Q6P1_options =[`If the gem was round (circle or oval), press ${option1_mountain_key}. If the gem had straight edges (square or rounded square), press ${option2_mountain_key}.`,
-            `If the gem was round (circle or oval), press ${option2_mountain_key}. If the gem had straight edges (square or rounded square), press ${option1_mountain_key}.`]
-    }
-else {
-    var Q5P1_options =[`If the gem was round (circle or oval), press ${option1_road_key}. If the gem had straight edges (square or rounded square), press ${option2_road_key}.`,
-        `If the gem was round (circle or oval), press ${option2_road_key}. If the gem had straight edges (square or rounded square), press ${option1_road_key}.`];
-    var Q6P1_options = [`If the gem was warm-tones (yellow or orange), press ${option1_mountain_key}. If the gem was cool-toned (light or dark blue), press ${option2_mountain_key}.`,
-        `If the gem was warm-tones (yellow or orange), press ${option2_mountain_key}. If the gem was cool-toned (light or dark blue), press ${option1_mountain_key}.`];
-    };
 
 
 var multi_choice_Q5 = {
