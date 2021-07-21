@@ -20,7 +20,7 @@ function setCharAt(str, index, chr) {
 };
 
 function rep(str) {
-    str = setCharAt(str, 67, 'w');
+    str = setCharAt(str, 69, 'w');
     return str
 };
 
@@ -304,7 +304,7 @@ for (i = 0; i < repetition_1_attention.length; i++) {
 /* -----attention task stimuli----- */
 for (j = 0; j < repetition_attention.length; j++) {
     var stimuli = new Object();
-    stimuli.at_stimulus = repo_site  + 'img/Stim/' + repetition_attention[j] + '.png';
+    stimuli.at_stimulus = repo_site  + 'img/Stim/' + repetition_attention[j] + '_g.png';
 
     stimuli.data = new Object();
 
