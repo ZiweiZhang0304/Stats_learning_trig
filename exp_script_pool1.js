@@ -186,7 +186,7 @@ var instruction = {
 
         '    <p style="color:black;font-size:26px">\n' +
         '        Do NOT press any keys when you encounter these L-shapes. <br>\n' +
-                 And PRESS THE SPACEBAR to all the other shapes. <br>\n' +
+        '         And PRESS THE SPACEBAR to all the other shapes. <br>\n' +
         '        <br>\n' +
         '        The shapes will go by quickly so you should pay attention to them. <br>\n' +
         '\n' +
