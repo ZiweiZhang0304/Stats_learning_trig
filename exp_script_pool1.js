@@ -20,7 +20,7 @@ function setCharAt(str, index, chr) {
 };
 
 function rep(str) {
-    str = setCharAt(str, 69, 'w');
+    str = setCharAt(str, 67, 'w');
     return str
 };
 
@@ -367,7 +367,7 @@ for (i = 0; i < lr_triplet_1.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus); //rep???
+    stimuli.at_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -384,7 +384,7 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus); //rep???
+    stimuli.at_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -401,7 +401,7 @@ for (i = 0; i < lr_triplet_3.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus); //rep???
+    stimuli.at_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
