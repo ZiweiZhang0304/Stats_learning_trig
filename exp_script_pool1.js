@@ -8,7 +8,7 @@ var data_dir = task_name;
 //my preference is to include the task and sbj_id in the file name
 var file_name = task_name + '_' + sbj_id; 
 
-var repo_site = "https://zz112duke.github.io/Stats_learning_trig/";
+var repo_site = "https://ziweizhang0304.github.io/Stats_learning_trig/";
 
 var timeline = [];
 
@@ -20,7 +20,7 @@ function setCharAt(str, index, chr) {
 };
 
 function rep(str) {
-    str = setCharAt(str, 65, 'w');
+    str = setCharAt(str, 69, 'w');
     return str
 };
 
@@ -118,11 +118,23 @@ var iti_200 = {
 }
 
 /* -----Preload Images----- */
-preload_list = [repo_site + 'img/Stim/FN_001.png', repo_site + 'img/Stim/FN_002.png', repo_site + 'img/Stim/FN_003.png',
-repo_site +'img/Stim/FN_004.png', repo_site + 'img/Stim/FN_005.png', repo_site + 'img/Stim/FN_006.png',
-repo_site + 'img/Stim/FT_001.png', repo_site + 'img/Stim/FT_002.png', repo_site + 'img/Stim/FT_003.png',
-repo_site + 'img/Stim/FT_004.png', repo_site + 'img/Stim/FT_005.png', repo_site + 'img/Stim/FT_006.png',
-repo_site +'img/Stim/fixation.png', repo_site + 'img/Stim/correct.png', repo_site + 'img/Stim/incorrect.png']
+preload_list = [repo_site + 'img/Stim/FN_001_g.png', repo_site + 'img/Stim/FN_002_g.png', repo_site + 'img/Stim/FN_003_g.png',
+repo_site +'img/Stim/FN_004_g.png', repo_site + 'img/Stim/FN_005_g.png', repo_site + 'img/Stim/FN_006_g.png',
+repo_site +'img/Stim/FN_007_g.png', repo_site + 'img/Stim/FN_008_g.png', repo_site + 'img/Stim/FN_009_g.png',
+repo_site +'img/Stim/FN_010_g.png', repo_site + 'img/Stim/FN_011_g.png', repo_site + 'img/Stim/FN_012_g.png',
+repo_site + 'img/Stim/FT_001_g.png', repo_site + 'img/Stim/FT_002_g.png', repo_site + 'img/Stim/FT_003_g.png',
+repo_site + 'img/Stim/FT_004_g.png', repo_site + 'img/Stim/FT_005_g.png', repo_site + 'img/Stim/FT_006_g.png',
+repo_site + 'img/Stim/FT_007_g.png', repo_site + 'img/Stim/FT_008_g.png', repo_site + 'img/Stim/FT_009_g.png',
+repo_site + 'img/Stim/IF_001_g.png',repo_site + 'img/Stim/IF_002_g.png',repo_site + 'img/Stim/IF_003_g.png',repo_site + 'img/Stim/IF_004_g.png',
+repo_site + 'img/Stim/FN_001_w.png', repo_site + 'img/Stim/FN_002_w.png', repo_site + 'img/Stim/FN_003_w.png',
+repo_site +'img/Stim/FN_004_w.png', repo_site + 'img/Stim/FN_005_w.png', repo_site + 'img/Stim/FN_006_w.png',
+repo_site +'img/Stim/FN_007_w.png', repo_site + 'img/Stim/FN_008_w.png', repo_site + 'img/Stim/FN_009_w.png',
+repo_site +'img/Stim/FN_010_w.png', repo_site + 'img/Stim/FN_011_w.png', repo_site + 'img/Stim/FN_012_w.png',
+repo_site + 'img/Stim/FT_001_w.png', repo_site + 'img/Stim/FT_002_w.png', repo_site + 'img/Stim/FT_003_w.png',
+repo_site + 'img/Stim/FT_004_w.png', repo_site + 'img/Stim/FT_005_w.png', repo_site + 'img/Stim/FT_006_w.png',
+repo_site + 'img/Stim/FT_007_w.png', repo_site + 'img/Stim/FT_008_w.png', repo_site + 'img/Stim/FT_009_w.png',
+repo_site + 'img/Stim/IF_001_w.png',repo_site + 'img/Stim/IF_002_w.png',repo_site + 'img/Stim/IF_003_w.png',repo_site + 'img/Stim/IF_004_w.png',
+repo_site +'img/Stim/fixation.png']
 
 /* -----Instructions----- */
 var instruction = {
@@ -230,70 +242,105 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction);
+//timeline.push(instruction);
 
-
-/* -----define learning stimuli----- */
-var lr_stimuli_TS1 = [//if based on color; warm left cold right; if based on shape; round up square down
-    { lr_stimulus: repo_site + "img/Stim/TS100.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS101.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS102.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS103.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS110.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS111.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS112.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS113.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS120.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS121.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS122.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS123.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS130.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS131.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS132.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-    { lr_stimulus: repo_site + "img/Stim/TS133.png", data: {TaskType: 'lr', lr_TaskSet: 'TS1', Scene: 'road'}},
-];
-var lr_stimuli_TS2 = [//if based on color; warm left cold right; if based on shape; round up square down
-    { lr_stimulus: repo_site + "img/Stim/TS200.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS201.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS202.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS203.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS210.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS211.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS212.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS213.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS220.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS221.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS222.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS223.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS230.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS231.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS232.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-    { lr_stimulus: repo_site + "img/Stim/TS233.png", data: {TaskType: 'lr', lr_TaskSet: 'TS2', Scene: 'mountain'}},
-];
 
 /* -----define learning triplet stimuli----- */
-var frequent_nontrigger = ["img/Stim/FT_001_g.png", "img/Stim/FT_002_g.png", "img/Stim/FT_003_g.png", "img/Stim/FT_004_g.png", "img/Stim/FT_005_g.png", "img/Stim/FT_006_g.png"
-, "img/Stim/FT_007_g.png", "img/Stim/FT_008_g.png","img/Stim/FT_009_g.png", "img/Stim/FT_010_g.png", "img/Stim/FT_011_g.png", "img/Stim/FT_012_g.png"]
-var frequent_trigger = ["img/Stim/FN_001_g.png", "img/Stim/FN_002_g.png", "img/Stim/FN_003_g.png", "img/Stim/FN_004_g.png", "img/Stim/FN_005_g.png", "img/Stim/FN_006_g.png"
-, "img/Stim/FN_007_g.png", "img/Stim/FN_008_g.png", "img/Stim/FN_009_g.png"]
+var frequent_nontrigger = ["img/Stim/FN_001_g.png", "img/Stim/FN_002_g.png", "img/Stim/FN_003_g.png", "img/Stim/FN_004_g.png", "img/Stim/FN_005_g.png", "img/Stim/FN_006_g.png"
+, "img/Stim/FN_007_g.png", "img/Stim/FN_008_g.png","img/Stim/FN_009_g.png", "img/Stim/FN_010_g.png", "img/Stim/FN_011_g.png", "img/Stim/FN_012_g.png"]
+var infrequent_target = ["img/Stim/IF_001_g.png", "img/Stim/IF_002_g.png", "img/Stim/IF_003_g.png", "img/Stim/IF_004_g.png"]
 
+var frequent_trigger = ["img/Stim/FT_001_g.png", "img/Stim/FT_002_g.png", "img/Stim/FT_003_g.png", "img/Stim/FT_004_g.png", "img/Stim/FT_005_g.png", "img/Stim/FT_006_g.png"
+, "img/Stim/FT_007_g.png", "img/Stim/FT_008_g.png", "img/Stim/FT_009_g.png"]
+/* -----define attention stimuli----- */
+
+var repetition = []
+for (i = 0; i < 108; i++) { //1080
+
+    stimuli_freq = frequent_nontrigger[Math.floor((Math.random()) * frequent_nontrigger.length)];
+    repetition.push(String(stimuli_freq.charAt(9)) + String(stimuli_freq.charAt(10)) + String(stimuli_freq.charAt(11)) + String(stimuli_freq.charAt(12)) + String(stimuli_freq.charAt(13)) + String(stimuli_freq.charAt(14)) );
+
+
+    if (i != 0) {
+
+        while (repetition[i] == repetition[i - 1]) {
+            stimuli_freq = frequent_nontrigger[Math.floor((Math.random()) * frequent_nontrigger.length)];
+            repetition[i] = (String(stimuli_freq.charAt(9)) + String(stimuli_freq.charAt(10)) + String(stimuli_freq.charAt(11)) + String(stimuli_freq.charAt(12)) + String(stimuli_freq.charAt(13)) + String(stimuli_freq.charAt(14)) );
+            if (repetition[i] != repetition[i - 1]) { break };
+        }
+    }
+
+}
+//console.log(repetition,repetition.length)
+
+var repetition_1 = []
+for (i = 0; i < 12; i++) {//120
+
+    stimuli_infreq = infrequent_target[Math.floor((Math.random()) * infrequent_target.length)];
+    repetition_1.push(String(String(stimuli_infreq.charAt(9)) + String(stimuli_infreq.charAt(10)) + String(stimuli_infreq.charAt(11)) + stimuli_infreq.charAt(12)) + String(stimuli_infreq.charAt(13)) + String(stimuli_infreq.charAt(14)) );
+
+
+    if (i != 0) {
+
+        while (repetition_1[i] == repetition_1[i - 1]) {
+            stimuli_infreq = infrequent_target[Math.floor((Math.random()) * infrequent_target.length)];
+            repetition_1[i] = (String(stimuli_infreq.charAt(9)) + String(stimuli_infreq.charAt(10)) + String(stimuli_infreq.charAt(11)) + String(stimuli_infreq.charAt(12)) + String(stimuli_infreq.charAt(13)) + String(stimuli_infreq.charAt(14)) );
+            if (repetition_1[i] != repetition_1[i - 1]) { break };
+        }
+    }
+
+}
+//console.log(repetition_1,repetition_1.length)
+
+
+var repetition_1_attention = repetition_1.slice(0, 12);
+var repetition_attention = repetition.slice(0, 108);
+
+var at_stimuli = []
+for (i = 0; i < repetition_1_attention.length; i++) {
+    repetition_attention.splice(Math.floor((Math.random() * repetition_attention.length)), 0, repetition_1_attention[i]);
+};
+
+/* -----attention task stimuli----- */
+for (j = 0; j < repetition_attention.length; j++) {
+    var stimuli = new Object();
+    stimuli.at_stimulus = repo_site  + 'img/Stim/' + repetition_attention[j] + '.png';
+
+    stimuli.data = new Object();
+
+
+    if (stimuli.at_stimulus.charAt(62) == 'F') {
+        stimuli.data.at_TrialType = 'frequent';
+        stimuli.data.correct_response = 'space'
+    } else {
+        stimuli.data.at_TrialType = 'infrequent';
+        stimuli.data.correct_response = ''
+    }
+    stimuli.at_fix = rep(stimuli.at_stimulus);
+
+    stimuli.data.test_part = 'test';
+    stimuli.data.TaskType = 'at';
+    at_stimuli.push(stimuli);
+}
+
+
+
+/* -----define learning triplet stimuli----- */
 //right now we want only one group of triplet for fast, medium, slow respectively
 //randomly select from FT_001-FT_009
 var lr_triplet_1 = getRandom(frequent_trigger,3);
 
-var frequent_nontrigger_filtered = frequent_nontrigger.filter(function(value, index, arr){
-        return value !== lr_triplet_1;
-                  // ^^ not equal
-        });
+var frequent_trigger_filtered = frequent_trigger.filter(function(val) {
+  return lr_triplet_1.indexOf(val) == -1;
+});
 
 var lr_triplet_2 = getRandom(frequent_trigger_filtered,3);
 
-var frequent_nontrigger_filtered1 = frequent_nontrigger_filtered.filter(function(value, index, arr){
-        return value !== lr_triplet_2;
-                  // ^^ not equal
-        });
+var frequent_trigger_filtered1 = frequent_trigger_filtered.filter(function(val) {
+  return lr_triplet_2.indexOf(val) == -1;
+});
 
-var lr_triplet_3 = frequent_nontrigger_filtered1;
+var lr_triplet_3 = frequent_trigger_filtered1;
 
 
 /*var lr_triplet_1 = [
@@ -304,18 +351,15 @@ var lr_triplet_3 = frequent_nontrigger_filtered1;
 
 
 /* -----randomize triplet-attention state pair----- */
-var at_stimuli = []
 var lr_stimuli_1 = []
 var lr_stimuli_2 = []
 var lr_stimuli_3 = []
-var lr_triplet_list = [lr_triplet_1, lr_triplet_2, lr_triplet_3];
 var attention_state_list = shuffle(['fast', 'slow', 'medium']);
-var index = Math.floor((Math.random()) * lr_triplet_list.length);
-var mountain_key_index = Math.floor((Math.random()) * allowed_keys_mountain.length);
+//var index = Math.floor((Math.random()) * lr_triplet_list.length);
 
 for (i = 0; i < lr_triplet_1.length; i++) {
     var stimuli = new Object();
-    stimuli.lr_stimulus = repo_site + lr_triplet_1[i] + '.png';
+    stimuli.lr_stimulus = repo_site + lr_triplet_1[i] ;
     stimuli.data = new Object();
 
     stimuli.data.attention_state = attention_state_list[0];
@@ -331,47 +375,41 @@ for (i = 0; i < lr_triplet_1.length; i++) {
 };
 
 for (i = 0; i < lr_triplet_2.length; i++) {
-    var ob = lr_triplet_2[i];
-    ob.data.attention_state = attention_state_list[1];
-    ob.allowed_keys = 'spacebar';
+    var stimuli = new Object();
+    stimuli.lr_stimulus = repo_site + lr_triplet_2[i] ;
+    stimuli.data = new Object();
+
+    stimuli.data.attention_state = attention_state_list[1];
+    stimuli.allowed_keys = 'space';
+    stimuli.data.correct_response = 'space';
+    stimuli.data.at_TrialType = 'frequent';
+
+    stimuli.at_fix = rep(stimuli.lr_stimulus); //rep???
+
+    stimuli.data.test_part = 'test';
+    stimuli.data.TaskType = 'lr';
+    lr_stimuli_2.push(stimuli);
 };
 
 for (i = 0; i < lr_triplet_3.length; i++) {
-    var ob = lr_triplet_3[i];
-    ob.data.attention_state = attention_state_list[2];
-    ob.allowed_keys = 'spacebar';
-};
-
-
-
-
-for (j = 0; j < repetition_attention.length; j++) {
     var stimuli = new Object();
-    stimuli.at_stimulus = repo_site  + repetition_attention[j] + '.png';
-
+    stimuli.lr_stimulus = repo_site + lr_triplet_3[i] ;
     stimuli.data = new Object();
 
+    stimuli.data.attention_state = attention_state_list[2];
+    stimuli.allowed_keys = 'space';
+    stimuli.data.correct_response = 'space';
+    stimuli.data.at_TrialType = 'frequent';
 
-    if (stimuli.at_stimulus.charAt(60) == 'F') {
-        stimuli.data.at_TrialType = 'frequent';
-        stimuli.data.correct_response = 'space'
-    } else {
-        stimuli_prac.data.at_TrialType = 'infrequent';
-        stimuli_prac.data.correct_response = ''
-    }
-    stimuli.at_fix = rep(stimuli.at_stimulus);
+    stimuli.at_fix = rep(stimuli.lr_stimulus); //rep???
 
-    stimuli.data.test_part = 'prac';
-    stimuli.data.TaskType = 'prac';
-    at_stimuli.push(stimuli);
-}
-
-
-
+    stimuli.data.test_part = 'test';
+    stimuli.data.TaskType = 'lr';
+    lr_stimuli_3.push(stimuli);
+};
 
 var lr_triplet_complete = lr_stimuli_1.concat(lr_stimuli_2, lr_stimuli_3);
 console.log(lr_triplet_complete);
-
 
 
 var learning = {
@@ -392,38 +430,39 @@ var learning = {
 
 var lr_test_TS1 = {
   timeline: [learning],
-  timeline_variables: TS1,
+  timeline_variables: lr_stimuli_1,
   sample: {
   type: 'with-replacement',
   size: 1,
 },
   randomize_order: true,
   repetitions: 1
-}
+};
 
 var lr_test_TS2 = {
   timeline: [learning],
-  timeline_variables: TS2,
+  timeline_variables: lr_stimuli_2,
   sample: {
   type: 'with-replacement',
   size: 1,
 },
   randomize_order: true,
   repetitions: 1
-}
+};
+
+var lr_test_TS3 = {
+  timeline: [learning],
+  timeline_variables: lr_stimuli_3,
+  sample: {
+  type: 'with-replacement',
+  size: 1,
+},
+  randomize_order: true,
+  repetitions: 1
+};
+
 
 /* Combine learning trials */
-var learning_trial = {
-    timeline: [iti_200, learning],
-    timeline_variables: lr_stimuli_complete,
-    sample: {
-        type: 'fixed-repetitions',
-        size: 4, // 4 repetitions of each triplet, 128 total trials, order is randomized.
-    }
-};
-timeline.push(learning_trial)
-
-
 var lr_node = false;
 var attention = {
   timeline:[
@@ -449,7 +488,8 @@ var attention = {
     data.sd = rt_sd
     data.slow = rt_mean + 0.8*rt_sd
     data.fast = Math.abs(rt_mean - 0.8*rt_sd)
-    data.condition = 2
+    data.medhigh = rt_mean + 0.2*rt_sd
+    data.medlow = Math.abs(rt_mean - 0.2*rt_sd)
 
 
     if (at_counter > 3) {
@@ -487,21 +527,22 @@ var attention = {
 
 
 
-    if (at_counter < 80 || last_infreq.includes('infrequent') || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
+    if (at_counter < 10 || last_infreq.includes('infrequent') || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
         lr_node = 0 //80th trial
     }
     else {
 
       if(rt_three > rt_mean+ 0.8 * rt_sd){
-            lr_node = true;
+            lr_node = 1; //lr_node = true;
             data.diff = 'slow'
-            data.condition = 2
             console.log('slow')
-          } else if (rt_three < Math.abs(rt_mean- 0.8 * rt_sd)){
-                lr_node = false;
+            } else if (rt_three < Math.abs(rt_mean- 0.8 * rt_sd)){
+                lr_node = 2; //lr_node = false;
                 data.diff = 'fast'
-                data.condition = 2
                 console.log('fast')
+            } else if (rt_three < rt_mean+ 0.2 * rt_sd && rt_three > Math.abs(rt_mean- 0.2 * rt_sd)){
+                lr_node = 3; //medium triggering should use three nodes...
+                console.log('lr_node = true')
             }
             else {lr_node = 0}
       }
@@ -524,7 +565,7 @@ var attention = {
 }
 
 
-var if_node_1= { //fast node --> TS1
+/*var if_node_1= { //fast node --> TS1
   timeline: [iti_200,lr_test_TS1,lr_feedback,iti_200],
   conditional_function: function(data){
     if (lr_node === false){
@@ -533,7 +574,7 @@ var if_node_1= { //fast node --> TS1
       return false;
     } else {return false;}
   }
-}
+};
 
 var if_node_2= { //slow node --> TS2
   timeline: [iti_200,lr_test_TS2,lr_feedback,iti_200],
@@ -544,11 +585,50 @@ var if_node_2= { //slow node --> TS2
       return false;
     } else{return false;}
   }
-}
+};
 
+var if_node_3= { //medium node --> TS3
+  timeline: [iti_200,lr_test_TS3,lr_feedback,iti_200],
+  conditional_function: function(data){
+    if (lr_node === true){
+      return true;
+    }else if (lr_node === false){
+      return false;
+    } else{return false;}
+  }
+};
+
+*/
+
+var if_node_1= { //fast node --> TS1
+  timeline: [iti_200,lr_test_TS1,iti_200],
+  conditional_function: function(data){
+    if (lr_node == 1){
+      return true;
+    } else {return false}
+  }
+};
+
+var if_node_2= { //slow node --> TS2
+  timeline: [iti_200,lr_test_TS2,iti_200],
+  conditional_function: function(data){
+    if (lr_node == 2){
+      return true;
+    } else{return false}
+  }
+};
+
+var if_node_3= { //medium node --> TS3
+  timeline: [iti_200,lr_test_TS3,iti_200],
+  conditional_function: function(data){
+    if (lr_node == 3){
+      return true;
+    } else{return false}
+  }
+};
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2,iti_200],
+  timeline: [attention,if_node_1,if_node_2,if_node_3,iti_200],
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
@@ -557,23 +637,22 @@ timeline.push(at_test_procedure);
 
 
 
-/* -----Attention Bonus Check----- */
-var attention_bonus_check = {
-    type: 'survey-html-form',
-    preamble: '<p> This is an attention check question. If you answered these questions correctly, you will get bonus payment.</p>',
-    html: '<p> The four possible correct response keys are <input name="first" type="text" /> <input name="second" type="text" /> <input name="third" type="text" /> <input name="fourth" type="text" />. </p> ',
-    autofocus: 'test-resp-box',
-    required: true
-};
-//timeline.push(attention_bonus_check); interleave this?
+/* --------------- Post Tests --------------- */
+/* -----Part 1: 2AFC----- */
 
 
-/* -----Payment Inclusion----- */
+
+
+/* -----Part 2: Recreate----- */
+//drag and drop
+
+
+/* -----Post Questionnaires----- */
 var Q0_options = ['1 and 2', '3 and 4','All of the above'];
 var multi_choice_Q0 = {
     type: 'survey-multi-choice',
     button_label: 'Next',
-    preamble: '<p> You have finished the Gemstone Expedition! <br> Please answer a few questions about the rules of the game. </p>',
+    preamble: '<p> You have finished the Study! <br> Please answer a few questions about the rules of the game. </p>',
     questions: [
         { prompt: '<p> The possible correct response keys are <br> 1. Up <br> 2. Down <br> 3. Left <br> 4. Right </p>', name: 'Q0', options: Q0_options, required: true, horizontal: false },
     ],
