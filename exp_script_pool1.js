@@ -142,107 +142,72 @@ var instruction = {
     pages: [
         /* -----instr_1----- */
         '<p style="color:black;font-size:26px">\n' +
-        '        Welcome to the Gemstone Expedition! <br>\n' +
+        '        Welcome to the study! Please take a few minutes to read the instructions carefully. <br>\n' +
         '        <br>\n' +
-        '        In this game, you are training to become a gemologist—an expert in gemstones. <br>\n' +
+        '        This is a two-part experiment. We will now go through the instructions for the first part: <br>\n' +
         '        <br>\n' +
-        '        During the game, you will discover beautiful gemstones, like these: <br>\n' +
+        '        In the first part, you will see different shapes.  <br>\n' +
+        '         <br>\n' +
+        '        Some shapes will appear more frequently than the others. <br>\n' +
         '    </p>\n' +
+
         '        <br>\n' +
+
         '    <p>\n' +
-        '       <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem01.png" /> <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem02.png" />\n' +
-        '       <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem03.png" /> <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem04.png" />\n' +
-        '\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png" />\n' +
+        '        <br>\n' +
         '    </p>\n' +
+
         '        <br>\n' +
+        '    </p>',
+
+        /* -----instr_2----- */
         '    <p style="color:black;font-size:26px">\n' +
-        '        When you find a gem, your job is to identify where the gem came from <br>\n' +
-        '        by pressing a button on your keyboard. <br>\n' +
+        '        However, occasionally, you will encounter L-shapes that look like these: <br>\n' +
+        '    </p>\n' +
+
         '        <br>\n' +
-        '        If you correctly identify where the gem came from, you earn a gold star! <br>\n' +
-        '        You do not earn a gold star for incorrectly identified gems. <br>\n' +
+
+        '    <p>\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_001_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_002_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_003_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_004_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_005_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_006_g.png" />\n' +
+        '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_007_g.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FT_008_g.png" />\n' +
+        '\n' +
+        '        <br>\n' +
+        '    </p>\n' +
+
+        '        <br>\n' +
+
+        '    <p style="color:black;font-size:26px">\n' +
+        '        Do NOT press any keys when you encounter these L-shapes. <br>\n' +
+                 And PRESS THE SPACEBAR to all the other shapes. <br>\n' +
+        '        <br>\n' +
+        '        The shapes will go by quickly so you should pay attention to them. <br>\n' +
         '\n' +
         '    </p>',
 
         /* -----instr_2----- */
         '<p style="color:black;font-size:26px">\n' +
-        '    Your gemology training will take place in two different locations: <br>\n' +
-        '    a faraway mountain and a deserted road, like this:\n' +
+        '    Now you will do a short practice of this part of the experiment. <br>\n' +
+        '    Note that you will see feedback on your performance during this practice but not during the real game. <br>\n'+
         '</p>\n' +
-        '<br>\n' +
-        '     <img src="https://zz112duke.github.io/Gem_learning/img/Stim/TS232_ex.png" /> <img src="https://zz112duke.github.io/Gem_learning/img/Stim/TS110_ex.png" />\n' +
-        '<br>\n' +
-        '\n' +
-        '<p style="color:black;font-size:26px">\n' +
-        '\n' +
-        '        When you are on the mountain, indicate whether the gem came from <br>\n' +
-        '        the top of the mountain by pressing the <span style="font-size: 26px"><b><kbd>Up</kbd></b></span> arrow key <br>\n' +
-        '        or the bottom of the mountain by pressing the <span style="font-size: 26px"><b><kbd>Down</kbd></b></span> arrow key on the keyboard. <br>\n' +
-        '        <br>\n' +
-        '        When you are on the road, indicate whether the gem originated from <br>\n' +
-        '        the left side of the road by pressing the <span style="font-size: 26px"><b><kbd>Left</kbd></b></span> arrow key <br>\n' +
-        '        or the right side of the road by pressing the <span style="font-size: 26px"><b><kbd>Right</kbd></b></span> arrow key on the keyboard. <br>\n' +
-        '</p>',
 
-        /* -----instr_3----- */
-        '<p style="color:black;font-size: 26px">\n' +
-        '    Notice that the gemstones come in different cuts: <br>\n' +
-        '    straight-edged (square and rounded square) and round (circle and oval). <br>\n' +
-        '    <br>\n' +
-        '    They also come in different colors: <br>\n' +
-        '    warm-toned colors (yellow and orange) and cool-toned colors (light blue and dark blue). <br>\n' +
-        '    Like this: <br>\n' +
-        '</p>\n' +
         '\n' +
-        '    <br>\n' +
-        '<p>\n' +
-        '\n' +
-        '    <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem01.png" /> <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem03.png" />\n' +
-        '    <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem02.png" /> <img src="https://zz112duke.github.io/Gem_learning/img/Stim/gem04.png" /><br>\n' +
-        '</p>\n' +
-        '<br>\n' +
-        '<p style="color:black;font-size: 26px">\n' +
-        '    This information may be helpful for figuring out where the gems came from.<br>\n' +
-        '</p>',
-
-        /* -----instr_4----- */
-        '<p style="color:black;font-size: 26px">\n' +
-        '    Because you are still a gemologist-in-training,  <br>\n' +
-        '    you will have to learn where the gems came from. <br>\n' +
-        '    <br>\n' +
-        '    There are only two possible responses in each location: <br>\n' +
-        '\n' +
-        '    <span style="font-size: 26px"><b><kbd>Up</kbd></b></span> or <span style="font-size: 26px"><b><kbd>Down</kbd></b></span> on the mountain, <br>\n' +
-        '    and <span style="font-size: 26px"><b><kbd>Left</kbd></b></span> or <span style="font-size: 26px"><b><kbd>Right</kbd></b></span> on the road.<br>\n' +
-        '    <br>\n' +
-        '    You will learn where different types of gems come from <br>\n' +
-        '    based on the feedback you receive after each response. <br>\n' +
-        '    <br>\n' +
-        '    A gold star indicates a correct response, and a red X indicates an incorrect response, like this:\n' +
-        '    </p>\n' +
-        '    <br>\n' +
-        '    <img src="https://zz112duke.github.io/Gem_learning/img/Stim/correct_ex.png" /> <img src="https://zz112duke.github.io/Gem_learning/img/Stim/incorrect_ex.png" />',
-
-        /* -----instr_5----- */
-        '<p style="color:black;font-size:26px">\n' +
-        '\n' +
-        '    Every time you see a gem, please respond as quickly and accurately as you can. <br>\n' +
-        '<br>\n' +
-        '    It is very important that you do your best. <br>\n' +
-        '<br>\n' +
-        '    Although the expedition may seem difficult at first, it should be do-able, especially if you are focused. <br>\n' +
-        '</p>\n' +
-        '<br>\n' +
         '<p style="color:black;font-size: 26px">\n' +
         '        Please DO NOT quit or refresh the webpage. <br>\n' +
         '        Unfortunately, we are unable to accept your HIT if you exit out of the page or refresh it.<br>\n' +
-        '        Now, click on "Next" to start the main experiment. <br> \n' +
-        '        <br> Happy exploring!\n' +
+        '        Now, click on ‘next’ to start the practice. <br>\n' +
         '</p> <br>'
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 /* -----define learning triplet stimuli----- */
