@@ -295,6 +295,7 @@ for (i = 0; i < 12; i++) {//120
 
 var repetition_1_attention = repetition_1.slice(0, 12);
 var repetition_attention = repetition.slice(0, 108);
+console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
 for (i = 0; i < repetition_1_attention.length; i++) {
@@ -322,7 +323,7 @@ for (j = 0; j < repetition_attention.length; j++) {
     stimuli.data.TaskType = 'at';
     at_stimuli.push(stimuli);
 }
-
+console.log(at_stimuli)
 
 
 /* -----define learning triplet stimuli----- */
