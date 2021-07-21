@@ -738,17 +738,6 @@ timeline.push(multi_choice_Q4);
 timeline.push(confidence);
 
 
-var multi_choice_Q6 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: '',
-    questions: [
-        { prompt: "<p>What were the rules of the game when you were on the mountain? <br> If you do not know for sure, please make your best guess.</p>", name: 'Q6P1', options: Q6P1_options, required: true },
-    ],
-};
-timeline.push(multi_choice_Q6);
-timeline.push(confidence);
-
 /* -----Demographics----- */
 var DemoQ1_options = ["Male", "Female", "Gender Non-conforming", "Other", "Choose not to respond"];
 var DemoQ2_options = ["Under 18", "18-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75-84", "85 or older"];
