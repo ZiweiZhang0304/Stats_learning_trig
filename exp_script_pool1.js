@@ -442,15 +442,13 @@ var attention = {
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
-    var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length //CHECK!!!
+    var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length
+    var slow_lr_counter = jsPsych.data.get().filter({diff: 'slow'}).select('rt').values.length
+    var fast_lr_counter = jsPsych.data.get().filter({diff: 'fast'}).select('rt').values.length
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
     var rt_sd = jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).select('rt').sd();
-
-    data.at_counter = at_counter
-    data.lr_counter = lr_counter
-    console.log(at_counter)
 
     data.at_RunningMean = rt_mean
     data.sd = rt_sd
@@ -458,6 +456,16 @@ var attention = {
     data.fast = Math.abs(rt_mean - 0.8*rt_sd)
     //data.medhigh = rt_mean + 0.2*rt_sd
     //data.medlow = Math.abs(rt_mean - 0.2*rt_sd)
+
+    data.at_counter = at_counter
+    data.lr_counter = lr_counter
+    data.slow_lr_counter = slow_lr_counter
+    data.fast_lr_counter = fast_lr_counter
+    console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
+    console.log('there are' + lr_counter + ' learning trials')
+    console.log('there are' + fast_lr_counter + ' fast learning trials')
+    console.log('there are' + slow_lr_counter + ' slow learning trials')
+
 
 
     if (at_counter > 3) {
@@ -492,9 +500,10 @@ var attention = {
         console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
 
   };
+
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
-    if (at_counter > 80 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
+    if (at_counter > 10 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
         console.log('----new restriction 1 starts here----')
 
         //see if the last 3 lr trials were all fast, if so the next one can't be
@@ -582,7 +591,7 @@ var attention = {
         lr_node = 0 //80th trial
     }
 
-    else if (at_counter > 80 && lr_counter > 0 && lr_counter < 6){
+    else if (at_counter > 10 && lr_counter > 0 && lr_counter < 6){
 
 
       /*-- If attention > 80 && 0< learning <=6 --*/
@@ -710,17 +719,17 @@ var if_node_2= { //slow node --> TS2
   }
 };
 
-var if_node_3= { //medium node --> TS3
+/*var if_node_3= { //medium node --> TS3
   timeline: [iti_200,lr_test_TS3,iti_200],
   conditional_function: function(data){
     if (lr_node == 3){
       return true;
     } else{return false}
   }
-};
+};*/
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2,if_node_3,iti_200],
+  timeline: [attention,if_node_1,if_node_2,iti_200], //,if_node_3
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
