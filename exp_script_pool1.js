@@ -954,10 +954,12 @@ var sort_trial = {
     stimuli: sorting_stimuli,
     prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
     sort_area_shape: "square",
+    stim_starts_inside:false
     sort_area_height: 500,
     sort_area_width: 500,
-    change_border_background_color: false,
     border_width: 5,
+    counter_text_unfinished: ,
+    counter_text_finished: ,
 
 };
 timeline.push(sort_trial);
