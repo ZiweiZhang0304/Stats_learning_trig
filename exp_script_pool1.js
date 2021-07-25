@@ -947,7 +947,7 @@ var sorting_stimuli = lr_triplet_1.concat(lr_triplet_2);
 console.log(sorting_stimuli);
 var sorting_stimuli_empty = [];
 
-for (var i = 0; i <= sorting_stimuli.length; i++) {
+for (var i = 0; i < sorting_stimuli.length; i++) {
     sorting_stimuli_empty.push(repo_site + sorting_stimuli[i]);
 }
 console.log(sorting_stimuli_empty);
