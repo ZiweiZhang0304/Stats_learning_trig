@@ -919,8 +919,8 @@ var twoAFC3 = {
     ],
 };
 
-timeline.push(twoAFC1,twoAFC2);
-//timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
+//timeline.push(twoAFC1,twoAFC2);
+timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
 
 
 /* -----Part 2: Recreate----- */
@@ -943,18 +943,22 @@ var instruction4 = {
 timeline.push(instruction4);
 
 
-var sorting_stimuli = lr_triplet_1.concat(lr_triplet_2);
-console.log(sorting_stimuli);
-var sorting_stimuli_empty = [];
+var sorting_stimuli= [];
 
 for (var i = 0; i < sorting_stimuli.length; i++) {
-    sorting_stimuli_empty.push(repo_site + sorting_stimuli[i]);
+    sorting_stimuli.push(repo_site + full_sitmuli_list[i]);
 }
-console.log(sorting_stimuli_empty);
+console.log(sorting_stimuli);
 var sort_trial = {
     type: 'free-sort',
-    stimuli: sorting_stimuli_empty,
-    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br> If you can’t remember a specific group of shapes, please make your best guess.</p>'
+    stimuli: sorting_stimuli,
+    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
+    sort_area_shape: "square",
+    sort_area_height: 500,
+    sort_area_width: 500,
+    change_border_background_color: false,
+    border_width: 5,
+
 };
 timeline.push(sort_trial);
 
