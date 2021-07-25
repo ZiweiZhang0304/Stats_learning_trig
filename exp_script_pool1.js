@@ -218,7 +218,7 @@ var instruction = {
         '    Note that you will see feedback on your performance during this practice but not during the real game. <br>\n'+
         '        <br>\n' +
         '    Now, click on ‘next’ to start the practice. <br>\n' +
-        '</p> <br>
+        '</p> <br>'
     ],
     show_clickable_nav: true,
 }
