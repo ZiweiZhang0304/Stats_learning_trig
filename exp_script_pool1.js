@@ -950,7 +950,7 @@ var sorting_stimuli_empty = [];
 for (var i = 1; i <= sorting_stimuli.length; i++) {
     sorting_stimuli_empty.push(repo_site + sorting_stimuli[i]);
 }
-
+console.log(sorting_stimuli_empty);
 var sort_trial = {
     type: 'free-sort',
     stimuli: sorting_stimuli_empty,
