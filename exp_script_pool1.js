@@ -869,6 +869,9 @@ var instruction3 = {
         '        <br>\n' +
         '        In this next part, you will be shown some shapes again and answer questions about them. <br>\n' +
         '        <br>\n' +
+        '</p> <br>',
+
+        '<p style="color:black;font-size: 26px">\n' +
         '        You will see two different groups of shapes at a time. <br>\n' +
         '        <br>\n' +
         '        Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment.  <br>\n' +
@@ -941,6 +944,7 @@ timeline.push(instruction4);
 
 
 var sorting_stimuli = lr_triplet_1.concat(lr_triplet_2);
+console.log(sorting_stimuli)
 for (var i = 1; i <= sorting_stimuli.length; i++) {
     sorting_stimuli.push(repo_site + sorting_stimuli[i]);
 }
@@ -948,7 +952,7 @@ for (var i = 1; i <= sorting_stimuli.length; i++) {
 var sort_trial = {
     type: 'free-sort',
     stimuli: sorting_stimuli,
-    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br> If you can’t remember a specific group of shapes, please make your best guess.</p>'
+    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br> If you can’t remember a specific group of shapes, please make your best guess.</p>'
 };
 timeline.push(sort_trial);
 
