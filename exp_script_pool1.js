@@ -304,6 +304,7 @@ var repetition_attention = repetition.slice(0, 108);
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
+var prac_stimuli = []
 for (i = 0; i < repetition_1_attention.length; i++) {
     repetition_attention.splice(Math.floor((Math.random() * repetition_attention.length)), 0, repetition_1_attention[i]);
 };
