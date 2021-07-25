@@ -905,8 +905,19 @@ var twoAFC2 = {
     ],
 };
 
+var twoAFC3 = {
+    type: 'survey-multi-choice',
+    button_label: 'Next',
+    preamble:  '<p> Now you will see two different groups of shapes at a time. <br>  Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment. ' +
+                '<br>  You should respond by selecting A or B. </p>',
+    questions: [
+        { prompt: 'a list of triplet images fast, a list of triplet images slow',
+            name: 'Q2', options: Q0_options, required: true, horizontal: false },
+    ],
+};
 
-timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3,twoAFC4,twoAFC5,twoAFC6]));
+
+timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
 
 
 /* -----Part 2: Recreate----- */
