@@ -938,9 +938,7 @@ for (var i = 1; i <= sorting_stimuli.length; i++) {
 var sort_trial = {
     type: 'free-sort',
     stimuli: sorting_stimuli,
-    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the. <br> +
-        Click next when you have arranged a group of three shapes in the order you remember them. <br> +
-        If you can’t remember a specific group of shapes, please make your best guess.</p>'
+    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br> If you can’t remember a specific group of shapes, please make your best guess.</p>'
 };
 timeline.push(sort_trial);
 
