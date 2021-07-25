@@ -957,9 +957,7 @@ var sort_trial = {
     stim_starts_inside:false,
     sort_area_height: 100,
     sort_area_width: 100,
-    border_width: 5,
-    counter_text_unfinished: ,
-    counter_text_finished: ,
+    border_width: 5
 
 };
 timeline.push(sort_trial);
