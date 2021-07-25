@@ -107,7 +107,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-timeline.push(consent);
+//timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -161,15 +161,17 @@ var instruction = {
         '<p style="color:black;font-size:26px">\n' +
         '        Welcome to the study! Please take a few minutes to read the instructions carefully. <br>\n' +
         '        <br>\n' +
-        '        This is a two-part experiment. We will now go through the instructions for the first part: <br>\n' +
-        '        <br>\n' +
+        '        This is a two-part experiment. We will now go through the instructions for the first part. <br>\n' +
+        '\n' +
+        '    </p>',
+
+       /* -----instr_2----- */
+        '<p style="color:black;font-size:26px">\n' +
         '        In the first part, you will see different shapes.  <br>\n' +
         '         <br>\n' +
         '        Some shapes will appear more frequently than the others. <br>\n' +
         '    </p>\n' +
-
         '        <br>\n' +
-
         '    <p>\n' +
         '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
         '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
@@ -182,11 +184,10 @@ var instruction = {
         '       <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
         '        <br>\n' +
         '    </p>\n' +
-
         '        <br>\n' +
         '    </p>',
 
-        /* -----instr_2----- */
+        /* -----instr_3----- */
         '    <p style="color:black;font-size:26px">\n' +
         '        However, occasionally, you will encounter L-shapes that look like these: <br>\n' +
         '    </p>\n' +
@@ -210,18 +211,14 @@ var instruction = {
         '\n' +
         '    </p>',
 
-        /* -----instr_2----- */
+        /* -----instr_4----- */
         '<p style="color:black;font-size:26px">\n' +
         '    Now you will do a short practice of this part of the experiment. <br>\n' +
+        '        <br>\n' +
         '    Note that you will see feedback on your performance during this practice but not during the real game. <br>\n'+
-        '</p>\n' +
-
-        '\n' +
-        '<p style="color:black;font-size: 26px">\n' +
-        '        Please DO NOT quit or refresh the webpage. <br>\n' +
-        '        Unfortunately, we are unable to accept your HIT if you exit out of the page or refresh it.<br>\n' +
-        '        Now, click on ‘next’ to start the practice. <br>\n' +
-        '</p> <br>'
+        '        <br>\n' +
+        '    Now, click on ‘next’ to start the practice. <br>\n' +
+        '</p> <br>
     ],
     show_clickable_nav: true,
 }
@@ -268,7 +265,40 @@ for (i = 0; i < 12; i++) {//120
 }
 //console.log(repetition_1,repetition_1.length)
 
+/* ----- Selecting Stim for Practice----- */
+var repetition_1_prac = repetition_1.slice(0, 2);
+var repetition_prac = repetition.slice(0, 8);
+console.log(repetition_1_prac, repetition_prac)
 
+
+for (i = 0; i < repetition_1_prac.length; i++) {
+    repetition_prac.splice(Math.floor((Math.random() * repetition_prac.length)), 0, repetition_1_prac[i]);
+}
+
+
+
+for (j = 0; j < repetition_prac.length; j++) {
+    var stimuli_prac = new Object();
+    stimuli_prac.at_stimulus_prac = repo_site + 'img/Stim/' + repetition_prac[j] + '_g.png';
+
+    stimuli_prac.data = new Object();
+
+
+    if (stimuli_prac.at_stimulus_prac.charAt(62) == 'F') {
+        stimuli_prac.data.at_TrialType = 'frequent';
+        stimuli_prac.data.correct_response = 'space'
+    } else {
+        stimuli_prac.data.at_TrialType = 'infrequent';
+        stimuli_prac.data.correct_response = ''
+    }
+    stimuli_prac.at_fix = rep(stimuli_prac.at_stimulus_prac);
+
+    stimuli_prac.data.test_part = 'prac';
+    stimuli_prac.data.TaskType = 'prac';
+    prac_stimuli.push(stimuli_prac);
+};
+
+/* -----Back to Selecting Main At_lr Trials----- */
 var repetition_1_attention = repetition_1.slice(0, 12);
 var repetition_attention = repetition.slice(0, 108);
 console.log(repetition_1_attention, repetition_attention)
@@ -300,6 +330,70 @@ for (j = 0; j < repetition_attention.length; j++) {
     at_stimuli.push(stimuli);
 }
 console.log(at_stimuli)
+
+/* -----Back to Creating Prac Trials----- */
+var prac = {
+    timeline: [
+        {
+            type: "image-keyboard-response",
+            stimulus:jsPsych.timelineVariable('at_stimulus_prac'),
+            choices: ['space'],
+            data: jsPsych.timelineVariable('data'),
+            trial_duration: 800,
+            on_finish: function (data) {
+                data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
+            }
+        },
+
+        {
+            type: "image-keyboard-response",
+            stimulus: jsPsych.timelineVariable('at_fix'),
+            choices: jsPsych.NO_KEYS,
+            response_ends_trial: false,
+            trial_duration:function(data) {
+                    if (jsPsych.data.get().filter({ TaskType: 'prac' }).last(1).select('rt').values[0] == null) {
+                        var fix_duration = 0
+                    } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'prac' }).last(1).select('rt').values[0]); };
+                    return fix_duration
+                }
+        }],
+};
+
+var prac_feedback = {
+    type: 'html-keyboard-response',
+    stimulus: function () {
+        var last_trial_correct = jsPsych.data.get().filter({ TaskType: 'prac' }).last(1).values()[0].correct;
+        if (last_trial_correct) {
+            return '<p style="color:black"> Correct!</p>'
+        } else {
+            return '<p style="color:black"> Incorrect.</p>'
+        }
+    },
+    choices: jsPsych.NO_KEYS,
+    trial_duration: 1000,
+};
+
+var prac_block = {
+    timeline: [prac, prac_feedback, iti_200],
+    timeline_variables: prac_stimuli,
+    randomize_order: false,
+    repetitions: 1
+}
+timeline.push(prac_block)
+
+var debrief = {
+    type: "html-keyboard-response",
+    stimulus: function () {
+
+        var trials = jsPsych.data.get().filter({ test_part: 'prac' });
+        var correct_trials = trials.filter({ correct: true });
+        var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+        return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
+            "<p>Remember that you should respond as accurately as possible. Press any key to move on.</p>";
+
+    }
+};
+timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
@@ -387,6 +481,24 @@ for (i = 0; i < lr_triplet_2.length; i++) {
 
 var lr_triplet_complete = lr_stimuli_1.concat(lr_stimuli_2); //, lr_stimuli_3
 console.log(lr_triplet_complete);
+
+
+var instruction2 = {
+    type: 'instructions',
+    pages: [
+        /* -----instr_9----- */
+        '<p style="color:black;font-size: 26px">\n' +
+        '        Please DO NOT quit or refresh the webpage. <br>\n' +
+        '        <br>\n' +
+        '        Unfortunately, we are unable to approve your submission if you exit out of the page or refresh it.<br>\n' +
+        '        <br>\n' +
+        '        Now, click on "Next" to start the main experiment. <br> \n' +
+        '</p> <br>'
+    ],
+    show_clickable_nav: true,
+}
+timeline.push(instruction2);
+
 
 
 var learning = {
@@ -743,31 +855,96 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-timeline.push(at_test_procedure);
+//timeline.push(at_test_procedure);
 
 
 
 /* --------------- Post Tests --------------- */
 /* -----Part 1: 2AFC----- */
+var instruction3 = {
+    type: 'instructions',
+    pages: [
+        /* -----instr_9----- */
+        '<p style="color:black;font-size: 26px">\n' +
+        '        You have finished the first part of the Study! <br>\n' +
+        '        <br>\n' +
+        '        In this next part, you will be shown some shapes again and answer questions about them. <br>\n' +
+        '        <br>\n' +
+        '        You will see two different groups of shapes at a time. <br>\n' +
+        '        <br>\n' +
+        '        Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment.  <br>\n' +
+        '        <br>\n' +
+        '        You should respond by selecting A or B. <br>\n' +
+        '        <br>\n' +
+        '        Now, click on "Next" to move on. <br> \n' +
+        '</p> <br>'
+    ],
+    show_clickable_nav: true,
+}
+timeline.push(instruction3);
+
+//make this a loop of 6 trials, 3 trials for each triplet, paired twice with foil sequences and once with the other attentional state
+var Q0_options = ['A', 'B'];
+var twoAFC1 = {
+    type: 'survey-multi-choice',
+    button_label: 'Next',
+    preamble: '<p> Does the first or the second group seem more familiar based on what you saw during the first part of the experiment? </p>',
+    questions: [
+        { prompt: 'a list of triplet images fast, a list of triplet images slow',
+            name: 'Q1', options: Q0_options, required: true, horizontal: false },
+    ],
+};
+
+var twoAFC2 = {
+    type: 'survey-multi-choice',
+    button_label: 'Next',
+    preamble:  '<p> Now you will see two different groups of shapes at a time. <br>  Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment. ' +
+                '<br>  You should respond by selecting A or B. </p>',
+    questions: [
+        { prompt: 'a list of triplet images fast, a list of triplet images slow',
+            name: 'Q2', options: Q0_options, required: true, horizontal: false },
+    ],
+};
 
 
+timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3,twoAFC4,twoAFC5,twoAFC6]));
 
 
 /* -----Part 2: Recreate----- */
 //drag and drop
 
-
-/* -----Post Questionnaires----- */
-var Q0_options = ['1 and 2', '3 and 4','All of the above'];
-var multi_choice_Q0 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: '<p> You have finished the Study! <br> Please answer a few questions about the rules of the game. </p>',
-    questions: [
-        { prompt: '<p> The possible correct response keys are <br> 1. Up <br> 2. Down <br> 3. Left <br> 4. Right </p>', name: 'Q0', options: Q0_options, required: true, horizontal: false },
+var instruction4 = {
+    type: 'instructions',
+    pages: [
+        /* -----instr_9----- */
+        '<p style="color:black;font-size: 26px">\n' +
+        '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
+        '        <br>\n' +
+        '        Therefore, in this section, we will ask you to recreate groups of 3 shapes that you remember from the first part of the experiment. <br>\n' +
+        '        <br>\n' +
+        '        Now, click on "Next" to move on to the next question. <br> \n' +
+        '</p> <br>'
     ],
+    show_clickable_nav: true,
+}
+timeline.push(instruction4);
+
+
+var sorting_stimuli = lr_triplet_1.concat(lr_triplet_2);
+for (var i = 1; i <= sorting_stimuli.length; i++) {
+    sorting_stimuli.push(repo_site + sorting_stimuli[i]);
+}
+
+var sort_trial = {
+    type: 'free-sort',
+    stimuli: sorting_stimuli,
+    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the. <br> +
+        Click next when you have arranged a group of three shapes in the order you remember them. <br> +
+        If you can’t remember a specific group of shapes, please make your best guess.</p>'
 };
-timeline.push(multi_choice_Q0);
+timeline.push(sort_trial);
+
+
 
 /* -----A Few Q on Rules----- */
 var FR_Q1 = {
@@ -779,73 +956,6 @@ var FR_Q1 = {
 timeline.push(FR_Q1);
 
 
-var confidence = {
-    type: 'html-slider-response',
-    stimulus: '<p>On a scale of 1-5, how confident are you in your answer to the last question? <br> Adjust the slider bar to indicate your answer.</p>',
-    labels: ['Not confident 0', '1','2','3','4','Confident 5'],
-    min: 0,
-    max: 5,
-    slider_start: 3,
-};
-timeline.push(confidence);
-
-var yn_options = ["Definitely No","Maybe No","Maybe Yes","Definitely Yes" ];
-var multi_choice_Q2 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: 'Please answer a few questions regarding the rules of the game.',
-    questions: [
-        { prompt: "<p> Did the same thing determine the correct response to each gem on the mountain and the road? <br> </p>", name: 'Q2', options: yn_options, required: true, horizontal: false },
-    ],
-};
-timeline.push(multi_choice_Q2);
-
-
-var FR_Q2 = {
-    type: 'survey-text',
-    preamble: '<p> Please answer a few questions regarding the rules of the game. </p>',
-    questions: [
-        { prompt: '<p> What determined the correct response to a gem when you were on the mountain? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess. </p> ',name: FR_Q2, rows: 5, columns: 80, required: true}
-    ],
-};
-timeline.push(FR_Q2);
-
-timeline.push(confidence);
-
-var FR_Q3 = {
-    type: 'survey-text',
-    preamble: '<p> Please answer a few questions regarding the rules of the game. </p>',
-    questions: [
-        { prompt:  '<p> What determined the correct response to a gem when you were on the road? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p> ',name: FR_Q3, rows: 5, columns: 80, required: true}
-    ],
-};
-timeline.push(FR_Q3);
-
-timeline.push(confidence);
-
-
-var Q3P1_options = ["The color of the gems", "The shape of the gems"];
-var multi_choice_Q3 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: 'Now, we will ask you to pick between different options to see how you learned the rules of the game.',
-    questions: [
-        { prompt: "<p> What determined the correct response to a gem when you were on the mountain? <br> If you do not know for sure, please make your best guess.</p>", name: 'Q3P1', options: Q3P1_options, required: true },
-    ],
-};
-timeline.push(multi_choice_Q3);
-timeline.push(confidence);
-
-var multi_choice_Q4 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: 'Now, we will ask you to pick between different options to see how you learned the rules of the game.',
-    questions: [
-        { prompt: "<p>What determined the correct response to a gem when you were on the road? <br> If you do not know for sure, please make your best guess.</p>", name: 'Q4P1', options: Q3P1_options, required: true },
-    ],
-};
-timeline.push(multi_choice_Q4);
-timeline.push(confidence);
 
 
 /* -----Demographics----- */
@@ -868,7 +978,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-timeline.push(multi_choice_Demo);
+//timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
