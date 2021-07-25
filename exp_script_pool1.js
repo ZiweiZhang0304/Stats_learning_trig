@@ -270,11 +270,10 @@ var repetition_1_prac = repetition_1.slice(0, 2);
 var repetition_prac = repetition.slice(0, 8);
 console.log(repetition_1_prac, repetition_prac)
 
-
+var prac_stimuli = []
 for (i = 0; i < repetition_1_prac.length; i++) {
     repetition_prac.splice(Math.floor((Math.random() * repetition_prac.length)), 0, repetition_1_prac[i]);
 }
-
 
 
 for (j = 0; j < repetition_prac.length; j++) {
@@ -304,7 +303,6 @@ var repetition_attention = repetition.slice(0, 108);
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
-var prac_stimuli = []
 for (i = 0; i < repetition_1_attention.length; i++) {
     repetition_attention.splice(Math.floor((Math.random() * repetition_attention.length)), 0, repetition_1_attention[i]);
 };
