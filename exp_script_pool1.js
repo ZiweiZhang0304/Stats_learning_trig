@@ -265,6 +265,32 @@ for (i = 0; i < 12; i++) {//120
 }
 //console.log(repetition_1,repetition_1.length)
 
+/* ----- Selecting Stim for First 3 Trials Frequent----- */
+var first3_stimuli = []
+var repetition_first3 = repetition.slice(0, 3);
+console.log(repetition_first3)
+
+for (j = 0; j < repetition_first3.length; j++) {
+    var stimuli_first3 = new Object();
+    stimuli_first3.at_stimulus_first3 = repo_site + 'img/Stim/' + repetition_first3[j] + '_b.png';
+
+    stimuli_first3.data = new Object();
+
+
+    if (stimuli_first3.at_stimulus_first3.charAt(60) == 's') {
+        stimuli_first3.data.at_TrialType = 'frequent';
+        stimuli_first3.data.correct_response = 'space'
+    } else {
+        stimuli_first3.data.at_TrialType = 'infrequent';
+        stimuli_first3.data.correct_response = ''
+    }
+    stimuli_first3.at_fix = rep(stimuli_first3.at_stimulus_first3);
+
+    stimuli_first3.data.test_part = 'test';
+    stimuli_first3.data.TaskType = 'at';
+    first3_stimuli.push(stimuli_first3);
+};
+
 /* ----- Selecting Stim for Practice----- */
 var repetition_1_prac = repetition_1.slice(0, 2);
 var repetition_prac = repetition.slice(0, 8);
@@ -299,7 +325,7 @@ for (j = 0; j < repetition_prac.length; j++) {
 
 /* -----Back to Selecting Main At_lr Trials----- */
 var repetition_1_attention = repetition_1.slice(0, 12);
-var repetition_attention = repetition.slice(0, 108);
+var repetition_attention = repetition.slice(3, 108);
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -549,8 +575,18 @@ var lr_test_TS3 = {
   repetitions: 1
 };
 
+/* -----Combine learning trials----- */
+/* -----First 3 trials should not have infrequent-----*/
+var first3_block = {
+    timeline: [attention_first3 , iti_200],
+    timeline_variables: first3_stimuli,
+    randomize_order: false,
+    repetitions: 1
+}
+timeline.push(first3_block)
 
-/* Combine learning trials */
+
+/* -----After the 3rd trial-----*/
 var lr_node = false;
 var attention = {
   timeline:[
@@ -572,8 +608,8 @@ var attention = {
 
     data.at_RunningMean = rt_mean
     data.sd = rt_sd
-    data.slow = rt_mean + 0.8*rt_sd
-    data.fast = Math.abs(rt_mean - 0.8*rt_sd)
+    data.slow = rt_mean + rt_sd
+    data.fast = Math.abs(rt_mean - rt_sd)
     //data.medhigh = rt_mean + 0.2*rt_sd
     //data.medlow = Math.abs(rt_mean - 0.2*rt_sd)
 
@@ -955,10 +991,8 @@ var sort_trial = {
     prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
     sort_area_shape: "square",
     stim_starts_inside:false,
-    sort_area_height: 100,
-    sort_area_width: 100,
-    border_width: 5
-
+    //sort_area_height: 100,
+    //sort_area_width: 300
 };
 timeline.push(sort_trial);
 
