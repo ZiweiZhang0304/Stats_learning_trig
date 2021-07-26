@@ -1032,12 +1032,13 @@ var sort_trial = {
     type: 'free-sort',
     stimuli: sorting_stimuli,
     prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.</p>',
-    stim_height: 100,
-    stim_width: 100,
-    border_width: 1,
+    stim_height: 50,
+    stim_width: 50,
+    scale_factor: 2.5,
+    border_width: 2,
     sort_area_shape: "square",
     stim_starts_inside:false,
-    sort_area_height: 300,
+    sort_area_height: 100,
     sort_area_width: 300
 };
 timeline.push(sort_trial);
