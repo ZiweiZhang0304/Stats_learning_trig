@@ -152,7 +152,7 @@ var frequent_trigger = full_sitmuli_list.filter(function(val) {
 
 var infrequent_target = ["img/Stim/IF_001_g.png", "img/Stim/IF_002_g.png", "img/Stim/IF_003_g.png", "img/Stim/IF_004_g.png"]
 
-
+console.log('hello!!!!')
 /* -----Instructions----- */
 var instruction = {
     type: 'instructions',
@@ -583,7 +583,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(first3_block)
+//timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
