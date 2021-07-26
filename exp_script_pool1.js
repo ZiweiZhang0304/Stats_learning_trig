@@ -222,7 +222,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction);
+//timeline.push(instruction);
 
 
 /* -----define attention stimuli----- */
@@ -522,7 +522,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction2);
+//timeline.push(instruction2);
 
 
 
@@ -962,7 +962,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction3);
+//timeline.push(instruction3);
 
 //make this a loop of 6 trials, 3 trials for each triplet, paired twice with foil sequences and once with the other attentional state
 var Q0_options = ['A', 'B'];
@@ -998,7 +998,7 @@ var twoAFC3 = {
     ],
 };
 
-timeline.push(twoAFC1,twoAFC2);
+//timeline.push(twoAFC1,twoAFC2);
 //timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
 
 
@@ -1019,7 +1019,7 @@ var instruction4 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction4);
+//timeline.push(instruction4);
 
 
 var sorting_stimuli= [];
@@ -1033,7 +1033,7 @@ var sort_trial = {
     stimuli: sorting_stimuli,
     prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
     sort_area_shape: "square",
-    stim_starts_inside:false,
+    stim_starts_inside:true,
     //sort_area_height: 100,
     //sort_area_width: 300
 };
