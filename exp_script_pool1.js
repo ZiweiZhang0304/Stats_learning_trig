@@ -272,12 +272,12 @@ console.log(repetition_first3)
 
 for (j = 0; j < repetition_first3.length; j++) {
     var stimuli_first3 = new Object();
-    stimuli_first3.at_stimulus_first3 = repo_site + 'img/Stim/' + repetition_first3[j] + '_b.png';
+    stimuli_first3.at_stimulus_first3 = repo_site + 'img/Stim/' + repetition_first3[j] + '_g.png';
 
     stimuli_first3.data = new Object();
 
 
-    if (stimuli_first3.at_stimulus_first3.charAt(60) == 's') {
+    if (stimuli_first3.at_stimulus_first3.charAt(62) == 'F') {
         stimuli_first3.data.at_TrialType = 'frequent';
         stimuli_first3.data.correct_response = 'space'
     } else {
@@ -577,6 +577,49 @@ var lr_test_TS3 = {
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
+
+var attention_first3 = {
+  timeline:[
+      {
+          type: "image-keyboard-response",
+          stimulus: jsPsych.timelineVariable('at_stimulus_first3'),
+          choices: ['space'],
+          data: jsPsych.timelineVariable('data'),
+          trial_duration: 800,
+          on_finish: function (data) {
+
+              var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
+              //var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length
+              console.log('this is at_counter from first3: ' + at_counter)
+              data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
+              var rt_mean = jsPsych.data.get().filter({test_part: 'test',at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
+              var rt_sd = jsPsych.data.get().filter({test_part: 'test', at_TrialType: 'frequent', key_press: 32}).select('rt').sd();
+
+              data.at_counter = at_counter
+              //data.lr_counter = lr_counter
+
+              data.at_RunningMean = rt_mean
+              data.sd = rt_sd
+              data.slow = rt_mean +  rt_sd
+              data.fast = Math.abs(rt_mean - rt_sd)
+          }
+      },
+
+
+{type: "image-keyboard-response",
+  stimulus: jsPsych.timelineVariable('at_fix'),
+  choices: jsPsych.NO_KEYS,
+  response_ends_trial: false,
+  trial_duration: function (data) {
+        if (jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0] == null) {
+            var fix_duration = 0
+        } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0]); };
+        return fix_duration
+    }
+}
+],
+};
+
 var first3_block = {
     timeline: [attention_first3 , iti_200],
     timeline_variables: first3_stimuli,
