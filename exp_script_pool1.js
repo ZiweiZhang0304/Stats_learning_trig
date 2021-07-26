@@ -1031,14 +1031,16 @@ console.log(sorting_stimuli);
 var sort_trial = {
     type: 'free-sort',
     stimuli: sorting_stimuli,
-    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
+    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.</p>',
+    stim_height: 80,
+    stim_width: 80,
     sort_area_shape: "square",
     stim_starts_inside:true,
     sort_area_height: 300,
     sort_area_width: 300
 };
 timeline.push(sort_trial);
-
+//    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
 
 
 /* -----A Few Q on Rules----- */
