@@ -1024,8 +1024,8 @@ var instruction4 = {
 
 var sorting_stimuli= [];
 
-for (var i = 0; i < full_sitmuli_list.length; i++) {
-    sorting_stimuli.push(repo_site + full_sitmuli_list[i]);
+for (var i = 0; i < lr_triplet_1.length; i++) {
+    sorting_stimuli.push(repo_site + lr_triplet_1[i]);
 }
 console.log(sorting_stimuli);
 var sort_trial = {
