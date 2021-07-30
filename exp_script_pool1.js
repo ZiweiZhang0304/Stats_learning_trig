@@ -999,8 +999,14 @@ var twoAFC3 = {
 };
 
 //timeline.push(twoAFC1,twoAFC2);
-timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
 
+var twoAFC = {
+    timeline: [twoAFC1,twoAFC2,twoAFC3], //,twoAFC4,twoAFC5,twoAFC6
+    //timeline_variables: first3_stimuli,
+    randomize_order: true,
+    repetitions: 1
+}
+timeline.push(twoAFC)
 
 /* -----Part 2: Recreate----- */
 //drag and drop
