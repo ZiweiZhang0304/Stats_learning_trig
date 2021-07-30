@@ -999,7 +999,7 @@ var twoAFC3 = {
 };
 
 //timeline.push(twoAFC1,twoAFC2);
-//timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
+timeline.push(shuffle([twoAFC1,twoAFC2,twoAFC3])); //,twoAFC4,twoAFC5,twoAFC6
 
 
 /* -----Part 2: Recreate----- */
@@ -1028,10 +1028,10 @@ for (var i = 0; i < lr_triplet_1.length; i++) {
     sorting_stimuli.push(repo_site + lr_triplet_1[i]);
 }
 console.log(sorting_stimuli);
-var sort_trial = {
+var sort_trial_1 = {
     type: 'free-sort',
     stimuli: sorting_stimuli,
-    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.</p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.</p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2.5,
@@ -1041,8 +1041,29 @@ var sort_trial = {
     sort_area_height: 100,
     sort_area_width: 300
 };
-timeline.push(sort_trial);
+timeline.push(sort_trial_1);
 //    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
+var sorting_stimuli= [];
+
+for (var i = 0; i < lr_triplet_2.length; i++) {
+    sorting_stimuli.push(repo_site + lr_triplet_2[i]);
+}
+console.log(sorting_stimuli);
+var sort_trial_2 = {
+    type: 'free-sort',
+    stimuli: sorting_stimuli,
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.</p>',
+    stim_height: 50,
+    stim_width: 50,
+    scale_factor: 2.5,
+    border_width: 2,
+    sort_area_shape: "square",
+    stim_starts_inside:false,
+    sort_area_height: 100,
+    sort_area_width: 300
+};
+timeline.push(sort_trial_2);
+
 
 
 /* -----A Few Q on Rules----- */
