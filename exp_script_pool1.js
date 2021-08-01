@@ -115,7 +115,13 @@ var iti_200 = {
   stimulus: repo_site + "img/Stim/gray_bdot.png",
   choices: jsPsych.NO_KEYS,
   trial_duration: 200,
-}
+};
+var iti_1000 = {
+  type: "image-keyboard-response",
+  stimulus: repo_site + "img/Stim/gray_bdot.png",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 1000,
+};
 
 /* -----Preload Images----- */
 preload_list = [repo_site + 'img/Stim/FN_001_g.png', repo_site + 'img/Stim/FN_002_g.png', repo_site + 'img/Stim/FN_003_g.png',
@@ -227,6 +233,25 @@ var instruction = {
 
 /* -----define attention stimuli----- */
 
+/*var repetition = []
+for (i = 0; i < 108; i++) { //1080
+
+    stimuli_freq = frequent_nontrigger[Math.floor((Math.random()) * frequent_nontrigger.length)];
+    repetition.push(String(stimuli_freq.charAt(9)) + String(stimuli_freq.charAt(10)) + String(stimuli_freq.charAt(11)) + String(stimuli_freq.charAt(12)) + String(stimuli_freq.charAt(13)) + String(stimuli_freq.charAt(14)) );
+
+
+    if (i != 0) {
+
+        while (repetition[i] == repetition[i - 1]) {
+            stimuli_freq = frequent_nontrigger[Math.floor((Math.random()) * frequent_nontrigger.length)];
+            repetition[i] = (String(stimuli_freq.charAt(9)) + String(stimuli_freq.charAt(10)) + String(stimuli_freq.charAt(11)) + String(stimuli_freq.charAt(12)) + String(stimuli_freq.charAt(13)) + String(stimuli_freq.charAt(14)) );
+            if (repetition[i] != repetition[i - 1]) { break };
+        }
+    }
+
+}*/
+for i
+
 var repetition = []
 for (i = 0; i < 108; i++) { //1080
 
@@ -243,8 +268,8 @@ for (i = 0; i < 108; i++) { //1080
         }
     }
 
-}
-//console.log(repetition,repetition.length)
+};
+console.log(repetition,repetition.length)
 
 var repetition_1 = []
 for (i = 0; i < 12; i++) {//120
@@ -486,7 +511,7 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     stimuli.data.TaskType = 'lr';
     lr_stimuli_2.push(stimuli);
 };
-
+console.log(lr_stimuli_1,lr_stimuli_2);
 /*for (i = 0; i < lr_triplet_3.length; i++) {
     var stimuli = new Object();
     stimuli.lr_stimulus = repo_site + lr_triplet_3[i] ;
@@ -938,6 +963,38 @@ var at_test_procedure = {
 
 
 /* --------------- Post Tests --------------- */
+//create list of 6 foils
+var foil_1 = getRandom(frequent_nontrigger,3);
+var rest = frequent_nontrigger.filter(function(val) {
+  return foil_1.indexOf(val) == -1;
+});
+var foil_2 = getRandom(rest,3);
+
+//create stimuli object called twoAFC_stimuli, with name 'twoAFC_stimulus'
+var twoAFC_trial_list = lr_triplet_1.concat(foil_1, foil_1, lr_triplet_1, lr_triplet_1, foil_2, foil_2, lr_triplet_1, lr_triplet_2, foil_1, foil_1,lr_triplet_2,
+    lr_triplet_2, foil_2, foil_2, lr_triplet_2, lr_triplet_2, lr_triplet_1, lr_triplet_1, lr_triplet_2);
+
+for (i = 0; i < twoAFC_trial_list.length; i++) {
+    var stimuli = new Object();
+    stimuli.twoAFC_stimulus = repo_site + twoAFC_trial_list[i] ;
+    stimuli.data = new Object();
+
+    if (lr_triplet_1.includes(i)){
+        stimuli.data.triplet_type = attention_state_list[0];}
+    else if (lr_triplet_2.includes(i)){
+        stimuli.data.triplet_type = attention_state_list[1];
+    } else if (foil_1.includes(i)){
+        stimuli.data.triplet_type = 'foil1';
+    } else {stimuli.data.triplet_type = 'foil2'};
+
+    stimuli.allowed_keys = '';
+    stimuli.data.correct_response = '';
+
+    stimuli.data.test_part = 'post';
+    stimuli.data.TaskType = 'twoAFC';
+    twoAFC_stimuli.push(stimuli);
+};
+
 /* -----Part 1: 2AFC----- */
 var instruction3 = {
     type: 'instructions',
@@ -964,53 +1021,116 @@ var instruction3 = {
 }
 //timeline.push(instruction3);
 
-//make this a loop of 6 trials, 3 trials for each triplet, paired twice with foil sequences and once with the other attentional state
-var Q0_options = ['A', 'B'];
-var twoAFC1 = {
+//8 test trials (2 triplets * 2 foils * 2 repetitions), 2 trials for each triplet, paired twice with foil sequences and once with the other attentional state
+//2 trials with the 2 triplets against each other, position counterbalanced
+//800ms with iti 1000ms
+
+var twoAFC_trial = {
+  timeline:[
+  {type: "image-keyboard-response",
+  stimulus: repo_site + "img/Stim/gray_bdot.png",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 1000,
+},
+
+  {type: "image-keyboard-response",
+  stimulus: jsPsych.timelineVariable('twoAFC_stimulus'),
+  choices: ,
+  data: jsPsych.timelineVariable('data'),
+  trial_duration: 800,
+  on_finish: function(data){
+
+    var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length;}
+}
+
+};
+
+
+var Q0_options = ['The first group of three shapes', 'The second group of three shapes'];
+var twoAFC_choice = {
     type: 'survey-multi-choice',
     button_label: 'Next',
     preamble: '<p> Does the first or the second group seem more familiar based on what you saw during the first part of the experiment? </p>',
     questions: [
-        { prompt: 'a list of triplet images fast, a list of triplet images slow',
+        { prompt: 'Click and select',
             name: 'Q1', options: Q0_options, required: true, horizontal: false },
     ],
 };
 
-var twoAFC2 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble:  '<p> Now you will see two different groups of shapes at a time. <br>  Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment. ' +
-                '<br>  You should respond by selecting A or B. </p>',
-    questions: [
-        { prompt: 'a list of triplet images fast, a list of triplet images slow',
-            name: 'Q2', options: Q0_options, required: true, horizontal: false },
-    ],
+var twoAFC01 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(0,6),
+    randomize_order: false,
+    repetitions: 1
 };
-
-var twoAFC3 = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble:  '<p> Now you will see two different groups of shapes at a time. <br>  Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment. ' +
-                '<br>  You should respond by selecting A or B. </p>',
-    questions: [
-        { prompt: 'a list of triplet images fast, a list of triplet images slow',
-            name: 'Q2', options: Q0_options, required: true, horizontal: false },
-    ],
+var twoAFC02 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(6,12),
+    randomize_order: false,
+    repetitions: 1
 };
-
-//timeline.push(twoAFC1,twoAFC2);
+var twoAFC03 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(12,18),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC04 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(18,24),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC05 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(24,30),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC06 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(30,36),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC07 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(36,42),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC08 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(42,48),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC09 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(48,54),
+    randomize_order: false,
+    repetitions: 1
+};
+var twoAFC10 = {
+    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline_variables: twoAFC_stimuli.slice(54,60),
+    randomize_order: false,
+    repetitions: 1
+};
 
 var twoAFC = {
-    timeline: [twoAFC1,twoAFC2,twoAFC3], //,twoAFC4,twoAFC5,twoAFC6
-    //timeline_variables: first3_stimuli,
+    timeline: [twoAFC01,twoAFC02,twoAFC03,twoAFC04,
+               twoAFC05,twoAFC06,twoAFC07,twoAFC08,
+               twoAFC09,twoAFC10],
     randomize_order: true,
     repetitions: 1
 }
 timeline.push(twoAFC)
 
+
+
 /* -----Part 2: Recreate----- */
 //drag and drop
-
 var instruction4 = {
     type: 'instructions',
     pages: [
@@ -1029,9 +1149,9 @@ var instruction4 = {
 
 
 var sorting_stimuli= [];
-
-for (var i = 0; i < lr_triplet_1.length; i++) {
-    sorting_stimuli.push(repo_site + lr_triplet_1[i]);
+var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2)
+for (var i = 0; i < lr_triplet_full.length; i++) {
+    sorting_stimuli.push(repo_site + lr_triplet_full[i]);
 }
 console.log(sorting_stimuli);
 var sort_trial_1 = {
@@ -1068,7 +1188,7 @@ var sort_trial_2 = {
     sort_area_height: 100,
     sort_area_width: 300
 };
-timeline.push(sort_trial_2);
+//timeline.push(sort_trial_2);
 
 
 
