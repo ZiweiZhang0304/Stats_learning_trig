@@ -973,6 +973,7 @@ var foil_2 = getRandom(rest,3);
 var twoAFC_trial_list = lr_triplet_1.concat(foil_1, foil_1, lr_triplet_1, lr_triplet_1, foil_2, foil_2, lr_triplet_1, lr_triplet_2, foil_1, foil_1,lr_triplet_2,
     lr_triplet_2, foil_2, foil_2, lr_triplet_2, lr_triplet_2, lr_triplet_1, lr_triplet_1, lr_triplet_2);
 
+twoAFC_stimuli = []
 for (i = 0; i < twoAFC_trial_list.length; i++) {
     var stimuli = new Object();
     stimuli.twoAFC_stimulus = repo_site + twoAFC_trial_list[i] ;
