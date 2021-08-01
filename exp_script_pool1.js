@@ -1040,7 +1040,7 @@ var twoAFC_trial = {
   trial_duration: 800,
   on_finish: function(data){
 
-    var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length;}
+    var twoAFC_counter = jsPsych.data.get().filter({TaskType: 'twoAFC'}).select('rt').values.length;}
     } ]
 };
 
@@ -1057,70 +1057,132 @@ var twoAFC_choice = {
 };
 
 var twoAFC01 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(0,6),
     randomize_order: false,
     repetitions: 1
 };
+
+var twoAFC01_Q = {
+    timeline: [twoAFC01 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC02 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(6,12),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC02_Q = {
+    timeline: [twoAFC02 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC03 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(12,18),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC03_Q = {
+    timeline: [twoAFC03 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC04 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(18,24),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC04_Q = {
+    timeline: [twoAFC04 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC05 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(24,30),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC05_Q = {
+    timeline: [twoAFC05 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC06 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(30,36),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC06_Q = {
+    timeline: [twoAFC06 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC07 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(36,42),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC07_Q = {
+    timeline: [twoAFC07 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC08 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(42,48),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC08_Q = {
+    timeline: [twoAFC08 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC09 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(48,54),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC09_Q = {
+    timeline: [twoAFC09 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
+
 var twoAFC10 = {
     timeline: [twoAFC_trial, twoAFC_choice],
     timeline_variables: twoAFC_stimuli.slice(54,60),
     randomize_order: false,
     repetitions: 1
 };
+var twoAFC10_Q = {
+    timeline: [twoAFC10 , twoAFC_choice],
+    randomize_order: false,
+    repetitions: 1
+};
 
 var twoAFC = {
-    timeline: [twoAFC01,twoAFC02,twoAFC03,twoAFC04,
-               twoAFC05,twoAFC06,twoAFC07,twoAFC08,
-               twoAFC09,twoAFC10],
+    timeline: [twoAFC01_Q,twoAFC02_Q,
+/*                twoAFC03_Q,twoAFC04_Q,
+               twoAFC05_Q,twoAFC06_Q,twoAFC07_Q,twoAFC08_Q,
+               twoAFC09_Q,twoAFC10_Q*/
+    ],
     randomize_order: true,
     repetitions: 1
 }
