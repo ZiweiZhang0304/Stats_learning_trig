@@ -250,7 +250,6 @@ for (i = 0; i < 108; i++) { //1080
     }
 
 }*/
-for i
 
 var repetition = []
 for (i = 0; i < 108; i++) { //1080
