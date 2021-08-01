@@ -1040,8 +1040,7 @@ var twoAFC_trial = {
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length;}
-}
-
+    } ]
 };
 
 
