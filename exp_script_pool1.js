@@ -1070,7 +1070,7 @@ var twoAFC01_Q = {
 };
 
 var twoAFC02 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(6,12),
     randomize_order: false,
     repetitions: 1
@@ -1082,7 +1082,7 @@ var twoAFC02_Q = {
 };
 
 var twoAFC03 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(12,18),
     randomize_order: false,
     repetitions: 1
@@ -1094,7 +1094,7 @@ var twoAFC03_Q = {
 };
 
 var twoAFC04 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(18,24),
     randomize_order: false,
     repetitions: 1
@@ -1106,7 +1106,7 @@ var twoAFC04_Q = {
 };
 
 var twoAFC05 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(24,30),
     randomize_order: false,
     repetitions: 1
@@ -1118,7 +1118,7 @@ var twoAFC05_Q = {
 };
 
 var twoAFC06 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(30,36),
     randomize_order: false,
     repetitions: 1
@@ -1130,7 +1130,7 @@ var twoAFC06_Q = {
 };
 
 var twoAFC07 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(36,42),
     randomize_order: false,
     repetitions: 1
@@ -1142,7 +1142,7 @@ var twoAFC07_Q = {
 };
 
 var twoAFC08 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(42,48),
     randomize_order: false,
     repetitions: 1
@@ -1154,7 +1154,7 @@ var twoAFC08_Q = {
 };
 
 var twoAFC09 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(48,54),
     randomize_order: false,
     repetitions: 1
@@ -1166,7 +1166,7 @@ var twoAFC09_Q = {
 };
 
 var twoAFC10 = {
-    timeline: [twoAFC_trial, twoAFC_choice],
+    timeline: [twoAFC_trial],
     timeline_variables: twoAFC_stimuli.slice(54,60),
     randomize_order: false,
     repetitions: 1
