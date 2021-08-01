@@ -1034,7 +1034,7 @@ var twoAFC_trial = {
 
   {type: "image-keyboard-response",
   stimulus: jsPsych.timelineVariable('twoAFC_stimulus'),
-  choices: ,
+  choices: jsPsych.NO_KEYS,
   data: jsPsych.timelineVariable('data'),
   trial_duration: 800,
   on_finish: function(data){
