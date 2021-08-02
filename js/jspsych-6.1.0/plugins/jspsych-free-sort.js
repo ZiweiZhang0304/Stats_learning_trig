@@ -389,17 +389,17 @@ jsPsych.plugins['free-sort'] = (function() {
         let final_locations = [];
         for(let i=0; i<items.length; i++){
           final_locations.push({
-            src: JSON.stringify(items[i].dataset.src),
-            x: JSON.stringify(parseInt(items[i].style.left)),
-            y: JSON.stringify(parseInt(items[i].style.top))
+            'src': JSON.stringify(items[i].dataset.src),
+            'x': JSON.stringify(parseInt(items[i].style.left)),
+            'y': JSON.stringify(parseInt(items[i].style.top))
           });
         }
 
         const trial_data = {
-          init_locations: init_locations,
-          moves: moves,
-          final_locations: final_locations,
-          rt: rt
+          'init_locations': JSON.stringify(init_locations),
+          'moves': JSON.stringify(moves),
+          'final_locations': JSON.stringify(final_locations),
+          'rt': rt
         };
 
         // advance to next part
