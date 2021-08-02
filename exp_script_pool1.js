@@ -158,7 +158,6 @@ var frequent_trigger = full_sitmuli_list.filter(function(val) {
 
 var infrequent_target = ["img/Stim/IF_001_g.png", "img/Stim/IF_002_g.png", "img/Stim/IF_003_g.png", "img/Stim/IF_004_g.png"]
 
-console.log('hello!!!!')
 /* -----Instructions----- */
 var instruction = {
     type: 'instructions',
@@ -228,7 +227,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 /* -----define attention stimuli----- */
@@ -252,7 +251,7 @@ for (i = 0; i < 108; i++) { //1080
 }*/
 
 var repetition = []
-for (i = 0; i < 108; i++) { //1080
+for (i = 0; i < 1080; i++) { //1080
 
     stimuli_freq = frequent_nontrigger[Math.floor((Math.random()) * frequent_nontrigger.length)];
     repetition.push(String(stimuli_freq.charAt(9)) + String(stimuli_freq.charAt(10)) + String(stimuli_freq.charAt(11)) + String(stimuli_freq.charAt(12)) + String(stimuli_freq.charAt(13)) + String(stimuli_freq.charAt(14)) );
@@ -271,7 +270,7 @@ for (i = 0; i < 108; i++) { //1080
 console.log(repetition,repetition.length)
 
 var repetition_1 = []
-for (i = 0; i < 12; i++) {//120
+for (i = 0; i < 120; i++) {//120
 
     stimuli_infreq = infrequent_target[Math.floor((Math.random()) * infrequent_target.length)];
     repetition_1.push(String(String(stimuli_infreq.charAt(9)) + String(stimuli_infreq.charAt(10)) + String(stimuli_infreq.charAt(11)) + stimuli_infreq.charAt(12)) + String(stimuli_infreq.charAt(13)) + String(stimuli_infreq.charAt(14)) );
@@ -428,7 +427,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -442,7 +441,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
@@ -546,7 +545,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction2);
+timeline.push(instruction2);
 
 
 
@@ -650,7 +649,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(first3_block)
+timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -957,7 +956,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
@@ -1008,7 +1007,7 @@ var instruction3 = {
         '</p> <br>',
 
         '<p style="color:black;font-size: 26px">\n' +
-        '        You will see two different groups of shapes at a time. <br>\n' +
+        '        You will see two different groups of shapes at a time. !!!NEED TO CHANGE THIS!!! <br>\n' +
         '        <br>\n' +
         '        Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment.  <br>\n' +
         '        <br>\n' +
@@ -1019,7 +1018,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction3);
+timeline.push(instruction3);
 
 //8 test trials (2 triplets * 2 foils * 2 repetitions), 2 trials for each triplet, paired twice with foil sequences and once with the other attentional state
 //2 trials with the 2 triplets against each other, position counterbalanced
@@ -1206,7 +1205,7 @@ var instruction4 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction4);
+timeline.push(instruction4);
 
 
 var sorting_stimuli= [];
