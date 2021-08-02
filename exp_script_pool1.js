@@ -1225,7 +1225,8 @@ var sort_trial_1 = {
     sort_area_shape: "square",
     stim_starts_inside:false,
     sort_area_height: 100,
-    sort_area_width: 300
+    sort_area_width: 300,
+    column_spread_factor: 3
 };
 timeline.push(sort_trial_1);
 
