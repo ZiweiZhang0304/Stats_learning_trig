@@ -174,7 +174,7 @@ var instruction = {
         '<p style="color:black;font-size:26px">\n' +
         '        In the first part, you will see different shapes.  <br>\n' +
         '         <br>\n' +
-        '        Some shapes will appear more frequently than the others. <br>\n' +
+        '        Some shapes will appear very frequently, like these: <br>\n' +
         '    </p>\n' +
         '        <br>\n' +
         '    <p>\n' +
@@ -209,7 +209,7 @@ var instruction = {
         '        <br>\n' +
 
         '    <p style="color:black;font-size:26px">\n' +
-        '        Do NOT press any keys when you encounter these L-shapes. <br>\n' +
+        '        Do NOT press any keys when you encounter these rare L-shapes. <br>\n' +
         '         And PRESS THE SPACEBAR to all the other shapes. <br>\n' +
         '        <br>\n' +
         '        The shapes will go by quickly so you should pay attention to them. <br>\n' +
@@ -347,8 +347,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 12);
-var repetition_attention = repetition.slice(3, 108);
+var repetition_1_attention = repetition_1.slice(0, 120);
+var repetition_attention = repetition.slice(3, 1080);
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -427,7 +427,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(prac_block)
+//timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -441,7 +441,7 @@ var debrief = {
 
     }
 };
-timeline.push(debrief);
+//timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
@@ -649,7 +649,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(first3_block)
+//timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -956,7 +956,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-timeline.push(at_test_procedure);
+//timeline.push(at_test_procedure);
 
 
 
@@ -978,11 +978,11 @@ for (i = 0; i < twoAFC_trial_list.length; i++) {
     stimuli.twoAFC_stimulus = repo_site + twoAFC_trial_list[i] ;
     stimuli.data = new Object();
 
-    if (lr_triplet_1.includes(i)){
+    if (lr_triplet_1.includes(twoAFC_trial_list[i])){
         stimuli.data.triplet_type = attention_state_list[0];}
-    else if (lr_triplet_2.includes(i)){
+    else if (lr_triplet_2.includes(twoAFC_trial_list[i])){
         stimuli.data.triplet_type = attention_state_list[1];
-    } else if (foil_1.includes(i)){
+    } else if (foil_1.includes(twoAFC_trial_list[i])){
         stimuli.data.triplet_type = 'foil1';
     } else {stimuli.data.triplet_type = 'foil2'};
 
@@ -1007,9 +1007,9 @@ var instruction3 = {
         '</p> <br>',
 
         '<p style="color:black;font-size: 26px">\n' +
-        '        You will see two different groups of shapes at a time. !!!NEED TO CHANGE THIS!!! <br>\n' +
+        '        You will see a sequence of 6 shapes, presented one at a time. <br>\n' +
         '        <br>\n' +
-        '        Each time you see the groups, indicate whether the first or second group seems more familiar based on what you saw during the first part of the experiment.  <br>\n' +
+        '        After seeing the 6 shapes, indicate whether the first or second group of 3 shapes seems more familiar based on what you saw during the first part of the experiment.  <br>\n' +
         '        <br>\n' +
         '        You should respond by selecting A or B. <br>\n' +
         '        <br>\n' +
@@ -1228,7 +1228,8 @@ var sort_trial_1 = {
     sort_area_width: 300
 };
 timeline.push(sort_trial_1);
-//    prompt: '<p>Drag and drop the 3 shapes in the boxes below in the order that you remember seeing them during the first part of the experiment.<br> Click next when you have arranged a group of three shapes in the order you remember them. <br>If you can’t remember a specific group of shapes, please make your best guess.</p>',
+
+
 var sorting_stimuli= [];
 
 for (var i = 0; i < lr_triplet_2.length; i++) {
@@ -1246,7 +1247,8 @@ var sort_trial_2 = {
     sort_area_shape: "square",
     stim_starts_inside:false,
     sort_area_height: 100,
-    sort_area_width: 300
+    sort_area_width: 300,
+    column_spread_factor: 3
 };
 //timeline.push(sort_trial_2);
 
