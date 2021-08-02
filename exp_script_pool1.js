@@ -1226,7 +1226,7 @@ var sort_trial_1 = {
     stim_starts_inside:false,
     sort_area_height: 100,
     sort_area_width: 300,
-    column_spread_factor: 3
+    column_spread_factor: 1.5
 };
 timeline.push(sort_trial_1);
 
