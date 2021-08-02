@@ -390,8 +390,8 @@ jsPsych.plugins['free-sort'] = (function() {
         for(let i=0; i<items.length; i++){
           final_locations.push({
             src: items[i].dataset.src,
-            x: parseInt(items[i].style.left),
-            y: parseInt(items[i].style.top)
+            x: parseInt(items[i].style.left,10),
+            y: parseInt(items[i].style.top,10)
           });
         }
 
