@@ -857,16 +857,16 @@ var attention = {
     ],
 };
 
-
-if (lr_triplet_1.data.attention_state == 'fast') {
-    var fast_lr = lr_triplet_1
+consolr.log('check attention', lr_stimuli_1.data.attention_state)
+if (lr_stimuli_1.data.attention_state == 'fast') {
+    var fast_lr = lr_test_TS1
 } else {
-    var slow_lr = lr_triplet_2}
+    var slow_lr = lr_test_TS2}
 
-if (lr_triplet_1.data.attention_state == 'slow') {
-    var slow_lr = lr_triplet_1
+if (lr_stimuli_2.data.attention_state == 'slow') {
+    var slow_lr = lr_test_TS1
 } else {
-    var fast_lr = lr_triplet_2}
+    var fast_lr = lr_test_TS2}
 
 var if_node_1= { //fast node
   timeline: [fast_lr],
