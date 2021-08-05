@@ -636,7 +636,7 @@ var attention = {
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
-    var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('diff').values.length
+    var lr_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('diff').values.length
     var slow_lr_counter = jsPsych.data.get().filter({diff: 'slow'}).select('rt').values.length
     var fast_lr_counter = jsPsych.data.get().filter({diff: 'fast'}).select('rt').values.length
 
@@ -865,7 +865,7 @@ if (lr_stimuli_1[0].data.attention_state == 'fast') {
 } else {
     var slow_lr = lr_test_TS2}
 
-if (lr_stimuli_2[0].data.attention_state == 'slow') {
+if (lr_stimuli_1[0].data.attention_state == 'slow') {
     var slow_lr = lr_test_TS1
 } else {
     var fast_lr = lr_test_TS2}
@@ -1123,16 +1123,27 @@ var twoAFC10_Q = {
     repetitions: 1
 };
 
-var twoAFC = {
+var twoAFC_910 = {
+    timeline: [twoAFC09_Q,twoAFC10_Q],
+    randomize_order: true,
+    repetitions: 1
+}
+
+var twoAFC_123 = {
     timeline: [twoAFC01_Q,twoAFC02_Q,
                 twoAFC03_Q,twoAFC04_Q,
-               twoAFC05_Q,twoAFC06_Q,twoAFC07_Q,twoAFC08_Q,
-               twoAFC09_Q,twoAFC10_Q
+               twoAFC05_Q,twoAFC06_Q,twoAFC07_Q,twoAFC08_Q
     ],
     randomize_order: true,
     repetitions: 1
 }
-timeline.push(twoAFC)
+
+var twoAFC = {
+    timeline: [twoAFC_123, twoAFC_910],
+    randomize_order: false,
+    repetitions: 1
+}
+//timeline.push(twoAFC)
 
 
 
