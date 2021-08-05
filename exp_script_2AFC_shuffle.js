@@ -472,6 +472,8 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     lr_stimuli_2.push(stimuli);
 };
 console.log(lr_stimuli_1,lr_stimuli_2);
+console.log('check attention', lr_stimuli_1.data.attention_state)
+
 /*for (i = 0; i < lr_triplet_3.length; i++) {
     var stimuli = new Object();
     stimuli.lr_stimulus = repo_site + lr_triplet_3[i] ;
@@ -857,7 +859,7 @@ var attention = {
     ],
 };
 
-consolr.log('check attention', lr_stimuli_1.data.attention_state)
+console.log('check attention', lr_stimuli_1.data.attention_state)
 if (lr_stimuli_1.data.attention_state == 'fast') {
     var fast_lr = lr_test_TS1
 } else {
