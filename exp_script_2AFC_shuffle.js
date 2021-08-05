@@ -1124,7 +1124,7 @@ var twoAFC10_Q = {
     repetitions: 1
 };
 
-var twoAFC_910 = {
+/*var twoAFC_910 = {
     timeline: [twoAFC09_Q,twoAFC10_Q],
     randomize_order: true,
     repetitions: 1
@@ -1137,14 +1137,25 @@ var twoAFC_123 = {
     ],
     randomize_order: true,
     repetitions: 1
-}
+}*/
 
 /*var twoAFC = {
     timeline: [twoAFC_910, twoAFC_123],
     randomize_order: false,
     repetitions: 1
 }*/
-//timeline.push(twoAFC)
+
+var twoAFC = {
+    timeline: [twoAFC01_Q,twoAFC02_Q,
+                twoAFC03_Q,twoAFC04_Q,
+               twoAFC05_Q,twoAFC06_Q,twoAFC07_Q,twoAFC08_Q,
+               twoAFC09_Q,twoAFC10_Q
+    ],
+    randomize_order: true,
+    repetitions: 1
+}
+
+timeline.push(twoAFC)
 
 
 
