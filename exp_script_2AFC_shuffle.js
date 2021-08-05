@@ -1139,11 +1139,11 @@ var twoAFC_123 = {
     repetitions: 1
 }
 
-var twoAFC = {
-    timeline: [twoAFC_123, twoAFC_910],
+/*var twoAFC = {
+    timeline: [twoAFC_910, twoAFC_123],
     randomize_order: false,
     repetitions: 1
-}
+}*/
 //timeline.push(twoAFC)
 
 
