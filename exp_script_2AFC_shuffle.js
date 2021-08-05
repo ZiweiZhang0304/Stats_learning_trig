@@ -514,7 +514,14 @@ timeline.push(instruction2);
 var learning = {
 
   timeline:[
-      {type: "image-keyboard-response",
+
+  {type: "image-keyboard-response",
+  stimulus: repo_site + "img/Stim/gray_bdot.png",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 200,
+        },
+
+  {type: "image-keyboard-response",
   stimulus: jsPsych.timelineVariable('lr_stimulus'),
   data: jsPsych.timelineVariable('data'),
   choices: ['space'],
@@ -536,27 +543,21 @@ var learning = {
         } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'lr' }).last(1).select('rt').values[0]); };
         return fix_duration
             }
-        },
-
-  /*{type: "image-keyboard-response",
-  stimulus: repo_site + "img/Stim/gray_bdot.png",
-  choices: jsPsych.NO_KEYS,
-  trial_duration: 200,
-        }*/
+        }
 
     ]
 };
 
 
 var lr_test_TS1 = {
-  timeline: [learning,iti_200],
+  timeline: [learning],
   timeline_variables: lr_stimuli_1,
   randomize_order: false,
   repetitions: 1
 };
 
 var lr_test_TS2 = {
-  timeline: [learning,iti_200],
+  timeline: [learning],
   timeline_variables: lr_stimuli_2,
   randomize_order: false,
   repetitions: 1
@@ -857,7 +858,7 @@ var attention = {
 };
 
 var if_node_1= { //fast node --> TS1
-  timeline: [iti_200,lr_test_TS1],
+  timeline: [lr_test_TS1],
   conditional_function: function(data){
     if (lr_node == 1){
       return true;
@@ -866,7 +867,7 @@ var if_node_1= { //fast node --> TS1
 };
 
 var if_node_2= { //slow node --> TS2
-  timeline: [iti_200,lr_test_TS2],
+  timeline: [lr_test_TS2],
   conditional_function: function(data){
     if (lr_node == 2){
       return true;
