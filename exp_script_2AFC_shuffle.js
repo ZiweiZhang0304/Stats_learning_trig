@@ -1159,12 +1159,6 @@ var sort_trial_1 = {
 timeline.push(sort_trial_1);
 
 
-var sorting_stimuli= [];
-
-for (var i = 0; i < lr_triplet_2.length; i++) {
-    sorting_stimuli.push(repo_site + lr_triplet_2[i]);
-}
-console.log(sorting_stimuli);
 var sort_trial_2 = {
     type: 'free-sort',
     stimuli: sorting_stimuli.slice(3,6),
@@ -1179,7 +1173,7 @@ var sort_trial_2 = {
     sort_area_width: 300,
     column_spread_factor: 3
 };
-//timeline.push(sort_trial_2);
+timeline.push(sort_trial_2);
 
 
 
