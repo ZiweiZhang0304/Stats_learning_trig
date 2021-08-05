@@ -532,7 +532,7 @@ var learning = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var lr_trial_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length;
-    data.lr_trial_counter = counter;
+    data.lr_trial_counter = lr_trial_counter ;
   }},
 
   {type: "image-keyboard-response",
