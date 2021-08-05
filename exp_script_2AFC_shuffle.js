@@ -860,17 +860,13 @@ var attention = {
 
 if (lr_triplet_1.data.attention_state == 'fast') {
     var fast_lr = lr_triplet_1
-    return fast_lr
 } else {
-    var slow_lr = lr_triplet_2
-    return slow_lr}
+    var slow_lr = lr_triplet_2}
 
 if (lr_triplet_1.data.attention_state == 'slow') {
     var slow_lr = lr_triplet_1
-    return [slow_lr]
 } else {
-    var fast_lr = lr_triplet_2
-    return fast_lr}
+    var fast_lr = lr_triplet_2}
 
 var if_node_1= { //fast node
   timeline: [fast_lr],
