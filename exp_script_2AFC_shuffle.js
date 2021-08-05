@@ -857,7 +857,7 @@ var attention = {
 };
 
 var if_node_1= { //fast node --> TS1
-  timeline: [iti_200,lr_test_TS1,iti_200],
+  timeline: [iti_200,lr_test_TS1],
   conditional_function: function(data){
     if (lr_node == 1){
       return true;
@@ -866,7 +866,7 @@ var if_node_1= { //fast node --> TS1
 };
 
 var if_node_2= { //slow node --> TS2
-  timeline: [iti_200,lr_test_TS2,iti_200],
+  timeline: [iti_200,lr_test_TS2],
   conditional_function: function(data){
     if (lr_node == 2){
       return true;
@@ -884,7 +884,7 @@ var if_node_2= { //slow node --> TS2
 };*/
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2,iti_200], //,if_node_3
+  timeline: [attention,if_node_1,if_node_2], //,iti_200 ,if_node_3
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
