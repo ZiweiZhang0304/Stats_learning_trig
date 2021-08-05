@@ -536,6 +536,12 @@ var learning = {
         } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'lr' }).last(1).select('rt').values[0]); };
         return fix_duration
             }
+        },
+
+  {type: "image-keyboard-response",
+  stimulus: repo_site + "img/Stim/gray_bdot.png",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 200,
         }
 
     ]
