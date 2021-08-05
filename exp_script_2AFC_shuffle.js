@@ -538,25 +538,25 @@ var learning = {
             }
         },
 
-  {type: "image-keyboard-response",
+  /*{type: "image-keyboard-response",
   stimulus: repo_site + "img/Stim/gray_bdot.png",
   choices: jsPsych.NO_KEYS,
   trial_duration: 200,
-        }
+        }*/
 
     ]
 };
 
 
 var lr_test_TS1 = {
-  timeline: [learning],
+  timeline: [learning,iti_200],
   timeline_variables: lr_stimuli_1,
   randomize_order: false,
   repetitions: 1
 };
 
 var lr_test_TS2 = {
-  timeline: [learning],
+  timeline: [learning,iti_200],
   timeline_variables: lr_stimuli_2,
   randomize_order: false,
   repetitions: 1
@@ -884,7 +884,7 @@ var if_node_2= { //slow node --> TS2
 };*/
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2], //,iti_200 ,if_node_3
+  timeline: [attention,if_node_1,if_node_2,iti_200], //,iti_200 ,if_node_3
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
