@@ -309,8 +309,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 120);
-var repetition_attention = repetition.slice(3, 1080);
+var repetition_1_attention = repetition_1.slice(0, 12); //change here to (0, 120)
+var repetition_attention = repetition.slice(3, 108); //change here to (3, 1080)
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -389,7 +389,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(prac_block)
+//timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -403,7 +403,7 @@ var debrief = {
 
     }
 };
-timeline.push(debrief);
+//timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
