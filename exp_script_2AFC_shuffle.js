@@ -636,9 +636,10 @@ var attention = {
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
-    var lr_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('diff').values.length
+    //var lr_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('diff').values.length
     var slow_lr_counter = jsPsych.data.get().filter({diff: 'slow'}).select('rt').values.length
     var fast_lr_counter = jsPsych.data.get().filter({diff: 'fast'}).select('rt').values.length
+    var lr_counter = slow_lr_counter + fast_lr_counter
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
