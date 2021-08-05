@@ -448,7 +448,7 @@ for (i = 0; i < lr_triplet_1.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus);
+    stimuli.lr_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -465,7 +465,7 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus);
+    stimuli.lr_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -482,7 +482,7 @@ console.log(lr_stimuli_1,lr_stimuli_2);
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus);
+    stimuli.lr_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -512,7 +512,9 @@ timeline.push(instruction2);
 
 
 var learning = {
-  type: "image-keyboard-response",
+
+  timeline:[
+      {type: "image-keyboard-response",
   stimulus: jsPsych.timelineVariable('lr_stimulus'),
   data: jsPsych.timelineVariable('data'),
   choices: ['space'],
@@ -522,43 +524,44 @@ var learning = {
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length;
     data.counter = counter;
-  }
-}
+  }},
 
+  {type: "image-keyboard-response",
+  stimulus: jsPsych.timelineVariable('lr_fix'),
+  choices: jsPsych.NO_KEYS,
+  response_ends_trial: false,
+  trial_duration: function (data) {
+        if (jsPsych.data.get().filter({ TaskType: 'lr' }).last(1).select('rt').values[0] == null) {
+            var fix_duration = 0
+        } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'lr' }).last(1).select('rt').values[0]); };
+        return fix_duration
+            }
+        };
+
+    ]
+};
 
 
 var lr_test_TS1 = {
   timeline: [learning],
   timeline_variables: lr_stimuli_1,
-  sample: {
-  type: 'with-replacement',
-  size: 1,
-},
-  randomize_order: true,
+  randomize_order: false,
   repetitions: 1
 };
 
 var lr_test_TS2 = {
   timeline: [learning],
   timeline_variables: lr_stimuli_2,
-  sample: {
-  type: 'with-replacement',
-  size: 1,
-},
-  randomize_order: true,
+  randomize_order: false,
   repetitions: 1
 };
 
-var lr_test_TS3 = {
+/*var lr_test_TS3 = {
   timeline: [learning],
   timeline_variables: lr_stimuli_3,
-  sample: {
-  type: 'with-replacement',
-  size: 1,
-},
-  randomize_order: true,
+  randomize_order: false,
   repetitions: 1
-};
+};*/
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
