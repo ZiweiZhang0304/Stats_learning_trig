@@ -529,8 +529,8 @@ var learning = {
   response_ends_trial: true,
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
-    var counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length;
-    data.counter = counter;
+    var lr_trial_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length;
+    data.lr_trial_counter = counter;
   }},
 
   {type: "image-keyboard-response",
@@ -634,7 +634,7 @@ var attention = {
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
-    var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length
+    var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('diff').values.length
     var slow_lr_counter = jsPsych.data.get().filter({diff: 'slow'}).select('rt').values.length
     var fast_lr_counter = jsPsych.data.get().filter({diff: 'fast'}).select('rt').values.length
 
@@ -857,8 +857,23 @@ var attention = {
     ],
 };
 
-var if_node_1= { //fast node --> TS1
-  timeline: [lr_test_TS1],
+
+if (lr_triplet_1.data.attention_state == 'fast') {
+    var fast_lr = lr_triplet_1
+    return fast_lr
+} else {
+    var slow_lr = lr_triplet_2
+    return slow_lr}
+
+if (lr_triplet_1.data.attention_state == 'slow') {
+    var slow_lr = lr_triplet_1
+    return [slow_lr]
+} else {
+    var fast_lr = lr_triplet_2
+    return fast_lr}
+
+var if_node_1= { //fast node
+  timeline: [fast_lr],
   conditional_function: function(data){
     if (lr_node == 1){
       return true;
@@ -866,8 +881,8 @@ var if_node_1= { //fast node --> TS1
   }
 };
 
-var if_node_2= { //slow node --> TS2
-  timeline: [lr_test_TS2],
+var if_node_2= { //slow node
+  timeline: [slow_lr],
   conditional_function: function(data){
     if (lr_node == 2){
       return true;
