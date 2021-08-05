@@ -107,7 +107,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-//timeline.push(consent);
+timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -234,7 +234,7 @@ var instruction = {
         '<p style="color:black;font-size:26px">\n' +
         '    Now you will do a short practice of this part of the experiment. <br>\n' +
         '        <br>\n' +
-        '    Note that you will see feedback on your performance during this practice but not during the real game. <br>\n'+
+        '    Note that you will see feedback on your performance during this practice but not during the real experiment. <br>\n'+
         '        <br>\n' +
         '    Now, click on ‘next’ to start the practice. <br>\n' +
         '</p> <br>'
@@ -389,7 +389,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -403,7 +403,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
@@ -428,7 +428,7 @@ var lr_triplet_3 = frequent_trigger_filtered1;
     { lr_stimulus: repo_site + "img/Stim/FT_001.png", data: {TaskType: 'lr'}},
     { lr_stimulus: repo_site + "img/Stim/FT_002.png", data: {TaskType: 'lr'}},
     { lr_stimulus: repo_site + "img/Stim/FT_003.png", data: {TaskType: 'lr'}},
-];
+];*/
 
 
 /* -----randomize triplet-attention state pair----- */
@@ -574,14 +574,12 @@ var attention_first3 = {
           on_finish: function (data) {
 
               var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
-              //var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length
               console.log('this is at_counter from first3: ' + at_counter)
               data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
               var rt_mean = jsPsych.data.get().filter({test_part: 'test',at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
               var rt_sd = jsPsych.data.get().filter({test_part: 'test', at_TrialType: 'frequent', key_press: 32}).select('rt').sd();
 
               data.at_counter = at_counter
-              //data.lr_counter = lr_counter
 
               data.at_RunningMean = rt_mean
               data.sd = rt_sd
@@ -611,7 +609,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(first3_block)
+timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -844,46 +842,10 @@ var attention = {
             var fix_duration = 0
         } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0]); };
         return fix_duration
+        }
     }
-}
-],
-}
-
-
-/*var if_node_1= { //fast node --> TS1
-  timeline: [iti_200,lr_test_TS1,lr_feedback,iti_200],
-  conditional_function: function(data){
-    if (lr_node === false){
-      return true;
-    } else if (lr_node === true){
-      return false;
-    } else {return false;}
-  }
+    ],
 };
-
-var if_node_2= { //slow node --> TS2
-  timeline: [iti_200,lr_test_TS2,lr_feedback,iti_200],
-  conditional_function: function(data){
-    if (lr_node === true){
-      return true;
-    }else if (lr_node === false){
-      return false;
-    } else{return false;}
-  }
-};
-
-var if_node_3= { //medium node --> TS3
-  timeline: [iti_200,lr_test_TS3,lr_feedback,iti_200],
-  conditional_function: function(data){
-    if (lr_node === true){
-      return true;
-    }else if (lr_node === false){
-      return false;
-    } else{return false;}
-  }
-};
-
-*/
 
 var if_node_1= { //fast node --> TS1
   timeline: [iti_200,lr_test_TS1,iti_200],
@@ -918,7 +880,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
@@ -1010,7 +972,7 @@ var Q0_options = ['The first group of three shapes', 'The second group of three 
 var twoAFC_choice = {
     type: 'survey-multi-choice',
     button_label: 'Next',
-    preamble: '<p> Does the first or the second group seem more familiar based on what you saw during the first part of the experiment? </p>',
+    preamble: '<p> Does the first or the second group of 3 shapes seem more familiar based on what you saw during the first part of the experiment? </p>',
     questions: [
         { prompt: 'Click and select',
             name: 'Q1', options: Q0_options, required: true, horizontal: false },
@@ -1140,14 +1102,14 @@ var twoAFC10_Q = {
 
 var twoAFC = {
     timeline: [twoAFC01_Q,twoAFC02_Q,
-/*                twoAFC03_Q,twoAFC04_Q,
+                twoAFC03_Q,twoAFC04_Q,
                twoAFC05_Q,twoAFC06_Q,twoAFC07_Q,twoAFC08_Q,
-               twoAFC09_Q,twoAFC10_Q*/
+               twoAFC09_Q,twoAFC10_Q
     ],
     randomize_order: true,
     repetitions: 1
 }
-//timeline.push(twoAFC)
+timeline.push(twoAFC)
 
 
 
@@ -1162,7 +1124,7 @@ var instruction4 = {
         '        <br>\n' +
         '        Therefore, in this section, we will ask you to recreate groups of 3 shapes that you remember from the first part of the experiment. <br>\n' +
         '        <br>\n' +
-        '        Now, click on "Next" to move on to the next question. <br> \n' +
+        '        Now, click on "Next" to move on. <br> \n' +
         '</p> <br>'
     ],
     show_clickable_nav: true,
@@ -1176,9 +1138,10 @@ for (var i = 0; i < lr_triplet_full.length; i++) {
     sorting_stimuli.push(repo_site + lr_triplet_full[i]);
 }
 console.log(sorting_stimuli);
+
 var sort_trial_1 = {
     type: 'free-sort',
-    stimuli: sorting_stimuli,
+    stimuli: sorting_stimuli.slice(0,3),
     prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.</p>',
     stim_height: 50,
     stim_width: 50,
@@ -1201,7 +1164,7 @@ for (var i = 0; i < lr_triplet_2.length; i++) {
 console.log(sorting_stimuli);
 var sort_trial_2 = {
     type: 'free-sort',
-    stimuli: sorting_stimuli,
+    stimuli: sorting_stimuli.slice(3,6),
     prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.</p>',
     stim_height: 50,
     stim_width: 50,
@@ -1249,7 +1212,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-//timeline.push(multi_choice_Demo);
+timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
@@ -1278,12 +1241,3 @@ jsPsych.init({
     }
 });
 
-/*jsPsych.init({
-    timeline: timeline,
-    preload_images: preload_list,
-    on_finish: function(){
-      var csv = jsPsych.data.get().csv();
-      var filename = 'gem_test_00.csv';
-      downloadCSV(csv, filename);
-      jsPsych.data.displayData()}
-});*/
