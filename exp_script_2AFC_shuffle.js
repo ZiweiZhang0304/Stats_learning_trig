@@ -899,7 +899,7 @@ var if_node_2= { //slow node
 };*/
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2,iti_200], //,iti_200 ,if_node_3
+  timeline: [attention,if_node_1,if_node_2,iti_200], //,if_node_3
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
