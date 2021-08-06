@@ -863,12 +863,9 @@ var attention = {
 
 if (lr_stimuli_1[0].data.attention_state == 'fast') {
     var fast_lr = lr_test_TS1
+    var slow_lr = lr_test_TS2
 } else {
-    var slow_lr = lr_test_TS2}
-
-if (lr_stimuli_1[0].data.attention_state == 'slow') {
     var slow_lr = lr_test_TS1
-} else {
     var fast_lr = lr_test_TS2}
 
 var if_node_1= { //fast node
@@ -1124,7 +1121,7 @@ var twoAFC10_Q = {
     repetitions: 1
 };
 
-/*var twoAFC_910 = {
+var twoAFC_910 = {
     timeline: [twoAFC09_Q,twoAFC10_Q],
     randomize_order: true,
     repetitions: 1
@@ -1137,15 +1134,15 @@ var twoAFC_123 = {
     ],
     randomize_order: true,
     repetitions: 1
-}*/
+}
 
-/*var twoAFC = {
+var twoAFC = {
     timeline: [twoAFC_910, twoAFC_123],
     randomize_order: false,
     repetitions: 1
-}*/
+}
 
-var twoAFC = {
+/*var twoAFC = {
     timeline: [twoAFC01_Q,twoAFC02_Q,
                 twoAFC03_Q,twoAFC04_Q,
                twoAFC05_Q,twoAFC06_Q,twoAFC07_Q,twoAFC08_Q,
@@ -1153,7 +1150,7 @@ var twoAFC = {
     ],
     randomize_order: true,
     repetitions: 1
-}
+}*/
 
 timeline.push(twoAFC)
 
