@@ -869,8 +869,8 @@ if (lr_stimuli_1[0].data.attention_state == 'fast') {
     var slow_lr = lr_test_TS1
     var fast_lr = lr_test_TS2}
 
-var if_node_1= { //fast node
-  timeline: [fast_lr],
+var if_node_1= { //slow node
+  timeline: [slow_lr],
   conditional_function: function(data){
     if (lr_node == 1){
       return true;
@@ -878,8 +878,8 @@ var if_node_1= { //fast node
   }
 };
 
-var if_node_2= { //slow node
-  timeline: [slow_lr],
+var if_node_2= { //fast node
+  timeline: [fast_lr],
   conditional_function: function(data){
     if (lr_node == 2){
       return true;
