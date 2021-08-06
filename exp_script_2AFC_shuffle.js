@@ -309,8 +309,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 12); //change here to (0, 120)
-var repetition_attention = repetition.slice(3, 216); //change here to (3, 1080)
+var repetition_1_attention = repetition_1.slice(0, 120); //change here to (0, 120)
+var repetition_attention = repetition.slice(3, 1080); //change here to (3, 1080)
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -389,7 +389,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -403,7 +403,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
@@ -699,7 +699,7 @@ var attention = {
 
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
-    if (at_counter > 10 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
+    if (at_counter > 80 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
         console.log('----new restriction 1 starts here----')
 
         //see if the last 3 lr trials were all fast, if so the next one can't be
@@ -782,12 +782,12 @@ var attention = {
     /*---- Start appying restrictions to triggering ----*/
 
     /*-- If attention <= 80 --*/
-    if (at_counter < 10 || last_infreq.includes('infrequent')
+    if (at_counter < 80 || last_infreq.includes('infrequent')
         || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
         lr_node = 0 //80th trial
     }
 
-    else if (at_counter > 10 && lr_counter > 0 && lr_counter < 6){
+    else if (at_counter > 80 && lr_counter > 0 && lr_counter < 6){
 
 
       /*-- If attention > 80 && 0< learning <=6 --*/
@@ -810,7 +810,7 @@ var attention = {
       }
 
 
-    else if (at_counter > 10 && lr_counter >= 6){
+    else if (at_counter > 80 && lr_counter >= 6){
 
       /*-- If attention > 80 && learning > 6 --*/
       if(rt_three > rt_mean+ rt_sd && last_slow == true)
@@ -829,7 +829,7 @@ var attention = {
     }
 
     /*-- If attention > 80 && learning = 0 --*/
-    else if (at_counter > 10 && lr_counter == 0) {
+    else if (at_counter > 80 && lr_counter == 0) {
 
         if(rt_three > rt_mean+ rt_sd) {
             lr_node = 1;
