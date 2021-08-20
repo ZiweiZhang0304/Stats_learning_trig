@@ -1045,8 +1045,11 @@ var debrief_TD = {
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post' });
+        console.log(trials)
         var correct_trials = trials.filter({ correct: true });
+        console.log(correct_trials)
         var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+        console.log(correct_trials.count() / trials.count())
         return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";
 
