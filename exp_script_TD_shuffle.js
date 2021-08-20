@@ -1009,7 +1009,9 @@ var instruction3 = {
         '        At the start of each trial, you will see one shape. <br>\n' +
         '        <br>\n' +
         '        You will then see a series of shapes, presented one at a time just like in the first part of the study. <br>\n' +
-        '        <br>\n' +
+        '</p> <br>',
+
+        '<p style="color:black;font-size: 26px">\n' +
         '        Whenever you see the shape presented at the beginning of the trial, press the SPACEBAR. <br>\n' +
         '        <br>\n' +
         '        Do not press any button to any other shape. <br>\n' +
@@ -1045,7 +1047,7 @@ var debrief_TD = {
         var correct_trials = trials.filter({ correct: true });
         var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
         return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
-            "<p>Remember that you should onlt press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press any key to move on.</p>";
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press any key to move on.</p>";
 
     }
 };
@@ -1057,7 +1059,7 @@ var instruction4 = {
         /* -----instr_9----- */
 
         '<p style="color:black;font-size: 26px">\n' +
-        '         You have finished the practice part. <br>\n' +
+        '        You have finished the practice part. <br>\n' +
         '        <br>\n' +
         '        Now click “Next” to start this part of the experiment. <br>\n' +
         '</p> <br>',
@@ -1106,7 +1108,7 @@ var TD_trial = {
 console.log(TD_stimuli.slice(0,12))
 var TD_target_present_1 = {
     type: "image-keyboard-response",
-    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press any key to start this trial. </p>',
     stimulus: TD_stimuli.slice(0,12)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
@@ -1129,7 +1131,7 @@ var TD1 = {
 console.log(TD_stimuli.slice(0,12)[3].TD_stimulus)
 var TD_target_present_2 = {
     type: "image-keyboard-response",
-    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press any key to start this trial. </p>',
     stimulus: TD_stimuli.slice(0,15)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
@@ -1150,7 +1152,7 @@ var TD2 = {
 
 var TD_target_present_3 = {
     type: "image-keyboard-response",
-    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press any key to start this trial. </p>',
     stimulus: TD_stimuli.slice(0,12)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
