@@ -1041,7 +1041,7 @@ timeline.push(instruction3);
 //debriefing page for TD
 var debrief_TD = {
     type: "html-keyboard-response",
-    choice: ['Enter'],
+    choices: ['Enter'],
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post' });
