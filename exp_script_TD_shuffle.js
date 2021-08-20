@@ -1038,23 +1038,6 @@ timeline.push(instruction3);
 
 
 
-//debriefing page for TD
-var debrief_TD = {
-    type: "html-keyboard-response",
-    choices: ['Enter'],
-    stimulus: function () {
-
-        var trials = jsPsych.data.get().filter({ test_part: 'post' });
-        console.log(trials)
-        var correct_trials = trials.filter({ correct: true });
-        console.log(correct_trials)
-        var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
-        console.log(correct_trials.count() / trials.count())
-        return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";
-
-    }
-};
 
 
 var instruction4 = {
@@ -1084,7 +1067,9 @@ var TD_trial = {
   trial_duration: 200,
   on_finish: function(data){
 
-    var TD_counter = jsPsych.data.get().filter({TaskType: 'TD'}).select('rt').values.length;}
+    var TD_counter = jsPsych.data.get().filter({TaskType: 'TD'}).select('rt').values.length;
+    data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response)
+    data.TD_counter = TD_counter}
     },
 
   {type: "image-keyboard-response",
@@ -1105,6 +1090,25 @@ var TD_trial = {
     }
 
   ]
+};
+
+
+//debriefing page for TD
+var debrief_TD = {
+    type: "html-keyboard-response",
+    choices: ['Enter'],
+    stimulus: function () {
+
+        var trials = jsPsych.data.get().filter({ test_part: 'post' });
+        console.log(trials)
+        var correct_trials = trials.filter({ correct: true });
+        console.log(correct_trials)
+        var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+        console.log(correct_trials.count() / trials.count())
+        return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";
+
+    }
 };
 
   // Among each item in TD_stimuli_all, is the sequence of 12 shapes.
