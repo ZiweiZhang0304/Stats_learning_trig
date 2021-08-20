@@ -1041,13 +1041,14 @@ timeline.push(instruction3);
 //debriefing page for TD
 var debrief_TD = {
     type: "html-keyboard-response",
+    choice: ['Enter']
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post' });
         var correct_trials = trials.filter({ correct: true });
         var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
         return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press any key to move on.</p>";
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";
 
     }
 };
