@@ -897,17 +897,19 @@ var at_test_procedure = {
 //place holder for TD for each 4 bins
 TD_list = []
 
+// draw 9 TD foils from 12 total possible
+var frequent_nontrigger_TD = getRandom(frequent_nontrigger,9);
+
 var TD_range = range(3,6)
 
 for (j = 0; j < range(0,1).length; j++) {
 
     TD_range.forEach( function myFunction(value) {
         console.log(value)
-      foil_1 = getRandom(frequent_nontrigger,value);
-      foil_2 = frequent_nontrigger.filter(function(val) {
+      foil_1 = getRandom(frequent_nontrigger_TD,value);
+      foil_2 = frequent_nontrigger_TD.filter(function(val) {
       return foil_1.indexOf(val) == -1;
             })
-    //})
 
     if (j==0) {
       var TD_1 = foil_1.concat(lr_triplet_1, foil_2); //still array of raw image names
@@ -920,38 +922,72 @@ for (j = 0; j < range(0,1).length; j++) {
 console.log(TD_list) // this is a object with 24 arrays, each array has a length of 12
 
 TD_stimuli = []
+var target_length = lr_triplet_1.length // 3
+var foil_length = frequent_nontrigger_TD.length // 9
+var sequence_length = target_length + foil_length // 9+3 = 12
+var possible_positions = sequence_length - 6 - 2 // 12 - (3+3) - 2 = 4
+var TD_sequence_number = possible_positions * target_length * 2 // 12 * 2 =24
 
-for (j = 0; j < TD_list.length; j++) {
-    var TD = TD_list[j];
 
-    for (i = 0; i < TD.length; i++) {
+    for (j = 0; j < TD_list.length; j++) {
+        var TD = TD_list[j];
+
+        for (i = 0; i < TD.length; i++) {
 
 
-        var stimuli = new Object();
-        stimuli.TD_stimulus = repo_site + TD[i];
-        stimuli.data = new Object();
+            var stimuli = new Object();
+            stimuli.TD_stimulus = repo_site + TD[i];
+            stimuli.data = new Object();
 
-        if (lr_triplet_1.includes(TD[i])) {
+            if (lr_triplet_1.includes(TD[i])) {
 
-            stimuli.data.triplet_type = attention_state_list[0];
-/*            for (k = 0; k < range(0,2).length; k++) {
-                stimuli.target == lr_triplet_1[k]}*/
+                stimuli.data.triplet_type = attention_state_list[0];
+                /*            for (k = 0; k < range(0,2).length; k++) {
+                                stimuli.target == lr_triplet_1[k]}*/
 
-        } else if (lr_triplet_2.includes(TD[i])) {
-            stimuli.data.triplet_type = attention_state_list[1];
-/*            for (k = 0; k < range(0,2).length; k++) {
-                stimuli.target == lr_triplet_2[k]}*/
+            } else if (lr_triplet_2.includes(TD[i])) {
+                stimuli.data.triplet_type = attention_state_list[1];
+                /*            for (k = 0; k < range(0,2).length; k++) {
+                                stimuli.target == lr_triplet_2[k]}*/
 
-        } else {
-            stimuli.data.triplet_type = 'foil';
-        };
+            } else {
+                stimuli.data.triplet_type = 'foil';
+            }
+            ;
 
-        stimuli.at_fix = rep(stimuli.TD_stimulus)
-        stimuli.data.test_part = 'post';
-        stimuli.data.TaskType = 'TD';
-        TD_stimuli.push(stimuli);
-    };
-};
+            stimuli.at_fix = rep(stimuli.TD_stimulus)
+            stimuli.data.test_part = 'post';
+            stimuli.data.TaskType = 'TD';
+            stimuli.data.correct_response = '';
+            stimuli.data.TD_target = '';
+            TD_stimuli.push(stimuli);
+        }
+    }
+//console.log('this is sequence',TD_stimuli.slice(0,12)) //TD_stimuli[0]
+//console.log('this is target', TD_stimuli.slice(0,12)[3].TD_stimulus) //TD_stimuli[0].TD_stimulus[3]
+
+
+
+var target_location = []
+var a_range = (TD_sequence_number/target_length) // 24/3 = 8
+for (a = 0; a < range(0,a_range).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
+    var b = range(3 + a, 5 + a)
+    b.forEach(function myFunction(value) {
+        console.log('this is b value ' + value)
+        var c = sequence_length * a + value
+        console.log('this is c value ' + c)
+        target_location.push(c)
+    })
+}
+
+
+
+target_location.forEach(function myFunction(value) {
+        console.log('this is c value ' + value)
+        TD_stimuli[value].data.correct_response = 'space'
+        TD_stimuli[value].data.TD_target = 'TD_target'
+
+    })
 
 
 
@@ -992,7 +1028,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction3);
+timeline.push(instruction3);
 
 
 // practice
@@ -1009,11 +1045,27 @@ var debrief_TD = {
         var correct_trials = trials.filter({ correct: true });
         var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
         return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
-            "<p>Remember that you should respond as accurately as possible. Press any key to move on.</p>";
+            "<p>Remember that you should onlt press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press any key to move on.</p>";
 
     }
 };
-//timeline.push(debrief_TD);
+
+
+var instruction4 = {
+    type: 'instructions',
+    pages: [
+        /* -----instr_9----- */
+
+        '<p style="color:black;font-size: 26px">\n' +
+        '         You have finished the practice part. <br>\n' +
+        '        <br>\n' +
+        '        Now click “Next” to start this part of the experiment. <br>\n' +
+        '</p> <br>',
+
+    ],
+    show_clickable_nav: true,
+}
+//timeline.push(instruction4);
 
 // real TD trials
 var TD_trial = {
@@ -1051,11 +1103,11 @@ var TD_trial = {
 
   // Among each item in TD_stimuli_all, is the sequence of 12 shapes.
   // You can create a group of 12 target presentation + sequence but can also
-console.log(TD_stimuli.slice(0,15))
+console.log(TD_stimuli.slice(0,12))
 var TD_target_present_1 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
-    stimulus: TD_stimuli.slice(0,15)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_stimuli.slice(0,12)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
 };
@@ -1063,7 +1115,7 @@ var TD_target_present_1 = {
 
 var TD_trial_sequence_1 = {
     timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(0,15), //TD_stimuli.slice(0): (0,1,2...23)
+    timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
@@ -1074,7 +1126,7 @@ var TD1 = {
     repetitions: 1
 };
 
-console.log(TD_stimuli.slice(0,15)[3].TD_stimulus)
+console.log(TD_stimuli.slice(0,12)[3].TD_stimulus)
 var TD_target_present_2 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
@@ -1085,7 +1137,7 @@ var TD_target_present_2 = {
 
 var TD_trial_sequence_2 = {
     timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(0,15), //TD_stimuli.slice(0): (0,1,2...23)
+    timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
@@ -1099,14 +1151,14 @@ var TD2 = {
 var TD_target_present_3 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
-    stimulus: TD_stimuli.slice(0,15)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_stimuli.slice(0,12)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
 };
 
 var TD_trial_sequence_3 = {
     timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(0,15), //TD_stimuli.slice(0): (0,1,2...23)
+    timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
