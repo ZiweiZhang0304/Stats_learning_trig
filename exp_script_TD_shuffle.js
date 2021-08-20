@@ -965,7 +965,7 @@ var instruction3 = {
         '<p style="color:black;font-size: 26px">\n' +
         '        You have finished the first part of the Study! <br>\n' +
         '        <br>\n' +
-        '        In this part of the study, you will press a button when you see different shapes. <br>\n' +
+        '        In this part of the study, you will press a button when you see some certain shapes. <br>\n' +
         '        <br>\n' +
         '</p> <br>',
 
@@ -978,15 +978,44 @@ var instruction3 = {
         '        <br>\n' +
         '        Do not press any button to any other shape. <br>\n' +
         '        <br>\n' +
-        '        Now, click on "Next" to start this part of the experiment. <br> \n' +
-        '</p> <br>'
+        '        The shapes will go by very fast so please respond quickly and accurately. <br>\n' +
+        '        <br>\n' +
+        '        Click on "Next" to move on. <br> \n' +
+        '</p> <br>',
+
+        '<p style="color:black;font-size: 26px">\n' +
+        '        Now you will do a short practice of this part. <br>\n' +
+        '        <br>\n' +
+        '        Click “Next” to start the practice. <br>\n' +
+        '</p> <br>',
+
     ],
     show_clickable_nav: true,
 }
 //timeline.push(instruction3);
 
 
+// practice
 
+
+
+
+//debriefing page for TD
+var debrief_TD = {
+    type: "html-keyboard-response",
+    stimulus: function () {
+
+        var trials = jsPsych.data.get().filter({ test_part: 'post' });
+        var correct_trials = trials.filter({ correct: true });
+        var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+        return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
+            "<p>Remember that you should respond as accurately as possible. Press any key to move on.</p>";
+
+    }
+};
+//timeline.push(debrief_TD);
+
+// real TD trials
 var TD_trial = {
   timeline:[
 
@@ -1025,7 +1054,7 @@ var TD_trial = {
 console.log(TD_stimuli.slice(0,15))
 var TD_target_present_1 = {
     type: "image-keyboard-response",
-    prompt: '<p>On this trial, press the SPACEBAR when you see the shape bellow. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
     stimulus: TD_stimuli.slice(0,15)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
@@ -1040,7 +1069,7 @@ var TD_trial_sequence_1 = {
 };
 
 var TD1 = {
-    timeline: [TD_target_present_1 , TD_trial_sequence_1],
+    timeline: [TD_target_present_1 , TD_trial_sequence_1,debrief_TD],
     randomize_order: false,
     repetitions: 1
 };
@@ -1048,7 +1077,7 @@ var TD1 = {
 console.log(TD_stimuli.slice(0,15)[3].TD_stimulus)
 var TD_target_present_2 = {
     type: "image-keyboard-response",
-    prompt: '<p>On this trial, press the SPACEBAR when you see the shape bellow. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
     stimulus: TD_stimuli.slice(0,15)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: jsPsych.ALL_KEYS
@@ -1062,16 +1091,38 @@ var TD_trial_sequence_2 = {
 };
 
 var TD2 = {
-    timeline: [TD_target_present_2 , TD_trial_sequence_2],
+    timeline: [TD_target_present_2 , TD_trial_sequence_2,debrief_TD],
     randomize_order: false,
     repetitions: 1
 };
 
+var TD_target_present_3 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. </b> Press any key to start this trial. </p>',
+    stimulus: TD_stimuli.slice(0,15)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: jsPsych.ALL_KEYS
+};
+
+var TD_trial_sequence_3 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(0,15), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+
+var TD3 = {
+    timeline: [TD_target_present_3 , TD_trial_sequence_3,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
   // Among TD_stimuli_all, the first 12 items are first triplet, next 12 are second triplet. We should randomly
 
 var target_presentation = {
-    timeline: [TD1, TD2
-/*                ,TD3, TD4, TD5, TD6,
+    timeline: [TD1, TD2, TD3
+        /*, TD4, TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
                TD19, TD20 ,TD21, TD22, TD23, TD24*/
@@ -1086,7 +1137,7 @@ timeline.push(target_presentation)
 var FR_Q1 = {
     type: 'survey-text',
     questions: [
-    {prompt: '<p> When you were playing the game, what determined the correct response to a gem? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+    {prompt: '<p> When you were playing the game, did you noticed the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
 timeline.push(FR_Q1);
