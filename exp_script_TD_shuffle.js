@@ -893,15 +893,6 @@ var at_test_procedure = {
 
 /* --------------- Post Tests --------------- */
 
-//create stimuli object called twoAFC_stimuli, with name 'twoAFC_stimulus'
-var TD = foil_1.concat(lr_triplet_1, foil_2, foil_3, foil_4); //first target,second target,third target --> 3 trials
-var TD = foil_1.concat(foil_2, lr_triplet_1, foil_3, foil_4);
-var TD = foil_1.concat(foil_2, foil_3, lr_triplet_1, foil_4);
-var TD = foil_1.concat(lr_triplet_2, foil_2, foil_3, foil_4);
-var TD = foil_1.concat(foil_2, lr_triplet_2, foil_3, foil_4);
-var TD = foil_1.concat(foil_2, foil_3, lr_triplet_2, foil_4);
-// a loop where each time i is the trial number after the third trial and comes before a triplet
-//do this for triplet 1
 
 //place holder for TD for each 4 bins
 TD_list = []
