@@ -1018,7 +1018,7 @@ var TD_trial = {
           var fix_duration = 0
           } else { var fix_duration = 200 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
             return fix_duration
-  },
+  }},
 
   {type: "image-keyboard-response",
   stimulus: repo_site + "img/Stim/gray_bdot.png",
