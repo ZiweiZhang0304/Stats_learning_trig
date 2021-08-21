@@ -1123,14 +1123,23 @@ var debrief_TD = {
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post' });
-        console.log(trials)
-        var correct_trials = trials.filter({ correct: true });
-        console.log(correct_trials)
-        var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
-        console.log(correct_trials.count() / trials.count())
-        return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";
+        //var correct_trials = trials.filter({ correct: true });
+        //var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+        var wrong_press = trials.filter({ correct: false }, { correct_response: '' })
+        var correct_press = trials.filter({ correct: true }, { correct_response: 'space' })
+        //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
+        console.log(wrong_press.length )
+        console.log(correct_press.length )
 
+        if (wrong_press.length != 0 )
+        {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
+        else if ( wrong_press.length == 0 && correct_press.length == 1){
+            return "<p>Good job! You have pressed a button to a correct shape. </p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
+        else if ( wrong_press.length == 0 && correct_press.length == 0){
+            return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
     }
 };
 
