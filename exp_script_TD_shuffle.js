@@ -983,18 +983,28 @@ var target_location = []
 var a_range = (TD_sequence_number/target_length) // 24/3 = 8
 for (a = 0; a < range(0,TD_sequence_number-1).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
     console.log(a)
-    if (a == 0){
-        var b = 3 }
-    else if (a != 0 && a % 3 == 0){
-        var b = target_location[a-1] + sequence_length - 1 }
-    else {
-        var b = target_location[a-1] + sequence_length + 1 }
-    //var b = 3 + a + a*sequence_length
+    if (a < 12){
+        if (a == 0){
+            var b = 3 }
+        else if (a != 0 && a % 3 == 0){
+            var b = target_location[a-1] + sequence_length - 1 }
+        else {
+            var b = target_location[a-1] + sequence_length + 1 }
+        target_location.push(b)
+    }
 
-    target_location.push(b)
+    else if (a >= 12){
+        if (a == 12) {var c = 147 }
+        else if (a != 12 && a % 3 == 0){
+            var c = target_location[a-1] + sequence_length - 1 }
+        else {
+            var c = target_location[a-1] + sequence_length + 1 }
+
+        target_location.push(c)}
     }
 
 console.log(target_location)
+console.log(TD_stimuli)
 
 target_location.forEach(function myFunction(value) {
         console.log('this is c value ' + value)
