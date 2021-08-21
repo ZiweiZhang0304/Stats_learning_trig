@@ -1163,14 +1163,14 @@ console.log(TD_stimuli.slice(0,12)[3].TD_stimulus)
 var TD_target_present_2 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_stimuli.slice(0,12)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_stimuli.slice(12,24)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
 
 var TD_trial_sequence_2 = {
     timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
+    timeline_variables: TD_stimuli.slice(12,24), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
@@ -1184,14 +1184,14 @@ var TD2 = {
 var TD_target_present_3 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_stimuli.slice(0,12)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_stimuli.slice(24,36)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
 
 var TD_trial_sequence_3 = {
     timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
+    timeline_variables: TD_stimuli.slice(24,36), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
