@@ -899,6 +899,7 @@ TD_list = []
 
 // draw 9 TD foils from 12 total possible
 var frequent_nontrigger_TD = getRandom(frequent_nontrigger,9);
+console.log(frequent_nontrigger_TD)
 
 var TD_range = range(3,6)
 
@@ -968,19 +969,32 @@ var TD_sequence_number = possible_positions * target_length * 2 // 12 * 2 =24
 
 
 
-var target_location = []
+/*var target_location = []
 var a_range = (TD_sequence_number/target_length) // 24/3 = 8
 for (a = 0; a < range(0,a_range).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
     var b = range(3 + a, 5 + a)
     b.forEach(function myFunction(value) {
-        console.log('this is b value ' + value)
         var c = sequence_length * a + value
-        console.log('this is c value ' + c)
         target_location.push(c)
     })
-}
+}*/
 
+var target_location = []
+var a_range = (TD_sequence_number/target_length) // 24/3 = 8
+for (a = 0; a < range(0,TD_sequence_number-1).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
+    console.log(a)
+    if (a == 0){
+        var b = 3 }
+    else if (a != 0 && a % 3 == 0){
+        var b = target_location[a-1] + sequence_length - 1 }
+    else {
+        var b = target_location[a-1] + sequence_length + 1 }
+    //var b = 3 + a + a*sequence_length
 
+    target_location.push(b)
+    }
+
+console.log(target_location)
 
 target_location.forEach(function myFunction(value) {
         console.log('this is c value ' + value)
@@ -988,7 +1002,6 @@ target_location.forEach(function myFunction(value) {
         TD_stimuli[value].data.TD_target = 'TD_target'
 
     })
-
 
 
 //loop through each list of 8 lists of TD trial sequences and assign a target each time
@@ -1140,7 +1153,7 @@ console.log(TD_stimuli.slice(0,12)[3].TD_stimulus)
 var TD_target_present_2 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_stimuli.slice(0,15)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_stimuli.slice(0,12)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
