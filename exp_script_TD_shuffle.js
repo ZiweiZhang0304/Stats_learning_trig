@@ -1174,18 +1174,21 @@ var debrief_TD = {
     }
 };
 
+
 var debrief_TD_prac = {
     type: "html-keyboard-response",
     choices: ['Enter'],
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
-        var wrong_press = trials.filter([{ correct: false }, { correct_response: '' }]).count()
-        var correct_press = trials.filter([{ correct: true }, { correct_response: 'space' }]).count()
+        var wrong_press = trials.filter([{ correct: false }, { correct_response:''}]).count()
+        var correct_press = trials.filter([{ correct: true }, { correct_response:'space'}]).count()
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
-        console.log(trials.length)
+        console.log(trials)
         console.log(wrong_press)
+        console.log(trials.filter([{ correct: false }, { correct_response:''}]).values())
         console.log(correct_press)
+        console.log(trials.filter([{ correct: true }, { correct_response:'space'}]).values())
 
         if (wrong_press != 0 )
         {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
