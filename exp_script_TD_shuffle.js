@@ -1173,6 +1173,7 @@ var debrief_TD = {
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
     }
 };
+
 var debrief_TD_prac = {
     type: "html-keyboard-response",
     choices: ['Enter'],
@@ -1182,8 +1183,9 @@ var debrief_TD_prac = {
         var wrong_press = trials.filter([{ correct: false }, { correct_response: '' }]).count()
         var correct_press = trials.filter([{ correct: true }, { correct_response: 'space' }]).count()
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
-        console.log(wrong_press )
-        console.log(correct_press )
+        console.log(trials.length)
+        console.log(wrong_press)
+        console.log(correct_press)
 
         if (wrong_press != 0 )
         {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
