@@ -1057,10 +1057,45 @@ timeline.push(instruction3);
 
 
 // practice
+var TD_list_prac = []
+for (j = 0; j < range(0,2).length; j++) {
+
+     foil = shuffle(frequent_nontrigger);
+     TD_list_prac.push(foil)
+    }
 
 
 
+TD_stimuli_prac = []
 
+for (j = 0; j < TD_list_prac.length; j++) {
+        var TD_prac = TD_list_prac[j];
+        //console.log(TD_prac)
+
+        for (i = 0; i < TD_prac.length; i++) {
+
+
+            var stimuli = new Object();
+            stimuli.TD_stimulus = repo_site + TD_prac[i];
+            stimuli.data = new Object();
+
+
+            stimuli.at_fix = rep(stimuli.TD_stimulus)
+            stimuli.data.test_part = 'post_prac';
+            stimuli.data.TaskType = 'TD';
+            stimuli.data.correct_response = '';
+            stimuli.data.TD_target = '';
+            TD_stimuli_prac.push(stimuli);
+        }
+    }
+
+target_location_prac = [3,4,5]
+target_location_prac.forEach(function myFunction(value) {
+        console.log('this is c value ' + value)
+        TD_stimuli_prac[value].data.correct_response = 'space'
+        TD_stimuli_prac[value].data.TD_target = 'TD_target'
+
+    })
 
 
 var instruction4 = {
@@ -1122,9 +1157,7 @@ var debrief_TD = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post' });
-        //var correct_trials = trials.filter({ correct: true });
-        //var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
         var wrong_press = trials.filter({ correct: false }, { correct_response: '' })
         var correct_press = trials.filter({ correct: true }, { correct_response: 'space' })
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
@@ -1212,7 +1245,86 @@ var TD3 = {
 };
 
 
-  // Among TD_stimuli_all, the first 12 items are first triplet, next 12 are second triplet. We should randomly
+// TD practice trial 1
+console.log(TD_stimuli.slice(0,12))
+var TD_target_present_1_prac = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli_prac.slice(0,12)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+
+
+var TD_trial_sequence_1_prac = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli_prac.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+
+var TD1_prac = {
+    timeline: [TD_target_present_1_prac , TD_trial_sequence_1_prac,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+var TD_target_present_2_prac = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli_prac.slice(12,24)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+
+// TD practice trial 2
+var TD_trial_sequence_2_prac = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli_prac.slice(12,24), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+
+var TD2_prac = {
+    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+// TD practice trial 3
+var TD_target_present_3_prac = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli_prac.slice(24,36)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+
+
+var TD_trial_sequence_3_prac = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli_prac.slice(24,36), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+
+var TD3_prac = {
+    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+var practice_presentation = {
+    timeline: [TD1_prac, TD2_prac, TD3_prac
+    ],
+    randomize_order: true,
+    repetitions: 1
+}
+timeline.push(practice_presentation)
+
+
+
 
 var target_presentation = {
     timeline: [TD1, TD2, TD3
@@ -1224,7 +1336,7 @@ var target_presentation = {
     randomize_order: true,
     repetitions: 1
 }
-timeline.push(target_presentation)
+//timeline.push(target_presentation)
 
 
 /* -----A Few Q on Rules----- */
@@ -1259,7 +1371,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-timeline.push(multi_choice_Demo);
+//timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
