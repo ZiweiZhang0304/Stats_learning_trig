@@ -1091,7 +1091,7 @@ for (j = 0; j < TD_list_prac.length; j++) {
 
 //target_location_prac = [3,4,5]
 var target_location_prac = []
-for (a = 0; a < range(0,TD_sequence_number-1).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
+for (a = 0; a < range(0,2).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
 
         if (a == 0){
             var b = 3 }
