@@ -1156,8 +1156,8 @@ var debrief_TD = {
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post' });
-        var wrong_press = trials.filter({ correct: false }, { correct_response: '' })
-        var correct_press = trials.filter({ correct: true }, { correct_response: 'space' })
+        var wrong_press = trials.filter({ correct: false }, { correct_response: '' }).values()
+        var correct_press = trials.filter({ correct: true }, { correct_response: 'space' }).values()
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
         console.log(wrong_press.length )
         console.log(correct_press.length )
@@ -1179,19 +1179,19 @@ var debrief_TD_prac = {
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
-        var wrong_press = trials.filter({ correct: false }, { correct_response: '' })
-        var correct_press = trials.filter({ correct: true }, { correct_response: 'space' })
+        var wrong_press = trials.filter([{ correct: false }, { correct_response: '' }]).count()
+        var correct_press = trials.filter([{ correct: true }, { correct_response: 'space' }]).count()
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
-        console.log(wrong_press.length )
-        console.log(correct_press.length )
+        console.log(wrong_press )
+        console.log(correct_press )
 
-        if (wrong_press.length != 0 )
+        if (wrong_press != 0 )
         {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
-        else if ( wrong_press.length == 0 && correct_press.length == 1){
+        else if ( wrong_press == 0 && correct_press == 1){
             return "<p>Good job! You have pressed a button to a correct shape. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-        else if ( wrong_press.length == 0 && correct_press.length == 0){
+        else if ( wrong_press == 0 && correct_press == 0){
             return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
     }
