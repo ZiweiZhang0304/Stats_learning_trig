@@ -964,20 +964,7 @@ var TD_sequence_number = possible_positions * target_length * 2 // 12 * 2 =24
             TD_stimuli.push(stimuli);
         }
     }
-//console.log('this is sequence',TD_stimuli.slice(0,12)) //TD_stimuli[0]
-//console.log('this is target', TD_stimuli.slice(0,12)[3].TD_stimulus) //TD_stimuli[0].TD_stimulus[3]
 
-
-
-/*var target_location = []
-var a_range = (TD_sequence_number/target_length) // 24/3 = 8
-for (a = 0; a < range(0,a_range).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
-    var b = range(3 + a, 5 + a)
-    b.forEach(function myFunction(value) {
-        var c = sequence_length * a + value
-        target_location.push(c)
-    })
-}*/
 
 var target_location = []
 var a_range = (TD_sequence_number/target_length) // 24/3 = 8
@@ -1168,6 +1155,29 @@ var debrief_TD = {
     choices: ['Enter'],
     stimulus: function () {
 
+        var trials = jsPsych.data.get().filter({ test_part: 'post' });
+        var wrong_press = trials.filter({ correct: false }, { correct_response: '' })
+        var correct_press = trials.filter({ correct: true }, { correct_response: 'space' })
+        //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
+        console.log(wrong_press.length )
+        console.log(correct_press.length )
+
+        if (wrong_press.length != 0 )
+        {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
+        else if ( wrong_press.length == 0 && correct_press.length == 1){
+            return "<p>Good job! You have pressed a button to a correct shape. </p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
+        else if ( wrong_press.length == 0 && correct_press.length == 0){
+            return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
+    }
+};
+var debrief_TD_prac = {
+    type: "html-keyboard-response",
+    choices: ['Enter'],
+    stimulus: function () {
+
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
         var wrong_press = trials.filter({ correct: false }, { correct_response: '' })
         var correct_press = trials.filter({ correct: true }, { correct_response: 'space' })
@@ -1187,9 +1197,7 @@ var debrief_TD = {
     }
 };
 
-  // Among each item in TD_stimuli_all, is the sequence of 12 shapes.
-  // You can create a group of 12 target presentation + sequence but can also
-//console.log(TD_stimuli.slice(0,12))
+
 var TD_target_present_1 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1278,7 +1286,7 @@ var TD_trial_sequence_1_prac = {
 };
 
 var TD1_prac = {
-    timeline: [TD_target_present_1_prac , TD_trial_sequence_1_prac,debrief_TD],
+    timeline: [TD_target_present_1_prac , TD_trial_sequence_1_prac,debrief_TD_prac],
     randomize_order: false,
     repetitions: 1
 };
@@ -1301,7 +1309,7 @@ var TD_trial_sequence_2_prac = {
 };
 
 var TD2_prac = {
-    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD],
+    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD_prac],
     randomize_order: false,
     repetitions: 1
 };
@@ -1326,7 +1334,7 @@ var TD_trial_sequence_3_prac = {
 };
 
 var TD3_prac = {
-    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD],
+    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD_prac],
     randomize_order: false,
     repetitions: 1
 };
