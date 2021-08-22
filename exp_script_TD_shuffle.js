@@ -1089,14 +1089,25 @@ for (j = 0; j < TD_list_prac.length; j++) {
         }
     }
 
-target_location_prac = [3,4,5]
+//target_location_prac = [3,4,5]
+
+for (a = 0; a < range(0,TD_sequence_number-1).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
+
+        if (a == 0){
+            var b = 3 }
+        else {
+            var b = target_location_prac[a-1] + sequence_length + 1 }
+        target_location_prac.push(b)
+    }
+
+console.log(target_location_prac)
+
 target_location_prac.forEach(function myFunction(value) {
         console.log('this is c value ' + value)
         TD_stimuli_prac[value].data.correct_response = 'space'
         TD_stimuli_prac[value].data.TD_target = 'TD_target'
 
     })
-
 
 var instruction4 = {
     type: 'instructions',
