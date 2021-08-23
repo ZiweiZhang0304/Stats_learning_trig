@@ -101,7 +101,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-//timeline.push(enter_full);
+timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -122,7 +122,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-//timeline.push(consent);
+timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -324,8 +324,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 12); //120
-var repetition_attention = repetition.slice(3, 108); //1080
+var repetition_1_attention = repetition_1.slice(0, 120); //120
+var repetition_attention = repetition.slice(3, 1080); //1080
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -899,7 +899,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-timeline.push(at_test_procedure);
+//timeline.push(at_test_procedure);
 
 
 
@@ -1131,7 +1131,7 @@ var TD_trial = {
   stimulus: jsPsych.timelineVariable('TD_stimulus'),
   choices:['space'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 400,
+  trial_duration: 200,
   on_finish: function(data){
 
     var TD_counter = jsPsych.data.get().filter({TaskType: 'TD'}).select('rt').values.length;
@@ -1795,7 +1795,7 @@ var Array_TD = [TD1, TD2, TD3, TD4, TD5, TD6,
                TD19, TD20 ,TD21, TD22, TD23, TD24];
 var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
-    timeline: shuffledTD,
+    timeline: Array_TD,
         /*[TD1, TD2, TD3, TD4, TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
