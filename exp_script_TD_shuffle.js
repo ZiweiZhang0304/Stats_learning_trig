@@ -1257,7 +1257,7 @@ var debrief_TD_prac2 = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
+        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
         var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
 
@@ -1284,7 +1284,7 @@ var debrief_TD_prac3 = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
+        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
         var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
 
