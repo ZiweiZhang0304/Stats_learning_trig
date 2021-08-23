@@ -1219,6 +1219,8 @@ var debrief_TD_prac = {
     }
 };
 
+
+/*--------- Real TD --------- */
 var TD_target_present_1 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1226,20 +1228,18 @@ var TD_target_present_1 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-
-
 var TD_trial_sequence_1 = {
     timeline: [TD_trial],
     timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
-
 var TD1 = {
     timeline: [TD_target_present_1 , TD_trial_sequence_1,debrief_TD],
     randomize_order: false,
     repetitions: 1
 };
+
 
 //console.log(TD_stimuli.slice(0,12)[3].TD_stimulus)
 
@@ -1251,19 +1251,18 @@ var TD_target_present_2 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-
 var TD_trial_sequence_2 = {
     timeline: [TD_trial],
     timeline_variables: TD_stimuli.slice(12,24), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
-
 var TD2 = {
     timeline: [TD_target_present_2 , TD_trial_sequence_2,debrief_TD],
     randomize_order: false,
     repetitions: 1
 };
+
 
 //console.log(TD_stimuli.slice(24,36))
 var TD_target_present_3 = {
@@ -1273,14 +1272,12 @@ var TD_target_present_3 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-
 var TD_trial_sequence_3 = {
     timeline: [TD_trial],
     timeline_variables: TD_stimuli.slice(24,36), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
 };
-
 var TD3 = {
     timeline: [TD_target_present_3 , TD_trial_sequence_3,debrief_TD],
     randomize_order: false,
@@ -1288,7 +1285,426 @@ var TD3 = {
 };
 
 
-// TD practice trial 1
+var TD_target_present_4 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(36,48)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_4 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(36,48), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD4 = {
+    timeline: [TD_target_present_4 , TD_trial_sequence_4,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_5 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(48,60)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_5 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(48,60), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD5 = {
+    timeline: [TD_target_present_5 , TD_trial_sequence_5,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_6 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(60,72)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_6 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(60,72), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD6 = {
+    timeline: [TD_target_present_6 , TD_trial_sequence_6,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_7 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(72,84)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_7 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(72,84), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD7 = {
+    timeline: [TD_target_present_7 , TD_trial_sequence_7,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_8 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(84,96)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_8 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(84,96), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD8 = {
+    timeline: [TD_target_present_8 , TD_trial_sequence_8,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_9 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(96,108)[7].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_9 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(96,108), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD9 = {
+    timeline: [TD_target_present_9 , TD_trial_sequence_9,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_10 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(108,120)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_10 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(108,120), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD10 = {
+    timeline: [TD_target_present_10 , TD_trial_sequence_10,debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_11 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(120,132)[7].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_11 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(120,132), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD11 = {
+    timeline: [TD_target_present_11, TD_trial_sequence_11, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_12 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(132,144)[8].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_12 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(132,144), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD12 = {
+    timeline: [TD_target_present_12, TD_trial_sequence_12, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_13 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(144,156)[3].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_13 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(144,156), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD13 = {
+    timeline: [TD_target_present_13, TD_trial_sequence_13, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_14 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(156,168)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_14 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(156,168), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD14 = {
+    timeline: [TD_target_present_14, TD_trial_sequence_14, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_15 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(168,180)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_15 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(168,180), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD15 = {
+    timeline: [TD_target_present_15, TD_trial_sequence_15, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_16 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(180,192)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_16 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(180,192), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD16 = {
+    timeline: [TD_target_present_16, TD_trial_sequence_16, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_17 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(192,204)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_17 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(192,204), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD17 = {
+    timeline: [TD_target_present_17, TD_trial_sequence_17, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_18 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(204,216)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_18 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(204,216), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD18 = {
+    timeline: [TD_target_present_18, TD_trial_sequence_18, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_19 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(216,228)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_19 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(216,228), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD19 = {
+    timeline: [TD_target_present_19, TD_trial_sequence_19, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_20 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(228,240)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_20 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(228,240), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD20 = {
+    timeline: [TD_target_present_20, TD_trial_sequence_20, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_21 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(240,252)[7].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_21 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(240,252), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD21 = {
+    timeline: [TD_target_present_21, TD_trial_sequence_21, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_22 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(252,264)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_22 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(252,264), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD22 = {
+    timeline: [TD_target_present_22, TD_trial_sequence_22, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_23 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(264,276)[7].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_23 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(264,276), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD23 = {
+    timeline: [TD_target_present_23, TD_trial_sequence_23, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+
+var TD_target_present_24 = {
+    type: "image-keyboard-response",
+    prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
+    stimulus: TD_stimuli.slice(276,288)[8].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+                                                  //24 trials; 24 targets at different positions
+    choices: ['Enter']
+};
+var TD_trial_sequence_24 = {
+    timeline: [TD_trial],
+    timeline_variables: TD_stimuli.slice(276,288), //TD_stimuli.slice(0): (0,1,2...23)
+    randomize_order: false,
+    repetitions: 1
+};
+var TD24 = {
+    timeline: [TD_target_present_24, TD_trial_sequence_24, debrief_TD],
+    randomize_order: false,
+    repetitions: 1
+};
+
+/*--------- TD practice --------- */
 console.log(TD_stimuli.slice(0,12))
 var TD_target_present_1_prac = {
     type: "image-keyboard-response",
@@ -1373,7 +1789,10 @@ timeline.push(instruction4);
 
 
 //real TD block
-var Array_TD = [TD1, TD2, TD3];
+var Array_TD = [TD1, TD2, TD3, TD4, TD5, TD6,
+               TD7, TD8 ,TD9, TD10, TD11, TD12,
+               TD13, TD14 ,TD15, TD16, TD17, TD18,
+               TD19, TD20 ,TD21, TD22, TD23, TD24];
 var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
     timeline: shuffledTD,
