@@ -421,6 +421,7 @@ var debrief = {
 timeline.push(debrief);
 
 
+
 /* -----define learning triplet stimuli----- */
 //right now we want only one group of triplet for fast, medium, slow respectively
 //randomly select from FT_001-FT_009
@@ -439,20 +440,15 @@ var frequent_trigger_filtered1 = frequent_trigger_filtered.filter(function(val) 
 var lr_triplet_3 = frequent_trigger_filtered1;
 
 
-/*var lr_triplet_1 = [
-    { lr_stimulus: repo_site + "img/Stim/FT_001.png", data: {TaskType: 'lr'}},
-    { lr_stimulus: repo_site + "img/Stim/FT_002.png", data: {TaskType: 'lr'}},
-    { lr_stimulus: repo_site + "img/Stim/FT_003.png", data: {TaskType: 'lr'}},
-];*/
-
 
 /* -----randomize triplet-attention state pair----- */
 var lr_stimuli_1 = []
 var lr_stimuli_2 = []
 var lr_stimuli_3 = []
 var attention_state_list = shuffle(['fast', 'slow']); //, 'medium'
-//var index = Math.floor((Math.random()) * lr_triplet_list.length);
 
+
+//when we add more triplets, we need slow_1, fast_1
 for (i = 0; i < lr_triplet_1.length; i++) {
     var stimuli = new Object();
     stimuli.lr_stimulus = repo_site + lr_triplet_1[i] ;
@@ -463,7 +459,7 @@ for (i = 0; i < lr_triplet_1.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus);
+    stimuli.lr_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -480,13 +476,15 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus);
+    stimuli.lr_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
     lr_stimuli_2.push(stimuli);
 };
 console.log(lr_stimuli_1,lr_stimuli_2);
+console.log('check attention', lr_stimuli_1[0].data.attention_state)
+
 /*for (i = 0; i < lr_triplet_3.length; i++) {
     var stimuli = new Object();
     stimuli.lr_stimulus = repo_site + lr_triplet_3[i] ;
@@ -497,7 +495,7 @@ console.log(lr_stimuli_1,lr_stimuli_2);
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.at_fix = rep(stimuli.lr_stimulus);
+    stimuli.lr_fix = rep(stimuli.lr_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'lr';
@@ -527,7 +525,16 @@ timeline.push(instruction2);
 
 
 var learning = {
-  type: "image-keyboard-response",
+
+  timeline:[
+
+  {type: "image-keyboard-response",
+  stimulus: repo_site + "img/Stim/gray_bdot.png",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 200,
+        },
+
+  {type: "image-keyboard-response",
   stimulus: jsPsych.timelineVariable('lr_stimulus'),
   data: jsPsych.timelineVariable('data'),
   choices: ['space'],
@@ -535,45 +542,40 @@ var learning = {
   response_ends_trial: true,
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
-    var counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length;
-    data.counter = counter;
-  }
-}
+    var lr_trial_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length;
+    data.lr_trial_counter = lr_trial_counter ;
+  }},
 
+  {type: "image-keyboard-response",
+  stimulus: jsPsych.timelineVariable('lr_fix'),
+  choices: jsPsych.NO_KEYS,
+  response_ends_trial: false,
+  trial_duration: function (data) {
+        if (jsPsych.data.get().filter({ TaskType: 'lr' }).last(1).select('rt').values[0] == null) {
+            var fix_duration = 0
+        } else { var fix_duration = 800 - (jsPsych.data.get().filter({ TaskType: 'lr' }).last(1).select('rt').values[0]); };
+        return fix_duration
+            }
+        }
+
+    ]
+};
 
 
 var lr_test_TS1 = {
   timeline: [learning],
   timeline_variables: lr_stimuli_1,
-  sample: {
-  type: 'with-replacement',
-  size: 1,
-},
-  randomize_order: true,
+  randomize_order: false,
   repetitions: 1
 };
 
 var lr_test_TS2 = {
   timeline: [learning],
   timeline_variables: lr_stimuli_2,
-  sample: {
-  type: 'with-replacement',
-  size: 1,
-},
-  randomize_order: true,
+  randomize_order: false,
   repetitions: 1
 };
 
-var lr_test_TS3 = {
-  timeline: [learning],
-  timeline_variables: lr_stimuli_3,
-  sample: {
-  type: 'with-replacement',
-  size: 1,
-},
-  randomize_order: true,
-  repetitions: 1
-};
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
@@ -639,9 +641,10 @@ var attention = {
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
-    var lr_counter = jsPsych.data.get().filter({TaskType: 'lr'}).select('rt').values.length
+    //var lr_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('diff').values.length
     var slow_lr_counter = jsPsych.data.get().filter({diff: 'slow'}).select('rt').values.length
     var fast_lr_counter = jsPsych.data.get().filter({diff: 'fast'}).select('rt').values.length
+    var lr_counter = slow_lr_counter + fast_lr_counter //+1??
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -655,9 +658,10 @@ var attention = {
     //data.medlow = Math.abs(rt_mean - 0.2*rt_sd)
 
     data.at_counter = at_counter
-    data.lr_counter = lr_counter
+
     data.slow_lr_counter = slow_lr_counter
     data.fast_lr_counter = fast_lr_counter
+    data.lr_counter = lr_counter
     console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
     console.log('there are' + lr_counter + ' learning trials')
     console.log('there are' + fast_lr_counter + ' fast learning trials')
@@ -700,7 +704,7 @@ var attention = {
 
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
-    if (at_counter > 10 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
+    if (at_counter > 80 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
         console.log('----new restriction 1 starts here----')
 
         //see if the last 3 lr trials were all fast, if so the next one can't be
@@ -783,12 +787,12 @@ var attention = {
     /*---- Start appying restrictions to triggering ----*/
 
     /*-- If attention <= 80 --*/
-    if (at_counter < 10 || last_infreq.includes('infrequent')
+    if (at_counter < 80 || last_infreq.includes('infrequent')
         || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
         lr_node = 0 //80th trial
     }
 
-    else if (at_counter > 10 && lr_counter > 0 && lr_counter < 6){
+    else if (at_counter > 80 && lr_counter > 0 && lr_counter < 6){
 
 
       /*-- If attention > 80 && 0< learning <=6 --*/
@@ -811,7 +815,7 @@ var attention = {
       }
 
 
-    else if (at_counter > 10 && lr_counter >= 6){
+    else if (at_counter > 80 && lr_counter >= 6){
 
       /*-- If attention > 80 && learning > 6 --*/
       if(rt_three > rt_mean+ rt_sd && last_slow == true)
@@ -830,7 +834,7 @@ var attention = {
     }
 
     /*-- If attention > 80 && learning = 0 --*/
-    else if (at_counter > 10 && lr_counter == 0) {
+    else if (at_counter > 80 && lr_counter == 0) {
 
         if(rt_three > rt_mean+ rt_sd) {
             lr_node = 1;
@@ -862,8 +866,16 @@ var attention = {
     ],
 };
 
-var if_node_1= { //fast node --> TS1
-  timeline: [iti_200,lr_test_TS1,iti_200],
+
+if (lr_stimuli_1[0].data.attention_state == 'fast') {
+    var fast_lr = lr_test_TS1
+    var slow_lr = lr_test_TS2
+} else {
+    var slow_lr = lr_test_TS1
+    var fast_lr = lr_test_TS2}
+
+var if_node_1= { //slow node
+  timeline: [slow_lr],
   conditional_function: function(data){
     if (lr_node == 1){
       return true;
@@ -871,8 +883,8 @@ var if_node_1= { //fast node --> TS1
   }
 };
 
-var if_node_2= { //slow node --> TS2
-  timeline: [iti_200,lr_test_TS2,iti_200],
+var if_node_2= { //fast node
+  timeline: [fast_lr],
   conditional_function: function(data){
     if (lr_node == 2){
       return true;
@@ -1110,7 +1122,6 @@ var instruction4 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction4);
 
 // real TD trials
 var TD_trial = {
@@ -1155,20 +1166,24 @@ var debrief_TD = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post' }).last(12);
-        var wrong_press = trials.filter({ correct: false }, { correct_response: '' }).values()
-        var correct_press = trials.filter({ correct: true }, { correct_response: 'space' }).values()
-        //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
-        console.log(wrong_press.length )
-        console.log(correct_press.length )
+        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
+        var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
+        var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
 
-        if (wrong_press.length != 0 )
+
+        console.log(wrong_press)
+        console.log('practice trial 1'+ trials.filter([{ correct: false , correct_response:''}]).values())
+        console.log(correct_press)
+        console.log('practice trial 1'+ trials.filter([{ correct: true , correct_response:'space'}]).values())
+
+
+        if (wrong_press != 0 )
         {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
-        else if ( wrong_press.length == 0 && correct_press.length == 1){
+        else if ( wrong_press == 0 && correct_press == 1){
             return "<p>Good job! You have pressed a button to a correct shape. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-        else if ( wrong_press.length == 0 && correct_press.length == 0){
+        else if ( wrong_press == 0 && correct_press == 0){
             return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
     }
@@ -1351,8 +1366,8 @@ var practice_presentation = {
     randomize_order: true,
     repetitions: 1
 }
-timeline.push(practice_presentation)
-
+timeline.push(practice_presentation);
+timeline.push(instruction4);
 
 
 
@@ -1366,7 +1381,7 @@ var target_presentation = {
     randomize_order: true,
     repetitions: 1
 }
-timeline.push(target_presentation)
+timeline.push(target_presentation);
 
 
 /* -----A Few Q on Rules----- */
