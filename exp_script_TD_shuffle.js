@@ -1236,9 +1236,9 @@ var debrief_TD_prac1 = {
 
 
         console.log(wrong_press)
-        console.log(trials.filter([{ correct: false , correct_response:''}]).values())
+        console.log('practice trial 1'+ trials.filter([{ correct: false , correct_response:''}]).values())
         console.log(correct_press)
-        console.log(trials.filter([{ correct: true , correct_response:'space'}]).values())
+        console.log('practice trial 1'+ trials.filter([{ correct: true , correct_response:'space'}]).values())
 
 
         if (wrong_press != 0 )
@@ -1263,9 +1263,9 @@ var debrief_TD_prac2 = {
 
 
         console.log(wrong_press)
-        console.log(trials.filter([{ correct: false , correct_response:''}]).values())
+        console.log('practice trial 2'+ trials.filter([{ correct: false , correct_response:''}]).values())
         console.log(correct_press)
-        console.log(trials.filter([{ correct: true , correct_response:'space'}]).values())
+        console.log('practice trial 2'+ trials.filter([{ correct: true , correct_response:'space'}]).values())
 
 
         if (wrong_press != 0 )
@@ -1290,9 +1290,9 @@ var debrief_TD_prac3 = {
 
 
         console.log(wrong_press)
-        console.log(trials.filter([{ correct: false , correct_response:''}]).values())
+        console.log('practice trial 3'+ trials.filter([{ correct: false , correct_response:''}]).values())
         console.log(correct_press)
-        console.log(trials.filter([{ correct: true , correct_response:'space'}]).values())
+        console.log('practice trial 3'+ trials.filter([{ correct: true , correct_response:'space'}]).values())
 
 
         if (wrong_press != 0 )
