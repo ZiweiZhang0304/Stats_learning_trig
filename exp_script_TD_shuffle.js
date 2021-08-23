@@ -272,7 +272,7 @@ console.log(repetition_first3)
 
 for (j = 0; j < repetition_first3.length; j++) {
     var stimuli_first3 = new Object();
-    stimuli_first3.at_stimulus_first3 = repo_site + 'img/Stim/' + repetition_first3[j] + '_g.png';
+    stimuli_first3.at_stimulus_first3 = repo_site + repetition_first3[j];
 
     stimuli_first3.data = new Object();
 
@@ -304,7 +304,7 @@ for (i = 0; i < repetition_1_prac.length; i++) {
 
 for (j = 0; j < repetition_prac.length; j++) {
     var stimuli_prac = new Object();
-    stimuli_prac.at_stimulus_prac = repo_site + 'img/Stim/' + repetition_prac[j] + '_g.png';
+    stimuli_prac.at_stimulus_prac = repo_site + repetition_prac[j];
 
     stimuli_prac.data = new Object();
 
@@ -336,7 +336,7 @@ for (i = 0; i < repetition_1_attention.length; i++) {
 /* -----attention task stimuli----- */
 for (j = 0; j < repetition_attention.length; j++) {
     var stimuli = new Object();
-    stimuli.at_stimulus = repo_site  + 'img/Stim/' + repetition_attention[j] + '_g.png';
+    stimuli.at_stimulus = repo_site + repetition_attention[j];
 
     stimuli.data = new Object();
 
