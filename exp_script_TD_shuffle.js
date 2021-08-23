@@ -1120,7 +1120,7 @@ var TD_trial = {
   stimulus: jsPsych.timelineVariable('TD_stimulus'),
   choices:['space'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 200,
+  trial_duration: 400,
   on_finish: function(data){
 
     var TD_counter = jsPsych.data.get().filter({TaskType: 'TD'}).select('rt').values.length;
