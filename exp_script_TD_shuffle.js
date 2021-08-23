@@ -256,7 +256,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -324,8 +324,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 120);
-var repetition_attention = repetition.slice(3, 1080);
+var repetition_1_attention = repetition_1.slice(0, 12); //120
+var repetition_attention = repetition.slice(3, 108); //1080
 console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -404,7 +404,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -418,7 +418,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 /* -----define learning triplet stimuli----- */
@@ -522,7 +522,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction2);
+timeline.push(instruction2);
 
 
 
@@ -624,7 +624,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(first3_block)
+timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -887,7 +887,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
@@ -1110,7 +1110,7 @@ var instruction4 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction4);
+timeline.push(instruction4);
 
 // real TD trials
 var TD_trial = {
@@ -1155,7 +1155,7 @@ var debrief_TD = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post' });
+        var trials = jsPsych.data.get().filter({ test_part: 'post' }).last(12);
         var wrong_press = trials.filter({ correct: false }, { correct_response: '' }).values()
         var correct_press = trials.filter({ correct: true }, { correct_response: 'space' }).values()
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
@@ -1366,7 +1366,7 @@ var target_presentation = {
     randomize_order: true,
     repetitions: 1
 }
-//timeline.push(target_presentation)
+timeline.push(target_presentation)
 
 
 /* -----A Few Q on Rules----- */
