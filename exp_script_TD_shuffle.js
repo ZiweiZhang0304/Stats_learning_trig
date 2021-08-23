@@ -1230,7 +1230,7 @@ var debrief_TD_prac1 = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
+        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
         var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
 
@@ -1261,13 +1261,6 @@ var debrief_TD_prac2 = {
         var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
 
-
-        console.log(wrong_press)
-        console.log('practice trial 2'+ trials.filter([{ correct: false , correct_response:''}]).values())
-        console.log(correct_press)
-        console.log('practice trial 2'+ trials.filter([{ correct: true , correct_response:'space'}]).values())
-
-
         if (wrong_press != 0 )
         {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
@@ -1287,12 +1280,6 @@ var debrief_TD_prac3 = {
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
         var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
-
-
-        console.log(wrong_press)
-        console.log('practice trial 3'+ trials.filter([{ correct: false , correct_response:''}]).values())
-        console.log(correct_press)
-        console.log('practice trial 3'+ trials.filter([{ correct: true , correct_response:'space'}]).values())
 
 
         if (wrong_press != 0 )
@@ -1419,7 +1406,7 @@ var TD_trial_sequence_2_prac = {
 };
 
 var TD2_prac = {
-    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD_prac2],
+    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD_prac1],
     randomize_order: false,
     repetitions: 1
 };
@@ -1444,7 +1431,7 @@ var TD_trial_sequence_3_prac = {
 };
 
 var TD3_prac = {
-    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD_prac3],
+    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD_prac1],
     randomize_order: false,
     repetitions: 1
 };
