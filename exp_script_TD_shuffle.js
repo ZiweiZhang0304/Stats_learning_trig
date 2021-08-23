@@ -1181,8 +1181,8 @@ var debrief_TD_prac = {
     stimulus: function () {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
-        var wrong_press = trials.filter([{ correct: false }, { correct_response:''}]).count()
-        var correct_press = trials.filter([{ correct: true }, { correct_response:'space'}]).count()
+        var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
+        var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
         //var no_press = trials.filter({ correct: false }, { correct_response: 'space' })
         console.log(trials)
         console.log(wrong_press)
