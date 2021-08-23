@@ -1166,7 +1166,7 @@ var debrief_TD = {
     choices: ['Enter'],
     stimulus: function () {
 
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
+        var trials = jsPsych.data.get().filter({ test_part: 'post' }).last(12);
         var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
 
@@ -1360,25 +1360,28 @@ var TD3_prac = {
     repetitions: 1
 };
 
+//practice block
+var Array_TD_prac = [TD1_prac, TD2_prac, TD3_prac];
+var shuffledTD_prac = jsPsych.randomization.repeat(Array_TD_prac, 1)
 var practice_presentation = {
-    timeline: [TD1_prac, TD2_prac, TD3_prac
-    ],
-    randomize_order: true,
+    timeline: shuffledTD_prac,
+    randomize_order: false,
     repetitions: 1
 }
 timeline.push(practice_presentation);
 timeline.push(instruction4);
 
 
-
+//real TD block
+var Array_TD = [TD1, TD2, TD3];
+var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
-    timeline: [TD1, TD2, TD3
-        /*, TD4, TD5, TD6,
+    timeline: shuffledTD,
+        /*[TD1, TD2, TD3, TD4, TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
-               TD19, TD20 ,TD21, TD22, TD23, TD24*/
-    ],
-    randomize_order: true,
+               TD19, TD20 ,TD21, TD22, TD23, TD24]*/
+    randomize_order: false,
     repetitions: 1
 }
 timeline.push(target_presentation);
