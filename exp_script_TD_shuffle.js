@@ -1159,6 +1159,39 @@ var TD_trial = {
   ]
 };
 
+var TD_trial_prac = {
+  timeline:[
+
+  {type: "image-keyboard-response",
+  stimulus: jsPsych.timelineVariable('TD_stimulus'),
+  choices:['space'],
+  data: jsPsych.timelineVariable('data'),
+  trial_duration: 200,
+  on_finish: function(data){
+
+    data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response)}
+    },
+
+  {type: "image-keyboard-response",
+  stimulus: jsPsych.timelineVariable('at_fix'),
+  choices: jsPsych.NO_KEYS,
+  response_ends_trial: false,
+  trial_duration:function(data) {
+       if (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0] == null) {
+          var fix_duration = 0
+          } else { var fix_duration = 200 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
+            return fix_duration
+  }},
+
+  {type: "image-keyboard-response",
+  stimulus: repo_site + "img/Stim/gray_bdot.png",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 40,
+    }
+
+  ]
+};
+
 
 //debriefing page for TD
 var debrief_TD = {
@@ -1716,7 +1749,7 @@ var TD_target_present_1_prac = {
 
 
 var TD_trial_sequence_1_prac = {
-    timeline: [TD_trial],
+    timeline: [TD_trial_prac],
     timeline_variables: TD_stimuli_prac.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
@@ -1739,7 +1772,7 @@ var TD_target_present_2_prac = {
 // TD practice trial 2
 console.log(TD_stimuli_prac.slice(12,24))
 var TD_trial_sequence_2_prac = {
-    timeline: [TD_trial],
+    timeline: [TD_trial_prac],
     timeline_variables: TD_stimuli_prac.slice(12,24), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
@@ -1764,7 +1797,7 @@ var TD_target_present_3_prac = {
 
 
 var TD_trial_sequence_3_prac = {
-    timeline: [TD_trial],
+    timeline: [TD_trial_prac],
     timeline_variables: TD_stimuli_prac.slice(24,36), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
