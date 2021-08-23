@@ -1204,9 +1204,9 @@ var debrief_TD_prac = {
             wrong_press = wrong_press_counter_list[trial_counter] - wrong_press_counter_list[trial_counter-1]
         }
 
-        console.log(wrong_press)
+        console.log(wrong_press_counter)
         console.log(trials.filter([{ correct: false }, { correct_response:''}]).values())
-        console.log(correct_press)
+        console.log(correct_press_counter)
         console.log(trials.filter([{ correct: true }, { correct_response:'space'}]).values())
 
 
