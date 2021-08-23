@@ -894,12 +894,12 @@ var if_node_2= { //fast node
 
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2,iti_200], //,if_node_3
+  timeline: [attention,if_node_1,if_node_2,iti_200],
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
@@ -1134,7 +1134,7 @@ var TD_trial = {
   trial_duration: 200,
   on_finish: function(data){
 
-    var TD_counter = jsPsych.data.get().filter({TaskType: 'TD'}).select('rt').values.length;
+    var TD_counter = jsPsych.data.get().filter({test_part: 'post'}).select('rt').values.length;
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response)
     data.TD_counter = TD_counter}
     },
@@ -1828,7 +1828,7 @@ var Array_TD = [TD1, TD2, TD3, TD4, TD5, TD6,
                TD19, TD20 ,TD21, TD22, TD23, TD24];
 var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
-    timeline: Array_TD,
+    timeline: shuffledTD,
         /*[TD1, TD2, TD3, TD4, TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
@@ -1871,7 +1871,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-//timeline.push(multi_choice_Demo);
+timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
