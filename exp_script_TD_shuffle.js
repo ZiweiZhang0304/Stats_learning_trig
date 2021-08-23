@@ -1186,6 +1186,7 @@ var debrief_TD_prac = {
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
         var wrong_press_counter = trials.filter([{ correct: false , correct_response:''}]).count()
         var correct_press_counter = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
+        var shape_counter = trials.count()
         wrong_press_counter_list.push(wrong_press_counter)
         correct_press_counter_list.push(correct_press_counter)
         console.log(wrong_press_counter_list.length, correct_press_counter_list.length)
@@ -1212,7 +1213,7 @@ var debrief_TD_prac = {
         if (wrong_press != 0 )
         {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
-        else if ( wrong_press[0] == 0 && correct_press[0] == 1){
+        else if ( wrong_press == 0 && correct_press == 1){
             return "<p>Good job! You have pressed a button to a correct shape. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
         else if ( wrong_press == 0 && correct_press == 0){
