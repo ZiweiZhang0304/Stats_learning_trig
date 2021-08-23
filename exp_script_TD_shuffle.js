@@ -1175,57 +1175,8 @@ var debrief_TD = {
 };
 
 
-/* var debrief_TD_prac = {
-    type: "html-keyboard-response",
-    choices: ['Enter'],
-    stimulus: function () {
 
-        var wrong_press_counter_list = []
-        var correct_press_counter_list = []
-
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' });
-        var wrong_press_counter = trials.filter([{ correct: false , correct_response:''}]).count()
-        var correct_press_counter = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
-        var shape_counter = trials.count()
-        wrong_press_counter_list.push(wrong_press_counter)
-        correct_press_counter_list.push(correct_press_counter)
-        console.log(wrong_press_counter_list.length, correct_press_counter_list.length)
-
-        var trial_counter = 0
-        if (shape_counter <= 12) {
-            trial_counter = 0
-            var wrong_press = wrong_press_counter_list[trial_counter]
-            var correct_press = correct_press_counter_list[trial_counter]
-        }
-        else if ( shape_counter > 12 && shape_counter <= 24){
-            trial_counter = 1
-            wrong_press = wrong_press_counter_list[trial_counter] - wrong_press_counter_list[trial_counter-1]
-            correct_press = correct_press_counter_list[trial_counter] - correct_press_counter_list[trial_counter-1]
-        } else if (shape_counter > 24 && shape_counter <= 36) {
-            trial_counter = 2
-            wrong_press = wrong_press_counter_list[trial_counter] - wrong_press_counter_list[trial_counter-1]
-            correct_press = correct_press_counter_list[trial_counter] - correct_press_counter_list[trial_counter-1]
-        }
-
-        console.log(wrong_press_counter)
-        console.log(trials.filter([{ correct: false }, { correct_response:''}]).values())
-        console.log(correct_press_counter)
-        console.log(trials.filter([{ correct: true }, { correct_response:'space'}]).values())
-
-
-        if (wrong_press != 0 )
-        {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
-        else if ( wrong_press == 0 && correct_press == 1){
-            return "<p>Good job! You have pressed a button to a correct shape. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-        else if ( wrong_press == 0 && correct_press == 0){
-            return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-    }
-};*/
-
-var debrief_TD_prac1 = {
+var debrief_TD_prac = {
     type: "html-keyboard-response",
     choices: ['Enter'],
     stimulus: function () {
@@ -1252,48 +1203,6 @@ var debrief_TD_prac1 = {
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
     }
 };
-var debrief_TD_prac2 = {
-    type: "html-keyboard-response",
-    choices: ['Enter'],
-    stimulus: function () {
-
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
-        var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
-        var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
-
-        if (wrong_press != 0 )
-        {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
-        else if ( wrong_press == 0 && correct_press == 1){
-            return "<p>Good job! You have pressed a button to a correct shape. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-        else if ( wrong_press == 0 && correct_press == 0){
-            return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-    }
-};
-var debrief_TD_prac3 = {
-    type: "html-keyboard-response",
-    choices: ['Enter'],
-    stimulus: function () {
-
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(12);
-        var wrong_press = trials.filter([{ correct: false , correct_response:''}]).count()
-        var correct_press = trials.filter([{ correct: true ,  correct_response:'space'}]).count()
-
-
-        if (wrong_press != 0 )
-        {return "<p>You have pressed a button to an incorrect shape. </b> Please respond more accurately. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>";}
-        else if ( wrong_press == 0 && correct_press == 1){
-            return "<p>Good job! You have pressed a button to a correct shape. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-        else if ( wrong_press == 0 && correct_press == 0){
-            return "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> Press enter to move on.</p>"}
-    }
-};
-
 
 var TD_target_present_1 = {
     type: "image-keyboard-response",
@@ -1383,7 +1292,7 @@ var TD_trial_sequence_1_prac = {
 };
 
 var TD1_prac = {
-    timeline: [TD_target_present_1_prac , TD_trial_sequence_1_prac,debrief_TD_prac1],
+    timeline: [TD_target_present_1_prac , TD_trial_sequence_1_prac,debrief_TD_prac],
     randomize_order: false,
     repetitions: 1
 };
@@ -1406,7 +1315,7 @@ var TD_trial_sequence_2_prac = {
 };
 
 var TD2_prac = {
-    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD_prac1],
+    timeline: [TD_target_present_2_prac , TD_trial_sequence_2_prac,debrief_TD_prac],
     randomize_order: false,
     repetitions: 1
 };
@@ -1431,7 +1340,7 @@ var TD_trial_sequence_3_prac = {
 };
 
 var TD3_prac = {
-    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD_prac1],
+    timeline: [TD_target_present_3_prac , TD_trial_sequence_3_prac,debrief_TD_prac],
     randomize_order: false,
     repetitions: 1
 };
