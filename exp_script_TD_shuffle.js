@@ -1131,7 +1131,7 @@ var TD_trial = {
   stimulus: jsPsych.timelineVariable('TD_stimulus'),
   choices:['space'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 400,
+  trial_duration: 200,
   on_finish: function(data){
 
     var TD_counter = jsPsych.data.get().filter({test_part: 'post'}).select('rt').values.length;
@@ -1146,7 +1146,7 @@ var TD_trial = {
   trial_duration:function(data) {
        if (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0] == null) {
           var fix_duration = 0
-          } else { var fix_duration = 400 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
+          } else { var fix_duration = 200 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
             return fix_duration
   }},
 
@@ -1166,7 +1166,7 @@ var TD_trial_prac = {
   stimulus: jsPsych.timelineVariable('TD_stimulus'),
   choices:['space'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 400,
+  trial_duration: 200,
   on_finish: function(data){
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response)}
@@ -1179,7 +1179,7 @@ var TD_trial_prac = {
   trial_duration:function(data) {
        if (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0] == null) {
           var fix_duration = 0
-          } else { var fix_duration = 400 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
+          } else { var fix_duration = 200 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
             return fix_duration
   }},
 
