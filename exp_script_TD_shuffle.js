@@ -101,7 +101,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-//timeline.push(enter_full);
+timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -122,7 +122,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-//timeline.push(consent);
+timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -256,7 +256,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -404,7 +404,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -418,7 +418,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 
@@ -520,7 +520,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction2);
+timeline.push(instruction2);
 
 
 
@@ -626,7 +626,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(first3_block)
+timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -899,7 +899,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
