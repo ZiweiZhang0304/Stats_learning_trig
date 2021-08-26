@@ -135,7 +135,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
             if (value.stimulus == TD_target) {
                 //get index of target
                 time.push(value.time)
-
+                return time
         }
     })
 }
@@ -173,8 +173,8 @@ function get_target_time(animation_sequence,response, TD_target,set) {
                 //console.log(shapes_reacted_to_index.some(checkindex))
                 //console.log(shapes_rt_index_after_target)
             }
-    }
-    return time[0];
+            return time[0]
+    };
 };
 
 /* -----Full screen-----*/
