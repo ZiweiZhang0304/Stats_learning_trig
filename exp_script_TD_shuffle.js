@@ -1366,6 +1366,8 @@ var TD_trial_sequence_1 = {
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
         //if no press made to target, grab the first post-target rt as offset
         var offset = get_target_time(animation_sequence,response, TD_target_1,'offset')
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1404,11 +1406,10 @@ var TD_trial_sequence_2 = {
         console.log(animation_sequence)
         var response = jsPsych.data.get().last(1).select('response').values
 
-        //in animation_sequence, find where the stimulus value is target, grab the time as onset
         var onset = get_target_time(animation_sequence,response, TD_target_2,'onset')
-        //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        //if no press made to target, grab the first post-target rt as offset
         var offset = get_target_time(animation_sequence,response, TD_target_2,'offset')
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1445,11 +1446,12 @@ var TD_trial_sequence_3 = {
         console.log(animation_sequence)
         var response = jsPsych.data.get().last(1).select('response').values
 
-        //in animation_sequence, find where the stimulus value is target, grab the time as onset
+
         var onset = get_target_time(animation_sequence,response, TD_target_3,'onset')
-        //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        //if no press made to target, grab the first post-target rt as offset
+
         var offset = get_target_time(animation_sequence,response, TD_target_3,'offset')
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1468,7 +1470,7 @@ var TD_target_4 = TD_stimuli.slice(36,48)[4].TD_stimulus
 var TD_target_present_4 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_target_4.TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_target_4, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
@@ -2032,7 +2034,7 @@ var sort_trial_1 = {
     prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
     stim_height: 50,
     stim_width: 50,
-    scale_factor: 2.5,
+    scale_factor: 2,
     border_width: 2,
     sort_area_shape: "square",
     stim_starts_inside:false,
@@ -2049,7 +2051,7 @@ var sort_trial_2 = {
     prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
     stim_height: 50,
     stim_width: 50,
-    scale_factor: 2.5,
+    scale_factor: 2,
     border_width: 2,
     sort_area_shape: "square",
     stim_starts_inside:false,
