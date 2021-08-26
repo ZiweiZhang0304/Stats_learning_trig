@@ -101,7 +101,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-timeline.push(enter_full);
+//timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -122,7 +122,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-timeline.push(consent);
+//timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -256,7 +256,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction);
+//timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -404,7 +404,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(prac_block)
+//timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -418,7 +418,7 @@ var debrief = {
 
     }
 };
-timeline.push(debrief);
+//timeline.push(debrief);
 
 
 
@@ -520,7 +520,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction2);
+//timeline.push(instruction2);
 
 
 
@@ -626,7 +626,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(first3_block)
+//timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -899,7 +899,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-timeline.push(at_test_procedure);
+//timeline.push(at_test_procedure);
 
 
 
@@ -1052,7 +1052,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction3);
+//timeline.push(instruction3);
 
 
 // practice
@@ -1261,20 +1261,29 @@ var TD_target_present_1 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var TD_trial_sequence_1 = {
+/*var TD_trial_sequence_1 = {
     timeline: [TD_trial],
     timeline_variables: TD_stimuli.slice(0,12), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
+};*/
+
+var animation_sequence_1 = TD_list.slice(0,12)
+var TD_trial_sequence_1 = {
+    type: 'animation',
+    frame_time: 300,
+    stimuli: animation_sequence_1,
+    frame_isi: 40,
+    choices: ['space'],
+    sequence_reps: 1
 };
 var TD1 = {
-    timeline: [TD_target_present_1 , TD_trial_sequence_1,debrief_TD],
+    timeline: [TD_target_present_1 , TD_trial_sequence_1],
     randomize_order: false,
     repetitions: 1
 };
 
 
-//console.log(TD_stimuli.slice(0,12)[3].TD_stimulus)
 
 //console.log(TD_stimuli.slice(12,24))
 var TD_target_present_2 = {
@@ -1284,14 +1293,24 @@ var TD_target_present_2 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var TD_trial_sequence_2 = {
+/*var TD_trial_sequence_2 = {
     timeline: [TD_trial],
     timeline_variables: TD_stimuli.slice(12,24), //TD_stimuli.slice(0): (0,1,2...23)
     randomize_order: false,
     repetitions: 1
+};*/
+
+var animation_sequence_2 = TD_list.slice(12,24)
+var TD_trial_sequence_2 = {
+    type: 'animation',
+    frame_time: 300,
+    stimuli: animation_sequence_2,
+    frame_isi: 40,
+    choices: ['space'],
+    sequence_reps: 1
 };
 var TD2 = {
-    timeline: [TD_target_present_2 , TD_trial_sequence_2,debrief_TD],
+    timeline: [TD_target_present_2 , TD_trial_sequence_2],
     randomize_order: false,
     repetitions: 1
 };
@@ -1452,7 +1471,7 @@ var TD_trial_sequence_10 = {
     repetitions: 1
 };
 var TD10 = {
-    timeline: [TD_target_present_10 , TD_trial_sequence_10,debrief_TD],
+    timeline: [TD_target_present_10 , TD_trial_sequence_10], //,debrief_TD
     randomize_order: false,
     repetitions: 1
 };
@@ -1817,26 +1836,84 @@ var practice_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(practice_presentation);
+//timeline.push(practice_presentation);
 timeline.push(instruction4);
 
 
 //real TD block
-var Array_TD = [TD1, TD2, TD3, TD4, TD5, TD6,
+var Array_TD = [TD1, TD2
+/*                , TD3, TD4, TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
-               TD19, TD20 ,TD21, TD22, TD23, TD24];
+               TD19, TD20 ,TD21, TD22, TD23, TD24*/
+];
 var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
     timeline: shuffledTD,
-        /*[TD1, TD2, TD3, TD4, TD5, TD6,
-               TD7, TD8 ,TD9, TD10, TD11, TD12,
-               TD13, TD14 ,TD15, TD16, TD17, TD18,
-               TD19, TD20 ,TD21, TD22, TD23, TD24]*/
     randomize_order: false,
     repetitions: 1
 }
 timeline.push(target_presentation);
+
+/* -----Part 2: Recreate----- */
+//drag and drop
+var instruction5 = {
+    type: 'instructions',
+    pages: [
+        /* -----instr_9----- */
+        '<p style="color:black;font-size: 26px">\n' +
+        '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
+        '        <br>\n' +
+        '        Therefore, in this section, we will ask you to recreate groups of 3 shapes that you remember from the first part of the experiment. <br>\n' +
+        '        <br>\n' +
+        '        Now, click on "Next" to move on. <br> \n' +
+        '</p> <br>'
+    ],
+    show_clickable_nav: true,
+}
+timeline.push(instruction5);
+
+
+var sorting_stimuli= [];
+var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2)
+for (var i = 0; i < lr_triplet_full.length; i++) {
+    sorting_stimuli.push(repo_site + lr_triplet_full[i]);
+}
+console.log(sorting_stimuli);
+
+var sort_trial_1 = {
+    type: 'free-sort',
+    stimuli: sorting_stimuli.slice(0,3),
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
+    stim_height: 50,
+    stim_width: 50,
+    scale_factor: 2.5,
+    border_width: 2,
+    sort_area_shape: "square",
+    stim_starts_inside:false,
+    sort_area_height: 100,
+    sort_area_width: 300,
+    column_spread_factor: 1.5
+};
+timeline.push(sort_trial_1);
+
+
+var sort_trial_2 = {
+    type: 'free-sort',
+    stimuli: sorting_stimuli.slice(3,6),
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
+    stim_height: 50,
+    stim_width: 50,
+    scale_factor: 2.5,
+    border_width: 2,
+    sort_area_shape: "square",
+    stim_starts_inside:false,
+    sort_area_height: 100,
+    sort_area_width: 300,
+    column_spread_factor: 3
+};
+timeline.push(sort_trial_2);
+
 
 
 /* -----A Few Q on Rules----- */
