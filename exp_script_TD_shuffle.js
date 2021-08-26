@@ -1362,10 +1362,10 @@ var TD_trial_sequence_1 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
+        var onset = get_target_time(animation_sequence,response, TD_target_1,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
         //if no press made to target, grab the first post-target rt as offset
-        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
+        var offset = get_target_time(animation_sequence,response, TD_target_1,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1405,10 +1405,10 @@ var TD_trial_sequence_2 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
+        var onset = get_target_time(animation_sequence,response, TD_target_2,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
         //if no press made to target, grab the first post-target rt as offset
-        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
+        var offset = get_target_time(animation_sequence,response, TD_target_2,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1446,10 +1446,10 @@ var TD_trial_sequence_3 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
+        var onset = get_target_time(animation_sequence,response, TD_target_3,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
         //if no press made to target, grab the first post-target rt as offset
-        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
+        var offset = get_target_time(animation_sequence,response, TD_target_3,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1486,11 +1486,8 @@ var TD_trial_sequence_4 = {
         console.log(animation_sequence)
         var response = jsPsych.data.get().last(1).select('response').values
 
-        //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
-        //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        //if no press made to target, grab the first post-target rt as offset
-        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
+        var onset = get_target_time(animation_sequence,response, TD_target_4,'onset')
+        var offset = get_target_time(animation_sequence,response, TD_target_4,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
