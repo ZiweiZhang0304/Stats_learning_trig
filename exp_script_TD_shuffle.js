@@ -1348,7 +1348,7 @@ var TD_trial_sequence_2 = {
     stimuli: animation_sequence_2,
     frame_isi: 40,
     choices: ['space'],
-    sequence_reps: 1
+    sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = jsPsych.data.get().last(1).select('animation_sequence').values
         console.log(animation_sequence)
