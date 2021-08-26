@@ -1269,6 +1269,7 @@ var TD_target_present_1 = {
 };*/
 
 var animation_sequence_1 = TD_list.slice(0,12)
+console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
     type: 'animation',
     frame_time: 300,
@@ -1301,6 +1302,7 @@ var TD_target_present_2 = {
 };*/
 
 var animation_sequence_2 = TD_list.slice(12,24)
+console.log(animation_sequence_2)
 var TD_trial_sequence_2 = {
     type: 'animation',
     frame_time: 300,
