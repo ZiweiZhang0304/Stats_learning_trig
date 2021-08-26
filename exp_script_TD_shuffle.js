@@ -1356,10 +1356,10 @@ var TD_trial_sequence_1 = {
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
-        var animation_sequence = jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('animation_sequence').values
-        console.log(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('animation_sequence'))
-        var response = jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('response').values
-        console.log(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('response'))
+        var animation_sequence = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('animation_sequence').values)
+        console.log(animation_sequence)
+        var response = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('response').values)
+        console.log(response)
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
         var onset = get_target_time(animation_sequence,response, TD_target_1,'onset')
