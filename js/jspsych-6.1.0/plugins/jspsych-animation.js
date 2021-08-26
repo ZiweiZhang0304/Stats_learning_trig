@@ -151,9 +151,9 @@ jsPsych.plugins.animation = (function() {
     var after_response = function(info) {
 
       responses.push({
-        key_press: info.key,
-        rt: info.rt,
-        stimulus: current_stim
+        'key_press': info.key,
+        'rt': info.rt,
+        'stimulus': current_stim
       });
 
       // after a valid response, the stimulus will have the CSS class 'responded'
