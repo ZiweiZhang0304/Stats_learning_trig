@@ -1277,11 +1277,11 @@ var debrief_TD_prac = {
 
 /*--------- Real TD --------- */
 
-var TD_target = TD_stimuli.slice(0,12)[3].TD_stimulus
+var TD_target_1 = TD_stimuli.slice(0,12)[3].TD_stimulus
 var TD_target_present_1 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_target, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_target_1, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
@@ -1307,14 +1307,14 @@ var TD_trial_sequence_1 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,TD_target,'onset')
+        var onset = get_target_time(animation_sequence,TD_target_1,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        var offset = get_target_time(response,TD_target,'offset')
+        var offset = get_target_time(response,TD_target_1,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
 
-        data.TD_target = TD_target
+        data.TD_target = TD_target_1
     }
 };
 var TD1 = {
@@ -1325,11 +1325,11 @@ var TD1 = {
 
 
 
-var TD_target = TD_stimuli.slice(12,24)[4].TD_stimulus
+var TD_target_2 = TD_stimuli.slice(12,24)[4].TD_stimulus
 var TD_target_present_2 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_target, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_target_2, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
@@ -1355,14 +1355,14 @@ var TD_trial_sequence_2 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,TD_target,'onset')
+        var onset = get_target_time(animation_sequence,TD_target_2,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        var offset = get_target_time(response,TD_target,'offset')
+        var offset = get_target_time(response,TD_target_2,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
 
-        data.TD_target = TD_target
+        data.TD_target = TD_target_2
     }
 };
 var TD2 = {
