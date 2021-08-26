@@ -96,6 +96,17 @@ function repeat_push(rslt, item, times) {
   return rslt;
 };
 
+function get_values_bykey(object) {
+
+    var TD_stimuli_list = []
+    object.forEach(function myFunction(value) {
+        console.log('this is item number ' + value)
+        TD_stimuli_list.push(value.TD_stimulus)
+
+    })
+    return TD_stimuli_list;
+};
+
 /* -----Full screen-----*/
 var enter_full = {
   type: 'fullscreen',
@@ -1268,7 +1279,7 @@ var TD_target_present_1 = {
     repetitions: 1
 };*/
 
-var animation_sequence_1 = TD_list.slice(0,12)
+var animation_sequence_1 = get_values_bykey(TD_stimuli.slice(0,12))
 console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
     type: 'animation',
@@ -1301,7 +1312,7 @@ var TD_target_present_2 = {
     repetitions: 1
 };*/
 
-var animation_sequence_2 = TD_list.slice(12,24)
+var animation_sequence_2 = get_values_bykey(TD_stimuli.slice(12,24))
 console.log(animation_sequence_2)
 var TD_trial_sequence_2 = {
     type: 'animation',
