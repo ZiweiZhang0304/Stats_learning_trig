@@ -107,18 +107,73 @@ function get_values_bykey(object) {
     return TD_stimuli_list;
 };
 
-function get_target_time(object,TD_target,set) {
+function findWithAttr(array, attr, value) {
+    for(var i = 0; i < array.length; i += 1) {
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
+    return -1;
+};
+
+
+function get_target_time(animation_sequence,response, TD_target,set) {
 
     var time = []
-    object.forEach(function myFunction(value) {
-        console.log('this is shape ' + value)
-        if (set =='onset' && value.stimulus == TD_target){
-            time.push(value.time)}
-        else if (set =='offset' && value.stimulus == TD_target) {
-            time.push(value.rt)
+    var shapes_reacted_to = []
+    var shapes_reacted_to_index = []
+    var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
+    //console.log(target_index)
+
+    function checkindex(index) {
+                    var index_after_target = index > target_index
+                    return  index_after_target;}
+
+    if (set =='onset') {
+        animation_sequence.forEach(function myFunction(value) {
+            //console.log('this is shape ' + value)
+            if (value.stimulus == TD_target) {
+                //get index of target
+                time.push(value.time)
+
         }
+    })
+}
+
+    if (set =='offset'){
+            var shapes_rt_index_after_target = []
+
+            response.forEach(function myFunction(value) {
+            var shape = value.stimulus
+            //console.log(shape)
+            shapes_reacted_to.push(shape)
+            var shape_index = findWithAttr(animation_sequence, 'stimulus', shape)
+            shapes_reacted_to_index.push(shape_index)
+
+            if (shape == TD_target) {
+                time.push(value.rt)
+                }
+            else if (shape_index > target_index){
+                //console.log('this is post target')
+                shapes_rt_index_after_target.push(value.rt)
+                //console.log(shapes_rt_index_after_target)
+            }
 
     })
+
+            //for every index in shapes_reacted_to_index, if all of them < target_index, then log
+            if (shapes_reacted_to_index.every( (val) => val <target_index) && shapes_reacted_to.includes(TD_target) == false ) {
+                //console.log('pressed before target')
+                //console.log(shapes_reacted_to_index.every( (val) => val <target_index))
+            }
+
+            //if any of them > target_index and no press to target, then take the rt of the first after target
+            else if(shapes_reacted_to_index.some(checkindex) && shapes_reacted_to.includes(TD_target) == false){ // Returns true
+                time.push(shapes_rt_index_after_target[0])
+                //console.log(shapes_reacted_to_index.some(checkindex))
+                //console.log(shapes_rt_index_after_target)
+            }
+    }
     return time[0];
 };
 
@@ -1307,9 +1362,10 @@ var TD_trial_sequence_1 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,TD_target_1,'onset')
+        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        var offset = get_target_time(response,TD_target_1,'offset')
+        //if no press made to target, grab the first post-target rt as offset
+        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1333,12 +1389,6 @@ var TD_target_present_2 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-/*var TD_trial_sequence_2 = {
-    timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(12,24), //TD_stimuli.slice(0): (0,1,2...23)
-    randomize_order: false,
-    repetitions: 1
-};*/
 
 var animation_sequence_2 = get_values_bykey(TD_stimuli.slice(12,24))
 console.log(animation_sequence_2)
@@ -1355,9 +1405,10 @@ var TD_trial_sequence_2 = {
         var response = jsPsych.data.get().last(1).select('response').values
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
-        var onset = get_target_time(animation_sequence,TD_target_2,'onset')
+        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
-        var offset = get_target_time(response,TD_target_2,'offset')
+        //if no press made to target, grab the first post-target rt as offset
+        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1372,42 +1423,83 @@ var TD2 = {
 };
 
 
-
+var TD_target_3 = TD_stimuli.slice(24,36)[5].TD_stimulus
 var TD_target_present_3 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_stimuli.slice(24,36)[5].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_target_3, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
+
+var animation_sequence_3 = get_values_bykey(TD_stimuli.slice(24,36))
 var TD_trial_sequence_3 = {
-    timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(24,36), //TD_stimuli.slice(0): (0,1,2...23)
-    randomize_order: false,
-    repetitions: 1
+    type: 'animation',
+    frame_time: 300,
+    stimuli: animation_sequence_3,
+    frame_isi: 40,
+    choices: ['space'],
+    sequence_reps: 1,
+    on_finish: function (data) {
+        var animation_sequence = jsPsych.data.get().last(1).select('animation_sequence').values
+        console.log(animation_sequence)
+        var response = jsPsych.data.get().last(1).select('response').values
+
+        //in animation_sequence, find where the stimulus value is target, grab the time as onset
+        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
+        //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
+        //if no press made to target, grab the first post-target rt as offset
+        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
+
+        var TD_rt = offset - onset
+        data.TD_rt = TD_rt
+
+        data.TD_target = TD_target_3
+    }
 };
 var TD3 = {
-    timeline: [TD_target_present_3 , TD_trial_sequence_3,debrief_TD],
+    timeline: [TD_target_present_3 , TD_trial_sequence_3],
     randomize_order: false,
     repetitions: 1
 };
 
 
+var TD_target_4 = TD_stimuli.slice(36,48)[4].TD_stimulus
 var TD_target_present_4 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_stimuli.slice(36,48)[4].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_target_4.TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
+
+var animation_sequence_4 = get_values_bykey(TD_stimuli.slice(36,48))
 var TD_trial_sequence_4 = {
-    timeline: [TD_trial],
-    timeline_variables: TD_stimuli.slice(36,48), //TD_stimuli.slice(0): (0,1,2...23)
-    randomize_order: false,
-    repetitions: 1
+    type: 'animation',
+    frame_time: 300,
+    stimuli: animation_sequence_4,
+    frame_isi: 40,
+    choices: ['space'],
+    sequence_reps: 1,
+    on_finish: function (data) {
+        var animation_sequence = jsPsych.data.get().last(1).select('animation_sequence').values
+        console.log(animation_sequence)
+        var response = jsPsych.data.get().last(1).select('response').values
+
+        //in animation_sequence, find where the stimulus value is target, grab the time as onset
+        var onset = get_target_time(animation_sequence,response, TD_target,'onset')
+        //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
+        //if no press made to target, grab the first post-target rt as offset
+        var offset = get_target_time(animation_sequence,response, TD_target,'offset')
+
+        var TD_rt = offset - onset
+        data.TD_rt = TD_rt
+
+        data.TD_target = TD_target_4
+    }
 };
 var TD4 = {
-    timeline: [TD_target_present_4 , TD_trial_sequence_4,debrief_TD],
+    timeline: [TD_target_present_4 , TD_trial_sequence_4],
     randomize_order: false,
     repetitions: 1
 };
@@ -1897,8 +1989,8 @@ timeline.push(instruction4);
 
 
 //real TD block
-var Array_TD = [TD1, TD2
-/*                , TD3, TD4, TD5, TD6,
+var Array_TD = [TD1, TD2, TD3, TD4
+/*               , TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
                TD19, TD20 ,TD21, TD22, TD23, TD24*/
