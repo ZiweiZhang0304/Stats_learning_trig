@@ -181,7 +181,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-//timeline.push(enter_full);
+timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -202,7 +202,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-//timeline.push(consent);
+timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -336,7 +336,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -482,7 +482,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -496,7 +496,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 
@@ -598,7 +598,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction2);
+timeline.push(instruction2);
 
 
 
@@ -704,7 +704,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(first3_block)
+timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
@@ -975,7 +975,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
@@ -1128,7 +1128,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction3);
+timeline.push(instruction3);
 
 
 // practice
@@ -1145,7 +1145,7 @@ TD_stimuli_prac = []
 
 for (j = 0; j < TD_list_prac.length; j++) {
         var TD_prac = TD_list_prac[j];
-        //console.log(TD_prac)
+
 
         for (i = 0; i < TD_prac.length; i++) {
 
@@ -1336,7 +1336,6 @@ var TD_target_present_1 = {
 };*/
 
 var animation_sequence_1 = get_values_bykey(TD_stimuli.slice(0,12))
-console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
     type: 'animation',
     frame_time: 300,
@@ -1346,9 +1345,9 @@ var TD_trial_sequence_1 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
+        //console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('response').values)
-        console.log(response)
+        //console.log(response)
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
         var onset = get_target_time(animation_sequence,response, TD_target_1,'onset')
@@ -1362,7 +1361,6 @@ var TD_trial_sequence_1 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
-        console.log(TD_rt)
 
         data.TD_target = TD_target_1
         data.test_part = 'post_TD'
@@ -1386,7 +1384,6 @@ var TD_target_present_2 = {
 };
 
 var animation_sequence_2 = get_values_bykey(TD_stimuli.slice(12,24))
-console.log(animation_sequence_2)
 var TD_trial_sequence_2 = {
     type: 'animation',
     frame_time: 300,
@@ -1396,7 +1393,6 @@ var TD_trial_sequence_2 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_2,'onset')
@@ -1438,7 +1434,6 @@ var TD_trial_sequence_3 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
 
@@ -1482,7 +1477,6 @@ var TD_trial_sequence_4 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_4,'onset')
@@ -1524,7 +1518,6 @@ var TD_trial_sequence_5 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_5,'onset')
@@ -1566,7 +1559,6 @@ var TD_trial_sequence_6 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_6,'onset')
@@ -1607,7 +1599,6 @@ var TD_trial_sequence_7 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_7,'onset')
@@ -1648,7 +1639,6 @@ var TD_trial_sequence_8 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_8,'onset')
@@ -1689,7 +1679,6 @@ var TD_trial_sequence_9 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_9,'onset')
@@ -1730,7 +1719,6 @@ var TD_trial_sequence_10 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_10,'onset')
@@ -1771,7 +1759,6 @@ var TD_trial_sequence_11 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_11,'onset')
