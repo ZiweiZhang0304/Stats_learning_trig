@@ -100,7 +100,7 @@ function get_values_bykey(object) {
 
     var TD_stimuli_list = []
     object.forEach(function myFunction(value) {
-        console.log('this is item number ' + value)
+        //console.log('this is item number ' + value)
         TD_stimuli_list.push(value.TD_stimulus)
 
     })
