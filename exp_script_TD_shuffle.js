@@ -1307,11 +1307,10 @@ var debrief_TD_prac = {
 
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(1);
 
-        var TD_rt = trials.select('TD_rt').values[0];
+        var TD_rt = Math.round(trials.select('TD_rt').values[0]* 100)/ 100;
         console.log(TD_rt)
 
         return "<p>Your reaction time for this trial was " + TD_rt + " ms.</p>" +
-            "<p>You have not pressed a button to the correct shape. </b> Please respond more accurately. </p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> </p>" +
             "<p>Press enter to move on.</p>"
 
@@ -1356,6 +1355,7 @@ var TD_trial_sequence_1 = {
         //in response, find where the the stimulus value is target, grab the rt as offset, rt = offset - onset
         //if no press made to target, grab the first post-target rt as offset
         var offset = get_target_time(animation_sequence,response, TD_target_1,'offset')
+        data.TD_trial_number = 1
         data.onset = onset
         data.offset = offset
         console.log('this is onset ', onset, 'this is offset ', offset)
@@ -1401,6 +1401,7 @@ var TD_trial_sequence_2 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_2,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_2,'offset')
+        data.TD_trial_number = 2
         data.onset = onset
         data.offset = offset
 
@@ -1444,6 +1445,7 @@ var TD_trial_sequence_3 = {
         var onset = get_target_time(animation_sequence,response, TD_target_3,'onset')
 
         var offset = get_target_time(animation_sequence,response, TD_target_3,'offset')
+        data.TD_trial_number = 3
         data.onset = onset
         data.offset = offset
 
@@ -1485,6 +1487,9 @@ var TD_trial_sequence_4 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_4,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_4,'offset')
+        data.TD_trial_number = 4
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1524,6 +1529,9 @@ var TD_trial_sequence_5 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_5,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_5,'offset')
+        data.TD_trial_number = 5
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1563,6 +1571,9 @@ var TD_trial_sequence_6 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_6,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_6,'offset')
+        data.TD_trial_number = 6
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1601,6 +1612,9 @@ var TD_trial_sequence_7 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_7,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_7,'offset')
+        data.TD_trial_number = 7
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1639,6 +1653,9 @@ var TD_trial_sequence_8 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_8,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_8,'offset')
+        data.TD_trial_number = 8
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1677,6 +1694,9 @@ var TD_trial_sequence_9 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_9,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_9,'offset')
+        data.TD_trial_number = 9
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1715,6 +1735,9 @@ var TD_trial_sequence_10 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_10,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_10,'offset')
+        data.TD_trial_number = 10
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1753,6 +1776,9 @@ var TD_trial_sequence_11 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_11,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_11,'offset')
+        data.TD_trial_number = 11
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1791,6 +1817,9 @@ var TD_trial_sequence_12 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_12,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_12,'offset')
+        data.TD_trial_number = 12
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1829,6 +1858,9 @@ var TD_trial_sequence_13 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_13,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_13,'offset')
+        data.TD_trial_number = 13
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1866,6 +1898,9 @@ var TD_trial_sequence_14 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_14,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_14,'offset')
+        data.TD_trial_number = 14
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1904,6 +1939,9 @@ var TD_trial_sequence_15 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_15,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_15,'offset')
+        data.TD_trial_number = 15
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1942,6 +1980,9 @@ var TD_trial_sequence_16 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_16,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_16,'offset')
+        data.TD_trial_number = 16
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1980,6 +2021,9 @@ var TD_trial_sequence_17 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_17,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_17,'offset')
+        data.TD_trial_number = 17
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2018,6 +2062,9 @@ var TD_trial_sequence_18 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_18,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_18,'offset')
+        data.TD_trial_number = 18
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2056,6 +2103,9 @@ var TD_trial_sequence_19 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_19,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_19,'offset')
+        data.TD_trial_number = 19
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2094,6 +2144,9 @@ var TD_trial_sequence_20 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_20,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_20,'offset')
+        data.TD_trial_number = 20
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2132,6 +2185,9 @@ var TD_trial_sequence_21 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_21,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_21,'offset')
+        data.TD_trial_number = 21
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2170,6 +2226,9 @@ var TD_trial_sequence_22 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_22,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_22,'offset')
+        data.TD_trial_number = 22
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2208,6 +2267,9 @@ var TD_trial_sequence_23 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_23,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_23,'offset')
+        data.TD_trial_number = 23
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -2246,6 +2308,9 @@ var TD_trial_sequence_24 = {
 
         var onset = get_target_time(animation_sequence,response, TD_target_24,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_24,'offset')
+        data.TD_trial_number = 24
+        data.onset = onset
+        data.offset = offset
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
