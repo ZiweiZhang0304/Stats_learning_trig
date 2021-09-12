@@ -782,7 +782,7 @@ var attention = {
 
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
-    if (at_counter > 80 && lr_counter > 0){//at_counter > 80 && lr_counter >= 6
+    if (at_counter > 80 && lr_counter > 0){ //at_counter > 80 && lr_counter >= 6
         console.log('----new restriction 1 starts here----')
 
         //see if the last 3 lr trials were all fast, if so the next one can't be
