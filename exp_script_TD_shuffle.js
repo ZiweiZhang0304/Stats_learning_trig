@@ -833,7 +833,7 @@ var attention = {
         //see if fast - slow is greater than 5, if so the next one can't be fast; or if slow - fast is greater than 5, if so the next one can't be slow
       //var diff_fast_counter = jsPsych.data.get().filter({diff: 'fast'}).last(1).select('lr_counter').values;
       //var diff_slow_counter = jsPsych.data.get().filter({diff: 'slow'}).last(1).select('lr_counter').values;
-      console.log('fast_counter' + diff_fast_counter + 'slow_counter' + diff_slow_counter)
+      console.log('fast_counter' + fast_lr_counter + 'slow_counter' + slow_lr_counter)
       if ((fast_lr_counter - slow_lr_counter) >=5 )
                 {diff_restrict_fast = false}
       else if ((slow_lr_counter - fast_lr_counter) >=5)
