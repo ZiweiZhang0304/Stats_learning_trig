@@ -828,16 +828,17 @@ var attention = {
             console.log('less than 3 slow trials');
             last_slow = true
         }
-      };
 
         //see if fast - slow is greater than 5, if so the next one can't be fast; or if slow - fast is greater than 5, if so the next one can't be slow
       var diff_fast_counter = jsPsych.data.get().filter({diff: 'fast'}).last(1).select('lr_counter').values;
       var diff_slow_counter = jsPsych.data.get().filter({diff: 'slow'}).last(1).select('lr_counter').values;
+      console.log('fast_counter' + diff_fast_counter + 'slow_counter' + diff_slow_counter)
       if ((diff_fast_counter - diff_slow_counter) >=5 )
                 {diff_restrict_slow = false}
       else if ((diff_slow_counter - diff_fast_counter) >=5)
                 {diff_restrict_fast = false}
       else { console.log('diff is smaller than 5') }
+    };
 
 
 
