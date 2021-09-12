@@ -181,7 +181,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-timeline.push(enter_full);
+//timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -202,7 +202,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-timeline.push(consent);
+//timeline.push(consent);
 
 /* -----ITI----- */
 var iti_200 = {
@@ -336,7 +336,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction);
+//timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -482,7 +482,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(prac_block)
+//timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -496,7 +496,7 @@ var debrief = {
 
     }
 };
-timeline.push(debrief);
+//timeline.push(debrief);
 
 
 
@@ -598,7 +598,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction2);
+//timeline.push(instruction2);
 
 
 
@@ -830,6 +830,18 @@ var attention = {
         }
       };
 
+        //see if fast - slow is greater than 5, if so the next one can't be fast; or if slow - fast is greater than 5, if so the next one can't be slow
+      var diff_fast_counter = jsPsych.data.get().filter({diff: 'fast'}).last(1).select('lr_counter').values;
+      var diff_slow_counter = jsPsych.data.get().filter({diff: 'slow'}).last(1).select('lr_counter').values;
+      if ((diff_fast_counter - diff_slow_counter) >=5 )
+                {diff_restrict_slow = false}
+      else if ((diff_slow_counter - diff_fast_counter) >=5)
+                {diff_restrict_fast = false}
+      else { console.log('diff is smaller than 5') }
+
+
+
+
     /* ----new restriction 2 starts here---- */
     //restriction 2 where in first 6, s fast 3 slow: ||initial_slow == false || initial_fast == false
     if ( 0< lr_counter && lr_counter <= 6 ) {
@@ -860,7 +872,7 @@ var attention = {
 
 
 
-    /*---- Start appying restrictions to triggering ----*/
+    /*---- Start applying restrictions to triggering ----*/
 
     /*-- If attention <= 80 --*/
     if (at_counter < 80 || last_infreq.includes('infrequent')
@@ -894,12 +906,12 @@ var attention = {
     else if (at_counter > 80 && lr_counter >= 6){
 
       /*-- If attention > 80 && learning > 6 --*/
-      if(rt_three > rt_mean+ rt_sd && last_slow == true)
+      if(rt_three > rt_mean+ rt_sd && last_slow == true && diff_restrict_slow != false)
       {
             lr_node = 1;
             data.diff = 'slow'
             console.log('slow')
-          } else if (rt_three < Math.abs(rt_mean- rt_sd) && last_fast == true)
+          } else if (rt_three < Math.abs(rt_mean- rt_sd) && last_fast == true && diff_restrict_fast != false)
           {
                 lr_node = 2;
                 data.diff = 'fast'
@@ -1128,7 +1140,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction3);
+//timeline.push(instruction3);
 
 
 // practice
@@ -2435,8 +2447,8 @@ var practice_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(practice_presentation);
-timeline.push(instruction4);
+//timeline.push(practice_presentation);
+//timeline.push(instruction4);
 
 
 //real TD block
@@ -2451,7 +2463,7 @@ var target_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(target_presentation);
+//timeline.push(target_presentation);
 
 /* -----Part 2: Recreate----- */
 //drag and drop
@@ -2469,7 +2481,7 @@ var instruction5 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction5);
+//timeline.push(instruction5);
 
 
 var sorting_stimuli= [];
@@ -2497,7 +2509,7 @@ var sort_trial_1 = {
     }
 
 };
-timeline.push(sort_trial_1);
+//timeline.push(sort_trial_1);
 
 
 var sort_trial_2 = {
@@ -2517,7 +2529,7 @@ var sort_trial_2 = {
         data.test_part = 'post_drag'
     }
 };
-timeline.push(sort_trial_2);
+//timeline.push(sort_trial_2);
 
 
 
@@ -2553,7 +2565,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-timeline.push(multi_choice_Demo);
+//timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
