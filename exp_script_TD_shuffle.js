@@ -732,6 +732,8 @@ var attention = {
     data.sd = rt_sd
     data.slow = rt_mean + rt_sd
     data.fast = Math.abs(rt_mean - rt_sd)
+    console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
+    console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
     //data.medhigh = rt_mean + 0.2*rt_sd
     //data.medlow = Math.abs(rt_mean - 0.2*rt_sd)
 
@@ -776,13 +778,14 @@ var attention = {
         //calculate trailing RT after the third trial
         var rt_three = jsPsych.data.get().filter({at_TrialType: 'frequent'}).last(3).select('rt').mean();
         data.at_TrailingMean = rt_three
+        console.log('trailing mean is ' + rt_three)
         console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
 
   };
 
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
-    if (at_counter > 20 && lr_counter > 0){ //at_counter > 80 && lr_counter >= 6
+    if (at_counter > 80 && lr_counter > 0){ //at_counter > 80 && lr_counter >= 6
         console.log('----new restriction 1 starts here----')
 
         //see if the last 3 lr trials were all fast, if so the next one can't be
@@ -880,12 +883,12 @@ var attention = {
     /*---- Start applying restrictions to triggering ----*/
 
     /*-- If attention <= 80 --*/
-    if (at_counter < 20 || last_infreq.includes('infrequent')
+    if (at_counter < 80 || last_infreq.includes('infrequent')
         || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
         lr_node = 0 //80th trial
     }
 
-    else if (at_counter > 20 && lr_counter > 0 && lr_counter < 6){
+    else if (at_counter > 80 && lr_counter > 0 && lr_counter < 6){
 
 
       /*-- If attention > 80 && 0< learning <=6 --*/
@@ -908,7 +911,7 @@ var attention = {
       }
 
 
-    else if (at_counter > 20 && lr_counter >= 6){
+    else if (at_counter > 80 && lr_counter >= 6){
 
       /*-- If attention > 80 && learning > 6 --*/
       if(rt_three > rt_mean+ rt_sd && last_slow == true && diff_restrict_slow != false)
@@ -927,7 +930,7 @@ var attention = {
     }
 
     /*-- If attention > 80 && learning = 0 --*/
-    else if (at_counter > 20 && lr_counter == 0) {
+    else if (at_counter > 80 && lr_counter == 0) {
 
         if(rt_three > rt_mean+ rt_sd) {
             lr_node = 1;
