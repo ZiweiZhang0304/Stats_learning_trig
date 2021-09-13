@@ -838,7 +838,9 @@ var attention = {
                 {diff_restrict_fast = false}
       else if ((slow_lr_counter - fast_lr_counter) >=5)
                 {diff_restrict_slow = false}
-      else { console.log('diff is smaller than 5') }
+      else { diff_restrict_slow = true
+             diff_restrict_fast = true
+          console.log('diff is smaller than 5') }
         }
     };
 
