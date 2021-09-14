@@ -181,7 +181,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-//timeline.push(enter_full);
+timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -336,7 +336,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -402,8 +402,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 12); //120
-var repetition_attention = repetition.slice(3, 500); //1080
+var repetition_1_attention = repetition_1.slice(0, 120); //120
+var repetition_attention = repetition.slice(3, 1080); //1080
 //console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -482,7 +482,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block)
+timeline.push(prac_block)
 
 var debrief = {
     type: "html-keyboard-response",
@@ -496,7 +496,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 
@@ -598,7 +598,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction2);
+timeline.push(instruction2);
 
 
 
@@ -1148,7 +1148,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction3);
+timeline.push(instruction3);
 
 
 // practice
@@ -2455,8 +2455,8 @@ var practice_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(practice_presentation);
-//timeline.push(instruction4);
+timeline.push(practice_presentation);
+timeline.push(instruction4);
 
 
 //real TD block
@@ -2471,7 +2471,7 @@ var target_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(target_presentation);
+timeline.push(target_presentation);
 
 /* -----Part 2: Recreate----- */
 //drag and drop
@@ -2489,7 +2489,7 @@ var instruction5 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction5);
+timeline.push(instruction5);
 
 
 var sorting_stimuli= [];
@@ -2517,7 +2517,7 @@ var sort_trial_1 = {
     }
 
 };
-//timeline.push(sort_trial_1);
+timeline.push(sort_trial_1);
 
 
 var sort_trial_2 = {
@@ -2537,7 +2537,7 @@ var sort_trial_2 = {
         data.test_part = 'post_drag'
     }
 };
-//timeline.push(sort_trial_2);
+timeline.push(sort_trial_2);
 
 
 
@@ -2573,7 +2573,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-//timeline.push(multi_choice_Demo);
+timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
