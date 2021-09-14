@@ -203,7 +203,7 @@ var consent = {
   cont_btn: 'start',
 };
 timeline.push(consent);
-
+console.log('diff is smaller than 3')
 /* -----ITI----- */
 var iti_200 = {
   type: "image-keyboard-response",
@@ -837,13 +837,13 @@ var attention = {
       //var diff_fast_counter = jsPsych.data.get().filter({diff: 'fast'}).last(1).select('lr_counter').values;
       //var diff_slow_counter = jsPsych.data.get().filter({diff: 'slow'}).last(1).select('lr_counter').values;
       console.log('fast_counter' + fast_lr_counter + 'slow_counter' + slow_lr_counter)
-      if ((fast_lr_counter - slow_lr_counter) >=5 )
+      if ((fast_lr_counter - slow_lr_counter) >=3 )
                 {diff_restrict_fast = false}
-      else if ((slow_lr_counter - fast_lr_counter) >=5)
+      else if ((slow_lr_counter - fast_lr_counter) >=3)
                 {diff_restrict_slow = false}
       else { diff_restrict_slow = true
              diff_restrict_fast = true
-          console.log('diff is smaller than 5') }
+          console.log('diff is smaller than 3') }
         }
     };
 
