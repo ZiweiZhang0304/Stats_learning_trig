@@ -1080,7 +1080,7 @@ var attention = {
     /*-- If attention <= 80 --*/
     if (at_counter < 80 || last_infreq.includes('infrequent')
         || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
-        lr_node = 0 //80th trial
+        lr_node = false //80th trial
     }
 
     else if (at_counter > 80 && lr_counter > 0 && lr_counter < 6){
@@ -1098,7 +1098,7 @@ var attention = {
                 data.diff = 'fast'
                 console.log('fast')
             }
-            else {lr_node = 0}
+            //else {lr_node = 0}
             /*      else if (rt_three < rt_mean+ 0.2 * rt_sd && rt_three > Math.abs(rt_mean- 0.2 * rt_sd)){
                 lr_node = 3; //medium triggering should use three nodes...
                 console.log('lr_node = true')
@@ -1109,7 +1109,7 @@ var attention = {
     else if (at_counter > 80 && lr_counter >= 6){
 
       /*-- If attention > 80 && learning > 6 --*/
-      if(rt_three > rt_mean+ rt_sd && last_slow == true && diff_restrict_slow != false) //either 1-5 happens???
+      if(rt_three > rt_mean+ rt_sd && last_slow == true && diff_restrict_slow != false)
       {
             lr_node = 1;
             data.diff = 'slow'
@@ -1121,11 +1121,11 @@ var attention = {
                 console.log('fast')
             }
 
-            else {lr_node = 0} //do i need to define when node == 0  here? since lr_node gets reset every trial anyway
+            //else {lr_node = 0} //do i need to define when node == 0  here? since lr_node gets reset every trial anyway
 
         /*-- If attention > 80 && learning > 6, insert fillers --*/
           //at the end of each trial, you decide whether this is a CHB, (e.g. 5 of them)
-          //if so, insert fillers
+          //if so, insert fillers; either 1-5 happens???
           else if( (rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler == true) || (rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler == true) ||
             (rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler == true) || (rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler == true) ||
             (rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler == true) )
@@ -1161,7 +1161,7 @@ var attention = {
                 data.diff = 'fast'
                 console.log('fast')
             }
-            else {lr_node = 0}};
+            else {lr_node = false}};
 
     }
   },
