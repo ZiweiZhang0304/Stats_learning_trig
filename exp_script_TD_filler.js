@@ -649,7 +649,6 @@ console.log(lr_triplet_complete);
 for (i = 0; i < fillers_1.length; i++) { //24
     var filler = fillers_1[i];
 
-    var triplet = [];
     for (j = 0; j < filler.length; j++) {
 
     var stimuli = new Object();
@@ -665,16 +664,15 @@ for (i = 0; i < fillers_1.length; i++) { //24
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
-    triplet.push(stimuli);
+
+    fl_stimuli_1.push(stimuli)
     };
 
-    fl_stimuli_1.push(triplet);
 };
 
 for (i = 0; i < fillers_2.length; i++) { //24
     var filler = fillers_2[i];
 
-    var triplet = [];
     for (j = 0; j < filler.length; j++) {
 
     var stimuli = new Object();
@@ -690,10 +688,9 @@ for (i = 0; i < fillers_2.length; i++) { //24
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
-    triplet.push(stimuli);
-    };
 
-    fl_stimuli_2.push(triplet);
+    fl_stimuli_2.push(stimuli);
+    };
 };
 
 var filler_complete = fillers_1.concat(fillers_2);
@@ -810,27 +807,32 @@ var lr_test_TS2 = {
 };
 
 // this is picking one list of 3 triplet stimuli at random
+fl_stimuli_triple = []
+for (i = 0; i < fillers_1.length; i++){
+    tri = [0+i*3,1+i*3,2+i*3];
+    fl_stimuli_triple.push(tri)
+};
+
 var filler_TS1 = {
   timeline: [filler],
   timeline_variables: fl_stimuli_1, // fl_stimuli_1 organizes stimuli in lists of triplets form
     // need to make sure everytime we insert a filler we're grabbing a group of 3 here, randomly select triplets without replacement, or shuffle for each subj
-  randomize_order: false,
     sample: {
-         type: 'without-replacement',
-         size: 1
-     }//repetitions: 1
+        type: 'alternate-groups',
+        groups: fl_stimuli_triple,
+        randomize_group_order: false
+    }
 };
 
 
 var filler_TS2 = {
   timeline: [filler],
   timeline_variables: fl_stimuli_2,
-  randomize_order: false,
-      randomize_order: false,
     sample: {
-         type: 'without-replacement',
-         size: 1
-     }
+        type: 'alternate-groups',
+        groups: fl_stimuli_triple,
+        randomize_group_order: false
+    }
 };
 
 
