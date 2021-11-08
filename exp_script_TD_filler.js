@@ -661,7 +661,7 @@ for (i = 0; i < fillers_1.length; i++) { //24
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.lr_fix = rep(stimuli.fl_stimulus);
+    stimuli.fl_fix = rep(stimuli.fl_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
@@ -686,7 +686,7 @@ for (i = 0; i < fillers_2.length; i++) { //24
     stimuli.data.correct_response = 'space';
     stimuli.data.at_TrialType = 'frequent';
 
-    stimuli.lr_fix = rep(stimuli.fl_stimulus);
+    stimuli.fl_fix = rep(stimuli.fl_stimulus);
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
