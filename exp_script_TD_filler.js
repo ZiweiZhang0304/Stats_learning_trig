@@ -775,6 +775,8 @@ var filler = {
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
     data.filler_trial_counter = filler_trial_counter ;
+    console.log(filler_trial_counter);
+    console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
   {type: "image-keyboard-response",
@@ -964,7 +966,7 @@ var attention = {
 
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
-    if (at_counter > 80 && lr_counter > 0){ //at_counter > 80 && lr_counter >= 6
+    if (at_counter > 10 && lr_counter > 0){ //change 80
         console.log('----new restriction 1 starts here----')
 
         /* ----count lr trials---- */
@@ -1082,12 +1084,12 @@ var attention = {
     /*---- Start applying restrictions to triggering ----*/
 
     /*-- If attention <= 80 --*/
-    if (at_counter < 80 || last_infreq.includes('infrequent')
+    if (at_counter < 10 || last_infreq.includes('infrequent') //change 80
         || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')){
         lr_node = false //80th trial
     }
 
-    else if (at_counter > 80 && lr_counter > 0 && lr_counter < 6){
+    else if (at_counter > 10 && lr_counter > 0 && lr_counter < 6){ //change 80
 
 
       /*-- If attention > 80 && 0< learning <=6 --*/
@@ -1110,7 +1112,7 @@ var attention = {
       }
 
 
-    else if (at_counter > 80 && lr_counter >= 6){
+    else if (at_counter > 10 && lr_counter >= 6){ //change 80
 
       /*-- If attention > 80 && learning > 6 --*/
       if(rt_three > rt_mean+ rt_sd && last_slow == true && diff_restrict_slow != false)
@@ -1153,7 +1155,7 @@ var attention = {
 
 
     /*-- If attention > 80 && learning = 0 --*/
-    else if (at_counter > 80 && lr_counter == 0) {
+    else if (at_counter > 10 && lr_counter == 0) { //change 80
 
         if(rt_three > rt_mean+ rt_sd) {
             lr_node = 1;
