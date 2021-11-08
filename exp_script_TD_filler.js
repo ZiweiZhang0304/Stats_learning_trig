@@ -812,7 +812,7 @@ var filler_TS1 = {
     sample: {
          type: 'without-replacement',
          size: 1
-     };//repetitions: 1
+     }//repetitions: 1
 };
 
 
@@ -824,7 +824,7 @@ var filler_TS2 = {
     sample: {
          type: 'without-replacement',
          size: 1
-     };
+     }
 };
 
 
