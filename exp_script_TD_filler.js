@@ -258,6 +258,8 @@ repo_site +'img/Stim/FN_010_g.png', repo_site + 'img/Stim/FN_011_g.png', repo_si
 repo_site + 'img/Stim/FN_013_g.png', repo_site + 'img/Stim/FN_014_g.png', repo_site + 'img/Stim/FN_015_g.png',
 repo_site + 'img/Stim/FN_016_g.png', repo_site + 'img/Stim/FN_017_g.png', repo_site + 'img/Stim/FN_018_g.png',
 repo_site + 'img/Stim/FN_019_g.png', repo_site + 'img/Stim/FN_020_g.png', repo_site + 'img/Stim/FN_021_g.png',
+repo_site + 'img/Stim/FN_021_g.png', repo_site + 'img/Stim/FN_022_g.png', repo_site + 'img/Stim/FN_023_g.png',
+repo_site + 'img/Stim/FN_024_g.png', repo_site + 'img/Stim/FN_025_g.png', repo_site + 'img/Stim/FN_026_g.png',
 repo_site + 'img/Stim/IF_001_g.png',repo_site + 'img/Stim/IF_002_g.png',repo_site + 'img/Stim/IF_003_g.png',repo_site + 'img/Stim/IF_004_g.png',
 repo_site + 'img/Stim/FN_001_w.png', repo_site + 'img/Stim/FN_002_w.png', repo_site + 'img/Stim/FN_003_w.png',
 repo_site +'img/Stim/FN_004_w.png', repo_site + 'img/Stim/FN_005_w.png', repo_site + 'img/Stim/FN_006_w.png',
@@ -266,7 +268,9 @@ repo_site +'img/Stim/FN_010_w.png', repo_site + 'img/Stim/FN_011_w.png', repo_si
 repo_site + 'img/Stim/FN_013_w.png', repo_site + 'img/Stim/FN_014_w.png', repo_site + 'img/Stim/FN_015_w.png',
 repo_site + 'img/Stim/FN_016_w.png', repo_site + 'img/Stim/FN_017_w.png', repo_site + 'img/Stim/FN_018_w.png',
 repo_site + 'img/Stim/FN_019_w.png', repo_site + 'img/Stim/FN_020_w.png', repo_site + 'img/Stim/FN_021_w.png',
-repo_site + 'img/Stim/IF_001_w.png',repo_site + 'img/Stim/IF_002_w.png',repo_site + 'img/Stim/IF_003_w.png',repo_site + 'img/Stim/IF_004_w.png',
+repo_site + 'img/Stim/FN_022_w.png', repo_site + 'img/Stim/FN_023_w.png', repo_site + 'img/Stim/FN_024_w.png',
+repo_site + 'img/Stim/FN_025_w.png', repo_site + 'img/Stim/FN_026_w.png', repo_site + 'img/Stim/IF_001_w.png',
+repo_site + 'img/Stim/IF_002_w.png',repo_site + 'img/Stim/IF_003_w.png',repo_site + 'img/Stim/IF_004_w.png',
 repo_site +'img/Stim/gray_bdot.png'] //,repo_site + 'img/Stim/FN_022_w.png',
 
 
@@ -274,7 +278,7 @@ repo_site +'img/Stim/gray_bdot.png'] //,repo_site + 'img/Stim/FN_022_w.png',
 var full_sitmuli_list = ["img/Stim/FN_001_g.png", "img/Stim/FN_002_g.png", "img/Stim/FN_003_g.png", "img/Stim/FN_004_g.png", "img/Stim/FN_005_g.png", "img/Stim/FN_006_g.png",
     "img/Stim/FN_007_g.png", "img/Stim/FN_008_g.png","img/Stim/FN_009_g.png", "img/Stim/FN_010_g.png", "img/Stim/FN_011_g.png", "img/Stim/FN_012_g.png","img/Stim/FN_013_g.png",
     "img/Stim/FN_014_g.png", "img/Stim/FN_015_g.png", "img/Stim/FN_016_g.png", "img/Stim/FN_017_g.png", "img/Stim/FN_018_g.png", "img/Stim/FN_019_g.png", "img/Stim/FN_020_g.png",
-    "img/Stim/FN_021_g.png"]
+    "img/Stim/FN_021_g.png","img/Stim/FN_022_g.png","img/Stim/FN_023_g.png","img/Stim/FN_024_g.png","img/Stim/FN_025_g.png","img/Stim/FN_026_g.png"]
 
 //randomly select from FN_001-FN_021
 var frequent_nontrigger = getRandom(full_sitmuli_list,12);
