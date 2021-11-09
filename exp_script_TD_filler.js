@@ -883,6 +883,7 @@ console.log(fl_stimuli_1_index, fl_stimuli_2_index)
 // var index_2 = fl_stimuli_2_index
 
 //var fl_fast_idx = fl_stimuli_triple[fast_fl_index];
+var ind = slow_index[0];
 var filler_TS1 = {
     timeline: [filler],
     timeline_variables: fl_stimuli_1, // 72 objects of a single filler
@@ -897,14 +898,15 @@ var filler_TS1 = {
   // },
     sample: {
         type: 'custom',
-        fn: function (slow_fl_index) { //fl_stimuli_1_index, slow_index[0]
+        fn: function (ind) { //fl_stimuli_1_index, slow_index[0], slow_fl_index
             //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
             //fl_index = fl_index
-            console.log(slow_fl_index)
+            //console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-            return slow_fl_index;
+            console.log(fast_index, slow_index)
+            return ind;
         }
     },
     repetitions: 1
@@ -916,10 +918,11 @@ var filler_TS2 = {
     timeline_variables: fl_stimuli_2,
    sample: {
         type: 'custom',
-        fn: function (slow_fl_index) { //fl_stimuli_1_index
-            console.log(slow_fl_index)
+        fn: function (ind) { //fl_stimuli_1_index
+            //console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-            return slow_fl_index;
+            console.log(fast_index, slow_index)
+            return indx;
         }
     },
     repetitions: 1
