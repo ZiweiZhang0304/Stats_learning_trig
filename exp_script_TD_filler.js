@@ -1,4 +1,4 @@
-console.log('hiiii')
+console.log('hi')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -764,8 +764,8 @@ var learning = {
 };
 
 
-var fast_fl_index = false;
-var slow_fl_index = false;
+//var fast_fl_index = false;
+//var slow_fl_index = false;
 var fast_index =[];
 var slow_index =[];
 var filler = {
@@ -899,7 +899,7 @@ var filler_TS1 = {
   // },
     sample: {
         type: 'custom',
-        fn: function (ind) { //fl_stimuli_1_index, slow_index[0], slow_fl_index
+        fn: function (slow_fl_index) { //fl_stimuli_1_index, slow_index[0], slow_fl_index
             //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
@@ -908,7 +908,7 @@ var filler_TS1 = {
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             console.log(fast_index, slow_index)
             console.log(ind)
-            a = ind
+            a = slow_fl_index
             return a;
         }
     },
@@ -921,12 +921,12 @@ var filler_TS2 = {
     timeline_variables: fl_stimuli_2,
    sample: {
         type: 'custom',
-        fn: function (ind) { //fl_stimuli_1_index
+        fn: function (slow_fl_index) { //fl_stimuli_1_index
             //console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             console.log(fast_index, slow_index)
             console.log(ind)
-            a =ind
+            a = slow_fl_index
             return a;
         }
     },
