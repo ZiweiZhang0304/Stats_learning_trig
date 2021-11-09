@@ -871,6 +871,7 @@ if (fl_stimuli_1[0].data.attention_state == 'fast') {
 } else {
     var fl_stimuli_1_index = slow_fl_index
     var fl_stimuli_2_index = fast_fl_index};
+console.log(fl_stimuli_1_index, fl_stimuli_2_index)
 
 // var index_1 = fl_stimuli_1_index
 // var index_2 = fl_stimuli_2_index
@@ -890,7 +891,7 @@ var filler_TS1 = {
   // },
     sample: {
         type: 'custom',
-        fn: function () {
+        fn: function (fl_stimuli_1_index) {
             //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
@@ -906,7 +907,7 @@ var filler_TS2 = {
     timeline_variables: fl_stimuli_2,
    sample: {
         type: 'custom',
-        fn: function () {
+        fn: function (fl_stimuli_2_index) {
             return fl_stimuli_2_index;
         }
     }
