@@ -840,9 +840,9 @@ var filler_TS1 = {
     sample: {
         type: 'custom',
         fn: function (fl_stimuli_1) {
-            let filler_tri = fl_stimuli_1[0];
+            //let filler_tri = fl_stimuli_1[0];
             fl_stimuli_1.splice(0, 1);
-            return filler_tri;
+            return fl_stimuli_1[0];
         }
     }
 };
@@ -853,9 +853,9 @@ var filler_TS2 = {
     sample: {
         type: 'custom',
         fn: function (fl_stimuli_2) {
-            let filler_tri = fl_stimuli_2[0];
+            //let filler_tri = fl_stimuli_2[0];
             fl_stimuli_2.splice(0, 1);
-            return filler_tri;
+            return fl_stimuli_2[0];
         }
     }
 }
@@ -1136,6 +1136,25 @@ var attention = {
                 lr_node = 3; //medium triggering should use three nodes...
                 console.log('lr_node = true')
             }*/
+
+            else if ((rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler == true) || (rt_three > rt_mean+ rt_sd && initial_slow == false && slow_filler == true) || (rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler == true) ||
+            (rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler == true) || (rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler == true) ||
+            (rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler == true)) {
+                filler_node = 1;
+                data.filler = 'slow'
+                console.log('filler slow')
+              }
+
+            else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler == true) || (rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == false && fast_filler == true) ||(rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler == true) ||
+            (rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler == true) || (rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler == true) ||
+            (rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler == true))
+              {
+                    filler_node = 2;
+                    data.filler = 'fast'
+                    console.log('filler fast')
+                };
+
+
       }
 
 
