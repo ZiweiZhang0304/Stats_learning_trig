@@ -906,6 +906,7 @@ var filler_TS1 = {
             //console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             console.log(fast_index, slow_index)
+            console.log(ind)
             return ind;
         }
     },
@@ -922,7 +923,8 @@ var filler_TS2 = {
             //console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             console.log(fast_index, slow_index)
-            return indx;
+            console.log(ind)
+            return ind;
         }
     },
     repetitions: 1
