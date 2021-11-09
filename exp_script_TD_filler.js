@@ -766,8 +766,8 @@ var learning = {
 
 // let fast_fl_index = false;
 // let slow_fl_index = false;
-let fast_index =[];
-let slow_index =[];
+var fast_index =[];
+var slow_index =[];
 var filler = {
 
   timeline:[
@@ -795,12 +795,12 @@ var filler = {
 
     console.log(slow_lr_filler)
     if (slow_lr_filler != 0){
-        let slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
+        const slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
         slow_index.push(slow_fl_index) //slow_index.splice(0, 1, slow_fl_index)
     }
 
     if (fast_lr_filler != 0) {
-        let fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
+        const fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
         fast_index.push(fast_fl_index) //fast_index.splice(0, 1, fast_fl_index)
     }
     //var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
