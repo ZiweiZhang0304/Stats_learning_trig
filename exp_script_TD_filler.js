@@ -813,27 +813,52 @@ for (i = 0; i < fillers_1.length; i++){
     fl_stimuli_triple.push(tri)
 };
 
+// var filler_TS1 = {
+//   timeline: [filler],
+//   timeline_variables: fl_stimuli_1, // fl_stimuli_1 organizes stimuli in lists of triplets form
+//     // need to make sure everytime we insert a filler we're grabbing a group of 3 here, randomly select triplets without replacement, or shuffle for each subj
+//     sample: {
+//         type: 'alternate-groups',
+//         groups: fl_stimuli_triple,
+//         randomize_group_order: false
+//     }
+// };
+//
+//
+// var filler_TS2 = {
+//   timeline: [filler],
+//   timeline_variables: fl_stimuli_2,
+//     sample: {
+//         type: 'alternate-groups',
+//         groups: fl_stimuli_triple,
+//         randomize_group_order: false
+//     }
+// };
 var filler_TS1 = {
-  timeline: [filler],
-  timeline_variables: fl_stimuli_1, // fl_stimuli_1 organizes stimuli in lists of triplets form
-    // need to make sure everytime we insert a filler we're grabbing a group of 3 here, randomly select triplets without replacement, or shuffle for each subj
+    timeline: [filler],
+    timeline_variables: fl_stimuli_1,
     sample: {
-        type: 'alternate-groups',
-        groups: fl_stimuli_triple,
-        randomize_group_order: false
+        type: 'custom',
+        fn: function (fl_stimuli_1) {
+            let filler_tri = fl_stimuli_1[0];
+            fl_stimuli_1.splice(0, 1);
+            return filler_tri;
+        }
     }
 };
-
 
 var filler_TS2 = {
-  timeline: [filler],
-  timeline_variables: fl_stimuli_2,
+    timeline: [filler],
+    timeline_variables: fl_stimuli_2,
     sample: {
-        type: 'alternate-groups',
-        groups: fl_stimuli_triple,
-        randomize_group_order: false
+        type: 'custom',
+        fn: function (fl_stimuli_2) {
+            let filler_tri = fl_stimuli_2[0];
+            fl_stimuli_2.splice(0, 1);
+            return filler_tri;
+        }
     }
-};
+}
 
 
 /* -----Combine learning trials----- */
