@@ -1217,7 +1217,7 @@ var attention = {
               }
 
 
-          else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true) ||
+          else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && fast_lr_counter >0 && slow_lr_counter >0 && diff_restrict_fast == false && fast_filler_num == true) ||
             (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
             (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
               {
