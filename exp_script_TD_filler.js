@@ -764,8 +764,8 @@ var learning = {
 };
 
 
-let fast_fl_index = false;
-let slow_fl_index = false;
+var fast_fl_index = false;
+var slow_fl_index = false;
 var fast_index =[];
 var slow_index =[];
 var filler = {
@@ -812,6 +812,7 @@ var filler = {
     console.log('fast filler index' + fast_fl_index + 'slow filler index' + slow_fl_index);
     console.log(fast_fl_index)
     console.log(slow_fl_index)
+    console.log(fast_index, slow_index)
 
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
