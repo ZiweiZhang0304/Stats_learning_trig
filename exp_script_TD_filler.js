@@ -1,4 +1,4 @@
-console.log('hiiii')
+console.log('hi')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -554,7 +554,7 @@ var frequent_trigger_filtered1 = frequent_trigger_filtered.filter(function(val) 
 });
 
 var fillers_shapes_1 = getRandom(frequent_trigger_filtered1,4); //4 shapes for fast filler
-console.log(fillers_shapes_1.length)
+//console.log(fillers_shapes_1.length)
 
 var fillers_shapes_2 = frequent_trigger_filtered1.filter(function(val) { //4 shapes for slow filler
   return fillers_shapes_1.indexOf(val) == -1;
@@ -604,7 +604,6 @@ for(i = 0; i < fillers_2.length; i++) {
     }
 };
 console.log(fillers_1, fillers_2)
-console.log(fillers_1.length, fillers_2.length)
 
 
 /* -----randomize triplet-attention state pair----- */
@@ -650,11 +649,10 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     stimuli.data.TaskType = 'lr';
     lr_stimuli_2.push(stimuli);
 };
-console.log(lr_stimuli_1,lr_stimuli_2);
-console.log('check attention', lr_stimuli_1[0].data.attention_state)
+//console.log(lr_stimuli_1,lr_stimuli_2);
 
 var lr_triplet_complete = lr_stimuli_1.concat(lr_stimuli_2); //, lr_stimuli_3
-console.log(lr_triplet_complete);
+//console.log(lr_triplet_complete);
 
 
 for (i = 0; i < fillers_1.length; i++) { //72
@@ -766,8 +764,8 @@ var learning = {
 };
 
 
-var fast_fl_index = false;
-var slow_fl_index = false;
+let fast_fl_index = false;
+let slow_fl_index = false;
 var filler = {
 
   timeline:[
