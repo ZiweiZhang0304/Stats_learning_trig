@@ -1244,7 +1244,7 @@ if (lr_stimuli_1[0].data.attention_state == 'fast') {
     var slow_lr = lr_test_TS1
     var fast_lr = lr_test_TS2};
 
-if (fl_stimuli_1[0][0].data.attention_state == 'fast') {
+if (fl_stimuli_1[0].data.attention_state == 'fast') {
     var fast_filler = filler_TS1
     var slow_filler = filler_TS2
 } else {
