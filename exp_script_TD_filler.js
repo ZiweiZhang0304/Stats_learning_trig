@@ -759,6 +759,9 @@ var learning = {
     ]
 };
 
+
+var fast_fl_index = 0;
+var slow_fl_index = 0;
 var filler = {
 
   timeline:[
@@ -778,10 +781,22 @@ var filler = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
+    var  slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
+    var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     data.filler_trial_counter = filler_trial_counter ;
-    var fl_index = fl_stimuli_triple[fast_lr_filler];
-    console.log(fl_index)
-    console.log(filler_trial_counter);
+    data.slow_lr_filler = slow_lr_filler;
+    data.fast_lr_filler = fast_lr_filler;
+
+    var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
+    fast_fl_index = fast_lr_filler;
+
+    var slow_fl_idx = fl_stimuli_triple[slow_lr_filler];
+    slow_fl_index = slow_lr_filler;
+
+    console.log('fast filler index' + fast_fl_idx + 'slow filler index' + slow_fl_idx);
+    console.log(fast_fl_index)
+    console.log(slow_fl_index)
+
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
@@ -837,16 +852,28 @@ var lr_test_TS2 = {
 //         randomize_group_order: false
 //     }
 // };
+
+var fl_fast_idx = fl_stimuli_triple[fast_fl_index];
 var filler_TS1 = {
     timeline: [filler],
     timeline_variables: fl_stimuli_1, // 72 objects of a single filler
+  //   on_finish: function(data){
+  //   var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
+  //   var  slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
+  //   var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+  //   var fast_fl_index = fl_stimuli_triple[fast_lr_filler];
+  //   var slow_fl_index = fl_stimuli_triple[slow_lr_filler];
+  //   //console.log('fast filler' + fast_fl_index + 'slow filler' + slow_fl_index)
+  //   console.log(filler_trial_counter);
+  // },
     sample: {
         type: 'custom',
-        fn: function (fl_index) {
+        fn: function (fl_fast_idx) {
+            //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
             //fl_index = fl_index
-            return fl_index;
+            return fl_fast_idx;
         }
     }
 };
@@ -857,12 +884,11 @@ var filler_TS2 = {
     timeline_variables: fl_stimuli_2,
    sample: {
         type: 'custom',
-        fn: function (fl_index) {
-            return fl_index;
+        fn: function (slow_fl_idx) {
+            return slow_fl_idx;
         }
     }
 }
-
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
@@ -1140,17 +1166,17 @@ var attention = {
                 console.log('lr_node = true')
             }*/
 
-            else if ((rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ rt_sd && initial_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true) ||
-            (rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
-            (rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true)) {
+            else if ((rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && initial_slow == false && slow_filler_num == true) || (rt_three > 0.5*rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 console.log('filler slow')
               }
 
-            else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == false && fast_filler_num == true) ||(rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
+            else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && initial_fast == false && fast_filler_num == true) ||(rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
               {
                     filler_node = 2;
                     data.filler = 'fast'
@@ -1181,9 +1207,9 @@ var attention = {
         /*-- If attention > 80 && learning > 6, insert fillers --*/
           //at the end of each trial, you decide whether this is a CHB, (e.g. 5 of them)
           //if so, insert fillers; either 1-5 happens???
-          else if( (rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true) ||
-            (rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
-            (rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true) )
+          else if( (rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true) )
           {
                 filler_node = 1;
                 data.filler = 'slow'
@@ -1191,9 +1217,9 @@ var attention = {
               }
 
 
-          else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
+          else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
               {
                     filler_node = 2;
                     data.filler = 'fast'
