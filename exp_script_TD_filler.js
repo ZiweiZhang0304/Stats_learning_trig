@@ -577,6 +577,13 @@ for(i = 0; i < fillers_1.length; i++) {
     }
 };
 
+// this is picking one list of 3 triplet stimuli at random
+fl_stimuli_triple = []
+for (i = 0; i < fillers_1.length; i++){
+    tri = [0+i*3,1+i*3,2+i*3];
+    fl_stimuli_triple.push(tri)
+};
+
 var fillers_2 = getPermutations(fillers_shapes_2 , 3); //permutations of fillers P(4,3)
 console.log(fillers_2);for(i = 0; i < fillers_1.length; i++) {
 if (hasDuplicates(fillers_2[i])) {
@@ -646,10 +653,9 @@ var lr_triplet_complete = lr_stimuli_1.concat(lr_stimuli_2); //, lr_stimuli_3
 console.log(lr_triplet_complete);
 
 
-for (i = 0; i < fillers_1.length; i++) { //24
+for (i = 0; i < fillers_1.length; i++) { //72
     var filler = fillers_1[i];
 
-    var triplet = [];
     for (j = 0; j < filler.length; j++) {
 
     var stimuli = new Object();
@@ -665,16 +671,15 @@ for (i = 0; i < fillers_1.length; i++) { //24
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
-    triplet.push(stimuli);
+
+    fl_stimuli_1.push(stimuli)
     };
 
-    fl_stimuli_1.push(triplet);
 };
 
-for (i = 0; i < fillers_2.length; i++) { //24
+for (i = 0; i < fillers_2.length; i++) { //72
     var filler = fillers_2[i];
 
-    var triplet = [];
     for (j = 0; j < filler.length; j++) {
 
     var stimuli = new Object();
@@ -690,10 +695,9 @@ for (i = 0; i < fillers_2.length; i++) { //24
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
-    triplet.push(stimuli);
-    };
 
-    fl_stimuli_2.push(triplet);
+    fl_stimuli_2.push(stimuli);
+    };
 };
 
 var filler_complete = fillers_1.concat(fillers_2);
@@ -775,6 +779,8 @@ var filler = {
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
     data.filler_trial_counter = filler_trial_counter ;
+    var fl_index = fl_stimuli_triple[fast_lr_filler];
+    console.log(fl_index)
     console.log(filler_trial_counter);
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
@@ -809,12 +815,6 @@ var lr_test_TS2 = {
   repetitions: 1
 };
 
-// this is picking one list of 3 triplet stimuli at random
-fl_stimuli_triple = []
-for (i = 0; i < fillers_1.length; i++){
-    tri = [0+i*3,1+i*3,2+i*3];
-    fl_stimuli_triple.push(tri)
-};
 
 // var filler_TS1 = {
 //   timeline: [filler],
@@ -839,27 +839,26 @@ for (i = 0; i < fillers_1.length; i++){
 // };
 var filler_TS1 = {
     timeline: [filler],
-    timeline_variables: fl_stimuli_1,
+    timeline_variables: fl_stimuli_1, // 72 objects of a single filler
     sample: {
         type: 'custom',
-        fn: function (fl_stimuli_1) {
+        fn: function (fl_index) {
             //let filler_tri = fl_stimuli_1[0];
-            fl_stimuli_1.splice(0, 1);
-            return fl_stimuli_1[0];
+            //fl_stimuli_1.splice(0, 1);
+            //fl_index = fl_index
+            return fl_index;
         }
     }
 };
-console.log(fl_stimuli_1[0])
+
 
 var filler_TS2 = {
     timeline: [filler],
     timeline_variables: fl_stimuli_2,
-    sample: {
+   sample: {
         type: 'custom',
-        fn: function (fl_stimuli_2) {
-            //let filler_tri = fl_stimuli_2[0];
-            fl_stimuli_2.splice(0, 1);
-            return fl_stimuli_2[0];
+        fn: function (fl_index) {
+            return fl_index;
         }
     }
 }
