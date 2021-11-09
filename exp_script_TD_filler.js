@@ -764,8 +764,10 @@ var learning = {
 };
 
 
-let fast_fl_index = false;
-let slow_fl_index = false;
+// let fast_fl_index = false;
+// let slow_fl_index = false;
+let fast_index =[];
+let slow_index =[];
 var filler = {
 
   timeline:[
@@ -785,7 +787,7 @@ var filler = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
-    var  slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
+    var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
     var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     data.filler_trial_counter = filler_trial_counter ;
     data.slow_lr_filler = slow_lr_filler;
@@ -793,11 +795,13 @@ var filler = {
 
     console.log(slow_lr_filler)
     if (slow_lr_filler != 0){
-        slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
+        let slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
+        slow_index.push(slow_fl_index) //slow_index.splice(0, 1, slow_fl_index)
     }
 
     if (fast_lr_filler != 0) {
-        fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
+        let fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
+        fast_index.push(fast_fl_index) //fast_index.splice(0, 1, fast_fl_index)
     }
     //var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
     //fast_fl_index = fast_lr_filler;
