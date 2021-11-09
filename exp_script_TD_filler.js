@@ -793,6 +793,7 @@ var filler = {
     data.slow_lr_filler = slow_lr_filler;
     data.fast_lr_filler = fast_lr_filler;
 
+    console.log(slow_lr_filler)
     if (slow_lr_filler != 0){
         slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
     }
@@ -902,7 +903,8 @@ var filler_TS1 = {
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             return slow_fl_index;
         }
-    }
+    },
+    repetitions: 1
 };
 
 
@@ -916,7 +918,8 @@ var filler_TS2 = {
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             return slow_fl_index;
         }
-    }
+    },
+    repetitions: 1
 }
 
 /* -----Combine learning trials----- */
