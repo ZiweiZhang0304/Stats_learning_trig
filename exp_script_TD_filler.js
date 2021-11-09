@@ -1,4 +1,4 @@
-console.log('hi')
+console.log('hiiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -562,7 +562,6 @@ var fillers_shapes_2 = frequent_trigger_filtered1.filter(function(val) { //4 sha
 
 //should have fillers_1 for slow and fillers_2 for fast
 var fillers_1 = getPermutations(fillers_shapes_1 , 3); //permutations of fillers P(4,3)
-console.log(fillers_1)
 for(i = 0; i < fillers_1.length; i++) {
     if (hasDuplicates(fillers_1[i])) {
     fillers_1.splice(i, 1);
@@ -585,6 +584,7 @@ for (i = 0; i < fillers_1.length; i++){
     tri = [0+i*3,1+i*3,2+i*3];
     fl_stimuli_triple.push(tri)
 };
+console.log(fl_stimuli_triple);
 
 var fillers_2 = getPermutations(fillers_shapes_2 , 3); //permutations of fillers P(4,3)
 console.log(fillers_2);for(i = 0; i < fillers_1.length; i++) {
@@ -602,7 +602,8 @@ for(i = 0; i < fillers_2.length; i++) {
     fillers_2.splice(i, 1);
     }
 };
-
+console.log(fillers_1, fillers_2)
+console.log(fillers_1.length, fillers_2.length)
 
 
 /* -----randomize triplet-attention state pair----- */
@@ -656,12 +657,12 @@ console.log(lr_triplet_complete);
 
 
 for (i = 0; i < fillers_1.length; i++) { //72
-    var filler = fillers_1[i];
+    var fil = fillers_1[i];
 
-    for (j = 0; j < filler.length; j++) {
+    for (j = 0; j < fil.length; j++) {
 
     var stimuli = new Object();
-    stimuli.fl_stimulus = repo_site + filler[j] ;
+    stimuli.fl_stimulus = repo_site + fil[j] ;
     stimuli.data = new Object();
 
     stimuli.data.attention_state = attention_state_list[0];
@@ -680,12 +681,12 @@ for (i = 0; i < fillers_1.length; i++) { //72
 };
 
 for (i = 0; i < fillers_2.length; i++) { //72
-    var filler = fillers_2[i];
+    var fil = fillers_2[i];
 
-    for (j = 0; j < filler.length; j++) {
+    for (j = 0; j < fil.length; j++) {
 
     var stimuli = new Object();
-    stimuli.fl_stimulus = repo_site + filler[j] ;
+    stimuli.fl_stimulus = repo_site + fil[j] ;
     stimuli.data = new Object();
 
     stimuli.data.attention_state = attention_state_list[1];
@@ -891,13 +892,13 @@ var filler_TS1 = {
   // },
     sample: {
         type: 'custom',
-        fn: function (fl_stimuli_1_index) {
+        fn: function (slow_fl_index) { //fl_stimuli_1_index
             //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
             //fl_index = fl_index
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-            return fl_stimuli_1_index;
+            return slow_fl_index;
         }
     }
 };
@@ -908,9 +909,9 @@ var filler_TS2 = {
     timeline_variables: fl_stimuli_2,
    sample: {
         type: 'custom',
-        fn: function (fl_stimuli_2_index) {
+        fn: function (slow_fl_index) { //fl_stimuli_1_index
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-            return fl_stimuli_2_index;
+            return slow_fl_index;
         }
     }
 }
