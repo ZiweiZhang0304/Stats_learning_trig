@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('hi')
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
 
@@ -761,8 +761,8 @@ var learning = {
 };
 
 
-var fast_fl_index = 0;
-var slow_fl_index = 0;
+var fast_fl_index = false;
+var slow_fl_index = false;
 var filler = {
 
   timeline:[
@@ -788,13 +788,20 @@ var filler = {
     data.slow_lr_filler = slow_lr_filler;
     data.fast_lr_filler = fast_lr_filler;
 
-    var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
-    fast_fl_index = fast_lr_filler;
+    if (slow_lr_filler != 0){
+        slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
+    }
 
-    var slow_fl_idx = fl_stimuli_triple[slow_lr_filler];
-    slow_fl_index = slow_lr_filler;
+    if (fast_lr_filler != 0) {
+        fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
+    }
+    //var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
+    //fast_fl_index = fast_lr_filler;
 
-    console.log('fast filler index' + fast_fl_idx + 'slow filler index' + slow_fl_idx);
+    //var slow_fl_idx = fl_stimuli_triple[slow_lr_filler];
+    //slow_fl_index = slow_lr_filler;
+
+    console.log('fast filler index' + fast_fl_index + 'slow filler index' + slow_fl_index);
     console.log(fast_fl_index)
     console.log(slow_fl_index)
 
@@ -815,7 +822,8 @@ var filler = {
 
     ]
 };
-
+console.log('logging index outside' + fast_fl_index)
+console.log('logging index outside' + slow_fl_index)
 
 var lr_test_TS1 = {
   timeline: [learning],
@@ -854,7 +862,7 @@ var lr_test_TS2 = {
 //     }
 // };
 
-var fl_fast_idx = fl_stimuli_triple[fast_fl_index];
+//var fl_fast_idx = fl_stimuli_triple[fast_fl_index];
 var filler_TS1 = {
     timeline: [filler],
     timeline_variables: fl_stimuli_1, // 72 objects of a single filler
@@ -869,12 +877,12 @@ var filler_TS1 = {
   // },
     sample: {
         type: 'custom',
-        fn: function (fl_fast_idx) {
+        fn: function (fast_fl_index) {
             //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
             //fl_index = fl_index
-            return fl_fast_idx;
+            return fast_fl_index;
         }
     }
 };
@@ -885,8 +893,8 @@ var filler_TS2 = {
     timeline_variables: fl_stimuli_2,
    sample: {
         type: 'custom',
-        fn: function (slow_fl_idx) {
-            return slow_fl_idx;
+        fn: function (slow_fl_index) {
+            return slow_fl_index;
         }
     }
 }
