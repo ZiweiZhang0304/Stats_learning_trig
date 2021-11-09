@@ -764,8 +764,8 @@ var learning = {
 };
 
 
-// let fast_fl_index = false;
-// let slow_fl_index = false;
+let fast_fl_index = false;
+let slow_fl_index = false;
 var fast_index =[];
 var slow_index =[];
 var filler = {
@@ -795,13 +795,13 @@ var filler = {
 
     console.log(slow_lr_filler)
     if (slow_lr_filler != 0){
-        const slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
-        slow_index.push(slow_fl_index) //slow_index.splice(0, 1, slow_fl_index)
+        slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
+        slow_index.splice(0, 1, slow_fl_index) // slow_index.push(slow_fl_index)
     }
 
     if (fast_lr_filler != 0) {
-        const fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
-        fast_index.push(fast_fl_index) //fast_index.splice(0, 1, fast_fl_index)
+        fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
+        fast_index.splice(0, 1, fast_fl_index) //fast_index.push(fast_fl_index)
     }
     //var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
     //fast_fl_index = fast_lr_filler;
@@ -832,6 +832,7 @@ var filler = {
 };
 console.log('logging index outside' + fast_fl_index)
 console.log('logging index outside' + slow_fl_index)
+console.log(fast_index, slow_index)
 
 var lr_test_TS1 = {
   timeline: [learning],
@@ -896,7 +897,7 @@ var filler_TS1 = {
   // },
     sample: {
         type: 'custom',
-        fn: function (slow_fl_index) { //fl_stimuli_1_index
+        fn: function (slow_fl_index) { //fl_stimuli_1_index, slow_index[0]
             //fl_fast_idx = fl_fast_idx
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
