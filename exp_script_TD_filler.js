@@ -1166,6 +1166,7 @@ var attention = {
                 console.log('lr_node = true')
             }*/
 
+
             else if ((rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && initial_slow == false && slow_filler_num == true) || (rt_three > 0.5*rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true) ||
             (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
             (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true)) {
