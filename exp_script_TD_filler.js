@@ -587,7 +587,8 @@ for (i = 0; i < fillers_1.length; i++){
 console.log(fl_stimuli_triple);
 
 var fillers_2 = getPermutations(fillers_shapes_2 , 3); //permutations of fillers P(4,3)
-console.log(fillers_2);for(i = 0; i < fillers_1.length; i++) {
+
+for(i = 0; i < fillers_2.length; i++) {
 if (hasDuplicates(fillers_2[i])) {
     fillers_2.splice(i, 1);
     }
@@ -897,6 +898,7 @@ var filler_TS1 = {
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
             //fl_index = fl_index
+            console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             return slow_fl_index;
         }
@@ -910,6 +912,7 @@ var filler_TS2 = {
    sample: {
         type: 'custom',
         fn: function (slow_fl_index) { //fl_stimuli_1_index
+            console.log(slow_fl_index)
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             return slow_fl_index;
         }
