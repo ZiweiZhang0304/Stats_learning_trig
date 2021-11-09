@@ -1,4 +1,4 @@
-console.log('hi')
+console.log('hiiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -908,7 +908,8 @@ var filler_TS1 = {
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             console.log(fast_index, slow_index)
             console.log(ind)
-            return ind;
+            a = ind
+            return a;
         }
     },
     repetitions: 1
@@ -925,7 +926,8 @@ var filler_TS2 = {
             console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             console.log(fast_index, slow_index)
             console.log(ind)
-            return ind;
+            a =ind
+            return a;
         }
     },
     repetitions: 1
