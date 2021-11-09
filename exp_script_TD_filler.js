@@ -649,6 +649,7 @@ console.log(lr_triplet_complete);
 for (i = 0; i < fillers_1.length; i++) { //24
     var filler = fillers_1[i];
 
+    var triplet = [];
     for (j = 0; j < filler.length; j++) {
 
     var stimuli = new Object();
@@ -664,15 +665,16 @@ for (i = 0; i < fillers_1.length; i++) { //24
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
-
-    fl_stimuli_1.push(stimuli)
+    triplet.push(stimuli);
     };
 
+    fl_stimuli_1.push(triplet);
 };
 
 for (i = 0; i < fillers_2.length; i++) { //24
     var filler = fillers_2[i];
 
+    var triplet = [];
     for (j = 0; j < filler.length; j++) {
 
     var stimuli = new Object();
@@ -688,9 +690,10 @@ for (i = 0; i < fillers_2.length; i++) { //24
 
     stimuli.data.test_part = 'test';
     stimuli.data.TaskType = 'fl';
-
-    fl_stimuli_2.push(stimuli);
+    triplet.push(stimuli);
     };
+
+    fl_stimuli_2.push(triplet);
 };
 
 var filler_complete = fillers_1.concat(fillers_2);
