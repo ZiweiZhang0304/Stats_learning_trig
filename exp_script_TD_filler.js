@@ -831,8 +831,8 @@ var filler = {
 
     ]
 };
-console.log('logging index outside' + fast_fl_index)
-console.log('logging index outside' + slow_fl_index)
+// console.log('logging index outside' + fast_fl_index)
+// console.log('logging index outside' + slow_fl_index)
 console.log(fast_index, slow_index)
 
 var lr_test_TS1 = {
