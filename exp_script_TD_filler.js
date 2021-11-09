@@ -896,6 +896,7 @@ var filler_TS1 = {
             //let filler_tri = fl_stimuli_1[0];
             //fl_stimuli_1.splice(0, 1);
             //fl_index = fl_index
+            console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             return fl_stimuli_1_index;
         }
     }
@@ -908,6 +909,7 @@ var filler_TS2 = {
    sample: {
         type: 'custom',
         fn: function (fl_stimuli_2_index) {
+            console.log(fl_stimuli_1_index, fl_stimuli_2_index)
             return fl_stimuli_2_index;
         }
     }
