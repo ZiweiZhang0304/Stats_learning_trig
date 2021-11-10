@@ -1,4 +1,4 @@
-console.log('hiiii')
+console.log('hhhhh')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -844,9 +844,17 @@ var lr_test_TS2 = {
   repetitions: 1
 };
 
+if (fl_stimuli_1[0].data.attention_state == 'fast') {
+    var fl_stimuli_1_index = fast_fl_index
+    var fl_stimuli_2_index = slow_fl_index
+} else {
+    var fl_stimuli_1_index = slow_fl_index
+    var fl_stimuli_2_index = fast_fl_index};
+console.log(fl_stimuli_1_index, fl_stimuli_2_index)
+
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(0,3),
+  timeline_variables: fl_stimuli_1.slice(0,fl_stimuli_1_index),
   randomize_order: false,
   repetitions: 1
     // sample: {
@@ -858,7 +866,7 @@ var filler_TS1 = {
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(0,3),
+  timeline_variables: fl_stimuli_2.slice(0,fl_stimuli_1_index),
   randomize_order: false,
   repetitions: 1
     // sample: {
@@ -890,13 +898,6 @@ var filler_TS2 = {
 //     }
 // };
 
-// if (fl_stimuli_1[0].data.attention_state == 'fast') {
-//     var fl_stimuli_1_index = fast_fl_index
-//     var fl_stimuli_2_index = slow_fl_index
-// } else {
-//     var fl_stimuli_1_index = slow_fl_index
-//     var fl_stimuli_2_index = fast_fl_index};
-// console.log(fl_stimuli_1_index, fl_stimuli_2_index)
 
 // var index_1 = fl_stimuli_1_index
 // var index_2 = fl_stimuli_2_index
