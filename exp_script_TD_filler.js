@@ -1,4 +1,4 @@
-console.log('hhhhi')
+console.log('hiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -651,9 +651,6 @@ for (i = 0; i < lr_triplet_2.length; i++) {
 };
 //console.log(lr_stimuli_1,lr_stimuli_2);
 
-var lr_triplet_complete = lr_stimuli_1.concat(lr_stimuli_2); //, lr_stimuli_3
-//console.log(lr_triplet_complete);
-
 
 for (i = 0; i < fillers_1.length; i++) { //72
     var fil = fillers_1[i];
@@ -764,10 +761,10 @@ var learning = {
 };
 
 
-//var fast_fl_index = false;
-//var slow_fl_index = false;
-var fast_index =[];
-var slow_index =[];
+var fast_fl_index = false;
+var slow_fl_index = false;
+var fast_index = [];
+var slow_index = [];
 var filler = {
 
   timeline:[
@@ -799,7 +796,7 @@ var filler = {
         slow_index.splice(0, 1, slow_fl_index) // slow_index.push(slow_fl_index)
     }
 
-    if (fast_lr_filler != 0) {
+    if (fast_lr_filler != 0){
         var fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
         fast_index.splice(0, 1, fast_fl_index) //fast_index.push(fast_fl_index)
     }
