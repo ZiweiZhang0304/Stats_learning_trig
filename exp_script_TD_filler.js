@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('helloooo')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -784,32 +784,30 @@ var filler = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
-    var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
-    var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+    //var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
+    //var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     data.filler_trial_counter = filler_trial_counter ;
-    data.slow_lr_filler = slow_lr_filler;
-    data.fast_lr_filler = fast_lr_filler;
 
-    console.log(slow_lr_filler)
-    if (slow_lr_filler != 0){
-        var slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
-        slow_index.splice(0, 1, slow_fl_index) // slow_index.push(slow_fl_index)
-    }
 
-    if (fast_lr_filler != 0){
-        var fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
-        fast_index.splice(0, 1, fast_fl_index) //fast_index.push(fast_fl_index)
-    }
+    // if (slow_lr_filler != 0){
+    //     var slow_fl_index = fl_stimuli_triple[slow_lr_filler-1];
+    //     slow_index.splice(0, 1, slow_fl_index) // slow_index.push(slow_fl_index)
+    // }
+    //
+    // if (fast_lr_filler != 0){
+    //     var fast_fl_index = fl_stimuli_triple[fast_lr_filler-1];
+    //     fast_index.splice(0, 1, fast_fl_index) //fast_index.push(fast_fl_index)
+    // }
     //var fast_fl_idx = fl_stimuli_triple[fast_lr_filler];
     //fast_fl_index = fast_lr_filler;
 
     //var slow_fl_idx = fl_stimuli_triple[slow_lr_filler];
     //slow_fl_index = slow_lr_filler;
 
-    console.log('fast filler index' + fast_fl_index + 'slow filler index' + slow_fl_index);
-    console.log(fast_fl_index)
-    console.log(slow_fl_index)
-    console.log(fast_index, slow_index)
+    // console.log('fast filler index' + fast_fl_index + 'slow filler index' + slow_fl_index);
+    // console.log(fast_fl_index)
+    // console.log(slow_fl_index)
+    // console.log(fast_index, slow_index)
 
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
@@ -830,7 +828,6 @@ var filler = {
 };
 // console.log('logging index outside' + fast_fl_index)
 // console.log('logging index outside' + slow_fl_index)
-console.log(fast_index, slow_index)
 
 var lr_test_TS1 = {
   timeline: [learning],
@@ -1020,6 +1017,7 @@ var attention = {
     var lr_counter = slow_lr_counter + fast_lr_counter //+1??
     var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
     var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+    var fl_counter = slow_lr_filler + fast_lr_filler
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -1039,6 +1037,7 @@ var attention = {
     data.slow_lr_counter = slow_lr_counter
     data.fast_lr_counter = fast_lr_counter
     data.lr_counter = lr_counter
+    data.fl_counter = fl_counter
     console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
     console.log('there are' + lr_counter + ' learning trials')
     console.log('there are' + fast_lr_counter + ' fast learning trials')
@@ -1193,7 +1192,7 @@ var attention = {
             initial_slow = false
         };
 
-      }  else {console.log('no learing yet or more than 6 learning trials')};
+      }  else {console.log('no learning yet or more than 6 learning trials')};
 
 
 
@@ -1245,7 +1244,7 @@ var attention = {
 
             else if (fast_lr_counter >0 && slow_lr_counter >0){
               if (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true){
-                  filler_node = 1;
+                  filler_node = 2;
                 data.filler = 'fast'
                 console.log('filler fast')
               }
