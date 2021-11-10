@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('helloooo')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -920,6 +920,8 @@ var lr_test_TS2 = {
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
 
+var fast_fl_index = 0;
+var slow_fl_index = 0;
 var attention_first3 = {
   timeline:[
       {
@@ -972,8 +974,7 @@ timeline.push(first3_block)
 /* -----After the 3rd trial-----*/
 var lr_node = false;
 var filler_node = false;
-var fast_fl_index = false;
-var slow_fl_index = false;
+
 var attention = {
   timeline:[
   {type: "image-keyboard-response",
