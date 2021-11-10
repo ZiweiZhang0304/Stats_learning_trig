@@ -1,4 +1,4 @@
-console.log('hiiii')
+console.log('hhhh')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -919,6 +919,8 @@ var lr_test_TS2 = {
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
+var lr_node = false;
+var filler_node = false;
 
 var fast_fl_index = 0;
 var slow_fl_index = 0;
@@ -972,8 +974,6 @@ timeline.push(first3_block)
 
 
 /* -----After the 3rd trial-----*/
-var lr_node = false;
-var filler_node = false;
 
 var attention = {
   timeline:[
@@ -1176,7 +1176,7 @@ var attention = {
     /*-- If attention <= 80 --*/
     if (at_counter < 10) { //change 80
         lr_node = false,
-            filler_node = false
+        filler_node = false
     }
 
     else if(last_infreq.includes('infrequent') || last_correct.includes(false) || last_rt.includes(true) || last_lr.includes('lr')) {
@@ -1202,15 +1202,10 @@ var attention = {
                 lr_node = 3; //medium triggering should use three nodes...
                 console.log('lr_node = true')
             }*/
-          else if (fast_lr_counter >0 && slow_lr_counter >0 && rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true){
-
-                filler_node = 1;
-                data.filler = 'slow'
-                console.log('filler slow')
-      }
 
 
-          else if ((rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && initial_slow == false && slow_filler_num == true) ||
+          else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true)||
+              (rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && initial_slow == false && slow_filler_num == true) ||
             (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
             (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true)) {
                 filler_node = 1;
@@ -1218,13 +1213,8 @@ var attention = {
                 console.log('filler slow')
               }
 
-          else if (fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true) {
-                  filler_node = 2;
-                data.filler = 'fast'
-                console.log('filler fast')
-      }
-
-          else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && initial_fast == false && fast_filler_num == true) ||
+          else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true)||
+              (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && initial_fast == false && fast_filler_num == true) ||
             (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
             (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
               {
@@ -1373,7 +1363,7 @@ var if_node_2= { //fast node
 };
 
 var filler_node_1= { //slow filler node
-  timeline: [fast_filler],
+  timeline: [slow_filler],
   conditional_function: function(data){
     if (filler_node == 1){
       return true;
@@ -1382,7 +1372,7 @@ var filler_node_1= { //slow filler node
 };
 
 var filler_node_2= { //fast filler node
-  timeline: [slow_filler],
+  timeline: [fast_filler],
   conditional_function: function(data){
     if (filler_node == 2){
       return true;
