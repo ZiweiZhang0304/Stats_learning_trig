@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('heeee')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -1017,7 +1017,7 @@ var attention = {
     console.log('there are' + lr_counter + ' learning trials')
     console.log('there are' + fast_lr_counter + ' fast learning trials')
     console.log('there are' + slow_lr_counter + ' slow learning trials')
-
+    filler_node = false
 
 
     if (at_counter > 3) {
