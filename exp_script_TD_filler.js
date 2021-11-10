@@ -1,4 +1,4 @@
-console.log('helloooo')
+console.log('hiiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -784,8 +784,8 @@ var filler = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
-    //var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
-    //var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+    slow_fl_index = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
+    fast_fl_index = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     data.filler_trial_counter = filler_trial_counter ;
 
 
@@ -826,7 +826,8 @@ var filler = {
 
     ]
 };
-// console.log('logging index outside' + fast_fl_index)
+console.log('logging index outside' + slow_fl_index )
+console.log('logging index outside' + fast_fl_index)
 // console.log('logging index outside' + slow_fl_index)
 
 var lr_test_TS1 = {
@@ -845,21 +846,25 @@ var lr_test_TS2 = {
 
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1,
-    sample: {
-        type: 'without-replacement',
-        size: 3
-    }
+  timeline_variables: fl_stimuli_1.slice(0,3),
+  randomize_order: false,
+  repetitions: 1
+    // sample: {
+    //     type: 'without-replacement',
+    //     size: 3
+    // }
 };
 
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2,
-    sample: {
-        type: 'without-replacement',
-        size: 3
-    }
+  timeline_variables: fl_stimuli_2.slice(0,3),
+  randomize_order: false,
+  repetitions: 1
+    // sample: {
+    //     type: 'without-replacement',
+    //     size: 3
+    // }
 };
 
 
