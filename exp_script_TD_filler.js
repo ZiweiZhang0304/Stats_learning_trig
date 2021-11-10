@@ -1,4 +1,4 @@
-console.log('hhhhh')
+console.log('hhhhhiiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -854,7 +854,7 @@ console.log(fl_stimuli_1_index, fl_stimuli_2_index)
 
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(0,fl_stimuli_1_index),
+  timeline_variables: fl_stimuli_1.slice(0,slow_fl_index),
   randomize_order: false,
   repetitions: 1
     // sample: {
@@ -866,7 +866,7 @@ var filler_TS1 = {
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(0,fl_stimuli_1_index),
+  timeline_variables: fl_stimuli_2.slice(0,slow_fl_index),
   randomize_order: false,
   repetitions: 1
     // sample: {
