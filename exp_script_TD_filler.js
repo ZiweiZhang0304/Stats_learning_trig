@@ -1,4 +1,4 @@
-console.log('heiiii')
+console.log('haha')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -802,7 +802,7 @@ var filler = {
     // console.log(fast_fl_index)
     // console.log(slow_fl_index)
     // console.log(fast_index, slow_index)
-
+    console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
@@ -1018,6 +1018,7 @@ var attention = {
     console.log('there are' + fast_lr_counter + ' fast learning trials')
     console.log('there are' + slow_lr_counter + ' slow learning trials')
     filler_node = false
+    lr_node = false
 
 
     if (at_counter > 3) {
@@ -1315,14 +1316,17 @@ var attention = {
 };
 
 console.log(fl_stimuli_1[0].data.attention_state)
+console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
 if (fl_stimuli_1[0].data.attention_state == 'fast') {
     //var fast_filler = filler_TS1
     //var slow_filler = filler_TS2
     var fl_ind_1 = fast_fl_index
+    var fl_ind_2 = slow_fl_index
 } else {
     // var slow_filler = filler_TS1
     // var fast_filler = filler_TS2
-    var fl_ind_2 = slow_fl_index
+    var fl_ind_1 = slow_fl_index
+    var fl_ind_2 = fast_fl_index
 };
 
 var filler_TS1 = {
