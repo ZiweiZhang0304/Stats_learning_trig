@@ -1,4 +1,4 @@
-console.log('hhhi')
+console.log('hello')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -846,6 +846,25 @@ var lr_test_TS2 = {
   repetitions: 1
 };
 
+var filler_TS1 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1,
+    sample: {
+        type: 'without-replacement',
+        size: 3
+    }
+};
+
+
+var filler_TS2 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2,
+    sample: {
+        type: 'without-replacement',
+        size: 3
+    }
+};
+
 
 // var filler_TS1 = {
 //   timeline: [filler],
@@ -869,67 +888,67 @@ var lr_test_TS2 = {
 //     }
 // };
 
-if (fl_stimuli_1[0].data.attention_state == 'fast') {
-    var fl_stimuli_1_index = fast_fl_index
-    var fl_stimuli_2_index = slow_fl_index
-} else {
-    var fl_stimuli_1_index = slow_fl_index
-    var fl_stimuli_2_index = fast_fl_index};
-console.log(fl_stimuli_1_index, fl_stimuli_2_index)
+// if (fl_stimuli_1[0].data.attention_state == 'fast') {
+//     var fl_stimuli_1_index = fast_fl_index
+//     var fl_stimuli_2_index = slow_fl_index
+// } else {
+//     var fl_stimuli_1_index = slow_fl_index
+//     var fl_stimuli_2_index = fast_fl_index};
+// console.log(fl_stimuli_1_index, fl_stimuli_2_index)
 
 // var index_1 = fl_stimuli_1_index
 // var index_2 = fl_stimuli_2_index
 
 //var fl_fast_idx = fl_stimuli_triple[fast_fl_index];
 //var ind = slow_index[0];
-var ind = [0,1,2];
-var filler_TS1 = {
-    timeline: [filler],
-    timeline_variables: fl_stimuli_1, // 72 objects of a single filler
-  //   on_finish: function(data){
-  //   var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
-  //   var  slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
-  //   var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
-  //   var fast_fl_index = fl_stimuli_triple[fast_lr_filler];
-  //   var slow_fl_index = fl_stimuli_triple[slow_lr_filler];
-  //   //console.log('fast filler' + fast_fl_index + 'slow filler' + slow_fl_index)
-  //   console.log(filler_trial_counter);
-  // },
-    sample: {
-        type: 'custom',
-        fn: function (ind) { //fl_stimuli_1_index, slow_index[0], slow_fl_index
-            //fl_fast_idx = fl_fast_idx
-            //let filler_tri = fl_stimuli_1[0];
-            //fl_stimuli_1.splice(0, 1);
-            //fl_index = fl_index
-            //console.log(slow_fl_index)
-            // console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-            // console.log(fast_index, slow_index)
-            // console.log(ind)
-            a = ind
-            return a;
-        }
-    },
-    repetitions: 1
-};
-
-
-var filler_TS2 = {
-    timeline: [filler],
-    timeline_variables: fl_stimuli_2,
-   sample: {
-        type: 'custom',
-        fn: function (ind) { //fl_stimuli_1_index
-            //console.log(slow_fl_index)
-            // console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-            // console.log(fast_index, slow_index)
-            // console.log(ind)
-            a = ind
-            return a;
-        }
-    },
-    repetitions: 1
-}
+//var ind = [0,1,2];
+// var filler_TS1 = {
+//     timeline: [filler],
+//     timeline_variables: fl_stimuli_1, // 72 objects of a single filler
+//   //   on_finish: function(data){
+//   //   var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
+//   //   var  slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
+//   //   var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+//   //   var fast_fl_index = fl_stimuli_triple[fast_lr_filler];
+//   //   var slow_fl_index = fl_stimuli_triple[slow_lr_filler];
+//   //   //console.log('fast filler' + fast_fl_index + 'slow filler' + slow_fl_index)
+//   //   console.log(filler_trial_counter);
+//   // },
+//     sample: {
+//         type: 'custom',
+//         fn: function (ind) { //fl_stimuli_1_index, slow_index[0], slow_fl_index
+//             //fl_fast_idx = fl_fast_idx
+//             //let filler_tri = fl_stimuli_1[0];
+//             //fl_stimuli_1.splice(0, 1);
+//             //fl_index = fl_index
+//             //console.log(slow_fl_index)
+//             // console.log(fl_stimuli_1_index, fl_stimuli_2_index)
+//             // console.log(fast_index, slow_index)
+//             // console.log(ind)
+//             a = ind
+//             return a;
+//         }
+//     },
+//     repetitions: 1
+// };
+//
+//
+// var filler_TS2 = {
+//     timeline: [filler],
+//     timeline_variables: fl_stimuli_2,
+//    sample: {
+//         type: 'custom',
+//         fn: function (ind) { //fl_stimuli_1_index
+//             //console.log(slow_fl_index)
+//             // console.log(fl_stimuli_1_index, fl_stimuli_2_index)
+//             // console.log(fast_index, slow_index)
+//             // console.log(ind)
+//             a = ind
+//             return a;
+//         }
+//     },
+//     repetitions: 1
+// }
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
