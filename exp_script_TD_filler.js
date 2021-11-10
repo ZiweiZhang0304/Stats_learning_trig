@@ -1,4 +1,4 @@
-console.log('hhhh')
+console.log('hello')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -820,9 +820,7 @@ var filler = {
 
     ]
 };
-console.log('logging index outside' + slow_fl_index )
-console.log('logging index outside' + fast_fl_index)
-// console.log('logging index outside' + slow_fl_index)
+
 
 var lr_test_TS1 = {
   timeline: [learning],
@@ -1012,6 +1010,8 @@ var attention = {
     data.slow_lr_counter = slow_lr_counter
     data.fast_lr_counter = fast_lr_counter
     data.lr_counter = lr_counter
+    data.slow_fl_counter = slow_lr_filler
+    data.fast_fl_counter = fast_lr_filler
     data.fl_counter = fl_counter
     console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
     console.log('there are' + lr_counter + ' learning trials')
@@ -1317,7 +1317,7 @@ var attention = {
 
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3]), //slice(0,)
+  timeline_variables: fl_stimuli_1.slice(0,3), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
   randomize_order: false,
   repetitions: 1
 };
@@ -1325,7 +1325,7 @@ var filler_TS1 = {
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3]), //slice(0,)
+  timeline_variables: fl_stimuli_2.slice(0,3), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
   randomize_order: false,
   repetitions: 1
 };
