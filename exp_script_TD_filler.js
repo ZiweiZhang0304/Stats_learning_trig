@@ -1,4 +1,4 @@
-console.log('hhhhhiiii')
+console.log('hello')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -761,10 +761,6 @@ var learning = {
 };
 
 
-var fast_fl_index = false;
-var slow_fl_index = false;
-var fast_index = [];
-var slow_index = [];
 var filler = {
 
   timeline:[
@@ -784,8 +780,6 @@ var filler = {
   on_finish: function(data){
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
-    slow_fl_index = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
-    fast_fl_index = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     data.filler_trial_counter = filler_trial_counter ;
 
 
@@ -844,59 +838,29 @@ var lr_test_TS2 = {
   repetitions: 1
 };
 
-if (fl_stimuli_1[0].data.attention_state == 'fast') {
-    var fl_stimuli_1_index = fast_fl_index
-    var fl_stimuli_2_index = slow_fl_index
-} else {
-    var fl_stimuli_1_index = slow_fl_index
-    var fl_stimuli_2_index = fast_fl_index};
-console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-
-var filler_TS1 = {
-  timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(0,slow_fl_index),
-  randomize_order: false,
-  repetitions: 1
-    // sample: {
-    //     type: 'without-replacement',
-    //     size: 3
-    // }
-};
-
-
-var filler_TS2 = {
-  timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(0,slow_fl_index),
-  randomize_order: false,
-  repetitions: 1
-    // sample: {
-    //     type: 'without-replacement',
-    //     size: 3
-    // }
-};
-
+// if (fl_stimuli_1[0].data.attention_state == 'fast') {
+//     var fl_stimuli_1_index = fast_fl_index
+//     var fl_stimuli_2_index = slow_fl_index
+// } else {
+//     var fl_stimuli_1_index = slow_fl_index
+//     var fl_stimuli_2_index = fast_fl_index};
+// console.log(fl_stimuli_1_index, fl_stimuli_2_index)
 
 // var filler_TS1 = {
 //   timeline: [filler],
-//   timeline_variables: fl_stimuli_1, // fl_stimuli_1 organizes stimuli in lists of triplets form
-//     // need to make sure everytime we insert a filler we're grabbing a group of 3 here, randomly select triplets without replacement, or shuffle for each subj
-//     sample: {
-//         type: 'alternate-groups',
-//         groups: fl_stimuli_triple,
-//         randomize_group_order: false
-//     }
+//   timeline_variables: fl_stimuli_1[fl_stimuli_triple[slow_fl_index]], //slice(0,)
+//   randomize_order: false,
+//   repetitions: 1
 // };
 //
 //
 // var filler_TS2 = {
 //   timeline: [filler],
-//   timeline_variables: fl_stimuli_2,
-//     sample: {
-//         type: 'alternate-groups',
-//         groups: fl_stimuli_triple,
-//         randomize_group_order: false
-//     }
+//   timeline_variables: fl_stimuli_2[fl_stimuli_triple[slow_fl_index]], //slice(0,)
+//   randomize_order: false,
+//   repetitions: 1
 // };
+
 
 
 // var index_1 = fl_stimuli_1_index
@@ -1008,6 +972,8 @@ timeline.push(first3_block)
 /* -----After the 3rd trial-----*/
 var lr_node = false;
 var filler_node = false;
+var fast_fl_index = false;
+var slow_fl_index = false;
 var attention = {
   timeline:[
   {type: "image-keyboard-response",
@@ -1021,6 +987,8 @@ var attention = {
     var slow_lr_counter = jsPsych.data.get().filter({diff: 'slow'}).select('rt').values.length
     var fast_lr_counter = jsPsych.data.get().filter({diff: 'fast'}).select('rt').values.length
     var lr_counter = slow_lr_counter + fast_lr_counter //+1??
+    fast_fl_index = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+    slow_fl_index = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
     var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
     var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     var fl_counter = slow_lr_filler + fast_lr_filler
@@ -1345,6 +1313,22 @@ var attention = {
     ],
 };
 
+console.log(slow_fl_index, fast_fl_index)
+console.log(fl_stimuli_triple[slow_fl_index])
+var filler_TS1 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]), //slice(0,)
+  randomize_order: false,
+  repetitions: 1
+};
+
+
+var filler_TS2 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]), //slice(0,)
+  randomize_order: false,
+  repetitions: 1
+};
 
 if (lr_stimuli_1[0].data.attention_state == 'fast') {
     var fast_lr = lr_test_TS1
