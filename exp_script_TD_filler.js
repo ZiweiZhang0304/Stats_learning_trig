@@ -1,4 +1,4 @@
-console.log('hell')
+console.log('hell000')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -922,8 +922,8 @@ var lr_test_TS2 = {
 var lr_node = false;
 var filler_node = false;
 
-var fast_fl_index = false;
-var slow_fl_index = false;
+var fast_fl_index = 0;
+var slow_fl_index = 0;
 var attention_first3 = {
   timeline:[
       {
