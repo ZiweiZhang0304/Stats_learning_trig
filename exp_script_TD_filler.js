@@ -1,4 +1,4 @@
-console.log('haha')
+console.log('haaaaa')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -1316,7 +1316,7 @@ var attention = {
 };
 
 console.log(fl_stimuli_1[0].data.attention_state)
-console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+console.log(fl_stimuli_triple[slow_fl_index], fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2])
 if (fl_stimuli_1[0].data.attention_state == 'fast') {
     //var fast_filler = filler_TS1
     //var slow_filler = filler_TS2
