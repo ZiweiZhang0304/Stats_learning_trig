@@ -1,4 +1,4 @@
-console.log('hhhh')
+console.log('hihihi')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -837,84 +837,6 @@ var lr_test_TS2 = {
   repetitions: 1
 };
 
-// if (fl_stimuli_1[0].data.attention_state == 'fast') {
-//     var fl_stimuli_1_index = fast_fl_index
-//     var fl_stimuli_2_index = slow_fl_index
-// } else {
-//     var fl_stimuli_1_index = slow_fl_index
-//     var fl_stimuli_2_index = fast_fl_index};
-// console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-
-// var filler_TS1 = {
-//   timeline: [filler],
-//   timeline_variables: fl_stimuli_1[fl_stimuli_triple[slow_fl_index]], //slice(0,)
-//   randomize_order: false,
-//   repetitions: 1
-// };
-//
-//
-// var filler_TS2 = {
-//   timeline: [filler],
-//   timeline_variables: fl_stimuli_2[fl_stimuli_triple[slow_fl_index]], //slice(0,)
-//   randomize_order: false,
-//   repetitions: 1
-// };
-
-
-
-// var index_1 = fl_stimuli_1_index
-// var index_2 = fl_stimuli_2_index
-
-//var fl_fast_idx = fl_stimuli_triple[fast_fl_index];
-//var ind = slow_index[0];
-//var ind = [0,1,2];
-// var filler_TS1 = {
-//     timeline: [filler],
-//     timeline_variables: fl_stimuli_1, // 72 objects of a single filler
-//   //   on_finish: function(data){
-//   //   var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
-//   //   var  slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
-//   //   var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
-//   //   var fast_fl_index = fl_stimuli_triple[fast_lr_filler];
-//   //   var slow_fl_index = fl_stimuli_triple[slow_lr_filler];
-//   //   //console.log('fast filler' + fast_fl_index + 'slow filler' + slow_fl_index)
-//   //   console.log(filler_trial_counter);
-//   // },
-//     sample: {
-//         type: 'custom',
-//         fn: function (ind) { //fl_stimuli_1_index, slow_index[0], slow_fl_index
-//             //fl_fast_idx = fl_fast_idx
-//             //let filler_tri = fl_stimuli_1[0];
-//             //fl_stimuli_1.splice(0, 1);
-//             //fl_index = fl_index
-//             //console.log(slow_fl_index)
-//             // console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-//             // console.log(fast_index, slow_index)
-//             // console.log(ind)
-//             a = ind
-//             return a;
-//         }
-//     },
-//     repetitions: 1
-// };
-//
-//
-// var filler_TS2 = {
-//     timeline: [filler],
-//     timeline_variables: fl_stimuli_2,
-//    sample: {
-//         type: 'custom',
-//         fn: function (ind) { //fl_stimuli_1_index
-//             //console.log(slow_fl_index)
-//             // console.log(fl_stimuli_1_index, fl_stimuli_2_index)
-//             // console.log(fast_index, slow_index)
-//             // console.log(ind)
-//             a = ind
-//             return a;
-//         }
-//     },
-//     repetitions: 1
-// }
 
 /* -----Combine learning trials----- */
 /* -----First 3 trials should not have infrequent-----*/
@@ -991,26 +913,30 @@ var attention = {
     var lr_counter = slow_lr_counter + fast_lr_counter //+1??
     fast_fl_index = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     slow_fl_index = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
-    console.log(slow_fl_index, fast_fl_index)
-
 
     if (slow_fl_index == 0){
         slow_fl_index = false;
     } else if (fast_fl_index == 0){
         fast_fl_index = false;
-    } else {}
-
-
-    if (fl_stimuli_1[0].data.attention_state == 'fast') {
-        fl_ind_1 = fast_fl_index
-        fl_ind_2 = slow_fl_index
     } else {
-        // var slow_filler = filler_TS1
-        // var fast_filler = filler_TS2
-        fl_ind_1 = slow_fl_index
-        fl_ind_2 = fast_fl_index
-    };
 
+        if (fl_stimuli_1[0].data.attention_state == 'fast') {
+            fl_ind_1 = fast_fl_index
+            fl_ind_2 = slow_fl_index
+
+        } else {
+            // var slow_filler = filler_TS1
+            // var fast_filler = filler_TS2
+            fl_ind_1 = slow_fl_index
+            fl_ind_2 = fast_fl_index
+        };
+        // start_1 = fl_stimuli_triple[fl_ind_1][0];
+        // end_1 = fl_stimuli_triple[fl_ind_1][2] + 1;
+        // start_2 = fl_stimuli_triple[fl_ind_2][0];
+        // end_2 = fl_stimuli_triple[fl_ind_2][2] + 1;
+    }
+    console.log(slow_fl_index, fast_fl_index)
+    console.log(fl_ind_1, fl_ind_2)  
 
     var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
     var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
@@ -1074,8 +1000,8 @@ var attention = {
         //calculate trailing RT after the third trial
         var rt_three = jsPsych.data.get().filter({at_TrialType: 'frequent'}).last(3).select('rt').mean();
         data.at_TrailingMean = rt_three
-        console.log('trailing mean is ' + rt_three)
-        console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
+        //console.log('trailing mean is ' + rt_three)
+        //console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
 
   };
 
@@ -1144,7 +1070,11 @@ var attention = {
             console.log('can we add slow filler next? ' + slow_filler_num)
         } else {
             slow_filler_num = true
-        }
+        };
+        /* ----no consecutive filler trials---- */
+        var last_fl = jsPsych.data.get().filter({ test_part: 'test' }).last(3).select('TaskType').values;
+        if (last_fl.includes('fl')== true) {
+            console.log('there is a filler trial')}
 
 
 
@@ -1229,19 +1159,19 @@ var attention = {
             }*/
 
 
-          else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true)||
-              (rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && initial_slow == false && slow_filler_num == true) ||
-            (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
-            (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true)) {
+          else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true && last_fl.includes('fl')== false)||
+              (rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true && last_fl.includes('fl')== false) || (rt_three > rt_mean+ 0.5*rt_sd && initial_slow == false && slow_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true && last_fl.includes('fl')== false) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true && last_fl.includes('fl')== false)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 console.log('filler slow')
               }
 
-          else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true)||
-              (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && initial_fast == false && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
+          else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true && last_fl.includes('fl')== false)||
+              (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true && last_fl.includes('fl')== false) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && initial_fast == false && fast_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true && last_fl.includes('fl')== false) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true && last_fl.includes('fl')== false))
               {
                     filler_node = 2;
                     data.filler = 'fast'
@@ -1276,9 +1206,9 @@ var attention = {
         /*-- If attention > 80 && learning > 6, insert fillers --*/
           //at the end of each trial, you decide whether this is a CHB, (e.g. 5 of them)
           //if so, insert fillers; either 1-5 happens???
-          else if( (rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true) ||
-            (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true) ||
-            (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true) )
+          else if( (rt_three > rt_mean+ 0.5*rt_sd && last_slow == false && slow_filler_num == true && last_fl.includes('fl')== false) || (rt_three > rt_mean+ 0.5*rt_sd && diff_restrict_slow == false && slow_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_lr.includes('lr') && slow_filler_num == true && last_fl.includes('fl')== false) || (rt_three > rt_mean+ 0.5*rt_sd && last_correct.includes(false) && slow_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three > rt_mean+ 0.5*rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true && last_fl.includes('fl')== false) )
           {
                 filler_node = 1;
                 data.filler = 'slow'
@@ -1286,9 +1216,9 @@ var attention = {
               }
 
 
-          else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true) ||
-            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true))
+          else if ((rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_fast == false && fast_filler_num == true && last_fl.includes('fl')== false) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && diff_restrict_fast == false && fast_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_lr.includes('lr') && fast_filler_num == true && last_fl.includes('fl')== false) || (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_correct.includes(false) && fast_filler_num == true && last_fl.includes('fl')== false) ||
+            (rt_three < Math.abs(rt_mean- 0.5*rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true && last_fl.includes('fl')== false))
               {
                     filler_node = 2;
                     data.filler = 'fast'
@@ -1340,7 +1270,7 @@ var attention = {
 };
 
 console.log(fl_stimuli_1[0].data.attention_state)
-console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
+//console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
 
 var filler_TS1 = {
   timeline: [filler],
