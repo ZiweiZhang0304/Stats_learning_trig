@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('hiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -804,7 +804,6 @@ var filler = {
     // console.log(fast_fl_index)
     // console.log(slow_fl_index)
     // console.log(fast_index, slow_index)
-    console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]+1)
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
