@@ -1,4 +1,4 @@
-console.log('hihihi')
+console.log('hi')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -845,8 +845,8 @@ var filler_node = false;
 
 var fast_fl_index = 0;
 var slow_fl_index = 0;
-var fl_ind_1 = fast_fl_index;
-var fl_ind_2 = slow_fl_index;
+var fl_ind_1 = 0;
+var fl_ind_2 = 0;
 var attention_first3 = {
   timeline:[
       {
@@ -904,7 +904,6 @@ var attention = {
   stimulus: jsPsych.timelineVariable('at_stimulus'),
   choices: ['space'],
   data: jsPsych.timelineVariable('data'),
-  trial_duration: 800,
   on_finish: function(data){
 
     var at_counter = jsPsych.data.get().filter({TaskType: 'at'}).select('rt').values.length
@@ -913,34 +912,37 @@ var attention = {
     var lr_counter = slow_lr_counter + fast_lr_counter //+1??
     fast_fl_index = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     slow_fl_index = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
+    var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
+    var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
+    var fl_counter = slow_lr_filler + fast_lr_filler
 
-    if (slow_fl_index == 0){
-        slow_fl_index = false;
-    } else if (fast_fl_index == 0){
-        fast_fl_index = false;
-    } else {
+    // if (slow_fl_index == 0 && fast_fl_index == 0 ){
+    //     slow_fl_index = false;
+    //     fast_fl_index = false;
+    // } else if (slow_fl_index != 0 && fast_fl_index == 0){
+    //     fast_fl_index = false;
+    // } else if (slow_fl_index == 0 && fast_fl_index != 0){
+    //     slow_fl_index = false;
+    // } else if (slow_fl_index != 0 && fast_fl_index != 0){
+    //     fast_fl_index = fast_fl_index;
+    //     slow_fl_index = slow_fl_index;
+    // }
 
-        if (fl_stimuli_1[0].data.attention_state == 'fast') {
-            fl_ind_1 = fast_fl_index
-            fl_ind_2 = slow_fl_index
-
-        } else {
-            // var slow_filler = filler_TS1
-            // var fast_filler = filler_TS2
-            fl_ind_1 = slow_fl_index
-            fl_ind_2 = fast_fl_index
-        };
+    if (fl_stimuli_1[0].data.attention_state == 'fast') {
+            fl_ind_2 = slow_lr_filler
+            fl_ind_1 = fast_lr_filler
+        }
+    else {
+        fl_ind_1 = slow_lr_filler
+        fl_ind_2 = fast_lr_filler
+    };
         // start_1 = fl_stimuli_triple[fl_ind_1][0];
         // end_1 = fl_stimuli_triple[fl_ind_1][2] + 1;
         // start_2 = fl_stimuli_triple[fl_ind_2][0];
         // end_2 = fl_stimuli_triple[fl_ind_2][2] + 1;
-    }
     console.log(slow_fl_index, fast_fl_index)
-    console.log(fl_ind_1, fl_ind_2)  
-
-    var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
-    var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
-    var fl_counter = slow_lr_filler + fast_lr_filler
+    console.log(slow_lr_filler, slow_lr_filler)
+    console.log(fl_ind_1, fl_ind_2)
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -1251,7 +1253,8 @@ var attention = {
             filler_node = false
         }};
 
-    }
+    },
+  trial_duration: 800
   },
 
 
