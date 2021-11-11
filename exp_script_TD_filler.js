@@ -440,8 +440,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 120); //120
-var repetition_attention = repetition.slice(3, 1080); //1080
+var repetition_1_attention = repetition_1.slice(0, 12); //120
+var repetition_attention = repetition.slice(3, 108); //1080
 //console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -802,7 +802,7 @@ var filler = {
     // console.log(fast_fl_index)
     // console.log(slow_fl_index)
     // console.log(fast_index, slow_index)
-    console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+    console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2])
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
