@@ -1,4 +1,4 @@
-console.log('interesting')
+console.log('xiasi')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -1324,6 +1324,14 @@ if (fl_stimuli_1[0].data.attention_state == 'fast') {
     var fast_filler_3 = filler_TS27
     //var fast_filler_2 = filler_TS48
 };
+
+
+if (lr_stimuli_1[0].data.attention_state == 'fast') {
+    var fast_lr = lr_test_TS1
+    var slow_lr = lr_test_TS2
+} else {
+    var slow_lr = lr_test_TS1
+    var fast_lr = lr_test_TS2};
 
 var if_node_1= { //slow node
   timeline: [slow_lr],
