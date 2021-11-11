@@ -577,6 +577,7 @@ for(i = 0; i < fillers_1.length; i++) {
     fillers_1.splice(i, 1);
     }
 };
+fillers_1 = shuffle(fillers_1);
 
 // this is picking one list of 3 triplet stimuli at random
 fl_stimuli_triple = []
@@ -603,6 +604,7 @@ for(i = 0; i < fillers_2.length; i++) {
     fillers_2.splice(i, 1);
     }
 };
+fillers_2 = shuffle(fillers_2);
 console.log(fillers_1, fillers_2)
 
 
