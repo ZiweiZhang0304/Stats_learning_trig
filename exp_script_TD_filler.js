@@ -1,4 +1,4 @@
-console.log('haaaa')
+console.log('helloooooo')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -1318,7 +1318,7 @@ var attention = {
 };
 
 console.log(fl_stimuli_1[0].data.attention_state)
-console.log(fl_stimuli_triple[slow_fl_index], fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2])
+console.log(fl_stimuli_triple[slow_fl_index], fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]+1)
 if (fl_stimuli_1[0].data.attention_state == 'fast') {
     //var fast_filler = filler_TS1
     //var slow_filler = filler_TS2
@@ -1333,7 +1333,7 @@ if (fl_stimuli_1[0].data.attention_state == 'fast') {
 
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[fl_ind_1][0], fl_stimuli_triple[fl_ind_1][2]), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[fl_ind_1][0], fl_stimuli_triple[fl_ind_1][2] +1), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
   randomize_order: false,
   repetitions: 1
 };
@@ -1341,7 +1341,7 @@ var filler_TS1 = {
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[fl_ind_2][0], fl_stimuli_triple[fl_ind_2][2]), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[fl_ind_2][0], fl_stimuli_triple[fl_ind_2][2] +1), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
   randomize_order: false,
   repetitions: 1
 };
