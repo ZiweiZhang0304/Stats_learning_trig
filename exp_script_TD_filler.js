@@ -1,4 +1,4 @@
-console.log('helloooooo')
+console.log('hell')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -804,7 +804,7 @@ var filler = {
     // console.log(fast_fl_index)
     // console.log(slow_fl_index)
     // console.log(fast_index, slow_index)
-    console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2])
+    console.log(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]+1)
     console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
@@ -922,8 +922,8 @@ var lr_test_TS2 = {
 var lr_node = false;
 var filler_node = false;
 
-var fast_fl_index = 0;
-var slow_fl_index = 0;
+var fast_fl_index = false;
+var slow_fl_index = false;
 var attention_first3 = {
   timeline:[
       {
@@ -990,6 +990,16 @@ var attention = {
     var lr_counter = slow_lr_counter + fast_lr_counter //+1??
     fast_fl_index = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     slow_fl_index = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length
+    console.log(slow_fl_index, fast_fl_index)
+
+
+    if (slow_fl_index == 0){
+        slow_fl_index = false;
+    } else if (fast_fl_index == 0){
+        fast_fl_index = false;
+    } else {}
+
+
     var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
     var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     var fl_counter = slow_lr_filler + fast_lr_filler
@@ -1178,7 +1188,7 @@ var attention = {
 
     /*-- If attention <= 80 --*/
     if (at_counter < 10) { //change 80
-        lr_node = false,
+        lr_node = false
         filler_node = false
     }
 
@@ -1330,6 +1340,7 @@ if (fl_stimuli_1[0].data.attention_state == 'fast') {
     var fl_ind_1 = slow_fl_index
     var fl_ind_2 = fast_fl_index
 };
+console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
 
 var filler_TS1 = {
   timeline: [filler],
