@@ -1,4 +1,4 @@
-console.log('xiasi')
+console.log('did i get it to work?')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -928,7 +928,6 @@ var attention = {
     console.log(slow_fl_index, fast_fl_index)
     console.log(fl_ind_1, fl_ind_2)
     console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
-    console.log(fl_stimuli_triple[fl_ind_1][0], fl_stimuli_triple[fl_ind_1][2]+1, fl_stimuli_triple[fl_ind_2][0], fl_stimuli_triple[fl_ind_2][2]+1)
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -1262,6 +1261,7 @@ var attention = {
 
 /* -----hard coded 24 trials for each condition -----*/
 
+/* ---First organize the triplets---*/
 var filler_TS1 = {
   timeline: [filler],
   timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[0][0], fl_stimuli_triple[0][2] +1),
@@ -1279,6 +1279,132 @@ var filler_TS2 = {
 var filler_TS3 = {
   timeline: [filler],
   timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[2][0], fl_stimuli_triple[2][2] +1),
+  repetitions: 1
+};
+
+var filler_TS4 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[3][0], fl_stimuli_triple[3][2] +1),
+  repetitions: 1
+};
+
+var filler_TS5 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[4][0], fl_stimuli_triple[4][2] +1),
+  repetitions: 1
+};
+
+var filler_TS6 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[5][0], fl_stimuli_triple[5][2] +1),
+  repetitions: 1
+};
+
+var filler_TS7 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[6][0], fl_stimuli_triple[6][2] +1),
+  repetitions: 1
+};
+
+var filler_TS8 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[7][0], fl_stimuli_triple[7][2] +1),
+  repetitions: 1
+};
+
+var filler_TS9 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[8][0], fl_stimuli_triple[8][2] +1),
+  repetitions: 1
+};
+
+var filler_TS10 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[9][0], fl_stimuli_triple[9][2] +1),
+  repetitions: 1
+};
+
+var filler_TS11 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[10][0], fl_stimuli_triple[10][2] +1),
+  repetitions: 1
+};
+
+var filler_TS12 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[11][0], fl_stimuli_triple[11][2] +1),
+  repetitions: 1
+};
+
+var filler_TS13 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[12][0], fl_stimuli_triple[12][2] +1),
+  repetitions: 1
+};
+
+var filler_TS14 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[13][0], fl_stimuli_triple[13][2] +1),
+  repetitions: 1
+};
+
+var filler_TS15 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[14][0], fl_stimuli_triple[14][2] +1),
+  repetitions: 1
+};
+
+var filler_TS16 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[15][0], fl_stimuli_triple[15][2] +1),
+  repetitions: 1
+};
+
+var filler_TS17 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[16][0], fl_stimuli_triple[16][2] +1),
+  repetitions: 1
+};
+
+var filler_TS18 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[17][0], fl_stimuli_triple[17][2] +1),
+  repetitions: 1
+};
+
+var filler_TS19 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[18][0], fl_stimuli_triple[18][2] +1),
+  repetitions: 1
+};
+
+var filler_TS20 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[19][0], fl_stimuli_triple[19][2] +1),
+  repetitions: 1
+};
+
+var filler_TS21 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[20][0], fl_stimuli_triple[20][2] +1),
+  repetitions: 1
+};
+
+var filler_TS22 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[21][0], fl_stimuli_triple[21][2] +1),
+  repetitions: 1
+};
+
+var filler_TS23 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[22][0], fl_stimuli_triple[22][2] +1),
+  repetitions: 1
+};
+
+var filler_TS24 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[23][0], fl_stimuli_triple[23][2] +1),
   repetitions: 1
 };
 
@@ -1302,27 +1428,258 @@ var filler_TS27 = {
   repetitions: 1
 };
 
+var filler_TS28 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[3][0], fl_stimuli_triple[3][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS29 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[4][0], fl_stimuli_triple[4][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS30 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[5][0], fl_stimuli_triple[5][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS31 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[6][0], fl_stimuli_triple[6][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+
+var filler_TS32 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[7][0], fl_stimuli_triple[7][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS33 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[8][0], fl_stimuli_triple[8][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS34 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[9][0], fl_stimuli_triple[9][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS35 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[10][0], fl_stimuli_triple[10][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS36 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[11][0], fl_stimuli_triple[11][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS37 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[12][0], fl_stimuli_triple[12][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS38 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[13][0], fl_stimuli_triple[13][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS39 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[14][0], fl_stimuli_triple[14][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS40 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[15][0], fl_stimuli_triple[15][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS41 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[16][0], fl_stimuli_triple[16][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS42 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[17][0], fl_stimuli_triple[17][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS43 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[18][0], fl_stimuli_triple[18][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS44 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[19][0], fl_stimuli_triple[19][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS45 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[20][0], fl_stimuli_triple[20][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS46 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[21][0], fl_stimuli_triple[21][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS47 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[22][0], fl_stimuli_triple[22][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS48 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[23][0], fl_stimuli_triple[23][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+/* ---Map triplets to attention---*/
 if (fl_stimuli_1[0].data.attention_state == 'fast') {
     var fast_filler_1 = filler_TS1
     var fast_filler_2 = filler_TS2
     var fast_filler_3 = filler_TS3
+    var fast_filler_4 = filler_TS4
+    var fast_filler_5 = filler_TS5
+    var fast_filler_6 = filler_TS6
+    var fast_filler_7 = filler_TS7
+    var fast_filler_8 = filler_TS8
+    var fast_filler_9 = filler_TS9
+    var fast_filler_10 = filler_TS10
+    var fast_filler_11 = filler_TS11
+    var fast_filler_12 = filler_TS12
+    var fast_filler_13 = filler_TS13
+    var fast_filler_14 = filler_TS14
+    var fast_filler_15 = filler_TS15
+    var fast_filler_16 = filler_TS16
+    var fast_filler_17 = filler_TS17
+    var fast_filler_18 = filler_TS18
+    var fast_filler_19 = filler_TS19
+    var fast_filler_20 = filler_TS20
+    var fast_filler_21 = filler_TS21
+    var fast_filler_22 = filler_TS22
+    var fast_filler_23 = filler_TS23
+    var fast_filler_24 = filler_TS24
 
 
     var slow_filler_1 = filler_TS25
     var slow_filler_2 = filler_TS26
     var slow_filler_3 = filler_TS27
-    //var slow_filler_2 = filler_TS48
+    var slow_filler_4 = filler_TS28
+    var slow_filler_5 = filler_TS29
+    var slow_filler_6 = filler_TS30
+    var slow_filler_7 = filler_TS31
+    var slow_filler_8 = filler_TS32
+    var slow_filler_9 = filler_TS33
+    var slow_filler_10 = filler_TS34
+    var slow_filler_11 = filler_TS35
+    var slow_filler_12 = filler_TS36
+    var slow_filler_13 = filler_TS37
+    var slow_filler_14 = filler_TS38
+    var slow_filler_15 = filler_TS39
+    var slow_filler_16 = filler_TS40
+    var slow_filler_17 = filler_TS41
+    var slow_filler_18 = filler_TS42
+    var slow_filler_19 = filler_TS43
+    var slow_filler_20 = filler_TS44
+    var slow_filler_21 = filler_TS45
+    var slow_filler_22 = filler_TS46
+    var slow_filler_23 = filler_TS47
+    var slow_filler_24 = filler_TS48
 
 } else {
     var slow_filler_1 = filler_TS1
     var slow_filler_2 = filler_TS2
     var slow_filler_3 = filler_TS3
+    var slow_filler_4 = filler_TS4
+    var slow_filler_5 = filler_TS5
+    var slow_filler_6 = filler_TS6
+    var slow_filler_7 = filler_TS7
+    var slow_filler_8 = filler_TS8
+    var slow_filler_9 = filler_TS9
+    var slow_filler_10 = filler_TS10
+    var slow_filler_11 = filler_TS11
+    var slow_filler_12 = filler_TS12
+    var slow_filler_13 = filler_TS13
+    var slow_filler_14 = filler_TS14
+    var slow_filler_15 = filler_TS15
+    var slow_filler_16 = filler_TS16
+    var slow_filler_17 = filler_TS17
+    var slow_filler_18 = filler_TS18
+    var slow_filler_19 = filler_TS19
+    var slow_filler_20 = filler_TS20
+    var slow_filler_21 = filler_TS21
+    var slow_filler_22 = filler_TS22
+    var slow_filler_23 = filler_TS23
+    var slow_filler_24 = filler_TS24
 
 
     var fast_filler_1 = filler_TS25
     var fast_filler_2 = filler_TS26
     var fast_filler_3 = filler_TS27
-    //var fast_filler_2 = filler_TS48
+    var fast_filler_4 = filler_TS28
+    var fast_filler_5 = filler_TS29
+    var fast_filler_6 = filler_TS30
+    var fast_filler_7 = filler_TS31
+    var fast_filler_8 = filler_TS32
+    var fast_filler_9 = filler_TS33
+    var fast_filler_10 = filler_TS34
+    var fast_filler_11 = filler_TS35
+    var fast_filler_12 = filler_TS36
+    var fast_filler_13 = filler_TS37
+    var fast_filler_14 = filler_TS38
+    var fast_filler_15 = filler_TS39
+    var fast_filler_16 = filler_TS40
+    var fast_filler_17 = filler_TS41
+    var fast_filler_18 = filler_TS42
+    var fast_filler_19 = filler_TS43
+    var fast_filler_20 = filler_TS44
+    var fast_filler_21 = filler_TS45
+    var fast_filler_22 = filler_TS46
+    var fast_filler_23 = filler_TS47
+    var fast_filler_24 = filler_TS48
 };
 
 
@@ -1351,6 +1708,9 @@ var if_node_2= { //fast node
   }
 };
 
+
+
+/* ---Decide on filler trigger node---*/
 var filler_node_1= { //slow filler node
   timeline: [slow_filler_1],
   conditional_function: function(data){
@@ -1381,6 +1741,218 @@ var filler_node_3= { //slow filler node
     } else{return false}
   }
 };
+var filler_node_4= { //slow filler node
+  timeline: [slow_filler_4],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 3){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_5= { //slow filler node
+  timeline: [slow_filler_5],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 4){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_6= { //slow filler node
+  timeline: [slow_filler_6],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 5){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_7= { //slow filler node
+  timeline: [slow_filler_7],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 6){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_8= { //slow filler node
+  timeline: [slow_filler_8],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 7){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_9= { //slow filler node
+  timeline: [slow_filler_9],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 8){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_10= { //slow filler node
+  timeline: [slow_filler_10],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 9){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_11= { //slow filler node
+  timeline: [slow_filler_11],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 10){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_12= { //slow filler node
+  timeline: [slow_filler_12],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 11){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_13= { //slow filler node
+  timeline: [slow_filler_13],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 12){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_14= { //slow filler node
+  timeline: [slow_filler_14],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 13){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_15= { //slow filler node
+  timeline: [slow_filler_15],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 14){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_16= { //slow filler node
+  timeline: [slow_filler_16],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 15){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_17= { //slow filler node
+  timeline: [slow_filler_17],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 16){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_18= { //slow filler node
+  timeline: [slow_filler_18],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 17){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_19= { //slow filler node
+  timeline: [slow_filler_19],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 18){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_20= { //slow filler node
+  timeline: [slow_filler_20],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 19){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_21= { //slow filler node
+  timeline: [slow_filler_21],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 20){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_22= { //slow filler node
+  timeline: [slow_filler_22],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 21){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_23= { //slow filler node
+  timeline: [slow_filler_23],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 22){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_24= { //slow filler node
+  timeline: [slow_filler_24],
+  conditional_function: function(data){
+    if (filler_node == 1){
+        if (slow_fl_index == 23){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+
+
 
 var filler_node_25= { //fast filler node
   timeline: [fast_filler_1],
@@ -1412,9 +1984,225 @@ var filler_node_27= { //fast filler node
     } else{return false}
   }
 };
+var filler_node_28= { //fast filler node
+  timeline: [fast_filler_4],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 3){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_29= { //fast filler node
+  timeline: [fast_filler_5],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 4){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_30= { //fast filler node
+  timeline: [fast_filler_6],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 5){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_31= { //fast filler node
+  timeline: [fast_filler_7],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 6){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_32= { //fast filler node
+  timeline: [fast_filler_8],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 7){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_33= { //fast filler node
+  timeline: [fast_filler_9],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 8){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_34= { //fast filler node
+  timeline: [fast_filler_10],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 9){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_35= { //fast filler node
+  timeline: [fast_filler_11],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 10){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_36= { //fast filler node
+  timeline: [fast_filler_12],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 11){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_37= { //fast filler node
+  timeline: [fast_filler_13],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 12){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_38= { //fast filler node
+  timeline: [fast_filler_14],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 13){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_39= { //fast filler node
+  timeline: [fast_filler_15],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 14){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_40= { //fast filler node
+  timeline: [fast_filler_16],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 15){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_41= { //fast filler node
+  timeline: [fast_filler_17],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 16){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_42= { //fast filler node
+  timeline: [fast_filler_18],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 17){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_43= { //fast filler node
+  timeline: [fast_filler_19],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 18){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_44= { //fast filler node
+  timeline: [fast_filler_20],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 19){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_45= { //fast filler node
+  timeline: [fast_filler_21],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 20){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_46= { //fast filler node
+  timeline: [fast_filler_22],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 21){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_47= { //fast filler node
+  timeline: [fast_filler_23],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 22){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+
+var filler_node_48= { //fast filler node
+  timeline: [fast_filler_24],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 23){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2, filler_node_1, filler_node_2, filler_node_3, filler_node_25, filler_node_26, filler_node_27,iti_200],
+  timeline: [attention,if_node_1,if_node_2, filler_node_1, filler_node_2, filler_node_3, filler_node_4, filler_node_5, filler_node_6, filler_node_7, filler_node_8,
+      filler_node_9, filler_node_10, filler_node_11, filler_node_12, filler_node_13, filler_node_14, filler_node_15, filler_node_16, filler_node_17, filler_node_18,
+      filler_node_19, filler_node_20, filler_node_21, filler_node_22, filler_node_23, filler_node_24, filler_node_25, filler_node_26, filler_node_27, filler_node_28,
+      filler_node_29, filler_node_30, filler_node_31, filler_node_32, filler_node_33, filler_node_34, filler_node_35, filler_node_36, filler_node_37, filler_node_38,
+      filler_node_39, filler_node_40, filler_node_41, filler_node_42, filler_node_43, filler_node_44, filler_node_45, filler_node_46, filler_node_47, filler_node_48, iti_200],
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
