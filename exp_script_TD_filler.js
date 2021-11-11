@@ -1,4 +1,4 @@
-console.log('did i get it to work?')
+console.log('yes')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -440,8 +440,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 24); //120
-var repetition_attention = repetition.slice(3, 216); //1080
+var repetition_1_attention = repetition_1.slice(0, 36); //120
+var repetition_attention = repetition.slice(3, 324); //1080
 //console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
