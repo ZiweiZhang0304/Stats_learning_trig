@@ -1,4 +1,4 @@
-console.log('hihhh')
+console.log('interesting')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -916,17 +916,6 @@ var attention = {
     var fast_lr_filler = jsPsych.data.get().filter({filler: 'fast'}).select('rt').values.length
     var fl_counter = slow_lr_filler + fast_lr_filler
 
-    // if (slow_fl_index == 0 && fast_fl_index == 0 ){
-    //     slow_fl_index = false;
-    //     fast_fl_index = false;
-    // } else if (slow_fl_index != 0 && fast_fl_index == 0){
-    //     fast_fl_index = false;
-    // } else if (slow_fl_index == 0 && fast_fl_index != 0){
-    //     slow_fl_index = false;
-    // } else if (slow_fl_index != 0 && fast_fl_index != 0){
-    //     fast_fl_index = fast_fl_index;
-    //     slow_fl_index = slow_fl_index;
-    // }
 
     if (fl_stimuli_1[0].data.attention_state == 'fast') {
             fl_ind_2 = slow_fl_index
@@ -936,12 +925,7 @@ var attention = {
         fl_ind_1 = slow_fl_index
         fl_ind_2 = fast_fl_index
     };
-        // start_1 = fl_stimuli_triple[fl_ind_1][0];
-        // end_1 = fl_stimuli_triple[fl_ind_1][2] + 1;
-        // start_2 = fl_stimuli_triple[fl_ind_2][0];
-        // end_2 = fl_stimuli_triple[fl_ind_2][2] + 1;
     console.log(slow_fl_index, fast_fl_index)
-    //console.log(slow_lr_filler, fast_lr_filler)
     console.log(fl_ind_1, fl_ind_2)
     console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
     console.log(fl_stimuli_triple[fl_ind_1][0], fl_stimuli_triple[fl_ind_1][2]+1, fl_stimuli_triple[fl_ind_2][0], fl_stimuli_triple[fl_ind_2][2]+1)
@@ -1274,36 +1258,72 @@ var attention = {
     ],
 };
 
-//console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
+
+
+/* -----hard coded 24 trials for each condition -----*/
 
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[fl_ind_1][0], fl_stimuli_triple[fl_ind_1][2] +1), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[0][0], fl_stimuli_triple[0][2] +1),
   randomize_order: false,
   repetitions: 1
 };
-
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[fl_ind_2][0], fl_stimuli_triple[fl_ind_2][2] +1), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[1][0], fl_stimuli_triple[1][2] +1),
   randomize_order: false,
   repetitions: 1
 };
 
-if (lr_stimuli_1[0].data.attention_state == 'fast') {
-    var fast_lr = lr_test_TS1
-    var slow_lr = lr_test_TS2
-} else {
-    var slow_lr = lr_test_TS1
-    var fast_lr = lr_test_TS2};
+var filler_TS3 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[2][0], fl_stimuli_triple[2][2] +1),
+  repetitions: 1
+};
+
+var filler_TS25 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[0][0], fl_stimuli_triple[0][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+var filler_TS26 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[1][0], fl_stimuli_triple[1][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
+
+var filler_TS27 = {
+  timeline: [filler],
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[2][0], fl_stimuli_triple[2][2] +1),
+  randomize_order: false,
+  repetitions: 1
+};
 
 if (fl_stimuli_1[0].data.attention_state == 'fast') {
-    var fast_filler = filler_TS1
-    var slow_filler = filler_TS2
+    var fast_filler_1 = filler_TS1
+    var fast_filler_2 = filler_TS2
+    var fast_filler_3 = filler_TS3
+
+
+    var slow_filler_1 = filler_TS25
+    var slow_filler_2 = filler_TS26
+    var slow_filler_3 = filler_TS27
+    //var slow_filler_2 = filler_TS48
+
 } else {
-    var slow_filler = filler_TS1
-    var fast_filler = filler_TS2};
+    var slow_filler_1 = filler_TS1
+    var slow_filler_2 = filler_TS2
+    var slow_filler_3 = filler_TS3
+
+
+    var fast_filler_1 = filler_TS25
+    var fast_filler_2 = filler_TS26
+    var fast_filler_3 = filler_TS27
+    //var fast_filler_2 = filler_TS48
+};
 
 var if_node_1= { //slow node
   timeline: [slow_lr],
@@ -1324,26 +1344,69 @@ var if_node_2= { //fast node
 };
 
 var filler_node_1= { //slow filler node
-  timeline: [slow_filler],
+  timeline: [slow_filler_1],
+  conditional_function: function(data){
+    if (filler_node == 1){ //slow filler condition
+        if (slow_fl_index == 0){ //no filler trial yet but about to insert one
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_2= { //slow filler node
+  timeline: [slow_filler_2],
   conditional_function: function(data){
     if (filler_node == 1){
-      return true;
+        if (slow_fl_index == 1){
+            return true;
+        } else {return false}
     } else{return false}
   }
 };
-
-var filler_node_2= { //fast filler node
-  timeline: [fast_filler],
+var filler_node_3= { //slow filler node
+  timeline: [slow_filler_3],
   conditional_function: function(data){
-    if (filler_node == 2){
-      return true;
+    if (filler_node == 1){
+        if (slow_fl_index == 2){
+            return true;
+        } else {return false}
     } else{return false}
   }
 };
 
+var filler_node_25= { //fast filler node
+  timeline: [fast_filler_1],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 0){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_26= { //fast filler node
+  timeline: [fast_filler_2],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 1){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
+var filler_node_27= { //fast filler node
+  timeline: [fast_filler_3],
+  conditional_function: function(data){
+    if (filler_node == 2){ //fast filler condition
+        if (fast_fl_index == 2){
+            return true;
+        } else {return false}
+    } else{return false}
+  }
+};
 
 var at_test_procedure = {
-  timeline: [attention,if_node_1,if_node_2, filler_node_1, filler_node_2,iti_200],
+  timeline: [attention,if_node_1,if_node_2, filler_node_1, filler_node_2, filler_node_3, filler_node_25, filler_node_26, filler_node_27,iti_200],
   timeline_variables: at_stimuli,
   randomize_order: false,
   repetitions: 1
