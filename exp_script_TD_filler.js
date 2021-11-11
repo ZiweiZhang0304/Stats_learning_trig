@@ -1,4 +1,4 @@
-console.log('hi')
+console.log('hihhh')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -929,20 +929,22 @@ var attention = {
     // }
 
     if (fl_stimuli_1[0].data.attention_state == 'fast') {
-            fl_ind_2 = slow_lr_filler
-            fl_ind_1 = fast_lr_filler
+            fl_ind_2 = slow_fl_index
+            fl_ind_1 = fast_fl_index
         }
     else {
-        fl_ind_1 = slow_lr_filler
-        fl_ind_2 = fast_lr_filler
+        fl_ind_1 = slow_fl_index
+        fl_ind_2 = fast_fl_index
     };
         // start_1 = fl_stimuli_triple[fl_ind_1][0];
         // end_1 = fl_stimuli_triple[fl_ind_1][2] + 1;
         // start_2 = fl_stimuli_triple[fl_ind_2][0];
         // end_2 = fl_stimuli_triple[fl_ind_2][2] + 1;
     console.log(slow_fl_index, fast_fl_index)
-    console.log(slow_lr_filler, slow_lr_filler)
+    //console.log(slow_lr_filler, fast_lr_filler)
     console.log(fl_ind_1, fl_ind_2)
+    console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
+    console.log(fl_stimuli_triple[fl_ind_1][0], fl_stimuli_triple[fl_ind_1][2]+1, fl_stimuli_triple[fl_ind_2][0], fl_stimuli_triple[fl_ind_2][2]+1)
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -1272,7 +1274,6 @@ var attention = {
     ],
 };
 
-console.log(fl_stimuli_1[0].data.attention_state)
 //console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
 
 var filler_TS1 = {
