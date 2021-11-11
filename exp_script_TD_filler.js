@@ -1,4 +1,4 @@
-console.log('hiii')
+console.log('hhhh')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -923,6 +923,8 @@ var filler_node = false;
 
 var fast_fl_index = 0;
 var slow_fl_index = 0;
+var fl_ind_1 = fast_fl_index;
+var fl_ind_2 = slow_fl_index;
 var attention_first3 = {
   timeline:[
       {
@@ -997,6 +999,17 @@ var attention = {
     } else if (fast_fl_index == 0){
         fast_fl_index = false;
     } else {}
+
+
+    if (fl_stimuli_1[0].data.attention_state == 'fast') {
+        fl_ind_1 = fast_fl_index
+        fl_ind_2 = slow_fl_index
+    } else {
+        // var slow_filler = filler_TS1
+        // var fast_filler = filler_TS2
+        fl_ind_1 = slow_fl_index
+        fl_ind_2 = fast_fl_index
+    };
 
 
     var slow_lr_filler = jsPsych.data.get().filter({filler: 'slow'}).select('rt').values.length // this counts how many fillers have been inserted
@@ -1327,18 +1340,6 @@ var attention = {
 };
 
 console.log(fl_stimuli_1[0].data.attention_state)
-console.log(fl_stimuli_triple[slow_fl_index], fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]+1)
-if (fl_stimuli_1[0].data.attention_state == 'fast') {
-    //var fast_filler = filler_TS1
-    //var slow_filler = filler_TS2
-    var fl_ind_1 = fast_fl_index
-    var fl_ind_2 = slow_fl_index
-} else {
-    // var slow_filler = filler_TS1
-    // var fast_filler = filler_TS2
-    var fl_ind_1 = slow_fl_index
-    var fl_ind_2 = fast_fl_index
-};
 console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
 
 var filler_TS1 = {
