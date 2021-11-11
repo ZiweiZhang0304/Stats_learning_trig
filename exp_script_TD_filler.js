@@ -1,4 +1,4 @@
-console.log('haaaaa')
+console.log('hiiii')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -1331,7 +1331,7 @@ if (fl_stimuli_1[0].data.attention_state == 'fast') {
 
 var filler_TS1 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3]), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+  timeline_variables: fl_stimuli_1.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
   randomize_order: false,
   repetitions: 1
 };
@@ -1339,7 +1339,7 @@ var filler_TS1 = {
 
 var filler_TS2 = {
   timeline: [filler],
-  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3]), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
+  timeline_variables: fl_stimuli_2.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][2]), //.slice(fl_stimuli_triple[slow_fl_index][0], fl_stimuli_triple[slow_fl_index][3])
   randomize_order: false,
   repetitions: 1
 };
