@@ -1,4 +1,3 @@
-console.log('test2.0')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -214,7 +213,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-//timeline.push(enter_full);
+timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -432,8 +431,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 48); //120
-var repetition_attention = repetition.slice(3, 423); //1080
+var repetition_1_attention = repetition_1.slice(0, 120); //120
+var repetition_attention = repetition.slice(3, 1080); //1080
 //console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
@@ -3768,7 +3767,7 @@ timeline.push(sort_trial_2);
 var FR_Q1 = {
     type: 'survey-text',
     questions: [
-    {prompt: '<p> When you were playing the game, did you noticed the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+    {prompt: '<p> When you were playing the game, did you notice the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
 timeline.push(FR_Q1);
