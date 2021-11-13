@@ -1,4 +1,4 @@
-
+console.log('test')
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
 
@@ -1050,9 +1050,9 @@ var attention = {
             slow_filler_num = true
         };
         /* ----no consecutive filler trials---- */
-        var last_fl = jsPsych.data.get().filter({ test_part: 'test' }).last(3).select('TaskType').values;
-        if (last_fl.includes('fl')== true) {
-            console.log('there is a filler trial')}
+        // var last_fl = jsPsych.data.get().filter({ test_part: 'test' }).last(3).select('TaskType').values;
+        // if (last_fl.includes('fl')== true) {
+        //     console.log('there is a filler trial')}
 
 
 
@@ -1137,32 +1137,32 @@ var attention = {
             }*/
 
         /* ----- slow control ----- */
-        else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true && last_fl.includes('fl')== false)) {
+        else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = 'diff_restrict'
                 console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = 'consecutive'
                 console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && initial_slow == false && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && initial_slow == false && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = 'initial_slow'
                 console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = 'last_lr'
                 console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = 'last_correct'
                 console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = last_infreq
@@ -1170,32 +1170,32 @@ var attention = {
       }
 
       /* ----- fast control ----- */
-        else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler_num == true && last_fl.includes('fl')== false)){
+        else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler_num == true)){
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'diff_restrict'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler_num == true && last_fl.includes('fl')== false) ) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler_num == true) ) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'consecutive'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == false && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == false && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'initial_fast'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_lr'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_correct'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_infreq'
@@ -1231,27 +1231,27 @@ var attention = {
           //at the end of each trial, you decide whether this is a CHB, (e.g. 5 of them)
           //if so, insert fillers; either 1-5 happens???
       /* ----- slow control ----- */
-      else if((rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      else if((rt_three > rt_mean+ rt_sd && last_slow == false && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               data.control_case = 'consecutive'
               console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               data.control_case = 'diff_restrict'
               console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               data.control_case = 'last_lr'
               console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               data.control_case = 'last_correct'
               console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true && last_fl.includes('fl')== false))
+      } else if ((rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && slow_filler_num == true))
           {
               filler_node = 1;
               data.filler = 'slow'
@@ -1259,27 +1259,27 @@ var attention = {
               console.log('filler slow')}
 
       /* ----- fast control ----- */
-      else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'consecutive'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'diff_restrict'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_lr'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_correct'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true && last_fl.includes('fl')== false)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_infreq'
