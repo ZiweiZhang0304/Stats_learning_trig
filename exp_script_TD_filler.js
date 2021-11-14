@@ -1,4 +1,4 @@
-console.log('morning')
+console.log('maaa')
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
 
@@ -978,7 +978,7 @@ var attention = {
         //calculate trailing RT after the third trial
         var rt_three = jsPsych.data.get().filter({at_TrialType: 'frequent'}).last(3).select('rt').mean();
         data.at_TrailingMean = rt_three
-        //console.log('trailing mean is ' + rt_three)
+        console.log('trailing mean is ' + rt_three)
         //console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
 
   };
