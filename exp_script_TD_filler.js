@@ -1309,7 +1309,7 @@ var attention = {
             // else {
             //     lr_node = false
             //     filler_node = false}
-            // };
+        };
 
     },
   trial_duration: 800
