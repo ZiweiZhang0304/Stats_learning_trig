@@ -1,4 +1,4 @@
-console.log('test')
+console.log('morning test')
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
 
@@ -1157,7 +1157,7 @@ var attention = {
                 data.filler = 'slow'
                 data.control_case = 'last_lr'
                 console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && rt_three != 0 && slow_filler_num == true)) { //&& rt_three != 0
                 filler_node = 1;
                 data.filler = 'slow'
                 data.control_case = 'last_correct'
@@ -1190,7 +1190,7 @@ var attention = {
                 data.filler = 'fast'
                 data.control_case = 'last_lr'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_correct'
@@ -1246,7 +1246,7 @@ var attention = {
               data.filler = 'slow'
               data.control_case = 'last_lr'
               console.log('filler slow')
-      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && slow_filler_num == true)) {
+      } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && rt_three != 0 && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               data.control_case = 'last_correct'
@@ -1274,7 +1274,7 @@ var attention = {
                 data.filler = 'fast'
                 data.control_case = 'last_lr'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && fast_filler_num == true)) {
+      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 data.control_case = 'last_correct'
