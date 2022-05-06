@@ -1,4 +1,4 @@
-[
+var followup_stimuli = [
  {
    "trial_number": 1,
    "TD_stim_list": "[https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png, https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png]",
