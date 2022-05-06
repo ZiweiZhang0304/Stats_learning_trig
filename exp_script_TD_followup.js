@@ -1,4 +1,5 @@
 var task_name = "Stats_learning_trig";
+var sbj_id = "test01";
 
 //you must put your save_data php url here.
 var save_url = "https://users.rcc.uchicago.edu/~zz112/exp_data/save_data.php";
