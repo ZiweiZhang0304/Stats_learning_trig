@@ -11,11 +11,12 @@ var file_name = task_name + '_' + sbj_id;
 var repo_site = "https://ziweizhang0304.github.io/Stats_learning_trig/";
 
 var timeline = [];
-console.log(followup_stimuli[0])
-console.log(length(followup_stimuli))
 
 //Read in csv file as stimuli
-//<script src='followup_0c402.js'></script>
+<script src='https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'></script>
+
+console.log(followup_stimuli[0])
+console.log(length(followup_stimuli))
 //in this file we'll have stimuli sets for the two tasks. then we can separate them in this script
 
 //loop through each list of 24 lists of TD trial sequences and assign a target each time
