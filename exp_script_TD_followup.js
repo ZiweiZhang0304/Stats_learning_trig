@@ -17,7 +17,7 @@ var timeline = [];
 //<script src='https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'></script> this only occurs in html
 
 console.log(followup_stimuli[0])
-console.log(length(followup_stimuli))
+console.log(followup_stimuli.length)
 //in this file we'll have stimuli sets for the two tasks. then we can separate them in this script
 
 //loop through each list of 24 lists of TD trial sequences and assign a target each time
