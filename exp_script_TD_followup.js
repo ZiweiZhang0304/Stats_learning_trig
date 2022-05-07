@@ -13,7 +13,8 @@ var repo_site = "https://ziweizhang0304.github.io/Stats_learning_trig/";
 var timeline = [];
 
 //Read in csv file as stimuli
-<script src='https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'></script>
+//<script src='https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'></script>
+var followup_stimuli = followup_stimuli
 
 console.log(followup_stimuli[0])
 console.log(length(followup_stimuli))
