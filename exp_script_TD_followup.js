@@ -199,6 +199,7 @@ var TD_target_present_1 = {
 };
 
 var animation_sequence_1 = followup_stimuli[0].TD_stim_list
+console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
     type: 'animation',
     frame_time: 300,
@@ -278,7 +279,7 @@ var TD2 = {
 };
 
 
-var TD_target_3 = TD_stimuli.slice(24,36)[5].TD_stimulus
+/*var TD_target_3 = TD_stimuli.slice(24,36)[5].TD_stimulus
 var TD_target_present_3 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1173,10 +1174,10 @@ var TD24 = {
     timeline: [TD_target_present_24, TD_trial_sequence_24],
     randomize_order: false,
     repetitions: 1
-};
+};*/
 
 /*--------- TD practice --------- */
-var TD_target_prac_1 = TD_stimuli_prac.slice(0,12)[3].TD_stimulus
+/*var TD_target_prac_1 = TD_stimuli_prac.slice(0,12)[3].TD_stimulus
 var TD_target_present_1_prac = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1297,7 +1298,7 @@ var practice_presentation = {
     timeline: shuffledTD_prac,
     randomize_order: false,
     repetitions: 1
-}
+}*/
 //timeline.push(practice_presentation);
 //timeline.push(instruction4);
 
