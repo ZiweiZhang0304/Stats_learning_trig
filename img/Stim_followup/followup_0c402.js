@@ -144,4 +144,4 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png"
  }
 ];
-export { followup_stimuli };
+export var followup_stimuli  = followup_stimuli;
