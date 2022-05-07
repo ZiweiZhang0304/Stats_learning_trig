@@ -11,7 +11,7 @@ var file_name = task_name + '_' + sbj_id;
 var repo_site = "https://ziweizhang0304.github.io/Stats_learning_trig/";
 
 var timeline = [];
-import { followup_stimuli } from 'https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'
+//import { followup_stimuli } from 'https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'
 
 //Read in csv file as stimulis
 //<script src='https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim_followup/followup_0c402.js'></script> this only occurs in html
