@@ -207,7 +207,7 @@ var debrief_TD_prac = {
 // now this variable followup_stimuli is a list of 24 objects, each containing 4 elements.
 // we need the second as animation_sequence_1
 // the fourth as TD_target
-var TD_target_1 = followup_stimuli[10].TD_target
+var TD_target_1 = followup_stimuli[12].TD_target
 console.log(TD_target_1)
 
 var TD_target_present_1 = {
@@ -218,7 +218,7 @@ var TD_target_present_1 = {
     choices: ['Enter']
 };
 
-var animation_sequence_1 = followup_stimuli[10].TD_stim_list
+var animation_sequence_1 = followup_stimuli[12].TD_stim_list
 console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
     type: 'animation',
