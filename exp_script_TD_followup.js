@@ -220,6 +220,7 @@ var TD_target_present_1 = {
 
 var animation_sequence_1 = followup_stimuli[12].TD_stim_list
 console.log(animation_sequence_1)
+str.replace(/%20/g, " ");
 var TD_trial_sequence_1 = {
     type: 'animation',
     frame_time: 300,
