@@ -218,7 +218,7 @@ var TD_target_present_1 = {
     choices: ['Enter']
 };
 
-var animation_sequence_1 = followup_stimuli[12].TD_stim_list
+var animation_sequence_1 = Array.from(followup_stimuli[12].TD_stim_list)
 console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
     type: 'animation',
@@ -258,7 +258,7 @@ var TD1 = {
 
 
 
-var TD_target_2 = followup_stimuli[1].TD_target
+var TD_target_2 = Array.from(followup_stimuli[1].TD_target)
 var TD_target_present_2 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
