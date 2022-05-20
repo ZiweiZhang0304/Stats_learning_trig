@@ -1353,7 +1353,7 @@ var instruction5 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction5);
+timeline.push(instruction5);
 
 //-------------Drag and drop-------------//
 /*var sorting_stimuli= [];
