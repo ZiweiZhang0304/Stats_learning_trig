@@ -2577,8 +2577,12 @@ var TD_target_present_1 = {
     repetitions: 1
 };*/
 
-var animation_sequence_1 = get_values_bykey(TD_stimuli.slice(0,12))
+var animation_sequence_1 =get_values_bykey(TD_stimuli.slice(0,12))
+console.log(TD_stimuli)
+console.log(typeof TD_stimuli)
 console.log(animation_sequence_1)
+console.log(typeof animation_sequence_1)
+
 var TD_trial_sequence_1 = {
     type: 'animation',
     frame_time: 300,
