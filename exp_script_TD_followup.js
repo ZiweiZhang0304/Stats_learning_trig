@@ -16,6 +16,65 @@ var timeline = [];
 console.log(followup_stimuli[0])
 console.log(followup_stimuli.length)
 
+function get_target_time(animation_sequence,response, TD_target,set) {
+
+    var time = []
+    var shapes_reacted_to = []
+    var shapes_reacted_to_index = []
+    var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
+    //console.log(target_index)
+
+    function checkindex(index) {
+                    var index_after_target = index > target_index
+                    return  index_after_target;}
+
+    if (set =='onset') {
+        animation_sequence.forEach(function myFunction(value) {
+            //console.log('this is shape ' + value)
+            if (value.stimulus == TD_target) {
+                //get index of target
+                time.push(value.time)
+        }
+    })
+}
+
+    if (set =='offset'){
+            var shapes_rt_index_after_target = []
+
+            response.forEach(function myFunction(value) {
+            var shape = value.stimulus
+            //console.log(shape)
+            shapes_reacted_to.push(shape)
+            var shape_index = findWithAttr(animation_sequence, 'stimulus', shape)
+            shapes_reacted_to_index.push(shape_index)
+
+            if (shape == TD_target) {
+                time.push(value.rt)
+                }
+            else if (shape_index > target_index){
+                //console.log('this is post target')
+                shapes_rt_index_after_target.push(value.rt)
+                //console.log(shapes_rt_index_after_target)
+            }
+
+    })
+
+            //for every index in shapes_reacted_to_index, if all of them < target_index, then log
+            if (shapes_reacted_to_index.every( (val) => val <target_index) && shapes_reacted_to.includes(TD_target) == false ) {
+                //console.log('pressed before target')
+                //console.log(shapes_reacted_to_index.every( (val) => val <target_index))
+            }
+
+            //if any of them > target_index and no press to target, then take the rt of the first after target
+            else if(shapes_reacted_to_index.some(checkindex) && shapes_reacted_to.includes(TD_target) == false){ // Returns true
+                time.push(shapes_rt_index_after_target[0])
+                //console.log(shapes_reacted_to_index.some(checkindex))
+                //console.log(shapes_rt_index_after_target)
+            }
+    };
+    return time[0]
+};
+
 preload_list = [repo_site + 'img/Stim/FN_001_g.png', repo_site + 'img/Stim/FN_002_g.png', repo_site + 'img/Stim/FN_003_g.png',
 repo_site +'img/Stim/FN_004_g.png', repo_site + 'img/Stim/FN_005_g.png', repo_site + 'img/Stim/FN_006_g.png',
 repo_site +'img/Stim/FN_007_g.png', repo_site + 'img/Stim/FN_008_g.png', repo_site + 'img/Stim/FN_009_g.png',
