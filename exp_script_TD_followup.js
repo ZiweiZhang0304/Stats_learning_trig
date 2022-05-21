@@ -116,46 +116,50 @@ repo_site +'img/Stim/gray_bdot.png']
 
 //loop through each list of 24 lists of TD trial sequences and assign a target each time
 /* -----Part 1: TD----- */
-var instruction3 = {
+var instruction1 = {
     type: 'instructions',
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        You have finished the first part of the Study! <br>\n' +
+        '        Welcome to the study! <br>\n' +
         '        <br>\n' +
-        '        In this study, you will press a button when you see some certain shapes. <br>\n' +
+        '        The study contains two parts. Click on “Next” to read the instructions for the first part. <br>\n' +
         '        <br>\n' +
         '</p> <br>',
 
         '<p style="color:black;font-size: 26px">\n' +
-        '        At the start of each trial, you will see one shape. <br>\n' +
+        '        Please read the instructions for the first part of the study carefully. <br>\n' +
+        '        In this part of the study, you will see a series of shapes, presented one at a time. <br>\n' +
         '        <br>\n' +
-        '        You will then see a series of shapes, presented one at a time just like in the first part of the study. <br>\n' +
+        '        However, before you see the shapes, we will show you one shape.  <br>\n' +
+        '        This shape is called the <b>target shape</b>.  <br>\n' +
+        '        When you see the target shape, press the <b>SPACEBAR</b>. <br>\n' +
         '</p> <br>',
 
         '<p style="color:black;font-size: 26px">\n' +
-        '        Whenever you see the shape presented at the beginning of the trial, press the SPACEBAR. <br>\n' +
+        '        Again, whenever you see the target shape, press the <b>SPACEBAR</b>. <br>\n' +
         '        <br>\n' +
-        '        Do not press any button to any other shape. <br>\n' +
+        '        </b>DO NOT</b> press any button to any other shape. <br>\n' +
         '        <br>\n' +
-        '        The shapes will go by very fast so please respond quickly and accurately. <br>\n' +
+        '        Notice that the shapes will go by very fast so please respond quickly and accurately. <br>\n' +
         '        <br>\n' +
         '        Click on "Next" to move on. <br> \n' +
         '</p> <br>',
 
         '<p style="color:black;font-size: 26px">\n' +
-        '        Now you will do a short practice of this part. <br>\n' +
+        '        Now you will do a short practice. <br>\n' +
         '        <br>\n' +
-        '        Click “Next” to start the practice. <br>\n' +
+        '        When you are ready, click “Next” to start the practice. <br>\n' +
         '</p> <br>',
 
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction3);
+timeline.push(instruction1);
 
 
-/*// practice
+
+/* //-------practice-------//
 var TD_list_prac = []
 for (j = 0; j < range(0,2).length; j++) {
 
@@ -208,7 +212,7 @@ target_location_prac.forEach(function myFunction(value) {
 
     })*/
 
-var instruction4 = {
+var instruction2 = {
     type: 'instructions',
     pages: [
         /* -----instr_9----- */
@@ -1113,7 +1117,7 @@ var TD_target_20 = followup_stimuli[19].TD_target
 var TD_target_present_20 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
-    stimulus: TD_stimuli.slice(228,240)[6].TD_stimulus, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
+    stimulus: TD_target_20, //TD_stimuli.slice(0): (0,1,2...23); TD_stimulus[3]: [3,4,5,4,5,6,5,6,7,6,7,8,3,4,5,4,5,6,5,6,7,6,7,8]
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
@@ -1447,7 +1451,7 @@ var practice_presentation = {
     repetitions: 1
 }*/
 //timeline.push(practice_presentation);
-//timeline.push(instruction4);
+//timeline.push(instruction2);
 
 
 //real TD block
@@ -1482,21 +1486,22 @@ var FR_Q2 = {
 timeline.push(FR_Q2);
 
 /* -----Part 2: Recreate----- */
-var instruction5 = {
+var instruction3 = {
     type: 'instructions',
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
+        '        Please read the instructions for the second part of the study. <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
-        '        Therefore, in this section, we will ask you to recreate groups of 3 shapes that you remember from the first part of the experiment. <br>\n' +
+        '        Therefore, in this section, we will ask you to recreate groups of 3 shapes that you remember from the first part of the study. <br>\n' +
         '        <br>\n' +
         '        Now, click on "Next" to move on. <br> \n' +
         '</p> <br>'
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction5);
+timeline.push(instruction3);
 
 
 
@@ -1506,7 +1511,7 @@ sort_trial_1_stimuli = string_to_object(followup_stimuli_DD[0].DD_stim_list)
 var sort_trial_1 = {
     type: 'free-sort',
     stimuli: sort_trial_1_stimuli,
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study. <br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br> If you are not sure about the order, just make your best guess. </p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
@@ -1528,7 +1533,7 @@ sort_trial_2_stimuli = string_to_object(followup_stimuli_DD[1].DD_stim_list)
 var sort_trial_2 = {
     type: 'free-sort',
     stimuli: sort_trial_2_stimuli,
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br> If you are not sure about the order, just make your best guess. </p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
@@ -1548,13 +1553,13 @@ timeline.push(sort_trial_2);
 
 
 //-----Final Awareness Free Response Q-----//
-var FR_Q3 = {
-    type: 'survey-text',
-    questions: [
-    {prompt: '<p> Did you notice the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
-  ],
-};
-timeline.push(FR_Q3);
+// var FR_Q3 = {
+//     type: 'survey-text',
+//     questions: [
+//     {prompt: '<p> Did you notice regular sequences of 3 shapes in the first part of the study, before the instructions told you that they were present? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+//   ],
+// };
+// timeline.push(FR_Q3);
 
 
 var interaction_data = jsPsych.data.getInteractionData();
