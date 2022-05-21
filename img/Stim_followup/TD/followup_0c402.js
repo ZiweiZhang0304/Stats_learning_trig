@@ -4,6 +4,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 8,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -11,6 +13,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 5,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -18,6 +22,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 9,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -25,6 +31,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png",
    "TD_target_position": 5,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -32,6 +40,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 6,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -39,6 +49,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png",
    "TD_target_position": 7,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -46,6 +58,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 7,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -53,6 +67,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 7,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -60,6 +76,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 8,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -67,6 +85,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 6,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -74,6 +94,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 4,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -81,6 +103,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 6,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -88,6 +112,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 8,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -95,6 +121,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 7,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -102,6 +130,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 8,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -109,6 +139,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 6,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -116,6 +148,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 5,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -123,6 +157,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 7,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  },
  {
@@ -130,6 +166,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 5,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -137,6 +175,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png",
    "TD_target_position": 6,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 2,
    "participant": "0c402"
  },
  {
@@ -144,6 +184,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 7,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -151,6 +193,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 6,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -158,6 +202,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_024_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png",
    "TD_target_position": 9,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_015_g.png",
+   "attention_state": "fast",
+   "TD_within_triplet_counter": 3,
    "participant": "0c402"
  },
  {
@@ -165,6 +211,8 @@ var followup_stimuli = [
    "TD_stim_list": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_016_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_019_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_013_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_021_g.png,https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_026_g.png",
    "TD_target_position": 4,
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_g.png",
+   "attention_state": "slow",
+   "TD_within_triplet_counter": 1,
    "participant": "0c402"
  }
 ]
