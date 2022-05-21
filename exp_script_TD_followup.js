@@ -84,6 +84,12 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     return time[0]
 };
 
+function string_to_object(s){
+    var match = s.split(',')
+    console.log(match)
+    return match;
+};
+
 preload_list = [repo_site + 'img/Stim/FN_001_g.png', repo_site + 'img/Stim/FN_002_g.png', repo_site + 'img/Stim/FN_003_g.png',
 repo_site +'img/Stim/FN_004_g.png', repo_site + 'img/Stim/FN_005_g.png', repo_site + 'img/Stim/FN_006_g.png',
 repo_site +'img/Stim/FN_007_g.png', repo_site + 'img/Stim/FN_008_g.png', repo_site + 'img/Stim/FN_009_g.png',
@@ -272,26 +278,11 @@ var debrief_TD_prac = {
 
 
 /*--------- Real TD --------- */
-//helpful function, move to top later
-
-function string_to_object(s){
-    //var TD_stimuli_list = [];
-    var match = s.split(',')
-    console.log(match)
-    // for (var a in match)
-    // {
-    //     var variable = match[a]
-    //     //console.log(variable)
-    //     TD_stimuli_list.push(variable)
-    // }
-    return match;
-};
-
 
 // now this variable followup_stimuli is a list of 24 objects, each containing 4 elements.
 // we need the second as animation_sequence_1
 // the fourth as TD_target
-var TD_target_1 = followup_stimuli[12].TD_target
+var TD_target_1 = followup_stimuli[0].TD_target
 console.log(TD_target_1)
 
 var TD_target_present_1 = {
@@ -302,7 +293,7 @@ var TD_target_present_1 = {
     choices: ['Enter']
 };
 
-var animation_sequence_1 = string_to_object(followup_stimuli[12].TD_stim_list)
+var animation_sequence_1 = string_to_object(followup_stimuli[0].TD_stim_list)
 console.log(typeof animation_sequence_1)
 console.log(animation_sequence_1)
 var TD_trial_sequence_1 = {
@@ -330,6 +321,8 @@ var TD_trial_sequence_1 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_1
         data.test_part = 'post_TD'
@@ -374,6 +367,8 @@ var TD_trial_sequence_2 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_2
         data.test_part = 'post_TD'
@@ -386,7 +381,7 @@ var TD2 = {
 };
 
 
-/*var TD_target_3 = TD_stimuli.slice(24,36)[5].TD_stimulus
+var TD_target_3 = followup_stimuli[2].TD_target
 var TD_target_present_3 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -395,7 +390,7 @@ var TD_target_present_3 = {
     choices: ['Enter']
 };
 
-var animation_sequence_3 = get_values_bykey(TD_stimuli.slice(24,36))
+var animation_sequence_3 = string_to_object(followup_stimuli[2].TD_stim_list)
 var TD_trial_sequence_3 = {
     type: 'animation',
     frame_time: 300,
@@ -417,6 +412,8 @@ var TD_trial_sequence_3 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_3
         data.test_part = 'post_TD'
@@ -429,7 +426,7 @@ var TD3 = {
 };
 
 
-var TD_target_4 = TD_stimuli.slice(36,48)[4].TD_stimulus
+var TD_target_4 = followup_stimuli[3].TD_target
 var TD_target_present_4 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -438,7 +435,7 @@ var TD_target_present_4 = {
     choices: ['Enter']
 };
 
-var animation_sequence_4 = get_values_bykey(TD_stimuli.slice(36,48))
+var animation_sequence_4 = string_to_object(followup_stimuli[3].TD_stim_list)
 var TD_trial_sequence_4 = {
     type: 'animation',
     frame_time: 300,
@@ -458,6 +455,8 @@ var TD_trial_sequence_4 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_4
         data.test_part = 'post_TD'
@@ -470,7 +469,8 @@ var TD4 = {
 };
 
 
-var TD_target_5 = TD_stimuli.slice(48,60)[5].TD_stimulus
+var TD_target_5 = followup_stimuli[4].TD_target
+
 var TD_target_present_5 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -479,7 +479,7 @@ var TD_target_present_5 = {
     choices: ['Enter']
 };
 
-var animation_sequence_5 = get_values_bykey(TD_stimuli.slice(48,60))
+var animation_sequence_5 = string_to_object(followup_stimuli[4].TD_stim_list)
 var TD_trial_sequence_5 = {
     type: 'animation',
     frame_time: 300,
@@ -499,6 +499,8 @@ var TD_trial_sequence_5 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_5
         data.test_part = 'post_TD'
@@ -512,7 +514,7 @@ var TD5 = {
 };
 
 
-var TD_target_6 = TD_stimuli.slice(60,72)[6].TD_stimulus
+var TD_target_6 = followup_stimuli[5].TD_target
 var TD_target_present_6 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -520,7 +522,7 @@ var TD_target_present_6 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_6 = get_values_bykey(TD_stimuli.slice(60,72))
+var animation_sequence_6 = string_to_object(followup_stimuli[5].TD_stim_list)
 var TD_trial_sequence_6 = {
     type: 'animation',
     frame_time: 300,
@@ -540,6 +542,8 @@ var TD_trial_sequence_6 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_6
         data.test_part = 'post_TD'
@@ -552,7 +556,7 @@ var TD6 = {
 };
 
 
-var TD_target_7 = TD_stimuli.slice(72,84)[5].TD_stimulus
+var TD_target_7 = followup_stimuli[6].TD_target
 var TD_target_present_7 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -560,7 +564,7 @@ var TD_target_present_7 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_7 = get_values_bykey(TD_stimuli.slice(72,84))
+var animation_sequence_7 = string_to_object(followup_stimuli[6].TD_stim_list)
 var TD_trial_sequence_7 = {
     type: 'animation',
     frame_time: 300,
@@ -580,6 +584,8 @@ var TD_trial_sequence_7 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_7
         data.test_part = 'post_TD'
@@ -592,7 +598,7 @@ var TD7 = {
 };
 
 
-var TD_target_8 = TD_stimuli.slice(84,96)[6].TD_stimulus
+var TD_target_8 = followup_stimuli[7].TD_target
 var TD_target_present_8 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -600,7 +606,7 @@ var TD_target_present_8 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_8 = get_values_bykey(TD_stimuli.slice(84,96))
+var animation_sequence_8 = string_to_object(followup_stimuli[7].TD_stim_list)
 var TD_trial_sequence_8 = {
     type: 'animation',
     frame_time: 300,
@@ -620,6 +626,8 @@ var TD_trial_sequence_8 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_8
         data.test_part = 'post_TD'
@@ -632,7 +640,7 @@ var TD8 = {
 };
 
 
-var TD_target_9 = TD_stimuli.slice(96,108)[7].TD_stimulus
+var TD_target_9 = followup_stimuli[8].TD_target
 var TD_target_present_9 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -640,7 +648,7 @@ var TD_target_present_9 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_9 = get_values_bykey(TD_stimuli.slice(96,108))
+var animation_sequence_9 = string_to_object(followup_stimuli[8].TD_stim_list)
 var TD_trial_sequence_9 = {
     type: 'animation',
     frame_time: 300,
@@ -660,6 +668,8 @@ var TD_trial_sequence_9 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_9
         data.test_part = 'post_TD'
@@ -672,7 +682,7 @@ var TD9 = {
 };
 
 
-var TD_target_10 = TD_stimuli.slice(108,120)[6].TD_stimulus
+var TD_target_10 = followup_stimuli[9].TD_target
 var TD_target_present_10 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -680,7 +690,7 @@ var TD_target_present_10 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_10 = get_values_bykey(TD_stimuli.slice(108,120))
+var animation_sequence_10 = string_to_object(followup_stimuli[9].TD_stim_list)
 var TD_trial_sequence_10 = {
     type: 'animation',
     frame_time: 300,
@@ -700,6 +710,8 @@ var TD_trial_sequence_10 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_10
         data.test_part = 'post_TD'
@@ -712,7 +724,7 @@ var TD10 = {
 };
 
 
-var TD_target_11 = TD_stimuli.slice(120,132)[7].TD_stimulus
+var TD_target_11 = followup_stimuli[10].TD_target
 var TD_target_present_11 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -720,7 +732,7 @@ var TD_target_present_11 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_11 = get_values_bykey(TD_stimuli.slice(120,132))
+var animation_sequence_11 = string_to_object(followup_stimuli[10].TD_stim_list)
 var TD_trial_sequence_11 = {
     type: 'animation',
     frame_time: 300,
@@ -740,6 +752,8 @@ var TD_trial_sequence_11 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_11
         data.test_part = 'post_TD'
@@ -752,7 +766,7 @@ var TD11 = {
 };
 
 
-var TD_target_12 = TD_stimuli.slice(132,144)[8].TD_stimulus
+var TD_target_12 = followup_stimuli[11].TD_target
 var TD_target_present_12 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -760,7 +774,7 @@ var TD_target_present_12 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_12 = get_values_bykey(TD_stimuli.slice(132,144))
+var animation_sequence_12 =  string_to_object(followup_stimuli[11].TD_stim_list)
 var TD_trial_sequence_12 = {
     type: 'animation',
     frame_time: 300,
@@ -781,6 +795,8 @@ var TD_trial_sequence_12 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_12
         data.test_part = 'post_TD'
@@ -793,7 +809,7 @@ var TD12 = {
 };
 
 
-var TD_target_13 = TD_stimuli.slice(144,156)[3].TD_stimulus
+var TD_target_13 = followup_stimuli[12].TD_target
 var TD_target_present_13 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -801,7 +817,7 @@ var TD_target_present_13 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_13 = get_values_bykey(TD_stimuli.slice(144,156))
+var animation_sequence_13 = string_to_object(followup_stimuli[12].TD_stim_list)
 var TD_trial_sequence_13 = {
     type: 'animation',
     frame_time: 300,
@@ -822,6 +838,8 @@ var TD_trial_sequence_13 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_13
         data.test_part = 'post_TD'
@@ -833,7 +851,7 @@ var TD13 = {
     repetitions: 1
 };
 
-var TD_target_14 = TD_stimuli.slice(156,168)[4].TD_stimulus
+var TD_target_14 = followup_stimuli[13].TD_target
 var TD_target_present_14 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -841,7 +859,7 @@ var TD_target_present_14 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_14 = get_values_bykey(TD_stimuli.slice(156,168))
+var animation_sequence_14 = string_to_object(followup_stimuli[13].TD_stim_list)
 var TD_trial_sequence_14 = {
     type: 'animation',
     frame_time: 300,
@@ -862,6 +880,8 @@ var TD_trial_sequence_14 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_14
         data.test_part = 'post_TD'
@@ -874,7 +894,7 @@ var TD14 = {
 };
 
 
-var TD_target_15 = TD_stimuli.slice(168,180)[5].TD_stimulus
+var TD_target_15 = followup_stimuli[14].TD_target
 var TD_target_present_15 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -882,7 +902,7 @@ var TD_target_present_15 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_15 = get_values_bykey(TD_stimuli.slice(168,180))
+var animation_sequence_15 = string_to_object(followup_stimuli[14].TD_stim_list)
 var TD_trial_sequence_15 = {
     type: 'animation',
     frame_time: 300,
@@ -903,6 +923,8 @@ var TD_trial_sequence_15 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_15
         data.test_part = 'post_TD'
@@ -915,7 +937,7 @@ var TD15 = {
 };
 
 
-var TD_target_16 = TD_stimuli.slice(180,192)[4].TD_stimulus
+var TD_target_16 = followup_stimuli[15].TD_target
 var TD_target_present_16 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -923,7 +945,7 @@ var TD_target_present_16 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_16 = get_values_bykey(TD_stimuli.slice(180,192))
+var animation_sequence_16 = string_to_object(followup_stimuli[15].TD_stim_list)
 var TD_trial_sequence_16 = {
     type: 'animation',
     frame_time: 300,
@@ -944,6 +966,8 @@ var TD_trial_sequence_16 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_16
         data.test_part = 'post_TD'
@@ -956,7 +980,7 @@ var TD16 = {
 };
 
 
-var TD_target_17 = TD_stimuli.slice(192,204)[5].TD_stimulus
+var TD_target_17 = followup_stimuli[16].TD_target
 var TD_target_present_17 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -964,7 +988,7 @@ var TD_target_present_17 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_17 = get_values_bykey(TD_stimuli.slice(192,204))
+var animation_sequence_17 = string_to_object(followup_stimuli[16].TD_stim_list)
 var TD_trial_sequence_17 = {
     type: 'animation',
     frame_time: 300,
@@ -985,6 +1009,8 @@ var TD_trial_sequence_17 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_17
         data.test_part = 'post_TD'
@@ -997,7 +1023,7 @@ var TD17 = {
 };
 
 
-var TD_target_18 = TD_stimuli.slice(204,216)[6].TD_stimulus
+var TD_target_18 = followup_stimuli[17].TD_target
 var TD_target_present_18 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1005,7 +1031,7 @@ var TD_target_present_18 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_18 = get_values_bykey(TD_stimuli.slice(204,216))
+var animation_sequence_18 = string_to_object(followup_stimuli[17].TD_stim_list)
 var TD_trial_sequence_18 = {
     type: 'animation',
     frame_time: 300,
@@ -1026,6 +1052,8 @@ var TD_trial_sequence_18 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_18
         data.test_part = 'post_TD'
@@ -1038,7 +1066,7 @@ var TD18 = {
 };
 
 
-var TD_target_19 = TD_stimuli.slice(216,228)[5].TD_stimulus
+var TD_target_19 = followup_stimuli[18].TD_target
 var TD_target_present_19 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1046,7 +1074,7 @@ var TD_target_present_19 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_19 = get_values_bykey(TD_stimuli.slice(216,228))
+var animation_sequence_19 = string_to_object(followup_stimuli[18].TD_stim_list)
 var TD_trial_sequence_19 = {
     type: 'animation',
     frame_time: 300,
@@ -1067,6 +1095,8 @@ var TD_trial_sequence_19 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_19
         data.test_part = 'post_TD'
@@ -1079,7 +1109,7 @@ var TD19 = {
 };
 
 
-var TD_target_20 = TD_stimuli.slice(228,240)[6].TD_stimulus
+var TD_target_20 = followup_stimuli[19].TD_target
 var TD_target_present_20 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1087,7 +1117,7 @@ var TD_target_present_20 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_20 = get_values_bykey(TD_stimuli.slice(228,240))
+var animation_sequence_20 = string_to_object(followup_stimuli[19].TD_stim_list)
 var TD_trial_sequence_20 = {
     type: 'animation',
     frame_time: 300,
@@ -1108,6 +1138,8 @@ var TD_trial_sequence_20 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_20
         data.test_part = 'post_TD'
@@ -1120,7 +1152,7 @@ var TD20 = {
 };
 
 
-var TD_target_21 = TD_stimuli.slice(240,252)[7].TD_stimulus
+var TD_target_21 = followup_stimuli[20].TD_target
 var TD_target_present_21 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1128,7 +1160,7 @@ var TD_target_present_21 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_21 = get_values_bykey(TD_stimuli.slice(240,252))
+var animation_sequence_21 = string_to_object(followup_stimuli[20].TD_stim_list)
 var TD_trial_sequence_21 = {
     type: 'animation',
     frame_time: 300,
@@ -1149,6 +1181,8 @@ var TD_trial_sequence_21 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_21
         data.test_part = 'post_TD'
@@ -1161,7 +1195,7 @@ var TD21 = {
 };
 
 
-var TD_target_22 = TD_stimuli.slice(252,264)[6].TD_stimulus
+var TD_target_22 = followup_stimuli[21].TD_target
 var TD_target_present_22 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1169,7 +1203,7 @@ var TD_target_present_22 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_22 = get_values_bykey(TD_stimuli.slice(252,264))
+var animation_sequence_22 = string_to_object(followup_stimuli[21].TD_stim_list)
 var TD_trial_sequence_22 = {
     type: 'animation',
     frame_time: 300,
@@ -1190,6 +1224,8 @@ var TD_trial_sequence_22 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_22
         data.test_part = 'post_TD'
@@ -1202,7 +1238,7 @@ var TD22 = {
 };
 
 
-var TD_target_23 = TD_stimuli.slice(264,276)[7].TD_stimulus
+var TD_target_23 = followup_stimuli[22].TD_target
 var TD_target_present_23 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1210,7 +1246,7 @@ var TD_target_present_23 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_23 = get_values_bykey(TD_stimuli.slice(264,276))
+var animation_sequence_23 = string_to_object(followup_stimuli[22].TD_stim_list)
 var TD_trial_sequence_23 = {
     type: 'animation',
     frame_time: 300,
@@ -1228,6 +1264,8 @@ var TD_trial_sequence_23 = {
         data.TD_trial_number = 23
         data.onset = onset
         data.offset = offset
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1243,7 +1281,7 @@ var TD23 = {
 };
 
 
-var TD_target_24 = TD_stimuli.slice(276,288)[8].TD_stimulus
+var TD_target_24 = followup_stimuli[23].TD_target
 var TD_target_present_24 = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1251,7 +1289,7 @@ var TD_target_present_24 = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_24 = get_values_bykey(TD_stimuli.slice(276,288))
+var animation_sequence_24 = string_to_object(followup_stimuli[23].TD_stim_list)
 var TD_trial_sequence_24 = {
     type: 'animation',
     frame_time: 300,
@@ -1272,6 +1310,8 @@ var TD_trial_sequence_24 = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        data.attention_state = attention_state
+        data.TD_target_position = TD_target_position
 
         data.TD_target = TD_target_24
         data.test_part = 'post_TD'
@@ -1281,9 +1321,9 @@ var TD24 = {
     timeline: [TD_target_present_24, TD_trial_sequence_24],
     randomize_order: false,
     repetitions: 1
-};*/
+};
 
-/*--------- TD practice --------- */
+//--------- TD practice --------- //
 /*var TD_target_prac_1 = TD_stimuli_prac.slice(0,12)[3].TD_stimulus
 var TD_target_present_1_prac = {
     type: "image-keyboard-response",
@@ -1423,8 +1463,25 @@ var target_presentation = {
 }
 timeline.push(target_presentation);
 
+//-----Awareness Question 1-----//
+var FR_Q1 = {
+    type: 'survey-text',
+    questions: [
+    {prompt: '<p> Did you use any strategy in this part of the study? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+  ],
+};
+timeline.push(FR_Q1);
+
+//-----Awareness Question 2-----//
+var FR_Q2 = {
+    type: 'survey-text',
+    questions: [
+    {prompt: '<p> Did you notice anything in part one of the study? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+  ],
+};
+timeline.push(FR_Q2);
+
 /* -----Part 2: Recreate----- */
-//drag and drop
 var instruction5 = {
     type: 'instructions',
     pages: [
@@ -1441,17 +1498,14 @@ var instruction5 = {
 }
 timeline.push(instruction5);
 
-//-------------Drag and drop-------------//
-/*var sorting_stimuli= [];
-var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2)
-for (var i = 0; i < lr_triplet_full.length; i++) {
-    sorting_stimuli.push(repo_site + lr_triplet_full[i]);
-}
-console.log(sorting_stimuli);
 
+
+//-------------Drag and drop-------------//
+
+sort_trial_1_stimuli = string_to_object(followup_stimuli_DD[0].DD_stim_list)
 var sort_trial_1 = {
     type: 'free-sort',
-    stimuli: sorting_stimuli.slice(0,3),
+    stimuli: sort_trial_1_stimuli,
     prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
     stim_height: 50,
     stim_width: 50,
@@ -1463,16 +1517,17 @@ var sort_trial_1 = {
     sort_area_width: 300,
     column_spread_factor: 1.5,
     on_finish: function (data) {
-        data.test_part = 'post_drag'
+        data.test_part = 'post_drag',
+        data.attention_state = followup_stimuli_DD[0].attention_state
     }
 
 };
 timeline.push(sort_trial_1);
 
-
+sort_trial_2_stimuli = string_to_object(followup_stimuli_DD[1].DD_stim_list)
 var sort_trial_2 = {
     type: 'free-sort',
-    stimuli: sorting_stimuli.slice(3,6),
+    stimuli: sort_trial_2_stimuli,
     prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
     stim_height: 50,
     stim_width: 50,
@@ -1484,46 +1539,23 @@ var sort_trial_2 = {
     sort_area_width: 300,
     column_spread_factor: 1.5,
     on_finish: function (data) {
-        data.test_part = 'post_drag'
+        data.test_part = 'post_drag',
+        data.attention_state = followup_stimuli_DD[1].attention_state
     }
 };
 timeline.push(sort_trial_2);
 
 
 
-/!* -----A Few Q on Rules----- *!/
-var FR_Q1 = {
+//-----Final Awareness Free Response Q-----//
+var FR_Q3 = {
     type: 'survey-text',
     questions: [
-    {prompt: '<p> When you were playing the game, did you notice the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+    {prompt: '<p> Did you notice the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
-timeline.push(FR_Q1);
+timeline.push(FR_Q3);
 
-
-
-
-/!* -----Demographics----- *!/
-var DemoQ1_options = ["Male", "Female", "Gender Non-conforming", "Other", "Choose not to respond"];
-var DemoQ2_options = ["Under 18", "18-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75-84", "85 or older"];
-var DemoQ3_options = ["Hispanic/Latino", "Not Hispanic/Latino", "Choose not to respond"];
-var DemoQ4_options = ["American Indian/Native American","White", "Black/African American", "Asian", "Native Hawaiian or Pacific Islander", "More than one race", "Other","Choose not to respond"];
-var DemoQ5_options = ["Less than a high school diploma", "High school degree or equivalent (e.g. GED)", "Some college, no degree", "Associate degree (e.g. AA, AS)", "College degree", "Master's degree (e.g. MA, MS, MEd)", "Doctorate or professional degree (e.g. MD, DDS, PhD)"];
-
-
-var multi_choice_Demo = {
-    type: 'survey-multi-choice',
-    button_label: 'Next',
-    preamble: 'Please answer some further questions on demographics.',
-    questions: [
-        { prompt: "What is your gender?", name: 'DemoQ1', options: DemoQ1_options, required: true },
-        { prompt: "What is your age?", name: 'DemoQ2', options: DemoQ2_options, required: true },
-        { prompt: "What is your Ethnicity?", name: 'DemoQ3', options: DemoQ3_options, required: true },
-        { prompt: "How would you describe yourself? Please select all that apply.", name: 'DemoQ4', options: DemoQ4_options, required: true },
-        { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
-    ],
-};
-timeline.push(multi_choice_Demo);*/
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
@@ -1551,4 +1583,3 @@ jsPsych.init({
         save_data_csv();
     }
 });
-
