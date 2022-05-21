@@ -207,16 +207,16 @@ var debrief_TD_prac = {
 //helpful function, move to top later
 
 function string_to_object(s){
-    var TD_stimuli_list = [];
+    //var TD_stimuli_list = [];
     var match = s.split(',')
     console.log(match)
-    for (var a in match)
-    {
-        var variable = match[a]
-        //console.log(variable)
-        TD_stimuli_list.push(variable)
-    }
-    return TD_stimuli_list;
+    // for (var a in match)
+    // {
+    //     var variable = match[a]
+    //     //console.log(variable)
+    //     TD_stimuli_list.push(variable)
+    // }
+    return match;
 };
 
 
