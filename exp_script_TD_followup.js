@@ -16,6 +16,15 @@ var timeline = [];
 console.log(followup_stimuli[0])
 console.log(followup_stimuli.length)
 
+function findWithAttr(array, attr, value) {
+    for(var i = 0; i < array.length; i += 1) {
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
+    return -1;
+};
+
 function get_target_time(animation_sequence,response, TD_target,set) {
 
     var time = []
