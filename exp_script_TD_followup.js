@@ -205,26 +205,18 @@ var debrief_TD_prac = {
 
 /*--------- Real TD --------- */
 //helpful function, move to top later
-function get_values_bykey(object) {
-
-    var TD_stimuli_list = []
-    object.forEach(function myFunction(value) {
-        //console.log('this is item number ' + value)
-        TD_stimuli_list.push(value.TD_stimulus)
-
-    })
-    return TD_stimuli_list;
-};
 
 function string_to_object(s){
-
-    var match = s.split(', ')
+    var TD_stimuli_list = [];
+    var match = s.split(',')
     console.log(match)
     for (var a in match)
     {
         var variable = match[a]
-        console.log(variable)
+        //console.log(variable)
+        TD_stimuli_list.push(variable)
     }
+    return TD_stimuli_list;
 };
 
 
@@ -292,7 +284,9 @@ var TD_target_present_2 = {
     choices: ['Enter']
 };
 
-var animation_sequence_2 = followup_stimuli[1].TD_stim_list
+var animation_sequence_2 = string_to_object(followup_stimuli[1].TD_stim_list)
+console.log(typeof animation_sequence_2)
+console.log(animation_sequence_2)
 var TD_trial_sequence_2 = {
     type: 'animation',
     frame_time: 300,
