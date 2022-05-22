@@ -96,6 +96,24 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+function shuffle(array) {
+  var currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+};
+
 preload_list = [repo_site + 'img/Stim/FN_001_g.png', repo_site + 'img/Stim/FN_002_g.png', repo_site + 'img/Stim/FN_003_g.png',
 repo_site +'img/Stim/FN_004_g.png', repo_site + 'img/Stim/FN_005_g.png', repo_site + 'img/Stim/FN_006_g.png',
 repo_site +'img/Stim/FN_007_g.png', repo_site + 'img/Stim/FN_008_g.png', repo_site + 'img/Stim/FN_009_g.png',
@@ -190,60 +208,6 @@ var instruction1 = {
 timeline.push(instruction1);
 
 
-
-/* //-------practice-------//
-var TD_list_prac = []
-for (j = 0; j < range(0,2).length; j++) {
-
-     foil = shuffle(frequent_nontrigger);
-     TD_list_prac.push(foil)
-    }
-
-
-
-TD_stimuli_prac = []
-
-for (j = 0; j < TD_list_prac.length; j++) {
-        var TD_prac = TD_list_prac[j];
-
-
-        for (i = 0; i < TD_prac.length; i++) {
-
-
-            var stimuli = new Object();
-            stimuli.TD_stimulus = repo_site + TD_prac[i];
-            stimuli.data = new Object();
-
-
-            stimuli.at_fix = rep(stimuli.TD_stimulus)
-            stimuli.data.test_part = 'post_prac';
-            stimuli.data.TaskType = 'TD';
-            stimuli.data.correct_response = '';
-            stimuli.data.TD_target = '';
-            TD_stimuli_prac.push(stimuli);
-        }
-    }
-
-//target_location_prac = [3,4,5]
-var target_location_prac = []
-for (a = 0; a < range(0,2).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
-
-        if (a == 0){
-            var b = 3 }
-        else {
-            var b = target_location_prac[a-1] + sequence_length + 1 }
-        target_location_prac.push(b)
-    }
-
-console.log(target_location_prac)
-
-target_location_prac.forEach(function myFunction(value) {
-        console.log('this is c value ' + value)
-        TD_stimuli_prac[value].data.correct_response = 'space'
-        TD_stimuli_prac[value].data.TD_target = 'TD_target'
-
-    })*/
-
 var instruction2 = {
     type: 'instructions',
     pages: [
@@ -291,7 +255,7 @@ var instruction2 = {
     }
 
   ]
-};
+};*/
 
 
 
@@ -310,10 +274,10 @@ var debrief_TD_prac = {
             "<p>Press enter to move on.</p>"
 
     }
-};*/
+};
 
 
-/*--------- Real TD --------- */
+//--------- Real TD --------- //
 
 // now this variable followup_stimuli is a list of 24 objects, each containing 4 elements.
 // we need the second as animation_sequence_1
@@ -1454,7 +1418,7 @@ var TD_target_present_3_prac = {
     choices: ['Enter']
 };
 var animation_sequence_prac_3 = string_to_object(followup_stimuli[prac_trial3_number].TD_stim_list);
-var  TD_trial_sequence_3_prac = {
+var TD_trial_sequence_3_prac = {
     type: 'animation',
     frame_time: 300,
     stimuli: animation_sequence_prac_3,
@@ -1484,9 +1448,9 @@ var TD3_prac = {
 
 //practice block
 var Array_TD_prac = [TD1_prac, TD2_prac, TD3_prac];
-var shuffledTD_prac = jsPsych.randomization.repeat(Array_TD_prac, 1)
+//var shuffledTD_prac = jsPsych.randomization.repeat(Array_TD_prac, 1)
 var practice_presentation = {
-    timeline: shuffledTD_prac,
+    timeline: Array_TD_prac,
     randomize_order: false,
     repetitions: 1
 }
