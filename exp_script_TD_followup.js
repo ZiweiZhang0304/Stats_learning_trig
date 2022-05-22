@@ -179,9 +179,11 @@ var instruction1 = {
 
         '<p style="color:black;font-size: 26px">\n' +
         '        Please read the instructions for the first part of the study carefully. <br>\n' +
+        '        <br>\n' +
         '        At the beginning of each trial, you will see one shape. <br>\n' +
         '        <br>\n' +
         '        This shape is called the <b>target shape</b>.  <br>\n' +
+        '        <br>\n' +
         '        You will then see a series of shapes, presented one at a time.  <br>\n' +
         '        When you see the target shape, press the <b>SPACEBAR</b>. <br>\n' +
         '</p> <br>',
@@ -189,7 +191,7 @@ var instruction1 = {
         '<p style="color:black;font-size: 26px">\n' +
         '        Again, whenever you see the target shape, press the <b>SPACEBAR</b>. <br>\n' +
         '        <br>\n' +
-        '        <b>DO NOT</b> press any button to any other shape. <br>\n' +
+        '        <b>DO NOT</b> press any button to any other shapes. <br>\n' +
         '        <br>\n' +
         '        Notice that the shapes will go by very fast so please respond quickly and accurately. <br>\n' +
         '        <br>\n' +
@@ -216,47 +218,12 @@ var instruction2 = {
         '<p style="color:black;font-size: 26px">\n' +
         '        You have finished the practice part. <br>\n' +
         '        <br>\n' +
-        '        Now click “Next” to start this part of the experiment. <br>\n' +
+        '        Now click “Next” to start the first part of the study. <br>\n' +
         '</p> <br>',
 
     ],
     show_clickable_nav: true,
-}
-
-
-/*var TD_trial_prac = {
-  timeline:[
-
-  {type: "image-keyboard-response",
-  stimulus: jsPsych.timelineVariable('TD_stimulus'),
-  choices:['space'],
-  data: jsPsych.timelineVariable('data'),
-  trial_duration:300,
-  on_finish: function(data){
-
-    data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response)}
-    },
-
-  {type: "image-keyboard-response",
-  stimulus: jsPsych.timelineVariable('at_fix'),
-  choices: jsPsych.NO_KEYS,
-  response_ends_trial: false,
-  trial_duration:function(data) {
-       if (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0] == null) {
-          var fix_duration = 0
-          } else { var fix_duration = 300 - (jsPsych.data.get().filter({ TaskType: 'TD' }).last(1).select('rt').values[0]); };
-            return fix_duration
-  }},
-
-  {type: "image-keyboard-response",
-  stimulus: repo_site + "img/Stim/gray_bdot.png",
-  choices: jsPsych.NO_KEYS,
-  trial_duration: 40,
-    }
-
-  ]
-};*/
-
+};
 
 
 var debrief_TD_prac = {
@@ -1515,7 +1482,7 @@ sort_trial_1_stimuli = string_to_object(followup_stimuli_DD[0].DD_stim_list)
 var sort_trial_1 = {
     type: 'free-sort',
     stimuli: sort_trial_1_stimuli,
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study. <br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br> If you are not sure about the order, just make your best guess. </p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study. <br>  <br> Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br>  <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br>  <br> If you are not sure about the order, just make your best guess. </p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
@@ -1537,7 +1504,7 @@ sort_trial_2_stimuli = string_to_object(followup_stimuli_DD[1].DD_stim_list)
 var sort_trial_2 = {
     type: 'free-sort',
     stimuli: sort_trial_2_stimuli,
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br> If you are not sure about the order, just make your best guess. </p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study.<br>  <br> Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br>  <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br>  <br> If you are not sure about the order, just make your best guess. </p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
