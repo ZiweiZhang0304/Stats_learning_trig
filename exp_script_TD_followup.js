@@ -1481,10 +1481,10 @@ var practice_presentation = {
 
 
 //real TD block
-var Array_TD = [TD1, TD2 ];/*, TD3, TD4, TD5, TD6,
+var Array_TD = [TD1, TD2 , TD3, TD4, TD5, TD6,
                TD7, TD8 ,TD9, TD10, TD11, TD12,
                TD13, TD14 ,TD15, TD16, TD17, TD18,
-               TD19, TD20 ,TD21, TD22, TD23, TD24*/
+               TD19, TD20 ,TD21, TD22, TD23, TD24];
 
 var target_presentation = {
     timeline: Array_TD,
