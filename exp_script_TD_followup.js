@@ -90,6 +90,12 @@ function string_to_object(s){
     return match;
 };
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 preload_list = [repo_site + 'img/Stim/FN_001_g.png', repo_site + 'img/Stim/FN_002_g.png', repo_site + 'img/Stim/FN_003_g.png',
 repo_site +'img/Stim/FN_004_g.png', repo_site + 'img/Stim/FN_005_g.png', repo_site + 'img/Stim/FN_006_g.png',
 repo_site +'img/Stim/FN_007_g.png', repo_site + 'img/Stim/FN_008_g.png', repo_site + 'img/Stim/FN_009_g.png',
@@ -1354,7 +1360,10 @@ var TD24 = {
 };
 
 //--------- TD practice --------- //
-/*var TD_target_prac_1 = TD_stimuli_prac.slice(0,12)[3].TD_stimulus
+
+var prac_trial1_number = getRandomInt(0,23);
+console.log(prac_trial1_number)
+var TD_target_prac_1 = followup_stimuli[prac_trial1_number].TD_target
 var TD_target_present_1_prac = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1362,8 +1371,10 @@ var TD_target_present_1_prac = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_prac_1 = get_values_bykey(TD_stimuli_prac.slice(0,12));
-var  TD_trial_sequence_1_prac = {
+var animation_sequence_prac_1 = shuffle(string_to_object(followup_stimuli[prac_trial1_number].TD_stim_list));
+console.log(string_to_object(followup_stimuli[prac_trial1_number].TD_stim_list))
+console.log(animation_sequence_prac_1)
+var TD_trial_sequence_1_prac = {
     type: 'animation',
     frame_time: 300,
     stimuli: animation_sequence_prac_1 ,
@@ -1391,8 +1402,9 @@ var TD1_prac = {
     repetitions: 1
 };
 
-
-var TD_target_prac_2 = TD_stimuli_prac.slice(12,24)[4].TD_stimulus
+var prac_trial2_number = getRandomInt(0,23);
+console.log(prac_trial2_number)
+var TD_target_prac_2 = followup_stimuli[prac_trial2_number].TD_target
 var TD_target_present_2_prac = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1400,7 +1412,7 @@ var TD_target_present_2_prac = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_prac_2 = get_values_bykey(TD_stimuli_prac.slice(12,24));
+var animation_sequence_prac_2 = string_to_object(followup_stimuli[prac_trial2_number].TD_stim_list);
 var  TD_trial_sequence_2_prac = {
     type: 'animation',
     frame_time: 300,
@@ -1431,7 +1443,9 @@ var TD2_prac = {
 
 
 // TD practice trial 3
-var TD_target_prac_3 = TD_stimuli_prac.slice(24,36)[5].TD_stimulus
+var prac_trial3_number = getRandomInt(0,23);
+console.log(prac_trial3_number)
+var TD_target_prac_3 = followup_stimuli[prac_trial3_number].TD_target
 var TD_target_present_3_prac = {
     type: "image-keyboard-response",
     prompt: '<p>On this trial, press the SPACEBAR when you see the shape above. Do not press anything when you see any other shapes. <br> Press enter to start this trial. </p>',
@@ -1439,7 +1453,7 @@ var TD_target_present_3_prac = {
                                                   //24 trials; 24 targets at different positions
     choices: ['Enter']
 };
-var animation_sequence_prac_3 = get_values_bykey(TD_stimuli_prac.slice(24,36));
+var animation_sequence_prac_3 = string_to_object(followup_stimuli[prac_trial3_number].TD_stim_list);
 var  TD_trial_sequence_3_prac = {
     type: 'animation',
     frame_time: 300,
@@ -1475,9 +1489,9 @@ var practice_presentation = {
     timeline: shuffledTD_prac,
     randomize_order: false,
     repetitions: 1
-}*/
-//timeline.push(practice_presentation);
-//timeline.push(instruction2);
+}
+timeline.push(practice_presentation);
+timeline.push(instruction2);
 
 
 //real TD block
@@ -1578,14 +1592,20 @@ timeline.push(sort_trial_2);
 
 
 
-//-----Final Awareness Free Response Q-----//
-// var FR_Q3 = {
-//     type: 'survey-text',
-//     questions: [
-//     {prompt: '<p> Did you notice regular sequences of 3 shapes in the first part of the study, before the instructions told you that they were present? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
-//   ],
-// };
-// timeline.push(FR_Q3);
+//-----Final Multiple Choice-----//
+var MC_Q3_options = ["Yes", "No", "Not sure"];
+var MC_Q4_options = ["Press SPACEBAR to a target", "Press ENTER to a target"];
+
+var multi_choice_Demo = {
+    type: 'survey-multi-choice',
+    button_label: 'Next',
+    preamble: 'Please answer some further questions on the study.',
+    questions: [
+        { prompt: "Did you notice regular sequences of 3 shapes in the first part of the study, before the instructions told you that they were present?", name: 'awareness', options: MC_Q3_options, required: true },
+        { prompt: "What is the rule of the first part of the study?", name: 'attention_check', options: MC_Q4_options, required: true },
+    ],
+};
+timeline.push(multi_choice_Demo);
 
 
 var interaction_data = jsPsych.data.getInteractionData();
