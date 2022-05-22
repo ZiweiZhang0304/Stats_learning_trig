@@ -112,7 +112,33 @@ repo_site + 'img/Stim/FN_025_w.png', repo_site + 'img/Stim/FN_026_w.png', repo_s
 repo_site + 'img/Stim/IF_002_w.png',repo_site + 'img/Stim/IF_003_w.png',repo_site + 'img/Stim/IF_004_w.png',
 repo_site +'img/Stim/gray_bdot.png']
 
+/* -----Full screen-----*/
+var enter_full = {
+  type: 'fullscreen',
+  fullscreen_mode: true
+};
+timeline.push(enter_full);
 
+
+/* -----Give consent-----*/
+var check_consent = function(elem) {
+  if (document.getElementById('consent_checkbox').checked) {
+    return true;
+  }
+  else {
+    alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+    return false;
+  }
+  return false;
+};
+
+var consent = {
+  type: 'external-html',
+  url: repo_site + "content/consent.html",
+  cont_fn: check_consent,
+  cont_btn: 'start',
+};
+timeline.push(consent);
 
 //loop through each list of 24 lists of TD trial sequences and assign a target each time
 /* -----Part 1: TD----- */
