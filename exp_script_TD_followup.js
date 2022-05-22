@@ -1483,7 +1483,7 @@ sort_trial_1_stimuli = string_to_object(followup_stimuli_DD[0].DD_stim_list)
 var sort_trial_1 = {
     type: 'free-sort',
     stimuli: sort_trial_1_stimuli,
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study. <br>  <br> Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br>  <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br>  <br> If you are not sure about the order, just make your best guess. </p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study. <br>  <br> Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, <br>and the shape that you remember seeing third to the right. <br>  <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br>  <br> If you are not sure about the order, just make your best guess. <br>  <br>   <br></p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
@@ -1505,7 +1505,7 @@ sort_trial_2_stimuli = string_to_object(followup_stimuli_DD[1].DD_stim_list)
 var sort_trial_2 = {
     type: 'free-sort',
     stimuli: sort_trial_2_stimuli,
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study.<br>  <br> Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br>  <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br>  <br> If you are not sure about the order, just make your best guess. </p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the study.<br>  <br> Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, <br> and the shape that you remember seeing third to the right. <br>  <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box. <br>  <br> If you are not sure about the order, just make your best guess. <br>  <br>  <br></p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
