@@ -185,7 +185,8 @@ var instruction1 = {
         '        This shape is called the <b>target shape</b>.  <br>\n' +
         '        <br>\n' +
         '        You will then see a series of shapes, presented one at a time.  <br>\n' +
-        '        When you see the target shape, press the <b>SPACEBAR</b>. <br>\n' +
+        '        <br>\n' +
+        '        When you see the target shape in the series of shapes, press the <b>SPACEBAR</b>. <br>\n' +
         '</p> <br>',
 
         '<p style="color:black;font-size: 26px">\n' +
