@@ -31,7 +31,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     var shapes_reacted_to = []
     var shapes_reacted_to_index = []
     var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
-    //console.log(target_index)
+    console.log(target_index)
 
     function checkindex(index) {
                     var index_after_target = index > target_index
@@ -227,23 +227,6 @@ var instruction2 = {
 };
 
 
-// var debrief_TD_prac = {
-//     type: "html-keyboard-response",
-//     choices: ['Enter'],
-//     stimulus: function () {
-//
-//         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(1);
-//
-//         var TD_rt = Math.round(trials.select('TD_rt').values[0]* 100)/ 100;
-//         console.log(TD_rt)
-//
-//         return "<p>Your reaction time for this trial was " + TD_rt + " ms.</p>" +
-//             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> </p>" +
-//             "<p>Press enter to move on.</p>"
-//
-//     }
-// };
-
 
 //--------- Real TD --------- //
 
@@ -273,9 +256,9 @@ var TD_trial_sequence_1 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('response').values)
-        //console.log(response)
+        console.log(response)
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
         var onset = get_target_time(animation_sequence,response, TD_target_1,'onset')
@@ -1317,6 +1300,7 @@ var TD_trial_sequence_1_prac = {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
         console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
+        console.log(response)
 
         var onset = get_target_time(animation_sequence,response, TD_target_prac_1,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_prac_1,'offset')
