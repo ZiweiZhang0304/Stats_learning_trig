@@ -227,22 +227,22 @@ var instruction2 = {
 };
 
 
-var debrief_TD_prac = {
-    type: "html-keyboard-response",
-    choices: ['Enter'],
-    stimulus: function () {
-
-        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(1);
-
-        var TD_rt = Math.round(trials.select('TD_rt').values[0]* 100)/ 100;
-        console.log(TD_rt)
-
-        return "<p>Your reaction time for this trial was " + TD_rt + " ms.</p>" +
-            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> </p>" +
-            "<p>Press enter to move on.</p>"
-
-    }
-};
+// var debrief_TD_prac = {
+//     type: "html-keyboard-response",
+//     choices: ['Enter'],
+//     stimulus: function () {
+//
+//         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(1);
+//
+//         var TD_rt = Math.round(trials.select('TD_rt').values[0]* 100)/ 100;
+//         console.log(TD_rt)
+//
+//         return "<p>Your reaction time for this trial was " + TD_rt + " ms.</p>" +
+//             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> </p>" +
+//             "<p>Press enter to move on.</p>"
+//
+//     }
+// };
 
 
 //--------- Real TD --------- //
@@ -1328,6 +1328,24 @@ var TD_trial_sequence_1_prac = {
         data.test_part = 'post_prac'
     }
 };
+
+var debrief_TD_prac = {
+    type: "html-keyboard-response",
+    choices: ['Enter'],
+    stimulus: function () {
+
+        var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(1);
+
+        var TD_rt = Math.round(trials.select('TD_rt').values[0]* 100)/ 100;
+        console.log(TD_rt)
+
+        return "<p>Your reaction time for this trial was " + TD_rt + " ms.</p>" +
+            "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> </p>" +
+            "<p>Press enter to move on.</p>"
+
+    }
+};
+
 var TD1_prac = {
     timeline: [TD_target_present_1_prac , TD_trial_sequence_1_prac,debrief_TD_prac],
     randomize_order: false,
@@ -1443,7 +1461,7 @@ timeline.push(target_presentation);
 var FR_Q1 = {
     type: 'survey-text',
     questions: [
-    {prompt: '<p> Did you use any strategy in this part of the study? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+    {prompt: '<p> Did you use any strategies to complete the first part of the study? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
 timeline.push(FR_Q1);
@@ -1452,7 +1470,7 @@ timeline.push(FR_Q1);
 var FR_Q2 = {
     type: 'survey-text',
     questions: [
-    {prompt: '<p> Did you notice anything in part one of the study? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
+    {prompt: '<p> Did you notice any patterns in the shapes in the first part of the study? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
 timeline.push(FR_Q2);
