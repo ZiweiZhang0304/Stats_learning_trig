@@ -1359,6 +1359,7 @@ var  TD_trial_sequence_2_prac = {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
         console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
+        console.log(response)
 
         var onset = get_target_time(animation_sequence,response, TD_target_prac_2,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_prac_2,'offset')
@@ -1400,6 +1401,7 @@ var TD_trial_sequence_3_prac = {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
         console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
+        console.log(response)
 
         var onset = get_target_time(animation_sequence,response, TD_target_prac_3,'onset')
         var offset = get_target_time(animation_sequence,response, TD_target_prac_3,'offset')
