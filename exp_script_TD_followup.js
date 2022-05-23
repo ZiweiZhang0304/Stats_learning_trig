@@ -1307,6 +1307,7 @@ var TD_trial_sequence_1_prac = {
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
+        console.log(TD_rt)
 
         data.TD_target = TD_target_prac_1
         data.test_part = 'post_prac'
