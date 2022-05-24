@@ -51,11 +51,12 @@ function get_target_time(animation_sequence,response, TD_target,set) {
             var shapes_rt_index_after_target = []
 
             response.forEach(function myFunction(value) {
-            var shape = value.stimulus
-            //console.log(shape)
+            var shape = value.stimulus //response.stimulus
+            console.log(shape)
             shapes_reacted_to.push(shape)
             var shape_index = findWithAttr(animation_sequence, 'stimulus', shape)
             shapes_reacted_to_index.push(shape_index)
+            console.log(shapes_reacted_to_index)
 
             if (shape == TD_target) {
                 time.push(value.rt)
@@ -81,6 +82,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
                 //console.log(shapes_rt_index_after_target)
             }
     };
+    console.log(time)
     return time[0]
 };
 
