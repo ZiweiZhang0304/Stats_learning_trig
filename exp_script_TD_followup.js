@@ -1295,7 +1295,7 @@ var TD_trial_sequence_1_prac = {
     type: 'animation',
     frame_time: 1000,
     stimuli: animation_sequence_prac_1 ,
-    frame_isi: 40,
+    frame_isi: 200,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
@@ -1354,7 +1354,7 @@ var  TD_trial_sequence_2_prac = {
     type: 'animation',
     frame_time: 1000,
     stimuli: animation_sequence_prac_2,
-    frame_isi: 40,
+    frame_isi: 200,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
@@ -1396,7 +1396,7 @@ var TD_trial_sequence_3_prac = {
     type: 'animation',
     frame_time: 1000,
     stimuli: animation_sequence_prac_3,
-    frame_isi: 40,
+    frame_isi: 200,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
