@@ -317,6 +317,7 @@ var TD_trial_sequence_1 = {
         console.log('this is onset ', onset, 'this is offset ', offset)
 
         var TD_rt = offset - onset
+        console.log('this is your RT ', TD_rt)
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[0].attention_state
         data.TD_target_position = followup_stimuli[0].TD_target_position
@@ -1337,9 +1338,9 @@ console.log(string_to_object(followup_stimuli[prac_trial1_number].TD_stim_list))
 console.log(animation_sequence_prac_1)
 var TD_trial_sequence_1_prac = {
     type: 'animation',
-    frame_time: 1000,
+    frame_time: 300,
     stimuli: animation_sequence_prac_1 ,
-    frame_isi: 800,
+    frame_isi: 40,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
@@ -1396,9 +1397,9 @@ var TD_target_present_2_prac = {
 var animation_sequence_prac_2 = string_to_object(followup_stimuli[prac_trial2_number].TD_stim_list);
 var  TD_trial_sequence_2_prac = {
     type: 'animation',
-    frame_time: 1000,
+    frame_time: 300,
     stimuli: animation_sequence_prac_2,
-    frame_isi: 800,
+    frame_isi: 40,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
@@ -1438,9 +1439,11 @@ var TD_target_present_3_prac = {
 var animation_sequence_prac_3 = string_to_object(followup_stimuli[prac_trial3_number].TD_stim_list);
 var TD_trial_sequence_3_prac = {
     type: 'animation',
-    frame_time: 1000,
+    frame_time: 300,
     stimuli: animation_sequence_prac_3,
-    frame_isi: 800,
+    frame_isi: 4
+
+    0,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
