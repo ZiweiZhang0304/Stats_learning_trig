@@ -107,7 +107,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
         console.log(offset_time_blank)
         console.log(offset_time_blank.length)
 
-        var all_rt = Array.prototype.concat.apply([], [time, time_blank, shapes_rt_index_after_target]);
+        var all_rt = Array.prototype.concat.apply([], [offset_time, offset_time_blank, shapes_rt_index_after_target]);
         var all_rt_sorted = all_rt.sort(function(a, b){return a-b});
         var result = all_rt_sorted.find(element => {
                     return element > onset_time[0];
