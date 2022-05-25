@@ -38,7 +38,7 @@ function findLastIndex(array, attr, value) {
 
 function get_target_time(animation_sequence,response, TD_target,set) {
 
-    var onset_time = []
+    //var onset_time = []
     var offset_time = []
     var offset_time_blank = []
     var shapes_reacted_to = []
@@ -51,13 +51,14 @@ function get_target_time(animation_sequence,response, TD_target,set) {
                     return  index_after_target;}
 
     if (set =='onset') {
-        animation_sequence.forEach(function myFunction(value) {
-            //console.log('this is shape ' + value)
-            if (value.stimulus == TD_target) {
-                //get index of target
-                onset_time.push(value.time)
-        }
-    })
+    //     animation_sequence.forEach(function myFunction(value) {
+    //         //console.log('this is shape ' + value)
+    //         if (value.stimulus == TD_target) {
+    //             //get index of target
+    //             onset_time.push(value.time)
+    //     }
+    // })
+    var onset_time = findWithAttr(animation_sequence, 'time', TD_target)
 }
 
     if (set =='offset'){
@@ -110,7 +111,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
         var all_rt = Array.prototype.concat.apply([], [offset_time, offset_time_blank, shapes_rt_index_after_target]);
         var all_rt_sorted = all_rt.sort(function(a, b){return a-b});
         var result = all_rt_sorted.find(element => {
-                    return element > onset_time[0];
+                    return element > onset_time;
         });
         console.log(all_rt)
         console.log(all_rt_sorted)
