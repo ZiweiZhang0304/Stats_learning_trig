@@ -16,24 +16,23 @@ var timeline = [];
 console.log(followup_stimuli[0])
 console.log(followup_stimuli.length)
 
-function findWithAttr(array, attr, value) {
+function findWithAttr(array, search_key, search_value) {
     for(var i = 0; i < array.length; i += 1) {
-        if(array[i][attr] === value) {
+        if(array[i][search_key] === search_value) {
             return i;
         }
     }
     return -1;
 };
 
-//a function that finds index of the last element satisfying a statement
-function findLastIndex(array, attr, value) {
-  var index = array.slice().reverse().findIndex(x => x[attr] === value);
-  var count = array.length - 1
-  var finalIndex = index >= 0 ? count - index : index;
-  console.log(finalIndex)
-  return finalIndex;
-}
-
+function findWithAttr_target(array, search_key, search_value, target_key) {
+    for(var i = 0; i < array.length; i += 1) {
+        if(array[i][search_key] === search_value) {
+            var target_value = array[i][target_key]
+            return target_value;
+        }
+    }
+};
 
 
 function get_target_time(animation_sequence,response, TD_target,set) {
@@ -45,7 +44,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     var shapes_reacted_to_index = []
     var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
     console.log(target_index)
-    var onset_time = findWithAttr(animation_sequence, 'time', TD_target)
+    var onset_time = findWithAttr_target(animation_sequence, 'time', TD_target)
 
     function checkindex(index) {
                     var index_after_target = index > target_index
