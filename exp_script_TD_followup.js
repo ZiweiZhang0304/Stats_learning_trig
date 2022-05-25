@@ -50,16 +50,9 @@ function get_target_time(animation_sequence,response, TD_target,set) {
                     var index_after_target = index > target_index
                     return  index_after_target;}
 
-//     if (set =='onset') {
-//         animation_sequence.forEach(function myFunction(value) {
-//             //console.log('this is shape ' + value)
-//             if (value.stimulus == TD_target) {
-//                 //get index of target
-//                 onset_time.push(value.time)
-//         }
-//     })
-//     var onset_time = findWithAttr(animation_sequence, 'time', TD_target)
-// }
+    if (set =='onset') {
+    return onset_time
+}
 
     if (set =='offset'){
             var shapes_rt_index_after_target = []
@@ -115,6 +108,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
         console.log(all_rt)
         console.log(all_rt_sorted)
         console.log(result)
+        return result
 
             //for every index in shapes_reacted_to_index, if all of them < target_index, then log
             // if (shapes_reacted_to_index.every( (val) => val <target_index) && shapes_reacted_to.includes(TD_target) == false ) {
@@ -133,8 +127,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
             // }
             // console.log('these are all the responses' + time)}
     };
-    //return time[0]
-    return result
+    //return result
 };
 
 function string_to_object(s){
