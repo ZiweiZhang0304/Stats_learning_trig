@@ -45,21 +45,22 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     var shapes_reacted_to_index = []
     var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
     console.log(target_index)
+    var onset_time = findWithAttr(animation_sequence, 'time', TD_target)
 
     function checkindex(index) {
                     var index_after_target = index > target_index
                     return  index_after_target;}
 
-    if (set =='onset') {
-    //     animation_sequence.forEach(function myFunction(value) {
-    //         //console.log('this is shape ' + value)
-    //         if (value.stimulus == TD_target) {
-    //             //get index of target
-    //             onset_time.push(value.time)
-    //     }
-    // })
-    var onset_time = findWithAttr(animation_sequence, 'time', TD_target)
-}
+//     if (set =='onset') {
+//         animation_sequence.forEach(function myFunction(value) {
+//             //console.log('this is shape ' + value)
+//             if (value.stimulus == TD_target) {
+//                 //get index of target
+//                 onset_time.push(value.time)
+//         }
+//     })
+//     var onset_time = findWithAttr(animation_sequence, 'time', TD_target)
+// }
 
     if (set =='offset'){
             var shapes_rt_index_after_target = []
@@ -94,7 +95,6 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     })
         console.log('this is when the target appears')
         console.log(onset_time)
-        console.log(onset_time.length)
 
         console.log('this is when the target is responded to')
         console.log(offset_time)
