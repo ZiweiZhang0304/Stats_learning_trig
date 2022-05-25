@@ -44,7 +44,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     var shapes_reacted_to_index = []
     var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
     console.log(target_index)
-    var onset_time = findWithAttr_target(animation_sequence, 'time', TD_target)
+    var onset_time = findWithAttr_target(animation_sequence, 'stimulus', TD_target, 'time')
 
     function checkindex(index) {
                     var index_after_target = index > target_index
