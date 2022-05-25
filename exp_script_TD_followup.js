@@ -1441,9 +1441,7 @@ var TD_trial_sequence_3_prac = {
     type: 'animation',
     frame_time: 300,
     stimuli: animation_sequence_prac_3,
-    frame_isi: 4
-
-    0,
+    frame_isi: 40,
     choices: ['space'],
     sequence_reps: 1,
     on_finish: function (data) {
