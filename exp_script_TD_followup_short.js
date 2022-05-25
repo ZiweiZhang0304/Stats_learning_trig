@@ -16,72 +16,118 @@ var timeline = [];
 console.log(followup_stimuli[0])
 console.log(followup_stimuli.length)
 
-function findWithAttr(array, attr, value) {
+function findWithAttr(array, search_key, search_value) {
     for(var i = 0; i < array.length; i += 1) {
-        if(array[i][attr] === value) {
+        if(array[i][search_key] === search_value) {
             return i;
         }
     }
     return -1;
 };
 
+function findWithAttr_target(array, search_key, search_value, target_key) {
+    for(var i = 0; i < array.length; i += 1) {
+        if(array[i][search_key] === search_value) {
+            var target_value = array[i][target_key]
+            return target_value;
+        }
+    }
+};
+
+
 function get_target_time(animation_sequence,response, TD_target,set) {
 
-    var time = []
+    //var onset_time = []
+    var offset_time = []
+    var offset_time_blank = []
     var shapes_reacted_to = []
     var shapes_reacted_to_index = []
     var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
-    //console.log(target_index)
+    console.log(target_index)
+    var onset_time = findWithAttr_target(animation_sequence, 'stimulus', TD_target, 'time')
 
     function checkindex(index) {
                     var index_after_target = index > target_index
                     return  index_after_target;}
 
     if (set =='onset') {
-        animation_sequence.forEach(function myFunction(value) {
-            //console.log('this is shape ' + value)
-            if (value.stimulus == TD_target) {
-                //get index of target
-                time.push(value.time)
-        }
-    })
+    return onset_time
 }
 
     if (set =='offset'){
             var shapes_rt_index_after_target = []
 
+            //need to keep a counter for blank
+
             response.forEach(function myFunction(value) {
-            var shape = value.stimulus
-            //console.log(shape)
+            var shape = value.stimulus //response.stimulus
+            console.log(shape)
             shapes_reacted_to.push(shape)
+            console.log(shapes_reacted_to)
+
             var shape_index = findWithAttr(animation_sequence, 'stimulus', shape)
             shapes_reacted_to_index.push(shape_index)
+            console.log(shapes_reacted_to_index)
 
-            if (shape == TD_target) {
-                time.push(value.rt)
+            if (shape == "blank" ) {
+                // var shape_index_blank = findLastIndex(animation_sequence, 'stimulus', shape)
+                // shapes_reacted_to_index.push(shape_index_blank)
+                offset_time_blank.push(value.rt)
+            }  else {
+
+            if (shape == TD_target) { //shape_index = target_index
+                offset_time.push(value.rt)
                 }
             else if (shape_index > target_index){
                 //console.log('this is post target')
                 shapes_rt_index_after_target.push(value.rt)
                 //console.log(shapes_rt_index_after_target)
-            }
+            }}
 
     })
+        console.log('this is when the target appears')
+        console.log(onset_time)
+
+        console.log('this is when the target is responded to')
+        console.log(offset_time)
+        console.log(offset_time.length)
+
+        console.log('this is all press to shapes')
+        console.log(shapes_rt_index_after_target)
+        console.log(shapes_rt_index_after_target.length)
+
+        console.log('this is all press to blank')
+        console.log(offset_time_blank)
+        console.log(offset_time_blank.length)
+
+        var all_rt = Array.prototype.concat.apply([], [offset_time, offset_time_blank, shapes_rt_index_after_target]);
+        var all_rt_sorted = all_rt.sort(function(a, b){return a-b});
+        var result = all_rt_sorted.find(element => {
+                    return element > onset_time;
+        });
+        console.log(all_rt)
+        console.log(all_rt_sorted)
+        console.log(result)
+        return result
 
             //for every index in shapes_reacted_to_index, if all of them < target_index, then log
-            if (shapes_reacted_to_index.every( (val) => val <target_index) && shapes_reacted_to.includes(TD_target) == false ) {
-                //console.log('pressed before target')
-                //console.log(shapes_reacted_to_index.every( (val) => val <target_index))
-            }
-
-            //if any of them > target_index and no press to target, then take the rt of the first after target
-            else if(shapes_reacted_to_index.some(checkindex) && shapes_reacted_to.includes(TD_target) == false){ // Returns true
-                time.push(shapes_rt_index_after_target[0])
-                //console.log(shapes_reacted_to_index.some(checkindex))
-                //console.log(shapes_rt_index_after_target)
-            }
+            // if (shapes_reacted_to_index.every( (val) => val <target_index) && shapes_reacted_to.includes(TD_target) == false ) {
+            //     console.log('pressed before target')
+            //     //console.log(shapes_reacted_to_index.every( (val) => val <target_index))
+            //     console.log(shapes_reacted_to_index)
+            // } else {
+            //     if () {
+            //
+            //     };
+            // //if any of them > target_index and no press to target, then take the rt of the first after target
+            // else if(shapes_reacted_to_index.some(checkindex) && shapes_reacted_to.includes(TD_target) == false){ // Returns true
+            //     time.push(shapes_rt_index_after_target[0])
+            //     //console.log(shapes_reacted_to_index.some(checkindex))
+            //     //console.log(shapes_rt_index_after_target)
+            // }
+            // console.log('these are all the responses' + time)}
     };
-    return time[0]
+    //return result
 };
 
 function string_to_object(s){
