@@ -13,8 +13,9 @@ var repo_site = "https://ziweizhang0304.github.io/Stats_learning_trig/";
 var timeline = [];
 
 //Read in csv file as stimulis; In this file we'll have stimuli sets for the two tasks. then we can separate them in this script
-console.log(followup_stimuli[0])
-console.log(followup_stimuli.length)
+// console.log(followup_stimuli[0])
+// console.log(followup_stimuli.length)
+console.log(followup_stimuli[0].participant)
 
 function findWithAttr(array, search_key, search_value) {
     for(var i = 0; i < array.length; i += 1) {
@@ -1313,6 +1314,7 @@ var TD_trial_sequence_24 = {
 
         data.TD_target = TD_target_24
         data.test_part = 'post_TD'
+        data.yoke_participant = followup_stimuli[0].participant
     }
 };
 var TD24 = {
