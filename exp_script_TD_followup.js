@@ -244,6 +244,8 @@ var instruction1 = {
         '        <br>\n' +
         '        Notice that the shapes will go by very fast so please respond quickly and accurately. <br>\n' +
         '        <br>\n' +
+        '        Please note: if you do not make a response to the vast majority of trials, you will not be eligible for compensation. <br>\n' +
+        '        <br>\n' +
         '        Click on "Next" to move on. <br> \n' +
         '</p> <br>',
 
