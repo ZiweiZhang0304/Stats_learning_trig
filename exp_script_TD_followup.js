@@ -16,6 +16,7 @@ var timeline = [];
 // console.log(followup_stimuli[0])
 // console.log(followup_stimuli.length)
 console.log(followup_stimuli[0].participant)
+var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
 
 function findWithAttr(array, search_key, search_value) {
     for(var i = 0; i < array.length; i += 1) {
@@ -322,6 +323,8 @@ var TD_trial_sequence_1 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[0].attention_state
         data.TD_target_position = followup_stimuli[0].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[0].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_1
         data.test_part = 'post_TD'
@@ -368,6 +371,8 @@ var TD_trial_sequence_2 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[1].attention_state
         data.TD_target_position = followup_stimuli[1].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[1].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_2
         data.test_part = 'post_TD'
@@ -413,6 +418,8 @@ var TD_trial_sequence_3 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[2].attention_state
         data.TD_target_position = followup_stimuli[2].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[2].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_3
         data.test_part = 'post_TD'
@@ -456,6 +463,8 @@ var TD_trial_sequence_4 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[3].attention_state
         data.TD_target_position = followup_stimuli[3].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[3].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_4
         data.test_part = 'post_TD'
@@ -500,6 +509,8 @@ var TD_trial_sequence_5 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[4].attention_state
         data.TD_target_position = followup_stimuli[4].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[4].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_5
         data.test_part = 'post_TD'
@@ -543,6 +554,8 @@ var TD_trial_sequence_6 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[5].attention_state
         data.TD_target_position = followup_stimuli[5].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[5].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_6
         data.test_part = 'post_TD'
@@ -585,6 +598,8 @@ var TD_trial_sequence_7 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[6].attention_state
         data.TD_target_position = followup_stimuli[6].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[6].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_7
         data.test_part = 'post_TD'
@@ -627,6 +642,8 @@ var TD_trial_sequence_8 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[7].attention_state
         data.TD_target_position = followup_stimuli[7].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[7].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_8
         data.test_part = 'post_TD'
@@ -669,6 +686,8 @@ var TD_trial_sequence_9 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[8].attention_state
         data.TD_target_position = followup_stimuli[8].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[8].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_9
         data.test_part = 'post_TD'
@@ -711,6 +730,8 @@ var TD_trial_sequence_10 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[9].attention_state
         data.TD_target_position = followup_stimuli[9].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[9].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_10
         data.test_part = 'post_TD'
@@ -753,6 +774,8 @@ var TD_trial_sequence_11 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[10].attention_state
         data.TD_target_position = followup_stimuli[10].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[10].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_11
         data.test_part = 'post_TD'
@@ -796,6 +819,8 @@ var TD_trial_sequence_12 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[11].attention_state
         data.TD_target_position = followup_stimuli[11].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[11].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_12
         data.test_part = 'post_TD'
@@ -839,6 +864,8 @@ var TD_trial_sequence_13 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[12].attention_state
         data.TD_target_position = followup_stimuli[12].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[12].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_13
         data.test_part = 'post_TD'
@@ -881,6 +908,8 @@ var TD_trial_sequence_14 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[13].attention_state
         data.TD_target_position = followup_stimuli[13].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[13].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_14
         data.test_part = 'post_TD'
@@ -924,6 +953,8 @@ var TD_trial_sequence_15 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[14].attention_state
         data.TD_target_position = followup_stimuli[14].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[14].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_15
         data.test_part = 'post_TD'
@@ -967,6 +998,8 @@ var TD_trial_sequence_16 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[15].attention_state
         data.TD_target_position = followup_stimuli[15].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[15].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_16
         data.test_part = 'post_TD'
@@ -1010,6 +1043,8 @@ var TD_trial_sequence_17 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[16].attention_state
         data.TD_target_position = followup_stimuli[16].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[16].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_17
         data.test_part = 'post_TD'
@@ -1053,6 +1088,8 @@ var TD_trial_sequence_18 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[17].attention_state
         data.TD_target_position = followup_stimuli[17].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[17].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_18
         data.test_part = 'post_TD'
@@ -1096,6 +1133,8 @@ var TD_trial_sequence_19 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[18].attention_state
         data.TD_target_position = followup_stimuli[18].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[18].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_19
         data.test_part = 'post_TD'
@@ -1139,6 +1178,8 @@ var TD_trial_sequence_20 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[19].attention_state
         data.TD_target_position = followup_stimuli[19].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[19].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_20
         data.test_part = 'post_TD'
@@ -1182,6 +1223,8 @@ var TD_trial_sequence_21 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[20].attention_state
         data.TD_target_position = followup_stimuli[20].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[20].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_21
         data.test_part = 'post_TD'
@@ -1225,6 +1268,8 @@ var TD_trial_sequence_22 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[21].attention_state
         data.TD_target_position = followup_stimuli[21].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[21].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_22
         data.test_part = 'post_TD'
@@ -1265,6 +1310,8 @@ var TD_trial_sequence_23 = {
         data.offset = offset
         data.attention_state = followup_stimuli[22].attention_state
         data.TD_target_position = followup_stimuli[22].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[22].TD_within_triplet_counter
+        data.participant = subject_id
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -1311,6 +1358,8 @@ var TD_trial_sequence_24 = {
         data.TD_rt = TD_rt
         data.attention_state = followup_stimuli[23].attention_state
         data.TD_target_position = followup_stimuli[23].TD_target_position
+        data.TD_within_triplet_counter = followup_stimuli[23].TD_within_triplet_counter
+        data.participant = subject_id
 
         data.TD_target = TD_target_24
         data.test_part = 'post_TD'
