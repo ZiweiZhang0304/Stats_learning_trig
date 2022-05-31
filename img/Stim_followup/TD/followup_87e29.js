@@ -6,7 +6,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 2,
@@ -15,7 +15,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 3,
@@ -24,7 +24,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 4,
@@ -33,7 +33,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 5,
@@ -42,7 +42,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 6,
@@ -51,7 +51,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_020_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 7,
@@ -60,7 +60,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 8,
@@ -69,7 +69,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 9,
@@ -78,7 +78,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_020_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 10,
@@ -87,7 +87,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 11,
@@ -96,7 +96,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 12,
@@ -105,7 +105,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 13,
@@ -114,7 +114,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 14,
@@ -123,7 +123,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 15,
@@ -132,7 +132,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 16,
@@ -141,7 +141,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_023_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 17,
@@ -150,7 +150,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 18,
@@ -159,7 +159,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 19,
@@ -168,7 +168,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 20,
@@ -177,7 +177,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_017_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 21,
@@ -186,7 +186,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_020_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 22,
@@ -195,7 +195,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 1,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 23,
@@ -204,7 +204,7 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_g.png",
    "attention_state": "slow",
    "TD_within_triplet_counter": 3,
-   "participant": 8.7e+30
+   "participant": "87e29"
  },
  {
    "trial_number": 24,
@@ -213,6 +213,6 @@ var followup_stimuli = [
    "TD_target": "https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_020_g.png",
    "attention_state": "fast",
    "TD_within_triplet_counter": 2,
-   "participant": 8.7e+30
+   "participant": "87e29"
  }
 ]
