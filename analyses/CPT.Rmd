@@ -1,0 +1,238 @@
+---
+title: "CPT"
+author: "Ziwei Zhang"
+date: '2022-07-13'
+output: html_document
+---
+
+```{r}
+library(car)
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(ggpubr)
+library(tidyr)
+library(magrittr)
+```
+
+
+```{r}
+data_dir <- '/Users/ziweizhang/Downloads/atten_stats_lr_trig_data/'
+file_list <- list.files(path="/Users/ziweizhang/Downloads/atten_stats_lr_trig_data/", full.names = TRUE)
+multiple.func <- function(x) {
+      read.csv(x, colClasses = c("participant" = "character"))
+}
+nan_mean <- function(x) mean(na.omit(x))
+nan_sd <- function(x) sd(na.omit(x))
+
+df <- #file_list %>%
+  lapply(file_list, multiple.func) %>%
+  bind_rows
+```
+
+
+```{r}
+frequent_RT <- df %>% subset(TaskType == 'at') %>% select(participant,rt,sd,at_RunningMean,slow,fast,trial_index)
+participant_number <- length(unique(frequent_RT$participant))
+
+frequent_RT$trial_number = rep(c(1:(nrow(frequent_RT)/participant_number)), participant_number)
+frequent_RT
+```
+
+```{r}
+#detach("package:plyr")
+mean_frequent_RT <- frequent_RT %>% group_by(trial_number) %>% summarise(mean_rt = nan_mean(rt), 
+                                                                         mean_sd = nan_mean(sd),
+                                                                         mean_mean = nan_mean(at_RunningMean),
+                                                                         mean_slow_thres = nan_mean(slow),
+                                                                         mean_fast_thres = nan_mean(fast))
+mean_frequent_RT
+#mean_frequent_RT$upper_thres <- mean_frequent_RT$mean_sd
+```
+
+
+# CPT Reaction times
+```{r}
+hist(mean_frequent_RT$mean_rt)
+(mean(mean_frequent_RT$mean_rt))
+(sd(mean_frequent_RT$mean_rt))
+```
+```{r}
+mean_frequent_RT
+```
+
+```{r}
+p1 <- ggplot(mean_frequent_RT,aes(x=mean_rt)) +
+    geom_histogram(alpha=0.7, bins = 25, color="#B4B4B4", fill="light gray") +
+    theme_classic() + theme(aspect.ratio = 0.8, legend.position="right", axis.text.y=element_text(size=14), axis.text.x=element_text(size=14,colour = "black"), axis.title.y=element_text(size=14,colour = "black"),axis.title.x=element_text(size=14), legend.direction = "vertical", legend.text=element_text(size=14)) +
+    guides(fill = guide_legend(label.position = "top")) +
+  labs(x = "CPT RT(ms)", y = "count", fill = "")
+
+#ggsave("SuppFig_3a.pdf", width = 5.5, height = 4, dpi=300)
+p1
+```
+
+## Tiggered trial postiions
+
+```{r}
+trigger <- df[!df$diff=="", c("trial_index", "participant","diff")]
+trigger$trial_index_new <- (trigger$trial_index)/3
+trigger$diff <- as.factor(trigger$diff)
+trigger
+```
+
+```{r}
+#hist(trigger$trial_index_new,breaks = 6)
+
+p2 <- ggplot(trigger,aes(x=trial_index_new)) +
+    geom_histogram(alpha=0.7, bins = 25, color="#B4B4B4", fill="light gray") +
+    theme_classic() + theme(aspect.ratio = 0.8, legend.position="right", axis.text.y=element_text(size=14), axis.text.x=element_text(size=14,colour = "black"), axis.title.y=element_text(size=14,colour = "black"),axis.title.x=element_text(size=14), legend.direction = "vertical", legend.text=element_text(size=14)) +
+    guides(fill = guide_legend(label.position = "top")) +
+  labs(x = "trial index", y = "count", fill = "") +
+  ylim(0,350)
+
+#ggsave("SuppFig_3b.pdf", width = 5.5, height = 4, dpi=300)
+p2
+```
+
+
+# Check RT distributions
+```{r}
+library(fitdistrplus)
+normal_dist <- fitdistrplus::fitdist(mean_frequent_RT$mean_rt, "norm")
+plot(normal_dist)
+
+lognorm_dist <- fitdistrplus::fitdist(mean_frequent_RT$mean_rt, "lnorm")
+plot(lognorm_dist)
+
+gamma_dist <- fitdistrplus::fitdist(mean_frequent_RT$mean_rt, "gamma")
+plot(gamma_dist)
+
+gofstat(list(gamma_dist, normal_dist,log_dist), fitnames = c("gamma", "norm", "lnorm"))
+```
+```{r}
+lognorm_dist <- fitdistrplus::fitdist(mean_frequent_RT$mean_rt, "lnorm")
+pdf(file="SuppFig_6.pdf")
+plot(lognorm_dist)
+dev.off()
+```
+
+
+# CPT RT facilitation analyses
+```{r}
+#read in CPT trials
+CPT_excl <- read.csv('/Users/ziweizhang/Downloads/Stats_lr_trig_data/analysis_output/E2/CPT_excl_both_lmm_E2.csv') %>%
+      mutate(participant = as.factor(participant),
+           attention_state = as.factor(attention_state),
+           test_part = as.factor(test_part),
+           with_triplet_counter = as.factor(with_triplet_counter))
+
+CPT_fast_excl <- CPT_excl %>% subset(attention_state == 'fast')
+CPT_slow_excl <- CPT_excl %>% subset(attention_state == 'slow')
+```
+
+## Build mixed effects models
+```{r}
+model_all_excl = lmer(rt ~ with_triplet_counter * test_part * attention_state  + (1 + with_triplet_counter + test_part + attention_state| participant), data=CPT_excl)
+Anova(model_all_excl)
+```
+
+```{r}
+# (em.test <- emmeans(model_all_excl, specs = pairwise ~ with_triplet_counter * test_part * attention_state, adjust = "tukey", transform = "response"))
+```
+
+## Joint plot
+```{r}
+df.summary.joint_excl <- bind_rows(df.summary.slow_excl, df.summary.fast_excl)
+
+df.summary.joint_excl$combined <- paste(df.summary.joint_excl$test_part, df.summary.joint_excl$attention_state, sep="_")
+
+df.summary.joint_excl$combined <- factor(df.summary.joint_excl$combined,
+                      levels = c("triggered_high attention", "triggered_low attention","filler_high attention", "filler_low attention"))
+```
+
+
+```{r}
+p6 <- ggplot(df.summary.joint_excl, aes(with_triplet_counter, RT, ymin = RT-se, ymax = RT+se, group=combined)) +
+  geom_line(aes(color = combined),size=1) +
+  geom_pointrange(aes(color = combined),size=0.3) +
+  geom_errorbar(aes(color= combined), width = 0.06) + facet_grid(rows = vars(attention_state), scales = 'free') +
+  scale_color_manual(values=c("#682191","#508f22", "#ce9fe9" , "#abe183"), labels = c("regular triggered triplets high attention","regular triggered triplets low attention","random control triplets high attention","random control triplets low attention")
+                     ) +
+  theme_classic() +  theme(axis.text.x = element_text(size=8, colour="black"),aspect.ratio = 0.45, legend.position="top", axis.text.y=element_text(size=8,colour="black"),axis.title.y=element_text(size=8), legend.title=element_text(size=8), legend.text=element_text(size=8), legend.direction = "vertical") +
+  labs(x = " ", y = "CPT RT(ms)", color = "") +
+  scale_x_discrete(expand = c(0,0.2),breaks=c("1","2","3"),labels=c("first triplet \n position", "second triplet \n position", "third triplet \n position")) + guides(color=guide_legend(ncol=2))
+#ggsave("Fig4c.png", width = 5.5, height = 4, dpi=300) 
+p6
+```
+
+
+
+### Low attention
+```{r}
+model_fast_excl = lmer(rt ~ with_triplet_counter * test_part  + (1 + with_triplet_counter + test_part| participant), data=CPT_fast_excl)
+summary(model_fast_excl)
+Anova(model_fast_excl)
+```
+
+```{r}
+se <- function(x) sqrt(var(x) / length(x))
+df.summary.fast_excl <- na.omit(CPT_fast_excl) %>%
+  group_by(with_triplet_counter,test_part) %>%
+  summarise(
+    se = se(rt),
+    RT = mean(rt)
+  )
+df.summary.fast_excl$attention_state <- rep("low attention", nrow(df.summary.fast_excl))
+```
+
+```{r}
+p4 <- ggplot(df.summary.fast_excl, aes(with_triplet_counter, RT, ymin = RT-se, ymax = RT+se, group=test_part)) +
+  geom_line(aes(color = test_part),size=1.2) +
+  geom_pointrange(aes(color = test_part)) +
+  geom_errorbar(aes(color= test_part), width = 0.06) +
+  scale_color_manual(values=c("#682191", "#ce9fe9"),labels = c("random rare control triplets", "regular rare triggered triplets")) +
+  theme_classic() +  theme(axis.text.x = element_text(size=14),aspect.ratio = 0.8,legend.position="top", axis.text.y=element_text(size=12),axis.title.y=element_text(size=14), legend.title=element_text(size=14), legend.text=element_text(size=14), legend.direction = "vertical") +
+  labs(x = " ", y = "RT(ms)", color = "") +
+  scale_x_discrete(expand = c(0,0.2),breaks=c("1","2","3"),labels=c("first \n triplet position", "second \n triplet position", "third \n triplet position")) +
+  ylim(300, 360)
+#ggsave("Fig4b.png")
+#"#ffe4e1", "#a22631"
+p4
+```
+
+### High attention 
+```{r}
+model_slow = lmer(rt ~ with_triplet_counter * test_part  + (1 + with_triplet_counter + test_part| participant), data=CPT_slow_excl)
+Anova(model_slow)
+```
+
+```{r}
+se <- function(x) sqrt(var(x) / length(x))
+df.summary.slow_excl <- na.omit(CPT_slow_excl) %>%
+  group_by(with_triplet_counter,test_part) %>%
+  summarise(
+    se = se(rt),
+    RT = mean(rt)
+  )
+df.summary.slow_excl$attention_state <- rep("high attention", nrow(df.summary.slow_excl))
+```
+
+```{r}
+p3 <- ggplot(df.summary.slow_excl, aes(with_triplet_counter, RT, ymin = RT-se, ymax = RT+se, group=test_part)) +
+  geom_line(aes(color = test_part),size=1.2) +
+  geom_pointrange(aes(color = test_part)) +
+  geom_errorbar(aes(color= test_part), width = 0.06)+
+  scale_color_manual(values=c("#508f22", "#abe183"),labels = c("random rare control triplets", "regular rare triggered triplets")) +
+  theme_classic() + theme(axis.text.x = element_text(size=14),aspect.ratio = 0.8,legend.position="top", axis.text.y=element_text(size=12),axis.title.y=element_text(size=14), legend.title=element_text(size=14), legend.text=element_text(size=14), legend.direction="vertical") +
+  labs(x = " ", y = "RT (ms)", color = "") +
+  scale_x_discrete(expand = c(0,0.2),breaks=c("1","2","3"),labels=c("first \n triplet position", "second \n triplet position", "third \n triplet position"))+
+  ylim(440, 500)
+#ggsave("Fig4a.png")
+p3
+```
+
+
+
+
