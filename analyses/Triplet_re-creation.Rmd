@@ -1,0 +1,191 @@
+---
+title: "Triplet_re-creation"
+author: "Ziwei Zhang"
+date: '2022-07-13'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(lme4)
+library(ggplot2)
+library(tidyr)
+library(lmerTest)
+library(afex)
+library(emmeans)
+library(dplyr)
+library(ggpubr)
+library(ggbeeswarm)
+```
+
+```{r}
+# read drag and drop file to get A'
+dd <- read.csv('/Users/ziweizhang/Downloads/Stats_lr_trig_data/analysis_output/E2/drag_n_drop_E1.csv') %>%
+      mutate(participant = as.factor(participant),
+           trial_type = as.factor(trial_type))
+
+dd_fast <- dd %>% subset(trial_type == 'fast')
+dd_slow <- dd %>% subset(trial_type == 'slow')
+
+## calculate accuracy for each participant for each attentional state, it's either 1 or 0
+dd_by_sub_trial <- dd %>% dplyr::group_by(participant, trial_type) %>% dplyr::summarise(correct = mean(correct), chance = mean(chance), ind_correct = mean(ind_correct))
+
+dd_fast_by_sub_trial <- dd_by_sub_trial %>% subset(trial_type == 'fast')
+dd_slow_by_sub_trial <- dd_by_sub_trial %>% subset(trial_type == 'slow')
+```
+
+```{r}
+#read TD to calculate RT facilitation
+df_ordered <- read.csv('/Users/ziweizhang/Downloads/Stats_lr_trig_data/analysis_output/E2/TD_lmm_E2.csv')
+
+df_ordered$within_triplet_counter = as.factor(df_ordered$within_triplet_counter )
+df_ordered$within_stream_position = as.factor(df_ordered$within_stream_position )
+df_ordered$participant = as.factor(df_ordered$participant)
+df_ordered$attention_state = as.factor(df_ordered$attention_state)
+
+TD_fast <- df_ordered %>% subset(attention_state == 'fast')
+TD_slow <- df_ordered %>% subset(attention_state == 'slow')
+```
+
+
+# CPT A' and RT facilitation
+```{r}
+lr_at_fast <- read.csv('/Users/ziweizhang/Downloads/Stats_lr_trig_data/analysis_output/E2/lt_at_corr_fast.csv') 
+AP <- lr_at_fast[c(2,1)]
+AP
+```
+
+```{r}
+# RT facilitation for individual analyses
+TD_fac_clean <- read.csv('/Users/ziweizhang/Downloads/Stats_lr_trig_data/analysis_output/E2/TD_fac_clean.csv') %>%
+       mutate(participant = as.factor(participant))
+
+indd_measure <- merge(TD_fac_clean , AP, by = "participant", all.x=TRUE, all.y=TRUE)
+indd_measure <- indd_measure[c(1,3,4,5,6,7,8,9,10,11,12)]
+indd_measure
+```
+
+## Simple linear regression approach controlling for L%
+```{r}
+infrequent_trial_count <- read.csv('/Users/ziweizhang/Downloads/Stats_lr_trig_data/analysis_output/E2/trial_count.csv') %>%
+       mutate(participant = as.factor(participant))
+summary(infrequent_trial_count$infrequent_ratio)
+sd(infrequent_trial_count$infrequent_ratio, na.rm = T)
+infrequent_trial_count
+```
+
+
+```{r}
+#infrequent_trial_count <- infrequent_trial_count %>% subset(participant %in% unique(dd_by_sub_trial$participant))
+indd_measure <- merge(indd_measure, infrequent_trial_count , by = "participant", all.x=F, all.y=F) #adding trial ratio
+indd_measure
+```
+
+```{r}
+indd_measure_z <- data.frame(lapply(indd_measure[c("fast_fac_13", "fast_fac_12", "fast_fac_23","slow_fac_13", "slow_fac_12", "slow_fac_23","overall_fac_13", "overall_fac_12", "overall_fac_23","AP","infrequent_ratio")], function(x) (x-nan_mean(x))/sd(x,na.rm = T)) )
+colnames(indd_measure_z)= c("fast_fac_13_z", "fast_fac_12_z", "fast_fac_23_z","slow_fac_13_z", "slow_fac_12_z", "slow_fac_23_z","overall_fac_13_z", "overall_fac_12_z", "overall_fac_23_z","AP_z","infrequent_ratio_z")
+
+indd_measure_z
+```
+
+
+### RT facilitation models overall
+```{r}
+model_13 = lm(overall_fac_13_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_13) 
+anova(model_13)
+```
+
+
+```{r}
+model_12 = lm(overall_fac_12_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_12) 
+anova(model_12)
+```
+
+
+```{r}
+model_23 = lm(overall_fac_23_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_23) 
+anova(model_23)
+```
+
+### RT facilitation models by attention
+#### High attention
+```{r}
+model_13_slow = lm(slow_fac_13_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_13_slow) 
+anova(model_13_slow)
+```
+
+```{r}
+model_12_slow = lm(slow_fac_12_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_12_slow) 
+anova(model_12_slow)
+```
+
+```{r}
+model_23_slow = lm(slow_fac_23_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_23_slow) 
+anova(model_23_slow)
+```
+
+#### Low attention
+```{r}
+model_13_fast = lm(fast_fac_13_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_13_fast) 
+anova(model_13_fast)
+```
+
+```{r}
+model_12_fast = lm(fast_fac_12_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_12_fast) 
+anova(model_12_fast)
+```
+
+```{r}
+model_23_fast = lm(fast_fac_23_z ~ AP_z + infrequent_ratio_z, data = indd_measure_z) #Create the linear regression
+summary(model_23_fast) 
+anova(model_23_fast)
+```
+
+```{r}
+p1 <- ggplot(data=indd_measure) + aes(x=AP, y=overall_fac_13) + geom_point(color="dark gray") + geom_smooth(method="lm", formula = "y ~ x", se = T,color="dark gray") + coord_cartesian(xlim = c(0.6,1)) +
+  labs(x = "CPT A'", y = "RT facilitation in TD (ms)") + theme_classic() + theme(aspect.ratio = 0.9, axis.text.y=element_text(size=14, colour="black"), axis.text.x=element_text(size=14, colour="black"), axis.title.y=element_text(size=14, colour="black"),axis.title.x=element_text(size=14, colour="black"))
+p1
+#ggsave("Fig6.png")
+```
+
+```{r}
+indd_measure_z$participant <- indd_measure$participant
+indd_measure_drag_drop <- indd_measure_z %>% subset(participant %in% unique(dd_by_sub_trial$participant)) 
+dd_by_sub_drag_drop <- dd_by_sub_trial %>% summarise(correct = mean(correct), ind_correct = mean(ind_correct)) %>% dplyr::select(c(correct, participant))
+
+#adding facilitation
+indd_measure_drag_drop <- merge(indd_measure_drag_drop, dd_by_sub_drag_drop, by = "participant", all.x=F, all.y=F)
+indd_measure_drag_drop <- indd_measure_drag_drop %>% mutate( correct_z = (correct-nan_mean(correct))/sd(correct,na.rm = T))
+indd_measure_drag_drop
+```
+
+```{r}
+model_drag_drop_aprime = lm(correct_z ~ AP_z  + infrequent_ratio_z, data = indd_measure_drag_drop)
+summary(model_drag_drop_aprime) 
+anova(model_drag_drop_aprime)
+```
+
+
+```{r}
+indd_measure_drag_drop$correct <- as.factor(indd_measure_drag_drop$correct)
+
+ggplot(data=indd_measure_drag_drop,
+  aes(x=correct, y=AP, color=correct))+ geom_beeswarm(cex=2) +
+  scale_color_manual(values=c("#B4B4B4", "#909090", "#636363"), labels = c("0", "1","2")) +
+  theme_classic() +  theme(aspect.ratio = 0.8, axis.text.x = element_text(size=14, colour="black"), axis.text.y=element_text(size=14, colour="black"), axis.title.y=element_text(size=14), legend.title=element_text(size=14), legend.text=element_text(size=14), legend.position="right") +
+  labs(x = "number of correctly created trials \n in triplet re-creation", y = "CPT A'", color = "") +
+  scale_x_discrete(expand = c(0,0.5),breaks=c("0","0.5","1"),labels=c("0 created", "1 created", "2 created")) + ylim(0.55,0.92)
+#ggsave("Fig_Supp9.pdf", width = 5.5, height = 4, dpi=300)
+```
+
+
+
