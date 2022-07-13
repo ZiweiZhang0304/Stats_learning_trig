@@ -9,13 +9,15 @@
   - img
     - Experiment 1: Stim images
     - Experiment 2: Stim_followup
-      - TD: target detection stimuli input file
-      - DD: drag and drop stimuli input file
+      - TD: matched target detection stimuli input file
+      - DD: metched drag and drop stimuli input file
 
 - Experimental data
-  - sa_sl_data_sh
-  - Data
-    - organized data for runing models
+  - Raw data: sa_sl_data_sh
+  - Organized data:
+    - TD_lmm_E2.csv: Target detection task data
+    - CPT data
+    - recreate
 
 - Analyses scirpt
   - Python scirpts for data cleaning
