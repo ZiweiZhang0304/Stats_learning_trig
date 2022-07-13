@@ -14,6 +14,8 @@
 
 - Experimental data
   - sa_sl_data_sh
+  - Data
+    - organized data for runing models
 
 - Analyses scirpt
   - Python scirpts for data cleaning
