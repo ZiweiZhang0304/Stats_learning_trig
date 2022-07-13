@@ -7,6 +7,8 @@
 
 - Experimental stimuli
   - img
+    - Experiment 1: Stim
+    - Experiment 1: Stim_followup
 
 - Experimental data
   - sa_sl_data_sh
