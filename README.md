@@ -15,8 +15,8 @@
 - Experimental data
   - Raw data: sa_sl_data_sh
   - Organized data:
-    - TD_lmm_E2.csv: Target detection task data
-    - CPT data
+    - TD_E1.csv: Target detection task data
+    - CPT_E1.csv: CPT data
     - recreate
 
 - Analyses scirpt
