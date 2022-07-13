@@ -15,9 +15,6 @@
 - Data
   - E1 raw data: E1_raw
   - E1 organized data: E1_organized
-    - TD_E1.csv: Target detection task data
-    - CPT_E1.csv: CPT data
-    - recreate
   - E2 raw data: E2_raw
 
 - Analyses scirpt
