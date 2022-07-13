@@ -13,11 +13,12 @@
       - DD: metched drag and drop stimuli input file
 
 - Experimental data
-  - Raw data: sa_sl_data_sh
-  - Organized data:
+  - E1 raw data: E1_raw
+  - E1 organized data: E1_organized
     - TD_E1.csv: Target detection task data
     - CPT_E1.csv: CPT data
     - recreate
+  - E2 raw data: E2_raw
 
 - Analyses scirpt
   - Python scirpts for data cleaning
