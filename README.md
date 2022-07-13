@@ -5,14 +5,14 @@
   - Experiment 2: exp_script_TD_followup.js
 
 
-- Experimental stimuli
+- Stimuli
   - img
     - Experiment 1: Stim images
     - Experiment 2: Stim_followup
       - TD: matched target detection stimuli input file
       - DD: metched drag and drop stimuli input file
 
-- Experimental data
+- Data
   - E1 raw data: E1_raw
   - E1 organized data: E1_organized
     - TD_E1.csv: Target detection task data
