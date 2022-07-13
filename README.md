@@ -7,8 +7,10 @@
 
 - Experimental stimuli
   - img
-    - Experiment 1: Stim
-    - Experiment 1: Stim_followup
+    - Experiment 1: Stim images
+    - Experiment 2: Stim_followup
+      - TD: target detection stimuli input file
+      - DD: drag and drop stimuli input file
 
 - Experimental data
   - sa_sl_data_sh
