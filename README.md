@@ -16,7 +16,8 @@
   - E1 raw data: E1_raw
   - E1 organized data: E1_organized
   - E2 raw data: E2_raw
+  - E2 organized data: E2_organized
 
 - Analyses scirpt
   - Python scirpts for data cleaning
-  - R scirpts for running models
+  - R scirpts for data analyses
