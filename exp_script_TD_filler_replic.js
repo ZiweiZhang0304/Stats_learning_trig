@@ -3735,12 +3735,15 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
 var sorting_stimuli_stage1_trial1_planA = shuffle(sorting_stimuli_stage1_trial1_planA);
 console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
-for (var i = 0; i < sorting_stimuli_stage1_trial1_planA; i++) {
+for (var i = 0; i < sorting_stimuli_stage1_trial1_planA.length; i++) {
     sorting_stimuli_stage1_trial1_planA[i] = '"' + sorting_stimuli_stage1_trial1_planA[i] + '"'
     looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planA[i])
 }
+console.log(sorting_stimuli_stage1_trial1_planA);
+console.log(img0);
+console.log(img1);
 
-const sorting_stimuli_stage1_trial1_planA_string = '<img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" />\n' + '<img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" />\n'
+const sorting_stimuli_stage1_trial1_planA_string = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" />\n' + '<img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" />\n'
 console.log(sorting_stimuli_stage1_trial1_planA_string);
 
 // var sort_trial_stage1_trial1_planA = {
