@@ -3765,22 +3765,8 @@ var sort_trial_stage1_trial1_planA = {
           horizontal: true,
           required: true,
           name: 'stage1_trial1_planA'
-        },
-        {
-          //prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
-          prompt: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_w.png" />\n',
-          options: [" ", " ", " ", " ", " "," "," "," "," "," "," "," "],
-          horizontal: true,
-          required: true,
-          name: 'stage1_trial2_planA'
         }
-      ],
-      randomize_question_order: true,
+    ],
       required_message:'<p>You must choose 3 shapes for this question!</p>'
   };
 timeline.push(sort_trial_stage1_trial1_planA);
