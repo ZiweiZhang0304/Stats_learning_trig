@@ -3730,24 +3730,58 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
 }
 console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
+// var sort_trial_stage1_trial1_planA = {
+//     type: 'free-sort',
+//     stimuli: sorting_stimuli_stage1_trial1_planA,
+//     prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
+//     stim_height: 50,
+//     stim_width: 50,
+//     scale_factor: 2,
+//     border_width: 2,
+//     sort_area_shape: "square",
+//     stim_starts_inside:false,
+//     sort_area_height: 100,
+//     sort_area_width: 300,
+//     column_spread_factor: 1.5,
+//     counter_text_unfinished: '<p>You still need to place %n% item%s% inside the sort area.</p>',
+//     on_finish: function (data) {
+//         data.test_part = 'post_drag'
+//     }
+//
+// };
 var sort_trial_stage1_trial1_planA = {
-    type: 'free-sort',
-    stimuli: sorting_stimuli_stage1_trial1_planA,
-    prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
-    stim_height: 50,
-    stim_width: 50,
-    scale_factor: 2,
-    border_width: 2,
-    sort_area_shape: "square",
-    stim_starts_inside:false,
-    sort_area_height: 100,
-    sort_area_width: 300,
-    column_spread_factor: 1.5,
-    on_finish: function (data) {
-        data.test_part = 'post_drag'
-    }
-
-};
+    type: 'survey-multi-select',
+      questions: [
+        {
+          prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
+          preamble: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_w.png" />\n',
+          //options: ["Red", "Yellow", "Green", "Blue", "Black"],
+          horizontal: true,
+          required: true,
+          name: 'stage1_trial1_planA'
+        },
+        {
+          prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
+          preamble: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_w.png" />\n' +
+          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_w.png" />\n',
+          //options: ["Apples", "Bananas", "Carrots", "Donuts", "Eggplant"],
+          horizontal: true,
+          required: true,
+          name: 'stage1_trial2_planA'
+        }
+      ],
+      randomize_question_order: true,
+      required_message:'<p>You must choose 3 shapes for this question!</p>'
+  };
 timeline.push(sort_trial_stage1_trial1_planA);
 
 
@@ -3759,25 +3793,8 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
     sorting_stimuli_stage1_trial2_planA.push(repo_site + frequent_nontrigger[i]);
 }
 console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
-var sort_trial_stage1_trial2_planA = {
-    type: 'free-sort',
-    stimuli: sorting_stimuli_stage1_trial2_planA,
-    prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
-    stim_height: 50,
-    stim_width: 50,
-    scale_factor: 2,
-    border_width: 2,
-    sort_area_shape: "square",
-    stim_starts_inside:false,
-    sort_area_height: 100,
-    sort_area_width: 300,
-    column_spread_factor: 1.5,
-    on_finish: function (data) {
-        data.test_part = 'post_drag'
-    }
-
-};
-timeline.push(sort_trial_stage1_trial2_planA);
+//var sort_trial_stage1_trial2_planA =
+//timeline.push(sort_trial_stage1_trial2_planA);
 
 // -- planB -- //
 var instruction6 = {
@@ -3808,25 +3825,8 @@ for (var i = 0; i < frequent_trigger_filtered1.length; i++) {
 
 console.log(sorting_stimuli_stage1_trial1_planB); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
-var sort_trial_stage1_trial1_planB = {
-    type: 'free-sort',
-    stimuli: sorting_stimuli_stage1_trial1_planB,
-    prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
-    stim_height: 50,
-    stim_width: 50,
-    scale_factor: 2,
-    border_width: 2,
-    sort_area_shape: "square",
-    stim_starts_inside:false,
-    sort_area_height: 100,
-    sort_area_width: 300,
-    column_spread_factor: 1.5,
-    on_finish: function (data) {
-        data.test_part = 'post_drag'
-    }
-
-};
-timeline.push(sort_trial_stage1_trial1_planB);
+//var sort_trial_stage1_trial1_planB =
+//timeline.push(sort_trial_stage1_trial1_planB);
 
 
 var sorting_stimuli_stage1_trial2_planB= [];
@@ -3840,25 +3840,8 @@ for (var i = 0; i < frequent_trigger_filtered1.length; i++) {
     sorting_stimuli_stage1_trial2_planB.push(repo_site + frequent_trigger_filtered1[i]);
 } // add in the 8 filler shapes
 console.log(sorting_stimuli_stage1_trial2_planB); //length should be 15 (12 freq non-trigger + 3 fast trigger)
-var sort_trial_stage1_trial2_planB = {
-    type: 'free-sort',
-    stimuli: sorting_stimuli_stage1_trial2_planB,
-    prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
-    stim_height: 50,
-    stim_width: 50,
-    scale_factor: 2,
-    border_width: 2,
-    sort_area_shape: "square",
-    stim_starts_inside:false,
-    sort_area_height: 100,
-    sort_area_width: 300,
-    column_spread_factor: 1.5,
-    on_finish: function (data) {
-        data.test_part = 'post_drag'
-    }
-
-};
-timeline.push(sort_trial_stage1_trial2_planB);
+// var sort_trial_stage1_trial2_planB =
+// timeline.push(sort_trial_stage1_trial2_planB);
 
 // -- planC -- //
 var instruction7 = {
@@ -3889,25 +3872,8 @@ for (var i = 0; i < frequent_trigger_filtered1.length; i++) {
 
 console.log(sorting_stimuli_stage1_trial1_planC); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
-var sort_trial_stage1_trial1_planC = {
-    type: 'free-sort',
-    stimuli: sorting_stimuli_stage1_trial1_planC,
-    prompt: '<p> 6 shapes were presented in a regular order during the first part of the experiment. From all the shapes outside of the box, drag the 6 shapes that you remember seeing regularly and drop them below.<br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
-    stim_height: 50,
-    stim_width: 50,
-    scale_factor: 2,
-    border_width: 2,
-    sort_area_shape: "square",
-    stim_starts_inside:false,
-    sort_area_height: 100,
-    sort_area_width: 300,
-    column_spread_factor: 1.5,
-    on_finish: function (data) {
-        data.test_part = 'post_drag'
-    }
-
-};
-timeline.push(sort_trial_stage1_trial1_planC);
+// var sort_trial_stage1_trial1_planC =
+// timeline.push(sort_trial_stage1_trial1_planC);
 
 /* ----- formal ordering trials ----- */
 var instruction8 = {
