@@ -3717,7 +3717,7 @@ var instruction5 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction5);
+timeline.push(instruction5);
 
 var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2);
 
@@ -3748,7 +3748,7 @@ var sort_trial_stage1_trial1_planA = {
     }
 
 };
-//timeline.push(sort_trial_stage1_trial1_planA);
+timeline.push(sort_trial_stage1_trial1_planA);
 
 
 var sorting_stimuli_stage1_trial2_planA= [];
@@ -3777,7 +3777,7 @@ var sort_trial_stage1_trial2_planA = {
     }
 
 };
-//timeline.push(sort_trial_stage1_trial2_planA);
+timeline.push(sort_trial_stage1_trial2_planA);
 
 // -- planB -- //
 var instruction6 = {
@@ -3796,7 +3796,7 @@ var instruction6 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction6);
+timeline.push(instruction6);
 
 var sorting_stimuli_stage1_trial1_planB= [];
 for (var i = 0; i < lr_triplet_1.length; i++) {
@@ -3826,7 +3826,7 @@ var sort_trial_stage1_trial1_planB = {
     }
 
 };
-//timeline.push(sort_trial_stage1_trial1_planB);
+timeline.push(sort_trial_stage1_trial1_planB);
 
 
 var sorting_stimuli_stage1_trial2_planB= [];
@@ -3858,7 +3858,7 @@ var sort_trial_stage1_trial2_planB = {
     }
 
 };
-//timeline.push(sort_trial_stage1_trial2_planB);
+timeline.push(sort_trial_stage1_trial2_planB);
 
 // -- planC -- //
 var instruction7 = {
@@ -3877,7 +3877,7 @@ var instruction7 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction7);
+timeline.push(instruction7);
 
 var sorting_stimuli_stage1_trial1_planC= [];
 for (var i = 0; i < lr_triplet_full.length; i++) {
@@ -3907,7 +3907,7 @@ var sort_trial_stage1_trial1_planC = {
     }
 
 };
-//timeline.push(sort_trial_stage1_trial1_planC);
+timeline.push(sort_trial_stage1_trial1_planC);
 
 /* ----- formal ordering trials ----- */
 var instruction8 = {
@@ -3922,7 +3922,7 @@ var instruction8 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction8);
+timeline.push(instruction8);
 
 
 var sorting_stimuli= [];
@@ -3949,7 +3949,7 @@ var sort_trial_1 = {
     }
 
 };
-//timeline.push(sort_trial_1);
+timeline.push(sort_trial_1);
 
 
 var sort_trial_2 = {
@@ -3969,7 +3969,7 @@ var sort_trial_2 = {
         data.test_part = 'post_drag'
     }
 };
-//timeline.push(sort_trial_2);
+timeline.push(sort_trial_2);
 
 
 
@@ -4013,7 +4013,7 @@ jsPsych.data.checks = interaction_data;
 var timeline_full = [enter_full, consent, instruction, prac_block, debrief, instruction2, first3_block, at_test_procedure, instruction3, practice_presentation, instruction4, target_presentation, instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
 var timeline_test = [instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
 //timeline.push(timeline_full)
-timeline.push(timeline_test)
+//timeline.push(timeline_test)
 
 
 function save_data_csv() {
