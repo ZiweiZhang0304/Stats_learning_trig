@@ -207,7 +207,11 @@ var getPermutations = function(list, maxLen) {
 
 function hasDuplicates(array) {
     return (new Set(array)).size !== array.length;
-}
+};
+
+function looseJsonParse(obj) {
+  return eval(`(${obj})`);
+};
 
 /* -----Full screen-----*/
 var enter_full = {
@@ -3728,7 +3732,16 @@ for (var i = 0; i < lr_triplet_1.length; i++) {
 for (var i = 0; i < frequent_nontrigger.length; i++) {
     sorting_stimuli_stage1_trial1_planA.push(repo_site + frequent_nontrigger[i]);
 }
+var sorting_stimuli_stage1_trial1_planA = shuffle(sorting_stimuli_stage1_trial1_planA);
 console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+
+for (var i = 0; i < sorting_stimuli_stage1_trial1_planA; i++) {
+    sorting_stimuli_stage1_trial1_planA[i] = '"' + sorting_stimuli_stage1_trial1_planA[i] + '"'
+    looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planA[i])
+}
+
+const sorting_stimuli_stage1_trial1_planA_string = '<img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" />\n' + '<img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" />\n'
+console.log(sorting_stimuli_stage1_trial1_planA_string);
 
 // var sort_trial_stage1_trial1_planA = {
 //     type: 'free-sort',
@@ -3749,25 +3762,22 @@ console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq
 //     }
 //
 // };
+
 var sort_trial_stage1_trial1_planA = {
     type: 'survey-multi-select',
       questions: [
         {
           //prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
           //preamble
-          prompt: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_w.png" />\n' +
-          '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_w.png" />\n',
+          prompt: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" /><img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />'
+          //sorting_stimuli_stage1_trial1_planA_string
           options: [" ", " ", " ", " ", " "," "," "," "," "," "," "," "],
           horizontal: true,
           required: true,
           name: 'stage1_trial1_planA'
         }
     ],
-      required_message:'<p>You must choose 3 shapes for this question!</p>'
+      required_message:'You must choose 3 shapes for this question!'
   };
 timeline.push(sort_trial_stage1_trial1_planA);
 
