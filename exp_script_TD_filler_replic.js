@@ -3753,8 +3753,9 @@ var sort_trial_stage1_trial1_planA = {
     type: 'survey-multi-select',
       questions: [
         {
-          prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
-          preamble: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
+          //prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
+          //preamble
+          prompt: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
@@ -3766,8 +3767,8 @@ var sort_trial_stage1_trial1_planA = {
           name: 'stage1_trial1_planA'
         },
         {
-          prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
-          preamble: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
+          //prompt: '<p>From all the shapes outside of the box, drag the 3 shapes that you remember seeing regularly during the first part of the experiment and drop them below.<br> When you drag and drop the 3 shapes, you should make sure that there are space in between them in the box.</p>',
+          prompt: '<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_002_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_003_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_004_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_005_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_006_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
