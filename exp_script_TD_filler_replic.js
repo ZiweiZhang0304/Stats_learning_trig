@@ -3760,7 +3760,7 @@ var sort_trial_stage1_trial1_planA = {
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_w.png" />\n',
-          //options: ["Red", "Yellow", "Green", "Blue", "Black"],
+          options: [" ", " ", " ", " ", " "," "," "," "," "," "," "," "],
           horizontal: true,
           required: true,
           name: 'stage1_trial1_planA'
@@ -3773,7 +3773,7 @@ var sort_trial_stage1_trial1_planA = {
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_007_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_008_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_009_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_010_w.png" />\n' +
           '          <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_011_w.png" /> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_012_w.png" />\n',
-          //options: ["Apples", "Bananas", "Carrots", "Donuts", "Eggplant"],
+          options: [" ", " ", " ", " ", " "," "," "," "," "," "," "," "],
           horizontal: true,
           required: true,
           name: 'stage1_trial2_planA'
@@ -3976,8 +3976,8 @@ var multi_choice_Demo = {
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
 
-var timeline_full = [enter_full, consent, instruction, prac_block, debrief, instruction2, first3_block, at_test_procedure, instruction3, practice_presentation, instruction4, target_presentation, instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
-var timeline_test = [instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
+//var timeline_full = [enter_full, consent, instruction, prac_block, debrief, instruction2, first3_block, at_test_procedure, instruction3, practice_presentation, instruction4, target_presentation, instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
+//var timeline_test = [instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
 //timeline.push(timeline_full)
 //timeline.push(timeline_test)
 
