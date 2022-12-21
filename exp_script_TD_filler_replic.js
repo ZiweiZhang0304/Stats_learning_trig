@@ -3743,10 +3743,10 @@ console.log(sorting_stimuli_stage1_trial1_planA);
 console.log(img0);
 console.log(img1);
 
-const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> <img src="' + `${img5}` + '" />'
-const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
-const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
-console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
+// const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> <img src="' + `${img5}` + '" />'
+// const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
+// const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
+// console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
 
 // var sort_trial_stage1_trial1_planA = {
 //     type: 'free-sort',
@@ -3813,10 +3813,17 @@ var Sprachkentnisse2 = {
 };
 timeline.push(Sprachkentnisse2);
 
+const sorting_stimuli_stage1_trial1_planA_string_01 = '<br><input name="img1" type= "checkbox" id="img1"> <label for="course"> <img src="' + `${img0}` + '" /></label><br> <br><input name="img2" type= "checkbox" id="img2"> <label for="course"> <img src="' + `${img1}` + '" /> <br><input name="img3" type= "checkbox" id="img3"> <label for="course"> <img src="' + `${img2}` + '" /> <br><input name="img4" type= "checkbox" id="img4"> <label for="course"> <img src="' + `${img3}` + '" /> <br><input name="img5" type= "checkbox" id="img5"> <label for="course"> <img src="' + `${img4}` + '" /> <br><input name="img6" type= "checkbox" id="img6"> <label for="course"> <img src="' + `${img5}` + '" /> <br><input name="img7" type= "checkbox" id="img7"> <label for="course"> <img src="' + `${img6}` + '" /> '
+const sorting_stimuli_stage1_trial1_planA_string_02 = '<br><input name="img8" type= "checkbox" id="img8"> <label for="course"> <img src="' + `${img7}` + '" /></label><br> <br><input name="img9" type= "checkbox" id="img9"> <label for="course"> <img src="' + `${img8}` + '" /></label><br> <br><input name="img10" type= "checkbox" id="img10"> <label for="course"> <img src="' + `${img9}` + '" /></label><br> <br><input name="img11" type= "checkbox" id="img11"> <label for="course"> <img src="' + `${img10}` + '" /></label><br> <br><input name="img12" type= "checkbox" id="img12"> <label for="course"> <img src="' + `${img11}` + '" />'
+const sorting_stimuli_stage1_trial1_planA_string_03 = '<br><input name="img13" type= "checkbox" id="img13"> <label for="course"> <img src="' + `${img12}` + '" /></label><br> <br><input name="img14" type= "checkbox" id="img14"> <label for="course"> <img src="' + `${img13}` + '" /></label><br> <br><input name="img15" type= "checkbox" id="img15"> <label for="course"> <img src="' + `${img14}` + '" />'
+console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
+
+
 var sort_trial_stage1_trial2_planA = {
     type: 'survey-html-form',
     preamble: '<div class="myDiv"><p>You must choose 3 shapes for this question!</p></div>', //'<h2>Language learning</h2>' +
-    html: ' <br><input name="img1" type= "checkbox" id="course" value="course"> <label for="course"> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png"/> </label><br><input name="LearnType" type= "checkbox" id="selftaught" value="selftaught"> <label for="selftaught">Self-taught</label><br><input name="LearnType" type= "checkbox" id="immersion" value="immersion"> <label for="immersion">I lived in a German-speaking country</label><br>',
+    html: sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03
+//' <br><input name="img1" type= "checkbox" id="course" value="course"> <label for="course"> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png"/> </label><br><input name="LearnType" type= "checkbox" id="selftaught" value="selftaught"> <label for="selftaught">Self-taught</label><br><input name="LearnType" type= "checkbox" id="immersion" value="immersion"> <label for="immersion">I lived in a German-speaking country</label><br>',
 };
 // var sort_trial_stage1_trial2_planA = {
 //       type: 'survey-html-form', //'html-button-response'
