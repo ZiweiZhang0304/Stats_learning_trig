@@ -4130,7 +4130,7 @@ var sort_trial_stage1_trial1_planC = {
           selection: '6'
         }
     ],
-      required_message:'You must choose exactly 3 shapes for this question!'
+      required_message:'You must choose exactly 6 shapes for this question!'
   };
 
 timeline.push(sort_trial_stage1_trial1_planC);
