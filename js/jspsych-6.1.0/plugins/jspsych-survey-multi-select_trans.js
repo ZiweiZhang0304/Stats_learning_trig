@@ -171,7 +171,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
     display_element.querySelector('#jspsych-survey-multi-select-next').addEventListener('click', function(){
       for(var i=0; i<trial.questions.length; i++){
         if(trial.questions[i].required){
-          if (selection == '3') {
+          if (question.selection == '3') {
           if(document.querySelectorAll('input[type="checkbox"]:checked').length != 3){
 
               console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
@@ -183,7 +183,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
             }
 
         }
-          else if (selection == '6') {
+          else if (question.selection == '6') {
               if(document.querySelectorAll('input[type="checkbox"]:checked').length != 6){
               console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
               console.log(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
