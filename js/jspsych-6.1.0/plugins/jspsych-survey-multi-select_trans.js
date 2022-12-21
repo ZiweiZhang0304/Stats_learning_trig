@@ -135,7 +135,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
         var option_id_name = _join(plugin_id_name, "option", question_id, j);
 
         // add check box container
-        display_element.querySelector(question_selector).innerHTML += '<div id="'+option_id_name+'" class="'+_join(plugin_id_name, 'option')+'"></div>';
+        display_element.querySelector(question_selector).innerHTML += '<div style="opacity:0; position:absolute; left:9999px;" id="'+option_id_name+'" class="'+_join(plugin_id_name, 'option')+'"></div>'; //style="opacity:0; position:absolute; left:9999px;"
 
         // add label and question text
         var form = document.getElementById(option_id_name)
