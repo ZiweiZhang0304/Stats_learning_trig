@@ -3796,7 +3796,8 @@ var sort_trial_stage1_trial1_planA = {
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
-          name: 'stage1_trial1_planA'
+          name: 'stage1_trial1_planA',
+          selection: '3'
         }
     ],
       required_message:'You must choose exactly 3 shapes for this question!'
@@ -3807,7 +3808,7 @@ timeline.push(sort_trial_stage1_trial1_planA);
 
 
 const sorting_stimuli_stage1_trial2_planA_string_01 =
-'<p> <center> Please select <h3>ANOTHER</h3> 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img1" type= "checkbox" id="img1" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img15}`
+'<p> <center> Please select <b>ANOTHER</b> 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img1" type= "checkbox" id="img1" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img15}`
 + '" /> <input name="img2" type= "checkbox" id="img2" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img16}`
 + '" /> <input name="img3" type= "checkbox" id="img3" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img17}`
 + '" /> <input name="img4" type= "checkbox" id="img4" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img18}`
@@ -4002,7 +4003,7 @@ for (var i = 0; i < sorting_stimuli_stage1_trial2_planB.length; i++) {
 }
 
 const sorting_stimuli_stage1_trial2_planB_string_01 =
-'<p> <center> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img1" type= "checkbox" id="img1" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
+'<p> <center> Please select <b>ANOTHER</b> 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img1" type= "checkbox" id="img1" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
 + '" /> <input name="img2" type= "checkbox" id="img2" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img50}`
 + '" /> <input name="img3" type= "checkbox" id="img3" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img51}`
 + '" /> <input name="img4" type= "checkbox" id="img4" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img52}`
@@ -4125,7 +4126,8 @@ var sort_trial_stage1_trial1_planC = {
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
-          name: 'stage1_trial1_planC'
+          name: 'stage1_trial1_planC',
+          selection: '6'
         }
     ],
       required_message:'You must choose exactly 3 shapes for this question!'
