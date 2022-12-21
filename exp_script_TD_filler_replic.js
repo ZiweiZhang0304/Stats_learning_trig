@@ -3783,16 +3783,6 @@ console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stag
 //       required_message:'You must choose 3 shapes for this question!'
 //   };
 
-var sort_trial_stage1_trial1_planA = {
-      type: 'html-button-response', //'html-button-response'
-      stimulus: '<p style="font-size:48px; color:white;">  </p>',//sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
-      choices: sorting_stimuli_stage1_trial2_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
-      prompt: "<p>You must choose 3 shapes for this question!</p>",
-      button_html: '<img src="%choice%" />',
-      response_ends_trial: false,
-      trial_duration: 20000
-    };
-timeline.push(sort_trial_stage1_trial1_planA);
 
 
 var sorting_stimuli_stage1_trial2_planA= [];
@@ -3805,6 +3795,17 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
 console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 //var sort_trial_stage1_trial2_planA =
 //timeline.push(sort_trial_stage1_trial2_planA);
+
+var sort_trial_stage1_trial2_planA = {
+      type: 'html-button-response', //'html-button-response'
+      stimulus: '<p style="font-size:48px; color:white;">  </p>',//sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
+      choices: sorting_stimuli_stage1_trial2_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
+      prompt: "<p>You must choose 3 shapes for this question!</p>",
+      button_html: '<img src="%choice%" />',
+      response_ends_trial: false,
+      trial_duration: 20000
+    };
+timeline.push(sort_trial_stage1_trial2_planA);
 
 // -- planB -- //
 var instruction6 = {
