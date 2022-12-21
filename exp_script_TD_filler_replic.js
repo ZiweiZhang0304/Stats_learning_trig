@@ -3740,14 +3740,62 @@ for (var i = 0; i < sorting_stimuli_stage1_trial1_planA.length; i++) {
     looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planA[i])
 }
 console.log(sorting_stimuli_stage1_trial1_planA);
-console.log(img0);
-console.log(img1);
 
 // const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> <img src="' + `${img5}` + '" />'
 // const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
 // const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
 // console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
 
+var sorting_stimuli_stage1_trial2_planA= [];
+for (var i = 0; i < lr_triplet_2.length; i++) {
+    sorting_stimuli_stage1_trial2_planA.push(repo_site + lr_triplet_2[i]);
+}
+for (var i = 0; i < frequent_nontrigger.length; i++) {
+    sorting_stimuli_stage1_trial2_planA.push(repo_site + frequent_nontrigger[i]);
+}
+console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+//timeline.push(sort_trial_stage1_trial2_planA);
+
+const sorting_stimuli_stage1_trial2_planA_string_01 =
+'<br>   <input name="img1" type= "checkbox" id="img1" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img0}`
++ '" /> <input name="img2" type= "checkbox" id="img2" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img1}`
++ '" /> <input name="img3" type= "checkbox" id="img3" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img2}`
++ '" /> <input name="img4" type= "checkbox" id="img4" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img3}`
++ '" /> <input name="img5" type= "checkbox" id="img5" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img4}`
++ '" /> <input name="img6" type= "checkbox" id="img6" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img5}`
++ '" /> <input name="img7" type= "checkbox" id="img7" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img6}` + '" /> '
+
+const sorting_stimuli_stage1_trial2_planA_string_02 =
+'       <input name="img8" type= "checkbox" id="img8" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img7}`
++ '" /> <input name="img9" type= "checkbox" id="img9" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img8}`
++ '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img9}`
++ '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img10}`
++ '" /></label> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img11}`+ '" />'
+
+const sorting_stimuli_stage1_trial2_planA_string_03 =
+'       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img12}`
++ '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img13}`
++ '" /> <input name="img15" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img14}` + '" /> <br><br><br>'
+
+//console.log(sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03);
+
+var sort_trial_stage1_trial2_planA = {
+    type: 'survey-multi-select', //'html-button-response'
+      questions: [
+        {
+          //preamble, prompt:
+          prompt: sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03,
+          options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
+          horizontal: true,
+          required: true,
+          name: 'stage1_trial2_planA'
+        }
+    ],
+      required_message:'You must choose 3 shapes for this question!'
+  };
+
+timeline.push(sort_trial_stage1_trial2_planA);
+//drafts
 // var sort_trial_stage1_trial1_planA = {
 //     type: 'free-sort',
 //     stimuli: sorting_stimuli_stage1_trial1_planA,
@@ -3768,20 +3816,6 @@ console.log(img1);
 //
 // };
 
-
-
-
-var sorting_stimuli_stage1_trial2_planA= [];
-for (var i = 0; i < lr_triplet_2.length; i++) {
-    sorting_stimuli_stage1_trial2_planA.push(repo_site + lr_triplet_2[i]);
-}
-for (var i = 0; i < frequent_nontrigger.length; i++) {
-    sorting_stimuli_stage1_trial2_planA.push(repo_site + frequent_nontrigger[i]);
-}
-console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
-//var sort_trial_stage1_trial2_planA =
-//timeline.push(sort_trial_stage1_trial2_planA);
-
 // var sort_trial_stage1_trial2_planA = {
 //       type: 'html-button-response', //'html-button-response'
 //       stimulus: '<p style="font-size:48px; color:white;">  </p>',//sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
@@ -3791,39 +3825,6 @@ console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq
 //       response_ends_trial: false,
 //       trial_duration: 20000
 //     };
-
-// const sorting_stimuli_stage1_trial1_planA_string_01 = '<br><input name="img1" type= "checkbox" id="img1" position:relative top: 10px right: 0> <label for="course"> <img src="' + `${img0}` + '" /></label><br> <br><input name="img2" type= "checkbox" id="img2"> <label for="course"> <img src="' + `${img1}` + '" /> <br><input name="img3" type= "checkbox" id="img3"> <label for="course"> <img src="' + `${img2}` + '" /> <br><input name="img4" type= "checkbox" id="img4"> <label for="course"> <img src="' + `${img3}` + '" /> <br><input name="img5" type= "checkbox" id="img5"> <label for="course"> <img src="' + `${img4}` + '" /> <br><input name="img6" type= "checkbox" id="img6"> <label for="course"> <img src="' + `${img5}` + '" /> <br><input name="img7" type= "checkbox" id="img7"> <label for="course"> <img src="' + `${img6}` + '" /> '
-// const sorting_stimuli_stage1_trial1_planA_string_02 = '<br><input name="img8" type= "checkbox" id="img8"> <label for="course"> <img src="' + `${img7}` + '" /></label><br> <br><input name="img9" type= "checkbox" id="img9"> <label for="course"> <img src="' + `${img8}` + '" /></label><br> <br><input name="img10" type= "checkbox" id="img10"> <label for="course"> <img src="' + `${img9}` + '" /></label><br> <br><input name="img11" type= "checkbox" id="img11"> <label for="course"> <img src="' + `${img10}` + '" /></label><br> <br><input name="img12" type= "checkbox" id="img12"> <label for="course"> <img src="' + `${img11}` + '" />'
-// const sorting_stimuli_stage1_trial1_planA_string_03 = '<br><input name="img13" type= "checkbox" id="img13"> <label for="course"> <img src="' + `${img12}` + '" /></label><br> <br><input name="img14" type= "checkbox" id="img14"> <label for="course"> <img src="' + `${img13}` + '" /></label><br> <br><input name="img15" type= "checkbox" id="img15"> <label for="course"> <img src="' + `${img14}` + '" />'
-
-const sorting_stimuli_stage1_trial2_planA_string_01 =
-'<br>   <input name="img1" type= "checkbox" id="img1" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img0}`
-+ '" /> <input name="img2" type= "checkbox" id="img2" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img1}`
-+ '" /> <input name="img3" type= "checkbox" id="img3" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img2}`
-+ '" /> <input name="img4" type= "checkbox" id="img4" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img3}`
-+ '" /> <input name="img5" type= "checkbox" id="img5" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img4}`
-+ '" /> <input name="img6" type= "checkbox" id="img6" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img5}`
-+ '" /> <input name="img7" type= "checkbox" id="img7" style= "margin-left: 3em;  margin-right: 0em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; vertical-align: middle;" src="' + `${img6}` + '" /> '
-
-const sorting_stimuli_stage1_trial2_planA_string_02 = '<input name="img8" type= "checkbox" id="img8"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 2em; vertical-align: middle;" src="' + `${img7}` + '" /></label><input name="img9" type= "checkbox" id="img9"> <label for="course"> <img src="' + `${img8}` + '" /></label> <input name="img10" type= "checkbox" id="img10"> <label for="course"> <img src="' + `${img9}` + '" /></label><input name="img11" type= "checkbox" id="img11"> <label for="course"> <img src="' + `${img10}` + '" /></label> <input name="img12" type= "checkbox" id="img12"> <label for="course"> <img src="' + `${img11}` + '" />'
-const sorting_stimuli_stage1_trial2_planA_string_03 = '<input name="img13" type= "checkbox" id="img13"> <label for="course"> <img src="' + `${img12}` + '" /></label> <input name="img14" type= "checkbox" id="img14"> <label for="course"> <img src="' + `${img13}` + '" /></label> <input name="img15" type= "checkbox" id="img15"> <label for="course"> <img src="' + `${img14}` + '" /> <br><br><br>'
-
-console.log(sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03);
-
-var sort_trial_stage1_trial2_planA = {
-    type: 'survey-multi-select', //'html-button-response'
-      questions: [
-        {
-          //preamble, prompt:
-          prompt: sorting_stimuli_stage1_trial2_planA_string_01, //+ sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03,
-          options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
-          horizontal: true,
-          required: true,
-          name: 'stage1_trial2_planA'
-        }
-    ],
-      required_message:'You must choose 3 shapes for this question!'
-  };
 
 // var sort_trial_stage1_trial2_planA = {
 //     type: 'survey-html-form',
@@ -3839,7 +3840,7 @@ var sort_trial_stage1_trial2_planA = {
 //       response_ends_trial: false,
 //       trial_duration: 20000
 //     };
-timeline.push(sort_trial_stage1_trial2_planA);
+
 // -- planB -- //
 var instruction6 = {
     type: 'instructions',
