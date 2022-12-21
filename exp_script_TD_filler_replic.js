@@ -3733,31 +3733,20 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
     sorting_stimuli_stage1_trial1_planA.push(repo_site + frequent_nontrigger[i]);
 }
 var sorting_stimuli_stage1_trial1_planA = shuffle(sorting_stimuli_stage1_trial1_planA);
-var sorting_stimuli_stage1_trial2_planA = shuffle(sorting_stimuli_stage1_trial2_planA);
 //console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
+var sorting_stimuli_stage1_trial1_planA_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial1_planA.length; i++) {
-    sorting_stimuli_stage1_trial1_planA[i] = '"' + sorting_stimuli_stage1_trial1_planA[i] + '"'
-    looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planA[i])
+    //sorting_stimuli_stage1_trial1_planA[i]
+    sorting_stimuli_stage1_trial1_planA_rename[i] = '"' + sorting_stimuli_stage1_trial1_planA[i] + '"'
+    looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planA_rename[i])
 }
 //console.log(sorting_stimuli_stage1_trial1_planA);
-for (var i = 0; i < sorting_stimuli_stage1_trial2_planA.length; i++) {
-    var j = i+15
-    sorting_stimuli_stage1_trial2_planA[i] = '"' + sorting_stimuli_stage1_trial2_planA[i] + '"'
-    looseJsonParse("img" + j + "=" + sorting_stimuli_stage2_trial1_planA[i])
-}
 
 // const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> <img src="' + `${img5}` + '" />'
 // const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
 // const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
 // console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
-var sorting_stimuli_stage1_trial1_planA= [];
-for (var i = 0; i < lr_triplet_1.length; i++) {
-    sorting_stimuli_stage1_trial1_planA.push(repo_site + lr_triplet_1[i]);
-}
-for (var i = 0; i < frequent_nontrigger.length; i++) {
-    sorting_stimuli_stage1_trial1_planA.push(repo_site + frequent_nontrigger[i]);
-}
 
 var sorting_stimuli_stage1_trial2_planA= [];
 for (var i = 0; i < lr_triplet_2.length; i++) {
@@ -3766,6 +3755,15 @@ for (var i = 0; i < lr_triplet_2.length; i++) {
 for (var i = 0; i < frequent_nontrigger.length; i++) {
     sorting_stimuli_stage1_trial2_planA.push(repo_site + frequent_nontrigger[i]);
 }
+var sorting_stimuli_stage1_trial2_planA = shuffle(sorting_stimuli_stage1_trial2_planA);
+
+var sorting_stimuli_stage1_trial2_planA_rename = []
+for (var i = 0; i < sorting_stimuli_stage1_trial2_planA.length; i++) {
+    var j = i+15
+    sorting_stimuli_stage1_trial2_planA_rename[i] = '"' + sorting_stimuli_stage1_trial2_planA[i] + '"'
+    looseJsonParse("img" + j + "=" + sorting_stimuli_stage2_trial1_planA_rename[i])
+}
+
 //console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
 const sorting_stimuli_stage1_trial1_planA_string_01 =
