@@ -1,4 +1,4 @@
-//console.log('test')
+console.log('test')
 
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
@@ -103,7 +103,7 @@ function get_values_bykey(object) {
 
     var TD_stimuli_list = []
     object.forEach(function myFunction(value) {
-        ////console.log('this is item number ' + value)
+        //console.log('this is item number ' + value)
         TD_stimuli_list.push(value.TD_stimulus)
 
     })
@@ -126,7 +126,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
     var shapes_reacted_to = []
     var shapes_reacted_to_index = []
     var target_index = findWithAttr(animation_sequence, 'stimulus', TD_target)
-    ////console.log(target_index)
+    //console.log(target_index)
 
     function checkindex(index) {
                     var index_after_target = index > target_index
@@ -134,7 +134,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
 
     if (set =='onset') {
         animation_sequence.forEach(function myFunction(value) {
-            ////console.log('this is shape ' + value)
+            //console.log('this is shape ' + value)
             if (value.stimulus == TD_target) {
                 //get index of target
                 time.push(value.time)
@@ -147,7 +147,7 @@ function get_target_time(animation_sequence,response, TD_target,set) {
 
             response.forEach(function myFunction(value) {
             var shape = value.stimulus
-            ////console.log(shape)
+            //console.log(shape)
             shapes_reacted_to.push(shape)
             var shape_index = findWithAttr(animation_sequence, 'stimulus', shape)
             shapes_reacted_to_index.push(shape_index)
@@ -156,24 +156,24 @@ function get_target_time(animation_sequence,response, TD_target,set) {
                 time.push(value.rt)
                 }
             else if (shape_index > target_index){
-                ////console.log('this is post target')
+                //console.log('this is post target')
                 shapes_rt_index_after_target.push(value.rt)
-                ////console.log(shapes_rt_index_after_target)
+                //console.log(shapes_rt_index_after_target)
             }
 
     })
 
             //for every index in shapes_reacted_to_index, if all of them < target_index, then log
             if (shapes_reacted_to_index.every( (val) => val <target_index) && shapes_reacted_to.includes(TD_target) == false ) {
-                ////console.log('pressed before target')
-                ////console.log(shapes_reacted_to_index.every( (val) => val <target_index))
+                //console.log('pressed before target')
+                //console.log(shapes_reacted_to_index.every( (val) => val <target_index))
             }
 
             //if any of them > target_index and no press to target, then take the rt of the first after target
             else if(shapes_reacted_to_index.some(checkindex) && shapes_reacted_to.includes(TD_target) == false){ // Returns true
                 time.push(shapes_rt_index_after_target[0])
-                ////console.log(shapes_reacted_to_index.some(checkindex))
-                ////console.log(shapes_rt_index_after_target)
+                //console.log(shapes_reacted_to_index.some(checkindex))
+                //console.log(shapes_rt_index_after_target)
             }
     };
     return time[0]
@@ -374,10 +374,10 @@ var instruction = {
 
 
 repetition = shuffle(repetition)
-////console.log(repetition,repetition.length)
+//console.log(repetition,repetition.length)
 
 repetition_1 = shuffle(repetition_1)
-////console.log(repetition_1,repetition_1.length)
+//console.log(repetition_1,repetition_1.length)
 
 /* ----- Selecting Stim for First 3 Trials Frequent----- */
 var first3_stimuli = []
@@ -438,7 +438,7 @@ for (j = 0; j < repetition_prac.length; j++) {
 /* -----Back to Selecting Main At_lr Trials----- */
 var repetition_1_attention = repetition_1.slice(0, 120); //120
 var repetition_attention = repetition.slice(3, 1080); //1080
-////console.log(repetition_1_attention, repetition_attention)
+//console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
 for (i = 0; i < repetition_1_attention.length; i++) {
@@ -466,7 +466,7 @@ for (j = 0; j < repetition_attention.length; j++) {
     stimuli.data.TaskType = 'at';
     at_stimuli.push(stimuli);
 }
-////console.log(at_stimuli)
+//console.log(at_stimuli)
 
 /* -----Back to Creating Prac Trials----- */
 var prac = {
@@ -550,7 +550,7 @@ var frequent_trigger_filtered1 = frequent_trigger_filtered.filter(function(val) 
 });
 
 var fillers_shapes_1 = getRandom(frequent_trigger_filtered1,4); //4 shapes for fast filler
-////console.log(fillers_shapes_1.length)
+//console.log(fillers_shapes_1.length)
 
 var fillers_shapes_2 = frequent_trigger_filtered1.filter(function(val) { //4 shapes for slow filler
   return fillers_shapes_1.indexOf(val) == -1;
@@ -581,7 +581,7 @@ for (i = 0; i < fillers_1.length; i++){
     tri = [0+i*3,1+i*3,2+i*3];
     fl_stimuli_triple.push(tri)
 };
-////console.log(fl_stimuli_triple);
+//console.log(fl_stimuli_triple);
 
 var fillers_2 = getPermutations(fillers_shapes_2 , 3); //permutations of fillers P(4,3)
 
@@ -601,7 +601,7 @@ for(i = 0; i < fillers_2.length; i++) {
     }
 };
 fillers_2 = shuffle(fillers_2);
-////console.log(fillers_1, fillers_2)
+//console.log(fillers_1, fillers_2)
 
 
 /* -----randomize triplet-attention state pair----- */
@@ -647,7 +647,7 @@ for (i = 0; i < lr_triplet_2.length; i++) {
     stimuli.data.TaskType = 'lr';
     lr_stimuli_2.push(stimuli);
 };
-////console.log(lr_stimuli_1,lr_stimuli_2);
+//console.log(lr_stimuli_1,lr_stimuli_2);
 
 
 for (i = 0; i < fillers_1.length; i++) { //72
@@ -698,8 +698,8 @@ for (i = 0; i < fillers_2.length; i++) { //72
 };
 
 var filler_complete = fillers_1.concat(fillers_2);
-////console.log(fl_stimuli_1);
-////console.log(fl_stimuli_2);
+//console.log(fl_stimuli_1);
+//console.log(fl_stimuli_2);
 
 
 var instruction2 = {
@@ -779,7 +779,7 @@ var filler = {
     var filler_trial_counter = jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values.length;
     data.filler_trial_counter = filler_trial_counter ;
 
-    //console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
+    console.log(jsPsych.data.get().filter({TaskType: 'fl'}).select('rt').values)
   }},
 
   {type: "image-keyboard-response",
@@ -900,9 +900,9 @@ var attention = {
         fl_ind_1 = slow_fl_index
         fl_ind_2 = fast_fl_index
     };
-    //console.log(slow_fl_index, fast_fl_index)
-    //console.log(fl_ind_1, fl_ind_2)
-    //console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
+    console.log(slow_fl_index, fast_fl_index)
+    console.log(fl_ind_1, fl_ind_2)
+    console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -912,8 +912,8 @@ var attention = {
     data.sd = rt_sd
     data.slow = rt_mean + rt_sd
     data.fast = Math.abs(rt_mean - rt_sd)
-    //console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
-    //console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
+    console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
+    console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
 
     data.at_counter = at_counter
 
@@ -923,10 +923,10 @@ var attention = {
     data.slow_fl_counter = slow_lr_filler
     data.fast_fl_counter = fast_lr_filler
     data.fl_counter = fl_counter
-    //console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
-    //console.log('there are' + lr_counter + ' learning trials')
-    //console.log('there are' + fast_lr_counter + ' fast learning trials')
-    //console.log('there are' + slow_lr_counter + ' slow learning trials')
+    console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
+    console.log('there are' + lr_counter + ' learning trials')
+    console.log('there are' + fast_lr_counter + ' fast learning trials')
+    console.log('there are' + slow_lr_counter + ' slow learning trials')
     filler_node = false
     lr_node = false
 
@@ -935,13 +935,13 @@ var attention = {
         //see if the last trial was an infrequent trial
         var last_infreq = jsPsych.data.get().filter({TaskType: 'at'}).last(3).select('at_TrialType').values;
         if (last_infreq.includes('infrequent') == true) {
-        //console.log('there is an infreq')}
+        console.log('there is an infreq')}
 
         //see if there was an error in the last 3 trials
         var last_correct = jsPsych.data.get().filter({ TaskType: 'at' }).last(3).select('correct').values;
-        //console.log(last_correct)
+        console.log(last_correct)
         if (last_correct.includes(false) == true){
-        //console.log('there is an error')}
+        console.log('there is an error')}
 
         var last_rt = jsPsych.data.get().filter({at_TrialType: 'frequent'}).last(3).select('rt').values;
 
@@ -951,32 +951,32 @@ var attention = {
             }
         };
         if (last_rt.includes(true)) {
-         //console.log('too fast')};
+         console.log('too fast')};
 
         var last_lr = jsPsych.data.get().filter({ test_part: 'test' }).last(3).select('TaskType').values;
         if (last_lr.includes('lr')== true) {
-            //console.log('there is a trig trial')}
+            console.log('there is a trig trial')}
 
         //calculate trailing RT after the third trial
         var rt_three = jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(3).select('rt').mean();
         data.at_TrailingMean = rt_three
-        //console.log('trailing mean is ' + rt_three)
-        ////console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
+        console.log('trailing mean is ' + rt_three)
+        //console.log(jsPsych.data.get().filter({ TaskType: 'at' }).last(1).select('rt').values[0])
 
   };
 
 /* ----new restriction 1 starts here---- */
     //restriction 1 where the last three trials were all fast/slow then the next one can't be the same: || last_fast == false || last_slow == false
     if (at_counter > 80 && lr_counter > 0){ //change 80
-        //console.log('----new restriction 1 starts here----')
+        console.log('----new restriction 1 starts here----')
 
         /* ----count lr trials---- */
         //see if the last 3 lr trials were all fast, if so the next one can't be
         if (fast_lr_counter >=3 ) {
             var last_lr_fast = jsPsych.data.get().filter({ diff: 'fast' }).last(3).select('lr_counter').values;
-            //console.log(last_lr_fast)
-            //console.log('lr_counter for fast trials: ' + last_lr_fast)
-            //console.log('max for last fast trials: ' + Math.max(...last_lr_fast), Math.max(...last_lr_fast)+1)
+            console.log(last_lr_fast)
+            console.log('lr_counter for fast trials: ' + last_lr_fast)
+            console.log('max for last fast trials: ' + Math.max(...last_lr_fast), Math.max(...last_lr_fast)+1)
 
 
             // if lr_counter number are not consecutive, it means that they are not in a 3 cluster,
@@ -987,9 +987,9 @@ var attention = {
             } else {
                 last_fast = true
             }
-            //console.log('can we trigger fast next? ' + last_fast)
+            console.log('can we trigger fast next? ' + last_fast)
         } else {
-            //console.log('less than 3 fast trials');
+            console.log('less than 3 fast trials');
             last_fast = true
         }
 
@@ -997,9 +997,9 @@ var attention = {
         //see if the last 3 lr trials were all slow, if so the next one can't be
         if (slow_lr_counter >=3 ) {
             var last_lr_slow = jsPsych.data.get().filter({diff: 'slow'}).last(3).select('lr_counter').values;
-            //console.log(last_lr_slow)
-            //console.log('lr_counter for slow trials: ' + last_lr_slow)
-            //console.log('max for last slow trials: ' + Math.max(...last_lr_slow), Math.max(...last_lr_slow)+1)
+            console.log(last_lr_slow)
+            console.log('lr_counter for slow trials: ' + last_lr_slow)
+            console.log('max for last slow trials: ' + Math.max(...last_lr_slow), Math.max(...last_lr_slow)+1)
 
             // if lr_counter number are not consecutive, it means that they are not in a 3 cluster,
             if (isConsecutive(last_lr_slow)) {
@@ -1009,32 +1009,32 @@ var attention = {
             } else {
                 last_slow = true
             }
-        //console.log('can we trigger slow next? ' + last_slow)
+        console.log('can we trigger slow next? ' + last_slow)
         } else {
-            //console.log('less than 3 slow trials');
+            console.log('less than 3 slow trials');
             last_slow = true
         }
 
         /* ----count filler trials---- */
-        //console.log('fast filler number ' + fast_lr_filler)
+        console.log('fast filler number ' + fast_lr_filler)
         if (fast_lr_filler ==24 ) {
             fast_filler_num = false
-            //console.log('can we add fast filler next? ' + fast_filler_num)
+            console.log('can we add fast filler next? ' + fast_filler_num)
         } else {
             fast_filler_num = true
         }
 
-        //console.log('slow filler number ' + slow_lr_filler)
+        console.log('slow filler number ' + slow_lr_filler)
         if (slow_lr_filler ==24 ) {
             slow_filler_num = false
-            //console.log('can we add slow filler next? ' + slow_filler_num)
+            console.log('can we add slow filler next? ' + slow_filler_num)
         } else {
             slow_filler_num = true
         };
         /* ----no consecutive filler trials---- */
         // var last_fl = jsPsych.data.get().filter({ test_part: 'test' }).last(3).select('TaskType').values;
         // if (last_fl.includes('fl')== true) {
-        //     //console.log('there is a filler trial')}
+        //     console.log('there is a filler trial')}
 
 
 
@@ -1042,14 +1042,14 @@ var attention = {
     if (fast_lr_counter >0 && slow_lr_counter >0){
         //see if fast - slow is greater than 5, if so the next one can't be fast; or if slow - fast is greater than 5, if so the next one can't be slow
 
-      //console.log('fast_counter' + fast_lr_counter + 'slow_counter' + slow_lr_counter)
+      console.log('fast_counter' + fast_lr_counter + 'slow_counter' + slow_lr_counter)
       if ((fast_lr_counter - slow_lr_counter) >=3 )
                 {diff_restrict_fast = false}
       else if ((slow_lr_counter - fast_lr_counter) >=3)
                 {diff_restrict_slow = false}
       else { diff_restrict_slow = true
              diff_restrict_fast = true
-          //console.log('diff is smaller than 3') }
+          console.log('diff is smaller than 3') }
         }
     };
 
@@ -1059,9 +1059,9 @@ var attention = {
     /* ----new restriction 2 starts here---- */
     //restriction 2 where in first 6, 3 fast 3 slow: ||initial_slow == false || initial_fast == false
     if ( 0< lr_counter && lr_counter <= 6 ) {
-        //console.log('----new restriction 2 starts here----')
+        console.log('----new restriction 2 starts here----')
         // check how many fast and how many slow have already been encountered
-        //console.log('here is initial learning trial: ' + lr_counter)
+        console.log('here is initial learning trial: ' + lr_counter)
         var initial = jsPsych.data.get().filter({ test_part: 'test' }).select('diff').values
 
 
@@ -1082,7 +1082,7 @@ var attention = {
             initial_slow = false
         };
 
-      }  else {//console.log('no learning yet or more than 6 learning trials')};
+      }  else {console.log('no learning yet or more than 6 learning trials')};
 
 
 
@@ -1105,17 +1105,17 @@ var attention = {
       {
             lr_node = 1;
             data.diff = 'slow'
-            //console.log('slow')
+            console.log('slow')
           } else if (rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == true && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false)
           {
                 lr_node = 2;
                 data.diff = 'fast'
-                //console.log('fast')
+                console.log('fast')
             }
             //else {lr_node = 0}
             /*      else if (rt_three < rt_mean+ 0.2 * rt_sd && rt_three > Math.abs(rt_mean- 0.2 * rt_sd)){
                 lr_node = 3; //medium triggering should use three nodes...
-                //console.log('lr_node = true')
+                console.log('lr_node = true')
             }*/
 
         /* ----- slow control ----- */
@@ -1123,37 +1123,37 @@ var attention = {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'diff_restrict'
-                //console.log('filler slow')
+                console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_slow == false && rt_three != 0 && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'consecutive'
-                //console.log('filler slow')
+                console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && initial_slow == false && rt_three != 0 && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'initial_slow'
-                //console.log('filler slow')
+                console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && rt_three != 0 && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'last_lr'
-                //console.log('filler slow')
+                console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && rt_three != 0 && slow_filler_num == true)) { //&& rt_three != 0
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'last_correct'
-                //console.log('filler slow')
+                console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && rt_three != 0 && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'last_infreq'
-                //console.log('filler slow')
+                console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_rt.includes(true) && rt_three != 0 && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'last_toofast'
-                //console.log('filler slow')
+                console.log('filler slow')
       }
 
       /* ----- fast control ----- */
@@ -1161,37 +1161,37 @@ var attention = {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'diff_restrict'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && rt_three != 0 && fast_filler_num == true) ) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'consecutive'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == false && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'initial_fast'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_lr'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_correct'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_infreq'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_rt.includes(true) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_toofast'
-                //console.log('filler fast')
+                console.log('filler fast')
         }
 
         //   else {
@@ -1209,12 +1209,12 @@ var attention = {
       {
             lr_node = 1;
             data.diff = 'slow'
-            //console.log('slow')
+            console.log('slow')
           } else if (rt_three < Math.abs(rt_mean- rt_sd) && last_fast == true && diff_restrict_fast != false && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false)
           {
                 lr_node = 2;
                 data.diff = 'fast'
-                //console.log('fast')
+                console.log('fast')
             }
 
             //else {lr_node = 0} //do i need to define when node == 0  here? since lr_node gets reset every trial anyway
@@ -1227,32 +1227,32 @@ var attention = {
               filler_node = 1;
               data.filler = 'slow'
               //data.control_case = 'consecutive'
-              //console.log('filler slow')
+              console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && diff_restrict_slow == false && rt_three != 0 && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               //data.control_case = 'diff_restrict'
-              //console.log('filler slow')
+              console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_lr.includes('lr') && rt_three != 0 && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               //data.control_case = 'last_lr'
-              //console.log('filler slow')
+              console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_correct.includes(false) && rt_three != 0 && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               //data.control_case = 'last_correct'
-              //console.log('filler slow')
+              console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') && rt_three != 0 && slow_filler_num == true)) {
               filler_node = 1;
               data.filler = 'slow'
               //data.control_case = 'last_infreq'
-              //console.log('filler slow')
+              console.log('filler slow')
       } else if ((rt_three > rt_mean+ rt_sd && last_rt.includes(true) && rt_three != 0 && slow_filler_num == true)) {
                 filler_node = 1;
                 data.filler = 'slow'
                 //data.control_case = 'last_toofast'
-                //console.log('filler slow')
+                console.log('filler slow')
       }
 
       /* ----- fast control ----- */
@@ -1260,32 +1260,32 @@ var attention = {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'consecutive'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'diff_restrict'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_lr'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_correct'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_infreq'
-                //console.log('filler fast')
+                console.log('filler fast')
       } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_rt.includes(true) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_toofast'
-                //console.log('filler fast')
+                console.log('filler fast')
       }
 
         //   else {
@@ -1302,11 +1302,11 @@ var attention = {
         if(rt_three > rt_mean+ rt_sd && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false) {
             lr_node = 1;
             data.diff = 'slow'
-            //console.log('slow')
+            console.log('slow')
           } else if (rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false) {
                 lr_node = 2;
                 data.diff = 'fast'
-                //console.log('fast')
+                console.log('fast')
             }
             // else {
             //     lr_node = false
@@ -2294,14 +2294,14 @@ TD_list = []
 
 // draw 9 TD foils from 12 total possible
 var frequent_nontrigger_TD = getRandom(frequent_nontrigger,9);
-//console.log(frequent_nontrigger_TD)
+console.log(frequent_nontrigger_TD)
 
 var TD_range = range(3,6)
 
 for (j = 0; j < range(0,1).length; j++) {
 
     TD_range.forEach( function myFunction(value) {
-        //console.log(value)
+        console.log(value)
       foil_1 = getRandom(frequent_nontrigger_TD,value);
       foil_2 = frequent_nontrigger_TD.filter(function(val) {
       return foil_1.indexOf(val) == -1;
@@ -2315,7 +2315,7 @@ for (j = 0; j < range(0,1).length; j++) {
      TD_list =  repeat_push(TD_list, TD_2, 3)}
     })
 }
-//console.log(TD_list) // this is a object with 24 arrays, each array has a length of 12
+console.log(TD_list) // this is a object with 24 arrays, each array has a length of 12
 
 TD_stimuli = []
 var target_length = lr_triplet_1.length // 3
@@ -2364,7 +2364,7 @@ var TD_sequence_number = possible_positions * target_length * 2 // 12 * 2 =24
 var target_location = []
 var a_range = (TD_sequence_number/target_length) // 24/3 = 8
 for (a = 0; a < range(0,TD_sequence_number-1).length; a++) { // a loop of 24 sequences with each having length of 12 24/3 = 8
-    //console.log(a)
+    console.log(a)
     if (a < 12){
         if (a == 0){
             var b = 3 }
@@ -2385,11 +2385,11 @@ for (a = 0; a < range(0,TD_sequence_number-1).length; a++) { // a loop of 24 seq
         target_location.push(c)}
     }
 
-//console.log(target_location)
-//console.log(TD_stimuli)
+console.log(target_location)
+console.log(TD_stimuli)
 
 target_location.forEach(function myFunction(value) {
-        //console.log('this is c value ' + value)
+        console.log('this is c value ' + value)
         TD_stimuli[value].data.correct_response = 'space'
         TD_stimuli[value].data.TD_target = 'TD_target'
 
@@ -2482,10 +2482,10 @@ for (a = 0; a < range(0,2).length; a++) { // a loop of 24 sequences with each ha
         target_location_prac.push(b)
     }
 
-//console.log(target_location_prac)
+console.log(target_location_prac)
 
 target_location_prac.forEach(function myFunction(value) {
-        //console.log('this is c value ' + value)
+        console.log('this is c value ' + value)
         TD_stimuli_prac[value].data.correct_response = 'space'
         TD_stimuli_prac[value].data.TD_target = 'TD_target'
 
@@ -2552,7 +2552,7 @@ var debrief_TD_prac = {
         var trials = jsPsych.data.get().filter({ test_part: 'post_prac' }).last(1);
 
         var TD_rt = Math.round(trials.select('TD_rt').values[0]* 100)/ 100;
-        //console.log(TD_rt)
+        console.log(TD_rt)
 
         return "<p>Your reaction time for this trial was " + TD_rt + " ms.</p>" +
             "<p>Remember that you should only press the SPACEBAR when you see the shape presented at the beginning of the trial. </b> </p>" +
@@ -2580,10 +2580,10 @@ var TD_target_present_1 = {
 };*/
 
 var animation_sequence_1 =get_values_bykey(TD_stimuli.slice(0,12))
-//console.log(TD_stimuli)
-//console.log(typeof TD_stimuli)
-//console.log(animation_sequence_1)
-//console.log(typeof animation_sequence_1)
+console.log(TD_stimuli)
+console.log(typeof TD_stimuli)
+console.log(animation_sequence_1)
+console.log(typeof animation_sequence_1)
 
 var TD_trial_sequence_1 = {
     type: 'animation',
@@ -2594,9 +2594,9 @@ var TD_trial_sequence_1 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('animation_sequence').values)
-        ////console.log(animation_sequence)
+        //console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().filter({ trial_type: 'animation' }).last(1).select('response').values)
-        ////console.log(response)
+        //console.log(response)
 
         //in animation_sequence, find where the stimulus value is target, grab the time as onset
         var onset = get_target_time(animation_sequence,response, TD_target_1,'onset')
@@ -2606,7 +2606,7 @@ var TD_trial_sequence_1 = {
         data.TD_trial_number = 1
         //data.onset = onset
         //data.offset = offset
-        //console.log('this is onset ', onset, 'this is offset ', offset)
+        console.log('this is onset ', onset, 'this is offset ', offset)
 
         var TD_rt = offset - onset
         data.TD_rt = TD_rt
@@ -3048,7 +3048,7 @@ var TD_trial_sequence_12 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_12,'onset')
@@ -3089,7 +3089,7 @@ var TD_trial_sequence_13 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_13,'onset')
@@ -3129,7 +3129,7 @@ var TD_trial_sequence_14 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_14,'onset')
@@ -3170,7 +3170,7 @@ var TD_trial_sequence_15 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_15,'onset')
@@ -3211,7 +3211,7 @@ var TD_trial_sequence_16 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_16,'onset')
@@ -3252,7 +3252,7 @@ var TD_trial_sequence_17 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_17,'onset')
@@ -3293,7 +3293,7 @@ var TD_trial_sequence_18 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_18,'onset')
@@ -3334,7 +3334,7 @@ var TD_trial_sequence_19 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_19,'onset')
@@ -3375,7 +3375,7 @@ var TD_trial_sequence_20 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_20,'onset')
@@ -3416,7 +3416,7 @@ var TD_trial_sequence_21 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_21,'onset')
@@ -3457,7 +3457,7 @@ var TD_trial_sequence_22 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_22,'onset')
@@ -3498,7 +3498,7 @@ var TD_trial_sequence_23 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_23,'onset')
@@ -3539,7 +3539,7 @@ var TD_trial_sequence_24 = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_24,'onset')
@@ -3580,7 +3580,7 @@ var  TD_trial_sequence_1_prac = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_prac_1,'onset')
@@ -3618,7 +3618,7 @@ var  TD_trial_sequence_2_prac = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_prac_2,'onset')
@@ -3657,7 +3657,7 @@ var  TD_trial_sequence_3_prac = {
     sequence_reps: 1,
     on_finish: function (data) {
         var animation_sequence = JSON.parse(jsPsych.data.get().last(1).select('animation_sequence').values)
-        //console.log(animation_sequence)
+        console.log(animation_sequence)
         var response = JSON.parse(jsPsych.data.get().last(1).select('response').values)
 
         var onset = get_target_time(animation_sequence,response, TD_target_prac_3,'onset')
@@ -3733,20 +3733,20 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
     sorting_stimuli_stage1_trial1_planA.push(repo_site + frequent_nontrigger[i]);
 }
 var sorting_stimuli_stage1_trial1_planA = shuffle(sorting_stimuli_stage1_trial1_planA);
-//console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
 for (var i = 0; i < sorting_stimuli_stage1_trial1_planA.length; i++) {
     sorting_stimuli_stage1_trial1_planA[i] = '"' + sorting_stimuli_stage1_trial1_planA[i] + '"'
     looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planA[i])
 }
-//console.log(sorting_stimuli_stage1_trial1_planA);
-//console.log(img0);
-//console.log(img1);
+console.log(sorting_stimuli_stage1_trial1_planA);
+console.log(img0);
+console.log(img1);
 
 // const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> <img src="' + `${img5}` + '" />'
 // const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
 // const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
-// //console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
+// console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
 
 // var sort_trial_stage1_trial1_planA = {
 //     type: 'free-sort',
@@ -3778,7 +3778,7 @@ for (var i = 0; i < lr_triplet_2.length; i++) {
 for (var i = 0; i < frequent_nontrigger.length; i++) {
     sorting_stimuli_stage1_trial2_planA.push(repo_site + frequent_nontrigger[i]);
 }
-//console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 //var sort_trial_stage1_trial2_planA =
 //timeline.push(sort_trial_stage1_trial2_planA);
 
@@ -3800,7 +3800,7 @@ const sorting_stimuli_stage1_trial2_planA_string_01 = '<br><input name="img1" ty
 const sorting_stimuli_stage1_trial2_planA_string_02 = '<input name="img8" type= "checkbox" id="img8"> <label for="course"> <img src="' + `${img7}` + '" /></label><input name="img9" type= "checkbox" id="img9"> <label for="course"> <img src="' + `${img8}` + '" /></label> <input name="img10" type= "checkbox" id="img10"> <label for="course"> <img src="' + `${img9}` + '" /></label><input name="img11" type= "checkbox" id="img11"> <label for="course"> <img src="' + `${img10}` + '" /></label> <input name="img12" type= "checkbox" id="img12"> <label for="course"> <img src="' + `${img11}` + '" />'
 const sorting_stimuli_stage1_trial2_planA_string_03 = '<input name="img13" type= "checkbox" id="img13"> <label for="course"> <img src="' + `${img12}` + '" /></label> <input name="img14" type= "checkbox" id="img14"> <label for="course"> <img src="' + `${img13}` + '" /></label> <input name="img15" type= "checkbox" id="img15"> <label for="course"> <img src="' + `${img14}` + '" /> <br><br><br>'
 
-//console.log(sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03);
+console.log(sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03);
 
 var sort_trial_stage1_trial2_planA = {
     type: 'survey-multi-select', //'html-button-response'
@@ -3859,7 +3859,7 @@ for (var i = 0; i < frequent_trigger_filtered1.length; i++) {
     sorting_stimuli_stage1_trial1_planB.push(repo_site + frequent_trigger_filtered1[i]);
 } // add in the 8 filler shapes
 
-////console.log(sorting_stimuli_stage1_trial1_planB); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+//console.log(sorting_stimuli_stage1_trial1_planB); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
 //var sort_trial_stage1_trial1_planB =
 //timeline.push(sort_trial_stage1_trial1_planB);
@@ -3875,7 +3875,7 @@ for (var i = 0; i < frequent_nontrigger.length; i++) {
 for (var i = 0; i < frequent_trigger_filtered1.length; i++) {
     sorting_stimuli_stage1_trial2_planB.push(repo_site + frequent_trigger_filtered1[i]);
 } // add in the 8 filler shapes
-////console.log(sorting_stimuli_stage1_trial2_planB); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+//console.log(sorting_stimuli_stage1_trial2_planB); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 // var sort_trial_stage1_trial2_planB =
 // timeline.push(sort_trial_stage1_trial2_planB);
 
@@ -3906,7 +3906,7 @@ for (var i = 0; i < frequent_trigger_filtered1.length; i++) {
     sorting_stimuli_stage1_trial1_planC.push(repo_site + frequent_trigger_filtered1[i]);
 } // add in the 8 filler shapes
 
-////console.log(sorting_stimuli_stage1_trial1_planC); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+//console.log(sorting_stimuli_stage1_trial1_planC); //length should be 15 (12 freq non-trigger + 3 fast trigger)
 
 // var sort_trial_stage1_trial1_planC =
 // timeline.push(sort_trial_stage1_trial1_planC);
@@ -3931,7 +3931,7 @@ var sorting_stimuli= [];
 for (var i = 0; i < lr_triplet_full.length; i++) {
     sorting_stimuli.push(repo_site + lr_triplet_full[i]);
 }
-////console.log(sorting_stimuli);
+//console.log(sorting_stimuli);
 
 var sort_trial_1 = {
     type: 'free-sort',
