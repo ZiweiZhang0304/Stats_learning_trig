@@ -4160,7 +4160,7 @@ for (var i = 0; i < lr_triplet_full.length; i++) {
 var sort_trial_1 = {
     type: 'free-sort',
     stimuli: sorting_stimuli.slice(0,3),
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br><br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, <br><br> and the shape that you remember seeing third to the right. <br><br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
@@ -4181,7 +4181,7 @@ timeline.push(sort_trial_1);
 var sort_trial_2 = {
     type: 'free-sort',
     stimuli: sorting_stimuli.slice(3,6),
-    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, and the shape that you remember seeing third to the right. <br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
+    prompt: '<p>Drag the 3 shapes outside of the box and drop them below in the order that you remember seeing them during the first part of the experiment.<br><br>  Place the shape that you remember seeing first to the left, the shape you remember seeing second in the middle, <br><br> and the shape that you remember seeing third to the right. <br><br> When you drag and drop the three shapes, you should make sure that there are space in between them in the box.</p>',
     stim_height: 50,
     stim_width: 50,
     scale_factor: 2,
