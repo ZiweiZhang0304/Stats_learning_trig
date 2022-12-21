@@ -3761,7 +3761,7 @@ var sorting_stimuli_stage1_trial2_planA_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial2_planA.length; i++) {
     var j = i+15
     sorting_stimuli_stage1_trial2_planA_rename[i] = '"' + sorting_stimuli_stage1_trial2_planA[i] + '"'
-    looseJsonParse("img" + j + "=" + sorting_stimuli_stage2_trial1_planA_rename[i])
+    looseJsonParse("img" + j + "=" + sorting_stimuli_stage1_trial2_planA_rename[i])
 }
 
 //console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
