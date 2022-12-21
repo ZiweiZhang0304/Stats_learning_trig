@@ -3743,7 +3743,9 @@ console.log(sorting_stimuli_stage1_trial1_planA);
 console.log(img0);
 console.log(img1);
 
-const sorting_stimuli_stage1_trial1_planA_string = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" />\n' + '<img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" />\n'
+const sorting_stimuli_stage1_trial1_planA_string = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" />\n' + '<img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" />\n' + '<img src="' + `${img4}` + '" /> <img src="' + `${img5}` \n
++ '" />\n' + '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" />\n' + '<img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" />\n' + '<img src="' + `${img10}` + '" /> <img src="' \n
++ `${img11}` + '" />\n' + '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" />\n' '<img src="' + `${img14}` + '" /> <img src="' + `${img15}` + '" />\n'
 console.log(sorting_stimuli_stage1_trial1_planA_string);
 
 // var sort_trial_stage1_trial1_planA = {
@@ -3773,7 +3775,7 @@ var sort_trial_stage1_trial1_planA = {
           //preamble, prompt:
           prompt: sorting_stimuli_stage1_trial1_planA_string,
           //'<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n  <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n',
-          options: ["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
+          options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
           name: 'stage1_trial1_planA'
