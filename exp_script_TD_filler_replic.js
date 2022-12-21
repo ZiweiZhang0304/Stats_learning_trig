@@ -3767,13 +3767,13 @@ console.log(sorting_stimuli_stage1_trial1_planA_string);
 // };
 
 var sort_trial_stage1_trial1_planA = {
-    type: 'survey-multi-select',
+    type: 'survey-multi-select', //'html-button-response'
       questions: [
         {
-          //preamble:
+          //preamble, prompt:
           prompt: sorting_stimuli_stage1_trial1_planA_string,
           //'<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n  <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n',
-          options: [" ", " ", " ", " ", " "," "," "," "," "," "," "," "],
+          options: ["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
           horizontal: true,
           required: true,
           name: 'stage1_trial1_planA'
@@ -3781,6 +3781,21 @@ var sort_trial_stage1_trial1_planA = {
     ],
       required_message:'You must choose 3 shapes for this question!'
   };
+// var sort_trial_stage1_trial1_planA = {
+//       type: 'html-button-response', //'html-button-response'
+//         questions: [
+//           {
+//             //preamble, prompt:
+//             stimulus: sorting_stimuli_stage1_trial1_planA_string,
+//             //'<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n  <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n',
+//             choices: ["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
+//             horizontal: true,
+//             required: true,
+//             name: 'stage1_trial1_planA'
+//           }
+//       ],
+//         required_message:'You must choose 3 shapes for this question!'
+//     };
 timeline.push(sort_trial_stage1_trial1_planA);
 
 
