@@ -3917,7 +3917,7 @@ for (var i = 0; i < lr_triplet_1.length; i++) {
     sorting_stimuli_stage1_trial1_planB.push(repo_site + lr_triplet_1[i]);
 }
 for (var i = 0; i < frequent_nontrigger.length; i++) {
-    sorting_stimuli_stage1_trial2_planB.push(repo_site + frequent_nontrigger[i]);
+    sorting_stimuli_stage1_trial1_planB.push(repo_site + frequent_nontrigger[i]);
 }
 for (var i = 0; i < fillers_shapes_1.length; i++) {
     sorting_stimuli_stage1_trial1_planB.push(repo_site + fillers_shapes_1[i]);
