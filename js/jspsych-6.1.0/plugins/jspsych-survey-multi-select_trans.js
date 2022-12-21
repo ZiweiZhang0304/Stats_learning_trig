@@ -49,7 +49,13 @@ jsPsych.plugins['survey-multi-select'] = (function() {
             pretty_name: 'Question Name',
             default: '',
             description: 'Controls the name of data values associated with this question'
-          }
+        },
+          selection: {
+            type: jsPsych.plugins.parameterType.STRING,
+            pretty_name: 'selection',
+            default: '3',
+            description: 'The strings that will be associated with a group of options.'
+            }
         }
       },
       randomize_question_order: {
@@ -165,15 +171,30 @@ jsPsych.plugins['survey-multi-select'] = (function() {
     display_element.querySelector('#jspsych-survey-multi-select-next').addEventListener('click', function(){
       for(var i=0; i<trial.questions.length; i++){
         if(trial.questions[i].required){
+          if (selection == '3') {
           if(document.querySelectorAll('input[type="checkbox"]:checked').length != 3){
 
               console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
               console.log(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
               console.log(typeof display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
             display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity(trial.required_message);
-          } else {
-            display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity('');
-          }
+            } else {
+              display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity('');
+            }
+
+        }
+          else if (selection == '6') {
+              if(document.querySelectorAll('input[type="checkbox"]:checked').length != 6){
+              console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
+              console.log(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
+              console.log(typeof display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
+            display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity(trial.required_message);
+
+        } else {
+          display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity('');
+        }
+    }
+
         }
       }
       trial_form.reportValidity();
