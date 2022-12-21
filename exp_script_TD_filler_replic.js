@@ -3800,7 +3800,7 @@ const sorting_stimuli_stage1_trial2_planA_string_01 = '<br><input name="img1" ty
 const sorting_stimuli_stage1_trial2_planA_string_02 = '<input name="img8" type= "checkbox" id="img8"> <label for="course"> <img src="' + `${img7}` + '" /></label><input name="img9" type= "checkbox" id="img9"> <label for="course"> <img src="' + `${img8}` + '" /></label> <input name="img10" type= "checkbox" id="img10"> <label for="course"> <img src="' + `${img9}` + '" /></label><input name="img11" type= "checkbox" id="img11"> <label for="course"> <img src="' + `${img10}` + '" /></label> <input name="img12" type= "checkbox" id="img12"> <label for="course"> <img src="' + `${img11}` + '" />'
 const sorting_stimuli_stage1_trial2_planA_string_03 = '<input name="img13" type= "checkbox" id="img13"> <label for="course"> <img src="' + `${img12}` + '" /></label> <input name="img14" type= "checkbox" id="img14"> <label for="course"> <img src="' + `${img13}` + '" /></label> <input name="img15" type= "checkbox" id="img15"> <label for="course"> <img src="' + `${img14}` + '" /> <br><br><br>'
 
-console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
+console.log(sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03);
 
 var sort_trial_stage1_trial2_planA = {
     type: 'survey-multi-select', //'html-button-response'
