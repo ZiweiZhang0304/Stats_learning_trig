@@ -3743,7 +3743,7 @@ console.log(sorting_stimuli_stage1_trial1_planA);
 console.log(img0);
 console.log(img1);
 
-const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> "<img src="' + `${img5}` + '" />'
+const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> <img src="' + `${img5}` + '" />'
 const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
 const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
 console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
@@ -3768,36 +3768,30 @@ console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stag
 //
 // };
 
-var sort_trial_stage1_trial1_planA = {
-    type: 'survey-multi-select', //'html-button-response'
-      questions: [
-        {
-          //preamble, prompt:
-          prompt: sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
-          //'<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n  <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n',
-          options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
-          horizontal: true,
-          required: true,
-          name: 'stage1_trial1_planA'
-        }
-    ],
-      required_message:'You must choose 3 shapes for this question!'
-  };
 // var sort_trial_stage1_trial1_planA = {
-//       type: 'html-button-response', //'html-button-response'
-//         questions: [
-//           {
-//             //preamble, prompt:
-//             stimulus: sorting_stimuli_stage1_trial1_planA_string,
-//             //'<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n  <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n',
-//             choices: ["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
-//             horizontal: true,
-//             required: true,
-//             name: 'stage1_trial1_planA'
-//           }
-//       ],
-//         required_message:'You must choose 3 shapes for this question!'
-//     };
+//     type: 'survey-multi-select', //'html-button-response'
+//       questions: [
+//         {
+//           //preamble, prompt:
+//           prompt: sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
+//           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
+//           horizontal: true,
+//           required: true,
+//           name: 'stage1_trial1_planA'
+//         }
+//     ],
+//       required_message:'You must choose 3 shapes for this question!'
+//   };
+
+var sort_trial_stage1_trial1_planA = {
+      type: 'html-button-response', //'html-button-response'
+      stimulus: '<p style="font-size:48px; color:white;">  </p>',//sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
+      choices: sorting_stimuli_stage1_trial1_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
+      prompt: "<p>You must choose 3 shapes for this question!</p>",
+      button_html: '<img src="%choice%" />',
+      response_ends_trial: false,
+      trial_duration: 2000
+    };
 timeline.push(sort_trial_stage1_trial1_planA);
 
 
