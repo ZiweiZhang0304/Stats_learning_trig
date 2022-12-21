@@ -3710,7 +3710,7 @@ var instruction5 = {
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        <h2>This is plan A instructions </h2><br>\n' +
+        '        <h2>This is version A instructions </h2><br>\n' +
         '        <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
@@ -3783,7 +3783,7 @@ var sort_trial_stage1_trial2_planA = {
     type: 'survey-multi-select', //'html-button-response'
       questions: [
         {
-          //preamble, prompt:
+          preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>'
           prompt: sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03,
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
@@ -3791,7 +3791,7 @@ var sort_trial_stage1_trial2_planA = {
           name: 'stage1_trial2_planA'
         }
     ],
-      required_message:'You must choose 3 shapes for this question!'
+      required_message:'You must choose exactly 3 shapes for this question!'
   };
 
 timeline.push(sort_trial_stage1_trial2_planA);
@@ -3847,7 +3847,7 @@ var instruction6 = {
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        <h2>This is plan B instructions </h2><br>\n' +
+        '        <h2>This is version B instructions </h2><br>\n' +
         '        <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
@@ -3894,7 +3894,7 @@ var instruction7 = {
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        <h2>This is plan C instructions </h2><br>\n' +
+        '        <h2>This is version C instructions </h2><br>\n' +
         '        <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
