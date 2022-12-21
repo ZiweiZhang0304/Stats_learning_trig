@@ -3796,17 +3796,31 @@ console.log(sorting_stimuli_stage1_trial2_planA); //length should be 15 (12 freq
 //var sort_trial_stage1_trial2_planA =
 //timeline.push(sort_trial_stage1_trial2_planA);
 
+// var sort_trial_stage1_trial2_planA = {
+//       type: 'html-button-response', //'html-button-response'
+//       stimulus: '<p style="font-size:48px; color:white;">  </p>',//sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
+//       choices: sorting_stimuli_stage1_trial2_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
+//       prompt: "<p>You must choose 3 shapes for this question!</p>",
+//       button_html: '<button class="jspsych-btn"><img src="%choice%" /></button>',
+//       response_ends_trial: false,
+//       trial_duration: 20000
+//     };
+var Sprachkentnisse2 = {
+    type: 'survey-html-form',
+    preamble: '<h2>Language learning</h2>' +
+'<div class="myDiv"><p>Please answer the following question:</p></div>',
+    html: 'How did you learn German? (You may choose several options) <br><input name="LearnType" type= "checkbox" id="course" value="course"> <label for="course">I took a course</label><br><input name="LearnType" type= "checkbox" id="selftaught" value="selftaught"> <label for="selftaught">Self-taught</label><br><input name="LearnType" type= "checkbox" id="immersion" value="immersion"> <label for="immersion">I lived in a German-speaking country</label><br>',
+};
+timeline.push(Sprachkentnisse2);
 var sort_trial_stage1_trial2_planA = {
-      type: 'html-button-response', //'html-button-response'
-      stimulus: '<p style="font-size:48px; color:white;">  </p>',//sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
+      type: 'survey-html-form', //'html-button-response'
+      html: sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
       choices: sorting_stimuli_stage1_trial2_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
-      prompt: "<p>You must choose 3 shapes for this question!</p>",
-      button_html: '<img src="%choice%" />',
+      preamble: "<p>You must choose 3 shapes for this question!</p>",
       response_ends_trial: false,
       trial_duration: 20000
     };
 timeline.push(sort_trial_stage1_trial2_planA);
-
 // -- planB -- //
 var instruction6 = {
     type: 'instructions',
