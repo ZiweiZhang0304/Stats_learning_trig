@@ -3770,11 +3770,11 @@ var sort_trial_stage1_trial1_planA = {
     type: 'survey-multi-select',
       questions: [
         {
-          //prompt:
-          preamble: sorting_stimuli_stage1_trial1_planA_string,
+          //preamble:
+          prompt: sorting_stimuli_stage1_trial1_planA_string,
           //'<img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n  <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_001_w.png" />\n',
           options: [" ", " ", " ", " ", " "," "," "," "," "," "," "," "],
-          horizontal: false,
+          horizontal: true,
           required: true,
           name: 'stage1_trial1_planA'
         }
