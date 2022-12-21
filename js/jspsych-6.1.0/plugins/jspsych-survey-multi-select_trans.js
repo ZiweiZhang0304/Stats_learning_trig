@@ -165,8 +165,9 @@ jsPsych.plugins['survey-multi-select'] = (function() {
     display_element.querySelector('#jspsych-survey-multi-select-next').addEventListener('click', function(){
       for(var i=0; i<trial.questions.length; i++){
         if(trial.questions[i].required){
-          if(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked').length != 3){
-              console.log(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked').length)
+          if(document.querySelectorAll('input[type="checkbox"]:checked').length != 3){
+
+              console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
               console.log(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
               console.log(typeof display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
             display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity(trial.required_message);
