@@ -135,7 +135,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
         var option_id_name = _join(plugin_id_name, "option", question_id, j);
 
         // add check box container
-        display_element.querySelector(question_selector).innerHTML += '<div id="'+option_id_name+'" class="'+_join(plugin_id_name, 'option')+'"></div>'; //style="opacity:0; position:absolute; left:9999px;"
+        display_element.querySelector(question_selector).innerHTML += '<div style="opacity:0; position:absolute; left:9999px;" id="'+option_id_name+'" class="'+_join(plugin_id_name, 'option')+'"></div>'; //style="opacity:0; position:absolute; left:9999px;"
 
         // add label and question text
         var form = document.getElementById(option_id_name)
@@ -166,6 +166,8 @@ jsPsych.plugins['survey-multi-select'] = (function() {
       for(var i=0; i<trial.questions.length; i++){
         if(trial.questions[i].required){
           if(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked').length != 3){
+              console.log(display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked').length)
+              console.log(typeof display_element.querySelector('#jspsych-survey-multi-select-'+i+' input:checked'))
             display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity(trial.required_message);
           } else {
             display_element.querySelector('#jspsych-survey-multi-select-'+i+' input').setCustomValidity('');
