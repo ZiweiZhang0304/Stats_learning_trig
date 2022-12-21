@@ -3807,7 +3807,7 @@ var sort_trial_stage1_trial2_planA = {
       questions: [
         {
           //preamble, prompt:
-          prompt: sorting_stimuli_stage1_trial2_planA_string_01 + sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03,
+          prompt: sorting_stimuli_stage1_trial2_planA_string_01, //+ sorting_stimuli_stage1_trial2_planA_string_02 + sorting_stimuli_stage1_trial2_planA_string_03,
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
