@@ -3812,14 +3812,20 @@ var Sprachkentnisse2 = {
     html: 'How did you learn German? (You may choose several options) <br><input name="LearnType" type= "checkbox" id="course" value="course"> <label for="course">I took a course</label><br><input name="LearnType" type= "checkbox" id="selftaught" value="selftaught"> <label for="selftaught">Self-taught</label><br><input name="LearnType" type= "checkbox" id="immersion" value="immersion"> <label for="immersion">I lived in a German-speaking country</label><br>',
 };
 timeline.push(Sprachkentnisse2);
+
 var sort_trial_stage1_trial2_planA = {
-      type: 'survey-html-form', //'html-button-response'
-      html: sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
-      choices: sorting_stimuli_stage1_trial2_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
-      preamble: "<p>You must choose 3 shapes for this question!</p>",
-      response_ends_trial: false,
-      trial_duration: 20000
-    };
+    type: 'survey-html-form',
+    preamble: '<div class="myDiv"><p>You must choose 3 shapes for this question!</p></div>', //'<h2>Language learning</h2>' +
+    html: ' <br><input name="img1" type= "checkbox" id="course" value="course"> <label for="course"> <img src="https://ziweizhang0304.github.io/Stats_learning_trig/img/Stim/FN_025_g.png"/> </label><br><input name="LearnType" type= "checkbox" id="selftaught" value="selftaught"> <label for="selftaught">Self-taught</label><br><input name="LearnType" type= "checkbox" id="immersion" value="immersion"> <label for="immersion">I lived in a German-speaking country</label><br>',
+};
+// var sort_trial_stage1_trial2_planA = {
+//       type: 'survey-html-form', //'html-button-response'
+//       html: sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03,
+//       choices: sorting_stimuli_stage1_trial2_planA,//["      ","      ", "      ", "      ", "      ","      ","      ","      ","      ","      ","      ","      "],
+//       preamble: "<p>You must choose 3 shapes for this question!</p>",
+//       response_ends_trial: false,
+//       trial_duration: 20000
+//     };
 timeline.push(sort_trial_stage1_trial2_planA);
 // -- planB -- //
 var instruction6 = {
