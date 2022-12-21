@@ -3745,7 +3745,7 @@ console.log(img1);
 
 const sorting_stimuli_stage1_trial1_planA_string_01 = '<img src="' + `${img0}` + '" /> <img src="' + `${img1}` + '" /> <img src="' + `${img2}` + '" /> <img src="' + `${img3}` + '" /> <img src="' + `${img4}` + '" /> "<img src="' + `${img5}` + '" />'
 const sorting_stimuli_stage1_trial1_planA_string_02 = '<img src="' + `${img6}` + '" /> <img src="' + `${img7}` + '" /> <img src="' + `${img8}` + '" /> <img src="' + `${img9}` + '" /> <img src="' + `${img10}` + '" /> <img src="' + `${img11}` + '" />'
-const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" /> <img src="' + `${img15}` + '" />'
+const sorting_stimuli_stage1_trial1_planA_string_03 = '<img src="' + `${img12}` + '" /> <img src="' + `${img13}` + '" /> <img src="' + `${img14}` + '" />'
 console.log(sorting_stimuli_stage1_trial1_planA_string_01 + sorting_stimuli_stage1_trial1_planA_string_02 + sorting_stimuli_stage1_trial1_planA_string_03);
 
 // var sort_trial_stage1_trial1_planA = {
