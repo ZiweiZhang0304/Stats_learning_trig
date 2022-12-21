@@ -3996,7 +3996,7 @@ var sorting_stimuli_stage1_trial2_planB = shuffle(sorting_stimuli_stage1_trial2_
 var sorting_stimuli_stage1_trial2_planB_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial2_planB.length; i++) {
     //sorting_stimuli_stage1_trial1_planA[i]
-    var k = i + 30
+    var k = i + 49
     sorting_stimuli_stage1_trial2_planB_rename[i] = '"' + sorting_stimuli_stage1_trial2_planB[i] + '"'
     looseJsonParse("img" + k + "=" + sorting_stimuli_stage1_trial2_planB_rename[i])
 }
@@ -4079,7 +4079,7 @@ var sorting_stimuli_stage1_trial2_planB = shuffle(sorting_stimuli_stage1_trial2_
 var sorting_stimuli_stage1_trial1_planC_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial1_planC.length; i++) {
     //sorting_stimuli_stage1_trial1_planA[i]
-    var x = i + 30
+    var x = i + 68
     sorting_stimuli_stage1_trial1_planC_rename[i] = '"' + sorting_stimuli_stage1_trial1_planC[i] + '"'
     looseJsonParse("img" + x + "=" + sorting_stimuli_stage1_trial1_planC_rename[i])
 }
