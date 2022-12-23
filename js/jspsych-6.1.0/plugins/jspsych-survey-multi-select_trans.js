@@ -246,7 +246,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
       // save data
       var trial_data = {
         "rt": response_time,
-        "responses": Array.from(question_data['Q0'].id),
+        "responses": [question_data['Q0'][0].id.toString(),question_data['Q0'][1].id.toString(),question_data['Q0'][2].id.toString()],
         "question_order": JSON.stringify(question_order)
       };
       display_element.innerHTML = '';
