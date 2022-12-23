@@ -217,7 +217,6 @@ jsPsych.plugins['survey-multi-select'] = (function() {
         console.log(match);
         var val = [];
         //var inputboxes = match.querySelectorAll("input[type=checkbox]:checked");
-        console.log(inputboxes);
         for(var j=0; j<match.length; j++){
           currentChecked = match[j];
           console.log(currentChecked)
