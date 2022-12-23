@@ -238,14 +238,14 @@ jsPsych.plugins['survey-multi-select'] = (function() {
         if(val.length == 0){ has_response.push(false); } else { has_response.push(true); }
         console.log(question_data)
         console.log(question_data['Q0'])
-        console.log(Array.from(question_data['Q0']))
-        console.log(JSON.stringify(question_data))
+        console.log(Array.from(question_data['Q0']['id']))
+        //console.log(Array.from(question_data['Q0'])[0], typeof Array.from(question_data['Q0'])[0])
       }
 
       // save data
       var trial_data = {
         "rt": response_time,
-        "responses": Array.from(question_data['Q0']),
+        "responses": Array.from(question_data['Q0']['id']),
         "question_order": JSON.stringify(question_order)
       };
       display_element.innerHTML = '';
