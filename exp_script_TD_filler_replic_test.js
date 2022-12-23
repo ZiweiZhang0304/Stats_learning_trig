@@ -959,7 +959,7 @@ var attention = {
         var rt_three = jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(3).select('rt').mean();
         data.at_TrailingMean = rt_three
         console.log('trailing mean is ' + rt_three)
-        console.log('what is this, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(0).select('rt').values[0])
+        //console.log('what is this, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(0).select('rt').values[0])
         console.log('this is 1 back trial RT, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(1).select('rt').values[0])
         console.log('this is 2 back trial RT, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(2).select('rt').values[0])
         console.log('this is 3 back trial RT, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(3).select('rt').values[0])
