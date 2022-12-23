@@ -959,6 +959,7 @@ var attention = {
         var rt_three = jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(3).select('rt').mean();
         data.at_TrailingMean = rt_three
         console.log('trailing mean is ' + rt_three)
+        console.log('what is this, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(0).select('rt').values[0])
         console.log('this is 1 back trial RT, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(1).select('rt').values[0])
         console.log('this is 2 back trial RT, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(2).select('rt').values[0])
         console.log('this is 3 back trial RT, excluding nan', jsPsych.data.get().filter({at_TrialType: 'frequent', key_press: 32}).last(3).select('rt').values[0])
@@ -2614,6 +2615,7 @@ var TD_trial_sequence_1 = {
         console.log('this is onset ', onset, 'this is offset ', offset)
 
         var TD_rt = offset - onset
+        console.log('this is target detection RT ', TD_rt)
         data.TD_rt = TD_rt
 
         data.TD_target = TD_target_1
@@ -2654,8 +2656,10 @@ var TD_trial_sequence_2 = {
         data.TD_trial_number = 2
         //data.onset = onset
         //data.offset = offset
+        console.log('this is onset ', onset, 'this is offset ', offset)
 
         var TD_rt = offset - onset
+        console.log('this is target detection RT ', TD_rt)
         data.TD_rt = TD_rt
 
         data.TD_target = TD_target_2
@@ -2698,7 +2702,10 @@ var TD_trial_sequence_3 = {
         //data.onset = onset
         //data.offset = offset
 
+        console.log('this is onset ', onset, 'this is offset ', offset)
+
         var TD_rt = offset - onset
+        console.log('this is target detection RT ', TD_rt)
         data.TD_rt = TD_rt
 
         data.TD_target = TD_target_3
@@ -2739,7 +2746,10 @@ var TD_trial_sequence_4 = {
         //data.onset = onset
         //data.offset = offset
 
+        console.log('this is onset ', onset, 'this is offset ', offset)
+
         var TD_rt = offset - onset
+        console.log('this is target detection RT ', TD_rt)
         data.TD_rt = TD_rt
 
         data.TD_target = TD_target_4
@@ -2780,7 +2790,10 @@ var TD_trial_sequence_5 = {
         //data.onset = onset
         //data.offset = offset
 
+        console.log('this is onset ', onset, 'this is offset ', offset)
+
         var TD_rt = offset - onset
+        console.log('this is target detection RT ', TD_rt)
         data.TD_rt = TD_rt
 
         data.TD_target = TD_target_5
@@ -2821,7 +2834,10 @@ var TD_trial_sequence_6 = {
         //data.onset = onset
         //data.offset = offset
 
+        console.log('this is onset ', onset, 'this is offset ', offset)
+
         var TD_rt = offset - onset
+        console.log('this is target detection RT ', TD_rt)
         data.TD_rt = TD_rt
 
         data.TD_target = TD_target_6
@@ -3695,9 +3711,9 @@ timeline.push(instruction4);
 
 //real TD block
 var Array_TD = [TD1, TD2, TD3, TD4, TD5, TD6,
-               TD7, TD8 ,TD9, TD10, TD11, TD12,
-               TD13, TD14 ,TD15, TD16, TD17, TD18,
-               TD19, TD20 ,TD21, TD22, TD23, TD24
+               // TD7, TD8 ,TD9, TD10, TD11, TD12,
+               // TD13, TD14 ,TD15, TD16, TD17, TD18,
+               // TD19, TD20 ,TD21, TD22, TD23, TD24
 ];
 var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
