@@ -226,13 +226,17 @@ jsPsych.plugins['survey-multi-select'] = (function() {
         var id = 'Q' + index
         var obje = {};
         var name = id;
-        if(match.attributes['data-name'].value !== ''){
-          name = match.attributes['data-name'].value;
-          console.log(name)
-        }
+        console.log(name, id)
+        // if(match.attributes['data-name'].value !== ''){
+        //   name = match.attributes['data-name'].value;
+        //   console.log(name)
+        // }
         obje[name] = val;
+        console.log(obje)
+
         Object.assign(question_data, obje);
         if(val.length == 0){ has_response.push(false); } else { has_response.push(true); }
+        console.log(question_data)
       }
 
       // save data
