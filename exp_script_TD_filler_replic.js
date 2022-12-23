@@ -3721,7 +3721,7 @@ var instruction5 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction5);
+//timeline.push(instruction5);
 
 var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2);
 
@@ -3803,7 +3803,7 @@ var sort_trial_stage1_trial1_planA = {
       required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial1_planA);
+//timeline.push(sort_trial_stage1_trial1_planA);
 
 
 
@@ -3845,7 +3845,7 @@ var sort_trial_stage1_trial2_planA = {
       required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial2_planA);
+//timeline.push(sort_trial_stage1_trial2_planA);
 //drafts
 // var sort_trial_stage1_trial1_planA = {
 //     type: 'free-sort',
@@ -3902,7 +3902,9 @@ var instruction6 = {
         '        <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
-        '        Therefore, in this section, we will ask you to identify groups of 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br>\n' +
+        '        Namely, they always appeared together in the same order. <br>\n' +
+        '        <br>\n' +
+        '        Therefore, in this section, we will ask you to identify groups of 3 shapes that you remember that always appeared together in the same order from the first part of the experiment. <br>\n' +
         '        <br>\n' +
         '        Now, click on "Next" to move on. <br> \n' +
         '</p> <br>'
@@ -4061,7 +4063,7 @@ var instruction7 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction7);
+//timeline.push(instruction7);
 
 var sorting_stimuli_stage1_trial1_planC= [];
 for (var i = 0; i < lr_triplet_full.length; i++) {
@@ -4133,7 +4135,7 @@ var sort_trial_stage1_trial1_planC = {
       required_message:'You must choose exactly 6 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial1_planC);
+//timeline.push(sort_trial_stage1_trial1_planC);
 
 /* ----- formal ordering trials ----- */
 var instruction8 = {
