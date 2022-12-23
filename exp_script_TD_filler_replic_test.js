@@ -866,7 +866,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(first3_block);
+//timeline.push(first3_block);
 
 
 /* -----After the 3rd trial-----*/
@@ -2288,7 +2288,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-timeline.push(at_test_procedure);
+//timeline.push(at_test_procedure);
 
 
 
@@ -3809,7 +3809,7 @@ var sort_trial_stage1_trial1_planB = {
       required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial1_planB);
+//timeline.push(sort_trial_stage1_trial1_planB);
 
 
 var sorting_stimuli_stage1_trial2_planB= [];
@@ -3874,7 +3874,7 @@ var sort_trial_stage1_trial2_planB = {
       required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial2_planB);
+//timeline.push(sort_trial_stage1_trial2_planB);
 
 
 /* ----- formal ordering trials ----- */
