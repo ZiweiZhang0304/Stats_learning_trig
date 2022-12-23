@@ -1,5 +1,3 @@
-console.log('test')
-
 var task_name = "Stats_learning_trig";
 var sbj_id = "test01";
 
@@ -900,9 +898,9 @@ var attention = {
         fl_ind_1 = slow_fl_index
         fl_ind_2 = fast_fl_index
     };
-    console.log(slow_fl_index, fast_fl_index)
-    console.log(fl_ind_1, fl_ind_2)
-    console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
+    // console.log(slow_fl_index, fast_fl_index)
+    // console.log(fl_ind_1, fl_ind_2)
+    // console.log(fl_stimuli_triple[fl_ind_1], fl_stimuli_triple[fl_ind_2])
 
     data.correct = data.key_press == jsPsych.pluginAPI.convertKeyCharacterToKeyCode(data.correct_response);
     var rt_mean = jsPsych.data.get().filter({ at_TrialType: 'frequent', key_press: 32}).select('rt').mean(); //if you change response key, don't forget to search for key code
@@ -912,8 +910,8 @@ var attention = {
     data.sd = rt_sd
     data.slow = rt_mean + rt_sd
     data.fast = Math.abs(rt_mean - rt_sd)
-    console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
-    console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
+    // console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
+    // console.log(Math.abs(rt_mean - rt_sd) ,  rt_mean + rt_sd)
 
     data.at_counter = at_counter
 
@@ -923,10 +921,10 @@ var attention = {
     data.slow_fl_counter = slow_lr_filler
     data.fast_fl_counter = fast_lr_filler
     data.fl_counter = fl_counter
-    console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
-    console.log('there are' + lr_counter + ' learning trials')
-    console.log('there are' + fast_lr_counter + ' fast learning trials')
-    console.log('there are' + slow_lr_counter + ' slow learning trials')
+    // console.log('ATTENTION!!! there are ' + at_counter + ' attention trials. KEEP GOING!!!')
+    // console.log('there are' + lr_counter + ' learning trials')
+    // console.log('there are' + fast_lr_counter + ' fast learning trials')
+    // console.log('there are' + slow_lr_counter + ' slow learning trials')
     filler_node = false
     lr_node = false
 
@@ -2389,7 +2387,7 @@ console.log(target_location)
 console.log(TD_stimuli)
 
 target_location.forEach(function myFunction(value) {
-        console.log('this is c value ' + value)
+        //console.log('this is c value ' + value)
         TD_stimuli[value].data.correct_response = 'space'
         TD_stimuli[value].data.TD_target = 'TD_target'
 
@@ -2482,10 +2480,9 @@ for (a = 0; a < range(0,2).length; a++) { // a loop of 24 sequences with each ha
         target_location_prac.push(b)
     }
 
-console.log(target_location_prac)
 
 target_location_prac.forEach(function myFunction(value) {
-        console.log('this is c value ' + value)
+        //console.log('this is c value ' + value)
         TD_stimuli_prac[value].data.correct_response = 'space'
         TD_stimuli_prac[value].data.TD_target = 'TD_target'
 
@@ -2580,10 +2577,6 @@ var TD_target_present_1 = {
 };*/
 
 var animation_sequence_1 =get_values_bykey(TD_stimuli.slice(0,12))
-console.log(TD_stimuli)
-console.log(typeof TD_stimuli)
-console.log(animation_sequence_1)
-console.log(typeof animation_sequence_1)
 
 var TD_trial_sequence_1 = {
     type: 'animation',
@@ -3928,6 +3921,11 @@ for (var i = 0; i < fillers_shapes_1.length; i++) {
 
 var sorting_stimuli_stage1_trial1_planB = shuffle(sorting_stimuli_stage1_trial1_planB);
 //console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+console.log('learning triplet one',lr_triplet_1)
+console.log('learning triplet two',lr_triplet_2)
+console.log('frequent nontrigger',frequent_nontrigger)
+console.log('learning filler one',fillers_shapes_1)
+console.log('learning filler two',fillers_shapes_2)
 
 var sorting_stimuli_stage1_trial1_planB_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial1_planB.length; i++) {
