@@ -216,18 +216,20 @@ jsPsych.plugins['survey-multi-select'] = (function() {
         var match = document.querySelectorAll('input[type="checkbox"]:checked');
         console.log(match);
         var val = [];
-        var inputboxes = match.querySelectorAll("input[type=checkbox]:checked");
+        //var inputboxes = match.querySelectorAll("input[type=checkbox]:checked");
         console.log(inputboxes);
-        for(var j=0; j<inputboxes.length; j++){
-          currentChecked = inputboxes[j];
-          console.log(currentChecked.value)
-          val.push(currentChecked.value)
+        for(var j=0; j<match.length; j++){
+          currentChecked = match[j];
+          console.log(currentChecked)
+          //val.push(currentChecked.value)
+          val.push(currentChecked)
         }
         var id = 'Q' + index
         var obje = {};
         var name = id;
         if(match.attributes['data-name'].value !== ''){
           name = match.attributes['data-name'].value;
+          console.log(name)
         }
         obje[name] = val;
         Object.assign(question_data, obje);
