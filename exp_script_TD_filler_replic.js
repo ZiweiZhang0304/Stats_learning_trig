@@ -3974,7 +3974,10 @@ var sort_trial_stage1_trial1_planB = {
           name: 'stage1_trial1_planB'
         }
     ],
-      required_message:'You must choose exactly 3 shapes for this question!'
+      required_message:'You must choose exactly 3 shapes for this question!',
+      on_finish: function (data) {
+          data.selection_stim = [`${img30}`,`${img31}`,`${img32}`]
+      }
   };
 
 timeline.push(sort_trial_stage1_trial1_planB);
@@ -4041,7 +4044,10 @@ var sort_trial_stage1_trial2_planB = {
           name: 'stage1_trial2_planB'
         }
     ],
-      required_message:'You must choose exactly 3 shapes for this question!'
+      required_message:'You must choose exactly 3 shapes for this question!',
+      on_finish: function (data) {
+          data.selection_stim = [`${img65}`,`${img66}`,`${img67}`]
+      }
   };
 
 timeline.push(sort_trial_stage1_trial2_planB);
