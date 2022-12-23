@@ -207,14 +207,17 @@ jsPsych.plugins['survey-multi-select'] = (function() {
       var response_time = endTime - startTime;
 
       // create object to hold responses
-      console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
+      //console.log(document.querySelectorAll('input[type="checkbox"]:checked').length)
       var question_data = {};
       var has_response = [];
       for(var index=0; index<trial.questions.length; index++){
         //var match = display_element.querySelector('#jspsych-survey-multi-select-'+index);
-        var match = document.querySelector('#jspsych-survey-multi-select-'+index);
+        //var match = document.querySelector('#jspsych-survey-multi-select-'+index);
+        var match = document.querySelectorAll('input[type="checkbox"]:checked');
+        console.log(match);
         var val = [];
-        var inputboxes = match.querySelectorAll("input[type=checkbox]:checked")
+        var inputboxes = match.querySelectorAll("input[type=checkbox]:checked");
+        console.log(inputboxes);
         for(var j=0; j<inputboxes.length; j++){
           currentChecked = inputboxes[j];
           console.log(currentChecked.value)
