@@ -4180,6 +4180,8 @@ var sort_trial_1 = {
     column_spread_factor: 1.5,
     on_finish: function (data) {
         data.test_part = 'post_drag'
+        data.sorting_stimuli = sorting_stimuli.slice(0,3)
+        data.sorting_stimuli_test = lr_triplet_1
     }
 
 };
@@ -4200,7 +4202,9 @@ var sort_trial_2 = {
     sort_area_width: 300,
     column_spread_factor: 1.5,
     on_finish: function (data) {
-        data.test_part = 'post_drag'
+        data.test_part = 'post_drag',
+        data.sorting_stimuli = sorting_stimuli.slice(3,6)
+        data.sorting_stimuli_test = lr_triplet_2
     }
 };
 timeline.push(sort_trial_2);
