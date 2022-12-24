@@ -235,7 +235,7 @@ jsPsych.plugins['survey-multi-select'] = (function() {
 
         Object.assign(question_data, obje);
         if(val.length == 0){ has_response.push(false); } else { has_response.push(true); }
-        console.log(question_data)
+        //console.log(question_data)
         console.log(question_data['Q0'])
         console.log(Array.from(question_data['Q0'][0].id))
         console.log(Array.from(question_data['Q0'][0].['id']))
