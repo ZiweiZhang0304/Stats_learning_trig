@@ -3974,7 +3974,8 @@ var sort_trial_stage1_trial1_planB = {
     ],
       required_message:'You must choose exactly 3 shapes for this question!',
       on_finish: function (data) {
-          data.selection_stim = [`${img30}`,`${img31}`,`${img32}`]
+          data.selection_stim = [`${img30}`,`${img31}`,`${img32}`,`${img33}`,`${img34}`,`${img35}`,`${img36}`,`${img37}`,`${img38}`,`${img39}`,`${img40}`,`${img41}`,`${img42}`,`${img43}`,`${img44}`,
+              `${img45}`,`${img46}`,`${img47}`,`${img48}`]
       }
   };
 
@@ -4044,7 +4045,8 @@ var sort_trial_stage1_trial2_planB = {
     ],
       required_message:'You must choose exactly 3 shapes for this question!',
       on_finish: function (data) {
-          data.selection_stim = [`${img65}`,`${img66}`,`${img67}`]
+          data.selection_stim = [`${img49}`,`${img50}`,`${img51}`,`${img52}`,`${img53}`,`${img54}`,`${img55}`,`${img56}`,`${img57}`,`${img58}`,`${img59}`,`${img60}`,`${img61}`,`${img62}`,`${img63}`,
+              `${img64}`,`${img65}`,`${img66}`,`${img67}`]
       }
   };
 
