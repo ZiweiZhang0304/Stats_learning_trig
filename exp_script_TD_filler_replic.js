@@ -3891,8 +3891,6 @@ var instruction6 = {
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        <h2>This is version B instructions </h2><br>\n' +
-        '        <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
         '        Namely, they always appeared together in the same order. <br>\n' +
@@ -4180,8 +4178,7 @@ var sort_trial_1 = {
     column_spread_factor: 1.5,
     on_finish: function (data) {
         data.test_part = 'post_drag'
-        data.sorting_stimuli = sorting_stimuli.slice(0,3)
-        data.sorting_stimuli_test = lr_triplet_1
+        data.sorting_stimuli = lr_triplet_1
     }
 
 };
@@ -4203,8 +4200,7 @@ var sort_trial_2 = {
     column_spread_factor: 1.5,
     on_finish: function (data) {
         data.test_part = 'post_drag',
-        data.sorting_stimuli = sorting_stimuli.slice(3,6)
-        data.sorting_stimuli_test = lr_triplet_2
+        data.sorting_stimuli = lr_triplet_2
     }
 };
 timeline.push(sort_trial_2);
