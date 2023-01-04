@@ -3906,7 +3906,7 @@ var instruction8 = {
 }
 timeline.push(instruction8);
 
-
+var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2);
 var sorting_stimuli= [];
 for (var i = 0; i < lr_triplet_full.length; i++) {
     sorting_stimuli.push(repo_site + lr_triplet_full[i]);
