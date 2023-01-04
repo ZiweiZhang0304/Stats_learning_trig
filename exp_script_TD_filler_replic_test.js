@@ -244,8 +244,9 @@ timeline.push(consent);
 var iti_200 = {
   type: "image-keyboard-response",
   stimulus: repo_site + "img/Stim/gray_bdot.png",
-  choices: jsPsych.NO_KEYS,
+  choices: ['space'],//jsPsych.NO_KEYS,
   trial_duration: 200,
+  response_ends_trial: false
 };
 
 
