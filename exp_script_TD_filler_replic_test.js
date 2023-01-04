@@ -216,7 +216,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-//timeline.push(enter_full);
+timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -368,7 +368,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction);
+timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -514,7 +514,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(prac_block);
+timeline.push(prac_block);
 
 var debrief = {
     type: "html-keyboard-response",
@@ -528,7 +528,7 @@ var debrief = {
 
     }
 };
-//timeline.push(debrief);
+timeline.push(debrief);
 
 
 
@@ -866,7 +866,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(first3_block);
+timeline.push(first3_block);
 
 
 /* -----After the 3rd trial-----*/
@@ -2288,7 +2288,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-//timeline.push(at_test_procedure);
+timeline.push(at_test_procedure);
 
 
 
@@ -2441,7 +2441,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction3);
+timeline.push(instruction3);
 
 
 // practice
@@ -3705,15 +3705,15 @@ var practice_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-//timeline.push(practice_presentation);
+timeline.push(practice_presentation);
 timeline.push(instruction4);
 
 
 //real TD block
 var Array_TD = [TD1, TD2, TD3, TD4, TD5, TD6,
-               // TD7, TD8 ,TD9, TD10, TD11, TD12,
-               // TD13, TD14 ,TD15, TD16, TD17, TD18,
-               // TD19, TD20 ,TD21, TD22, TD23, TD24
+               TD7, TD8 ,TD9, TD10, TD11, TD12,
+               TD13, TD14 ,TD15, TD16, TD17, TD18,
+               TD19, TD20 ,TD21, TD22, TD23, TD24
 ];
 var shuffledTD = jsPsych.randomization.repeat(Array_TD, 1)
 var target_presentation = {
@@ -3731,8 +3731,6 @@ var instruction6 = {
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        <h2>This is version B instructions </h2><br>\n' +
-        '        <br>\n' +
         '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
         '        <br>\n' +
         '        Namely, they always appeared together in the same order. <br>\n' +
@@ -3906,7 +3904,7 @@ var instruction8 = {
     ],
     show_clickable_nav: true,
 }
-//timeline.push(instruction8);
+timeline.push(instruction8);
 
 
 var sorting_stimuli= [];
@@ -3934,7 +3932,7 @@ var sort_trial_1 = {
     }
 
 };
-//timeline.push(sort_trial_1);
+timeline.push(sort_trial_1);
 
 
 var sort_trial_2 = {
@@ -3955,7 +3953,7 @@ var sort_trial_2 = {
         data.sorting_stimuli = lr_triplet_2
     }
 };
-//timeline.push(sort_trial_2);
+timeline.push(sort_trial_2);
 
 
 
@@ -3966,7 +3964,7 @@ var FR_Q1 = {
     {prompt: '<p> During the first part of the study, did you notice the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
-//timeline.push(FR_Q1);
+timeline.push(FR_Q1);
 
 
 
@@ -3991,7 +3989,7 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-//timeline.push(multi_choice_Demo);
+timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
