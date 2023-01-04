@@ -3731,11 +3731,11 @@ var instruction6 = {
     pages: [
         /* -----instr_9----- */
         '<p style="color:black;font-size: 26px">\n' +
-        '        Some of the shapes you saw in the first part of the study in fact appeared in a regular order. <br>\n' +
+        '        Some shapes that you saw in the first part of the study appeared in a regular order. <br>\n' +
         '        <br>\n' +
-        '        Namely, they always appeared together in the same order. <br>\n' +
+        '        In other words, they always appeared together one after another in the same order. <br>\n' +
         '        <br>\n' +
-        '        Therefore, in this section, we will ask you to identify groups of 3 shapes that you remember that always appeared together in the same order from the first part of the experiment. <br>\n' +
+        '        In this section, we will ask you to identify groups of 3 shapes that you remember always appearing together in the same order from the first part of the study. <br>\n' +
         '        <br>\n' +
         '        Now, click on "Next" to move on. <br> \n' +
         '</p> <br>'
@@ -3774,7 +3774,7 @@ for (var i = 0; i < sorting_stimuli_stage1_trial1_planB.length; i++) {
 }
 
 const sorting_stimuli_stage1_trial1_planB_string_01 =
-'<p> <center> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img30}`
+'<p> <center> Please select 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img30}`
 + '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img31}`
 + '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img32}`
 + '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img33}`
@@ -3845,7 +3845,7 @@ for (var i = 0; i < sorting_stimuli_stage1_trial2_planB.length; i++) {
 }
 
 const sorting_stimuli_stage1_trial2_planB_string_01 =
-'<p> <center> Please select <b>ANOTHER</b> 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
+'<p> <center> Please select <b>ANOTHER</b> 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
 + '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img50}`
 + '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img51}`
 + '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img52}`
