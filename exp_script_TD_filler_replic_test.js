@@ -3909,6 +3909,7 @@ for (var i = 0; i < fillers_shapes_full.length; i++) {
     sorting_stimuli_stage1_trial1_planC.push(repo_site + fillers_shapes_full[i]);
 } // add in the 8 filler shapes
 
+var sorting_stimuli_stage1_trial1_planC = shuffle(sorting_stimuli_stage1_trial1_planC);
 var sorting_stimuli_stage1_trial1_planC_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial1_planC.length; i++) {
     //sorting_stimuli_stage1_trial1_planA[i]
