@@ -4015,7 +4015,7 @@ var sort_trial_stage1_trial2_planC = {
       questions: [
         {
           //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
-          prompt: sorting_stimuli_stage1_trial2_planC_string_01 + sorting_stimuli_stage1_trial2_planC_string_02 + sorting_stimuli_stage2_trial1_planC_string_03,
+          prompt: sorting_stimuli_stage1_trial2_planC_string_01 + sorting_stimuli_stage1_trial2_planC_string_02 + sorting_stimuli_stage1_trial2_planC_string_03,
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
