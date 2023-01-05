@@ -3893,6 +3893,9 @@ var instruction6 = {
 
 
 // Version C //
+var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2);
+//console.log(sorting_stimuli);
+
 var sorting_stimuli_stage1_trial1_planC= [];
 for (var i = 0; i < lr_triplet_full.length; i++) {
     sorting_stimuli_stage1_trial1_planC.push(repo_site + lr_triplet_full[i]);
@@ -4025,7 +4028,7 @@ var sort_trial_stage1_trial2_planC = {
 
 //timeline.push(sort_trial_stage1_trial2_planC);
 
-/* ----- formal ordering trials ----- */
+/* ----- Darg and Drop Trials ----- */
 var instruction8 = {
     type: 'instructions',
     pages: [
@@ -4040,12 +4043,10 @@ var instruction8 = {
 }
 //timeline.push(instruction8);
 
-var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2);
 var sorting_stimuli= [];
 for (var i = 0; i < lr_triplet_full.length; i++) {
     sorting_stimuli.push(repo_site + lr_triplet_full[i]);
 }
-//console.log(sorting_stimuli);
 
 var sort_trial_1 = {
     type: 'free-sort',
