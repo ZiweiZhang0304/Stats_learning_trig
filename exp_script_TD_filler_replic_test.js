@@ -3870,24 +3870,24 @@ var instruction6 = {
 // + '" /> <input name="img18" type= "checkbox" id="img18" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img66}`
 // + '" /> <input name="img19" type= "checkbox" id="img19" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img67}` + '" /> <br><br><br>'
 //
-var sort_trial_stage1_trial2_planB = {
-    type: 'survey-multi-select', //'html-button-response'
-      questions: [
-        {
-          //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
-          prompt: sorting_stimuli_stage1_trial2_planB_string_01 + sorting_stimuli_stage1_trial2_planB_string_02 + sorting_stimuli_stage1_trial2_planB_string_03,
-          options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
-          horizontal: true,
-          required: true,
-          name: 'stage1_trial2_planB'
-        }
-    ],
-      required_message:'You must choose exactly 3 shapes for this question!',
-      on_finish: function (data) {
-          data.selection_stim = [`${img49}`,`${img50}`,`${img51}`,`${img52}`,`${img53}`,`${img54}`,`${img55}`,`${img56}`,`${img57}`,`${img58}`,`${img59}`,`${img60}`,`${img61}`,`${img62}`,`${img63}`,
-              `${img64}`,`${img65}`,`${img66}`,`${img67}`]
-      }
-  };
+// var sort_trial_stage1_trial2_planB = {
+//     type: 'survey-multi-select', //'html-button-response'
+//       questions: [
+//         {
+//           //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
+//           prompt: sorting_stimuli_stage1_trial2_planB_string_01 + sorting_stimuli_stage1_trial2_planB_string_02 + sorting_stimuli_stage1_trial2_planB_string_03,
+//           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
+//           horizontal: true,
+//           required: true,
+//           name: 'stage1_trial2_planB'
+//         }
+//     ],
+//       required_message:'You must choose exactly 3 shapes for this question!',
+//       on_finish: function (data) {
+//           data.selection_stim = [`${img49}`,`${img50}`,`${img51}`,`${img52}`,`${img53}`,`${img54}`,`${img55}`,`${img56}`,`${img57}`,`${img58}`,`${img59}`,`${img60}`,`${img61}`,`${img62}`,`${img63}`,
+//               `${img64}`,`${img65}`,`${img66}`,`${img67}`]
+//       }
+//   };
 
 //timeline.push(sort_trial_stage1_trial2_planB);
 
