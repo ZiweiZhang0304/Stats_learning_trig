@@ -216,7 +216,7 @@ var enter_full = {
   type: 'fullscreen',
   fullscreen_mode: true
 };
-timeline.push(enter_full);
+//timeline.push(enter_full);
 
 
 /* -----Give consent-----*/
@@ -237,7 +237,7 @@ var consent = {
   cont_fn: check_consent,
   cont_btn: 'start',
 };
-timeline.push(consent);
+//timeline.push(consent);
 
 
 /* -----ITI----- */
@@ -369,7 +369,7 @@ var instruction = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction);
+//timeline.push(instruction);
 
 
 repetition = shuffle(repetition)
@@ -515,7 +515,7 @@ var prac_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(prac_block);
+//timeline.push(prac_block);
 
 var debrief = {
     type: "html-keyboard-response",
@@ -529,7 +529,7 @@ var debrief = {
 
     }
 };
-timeline.push(debrief);
+//timeline.push(debrief);
 
 
 
@@ -715,7 +715,7 @@ var instruction2 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction2);
+//timeline.push(instruction2);
 
 
 
@@ -867,7 +867,7 @@ var first3_block = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(first3_block);
+//timeline.push(first3_block);
 
 
 /* -----After the 3rd trial-----*/
@@ -2289,7 +2289,7 @@ var at_test_procedure = {
   randomize_order: false,
   repetitions: 1
 }
-timeline.push(at_test_procedure);
+//timeline.push(at_test_procedure);
 
 
 
@@ -2442,7 +2442,7 @@ var instruction3 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction3);
+//timeline.push(instruction3);
 
 
 // practice
@@ -3706,8 +3706,8 @@ var practice_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(practice_presentation);
-timeline.push(instruction4);
+// timeline.push(practice_presentation);
+// timeline.push(instruction4);
 
 
 //real TD block
@@ -3722,7 +3722,7 @@ var target_presentation = {
     randomize_order: false,
     repetitions: 1
 }
-timeline.push(target_presentation);
+//timeline.push(target_presentation);
 
 
 /* -----Part 2: Recreate----- */
@@ -3743,7 +3743,7 @@ var instruction6 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction6);
+//timeline.push(instruction6);
 
 
 
@@ -3961,7 +3961,7 @@ var sort_trial_stage1_trial1_planC = {
       required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial1_planC);
+//timeline.push(sort_trial_stage1_trial1_planC);
 
 
 var sorting_stimuli_stage1_trial2_planC = shuffle(sorting_stimuli_stage1_trial1_planC);
@@ -4023,7 +4023,7 @@ var sort_trial_stage1_trial2_planC = {
       required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial2_planC);
+//timeline.push(sort_trial_stage1_trial2_planC);
 
 /* ----- formal ordering trials ----- */
 var instruction8 = {
@@ -4038,7 +4038,7 @@ var instruction8 = {
     ],
     show_clickable_nav: true,
 }
-timeline.push(instruction8);
+//timeline.push(instruction8);
 
 var lr_triplet_full = lr_triplet_1.concat(lr_triplet_2);
 var sorting_stimuli= [];
@@ -4066,7 +4066,7 @@ var sort_trial_1 = {
     }
 
 };
-timeline.push(sort_trial_1);
+//timeline.push(sort_trial_1);
 
 
 var sort_trial_2 = {
@@ -4087,7 +4087,7 @@ var sort_trial_2 = {
         data.sorting_stimuli = lr_triplet_2
     }
 };
-timeline.push(sort_trial_2);
+//timeline.push(sort_trial_2);
 
 
 
@@ -4098,7 +4098,7 @@ var FR_Q1 = {
     {prompt: '<p> During the first part of the study, did you notice the presence of regular sequence of 3 shapes before the instruction told you so? <br> Please describe in as much detail as you can. <br> If you are not sure, please share your best guess.</p>', name: FR_Q1, rows: 5, columns: 80, required: true},
   ],
 };
-timeline.push(FR_Q1);
+//timeline.push(FR_Q1);
 
 
 
@@ -4123,15 +4123,15 @@ var multi_choice_Demo = {
         { prompt: "What is the highest degree or level of school you have completed?", name: 'DemoQ5', options: DemoQ5_options, required: true },
     ],
 };
-timeline.push(multi_choice_Demo);
+//timeline.push(multi_choice_Demo);
 
 var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
 
 //var timeline_full = [enter_full, consent, instruction, prac_block, debrief, instruction2, first3_block, at_test_procedure, instruction3, practice_presentation, instruction4, target_presentation, instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
-//var timeline_test = [instruction5, sort_trial_stage1_trial1_planA, sort_trial_stage1_trial2_planA, instruction6, sort_trial_stage1_trial1_planB, sort_trial_stage1_trial2_planB, instruction7, sort_trial_stage1_trial1_planC, instruction8, sort_trial_1, sort_trial_2, FR_Q1, multi_choice_Demo];
+//var timeline_test = [instruction6, sort_trial_stage1_trial1_planC, sort_trial_stage1_trial2_planC, instruction8];
 //timeline.push(timeline_full)
-//timeline.push(timeline_test)
+timeline.push(instruction6, sort_trial_stage1_trial1_planC, sort_trial_stage1_trial2_planC, instruction8)
 
 
 function save_data_csv() {
