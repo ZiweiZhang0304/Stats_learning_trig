@@ -3913,7 +3913,7 @@ var sorting_stimuli_stage1_trial1_planC_rename = []
 for (var i = 0; i < sorting_stimuli_stage1_trial1_planC.length; i++) {
     //sorting_stimuli_stage1_trial1_planA[i]
     sorting_stimuli_stage1_trial1_planC_rename[i] = '"' + sorting_stimuli_stage1_trial1_planC[i] + '"'
-    looseJsonParse("img" + x + "=" + sorting_stimuli_stage1_trial1_planC_rename[i])
+    looseJsonParse("img" + i + "=" + sorting_stimuli_stage1_trial1_planC_rename[i])
 }
 
 const sorting_stimuli_stage1_trial1_planC_string_01 =
