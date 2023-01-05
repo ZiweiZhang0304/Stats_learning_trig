@@ -3734,7 +3734,7 @@ var instruction6 = {
         '<p style="color:black;font-size: 26px">\n' +
         '        Some shapes that you saw in the first part of the study appeared in a regular order. <br>\n' +
         '        <br>\n' +
-        '        In other words, they always appeared together one after another in the same order. <br>\n' +
+        '        In other words, they <b> always appeared together one after another in the same order </b> . <br>\n' +
         '        <br>\n' +
         '        In this section, we will ask you to identify groups of 3 shapes that you remember always appearing together in the same order from the first part of the study. <br>\n' +
         '        <br>\n' +
