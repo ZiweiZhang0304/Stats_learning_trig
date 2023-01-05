@@ -3747,150 +3747,283 @@ timeline.push(instruction6);
 
 
 
-var sorting_stimuli_stage1_trial1_planB= [];
-for (var i = 0; i < lr_triplet_1.length; i++) {
-    sorting_stimuli_stage1_trial1_planB.push(repo_site + lr_triplet_1[i]);
+// var sorting_stimuli_stage1_trial1_planB= [];
+// for (var i = 0; i < lr_triplet_1.length; i++) {
+//     sorting_stimuli_stage1_trial1_planB.push(repo_site + lr_triplet_1[i]);
+// }
+// for (var i = 0; i < frequent_nontrigger.length; i++) {
+//     sorting_stimuli_stage1_trial1_planB.push(repo_site + frequent_nontrigger[i]);
+// }
+// for (var i = 0; i < fillers_shapes_1.length; i++) {
+//     sorting_stimuli_stage1_trial1_planB.push(repo_site + fillers_shapes_1[i]);
+// } // add in the 4 filler shapes
+//
+// var sorting_stimuli_stage1_trial1_planB = shuffle(sorting_stimuli_stage1_trial1_planB);
+// //console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+// console.log('learning triplet one',lr_triplet_1)
+// console.log('learning triplet two',lr_triplet_2)
+// console.log('frequent nontrigger',frequent_nontrigger)
+// console.log('learning filler one',fillers_shapes_1)
+// console.log('learning filler two',fillers_shapes_2)
+//
+// var sorting_stimuli_stage1_trial1_planB_rename = []
+// for (var i = 0; i < sorting_stimuli_stage1_trial1_planB.length; i++) {
+//     //sorting_stimuli_stage1_trial1_planA[i]
+//     var h = i + 30
+//     sorting_stimuli_stage1_trial1_planB_rename[i] = '"' + sorting_stimuli_stage1_trial1_planB[i] + '"'
+//     looseJsonParse("img" + h + "=" + sorting_stimuli_stage1_trial1_planB_rename[i])
+// }
+//
+// const sorting_stimuli_stage1_trial1_planB_string_01 =
+// '<p> <center> Please select 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img30}`
+// + '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img31}`
+// + '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img32}`
+// + '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img33}`
+// + '" /> <input name="img05" type= "checkbox" id="img05" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img34}`
+// + '" /> <input name="img06" type= "checkbox" id="img06" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img35}`
+// + '" /> <input name="img07" type= "checkbox" id="img07" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img36}` + '" /> '
+//
+// const sorting_stimuli_stage1_trial1_planB_string_02 =
+// '       <input name="img08" type= "checkbox" id="img08" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img37}`
+// + '" /> <input name="img09" type= "checkbox" id="img09" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img38}`
+// + '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img39}`
+// + '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img40}`
+// + '" /></label> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img41}`+ '" />'
+//
+// const sorting_stimuli_stage1_trial1_planB_string_03 =
+// '       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img42}`
+// + '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img43}`
+// + '" /> <input name="img15" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img44}`
+// + '" /> <input name="img16" type= "checkbox" id="img16" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img45}`
+// + '" /> <input name="img17" type= "checkbox" id="img17" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img46}`
+// + '" /> <input name="img18" type= "checkbox" id="img18" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img47}`
+// + '" /> <input name="img19" type= "checkbox" id="img19" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img48}` + '" /> <br><br><br>'
+//
+// var sort_trial_stage1_trial1_planB = {
+//     type: 'survey-multi-select', //'html-button-response'
+//       questions: [
+//         {
+//           //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
+//           prompt: sorting_stimuli_stage1_trial1_planB_string_01 + sorting_stimuli_stage1_trial1_planB_string_02 + sorting_stimuli_stage1_trial1_planB_string_03,
+//           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
+//           horizontal: true,
+//           required: true,
+//           name: 'stage1_trial1_planB'
+//         }
+//     ],
+//       required_message:'You must choose exactly 3 shapes for this question!',
+//       on_finish: function (data) {
+//           data.selection_stim = [`${img30}`,`${img31}`,`${img32}`,`${img33}`,`${img34}`,`${img35}`,`${img36}`,`${img37}`,`${img38}`,`${img39}`,`${img40}`,`${img41}`,`${img42}`,`${img43}`,`${img44}`,
+//               `${img45}`,`${img46}`,`${img47}`,`${img48}`]
+//       }
+//   };
+//
+// //timeline.push(sort_trial_stage1_trial1_planB);
+//
+//
+//
+//
+// var sorting_stimuli_stage1_trial2_planB= [];
+// for (var i = 0; i < lr_triplet_2.length; i++) {
+//     sorting_stimuli_stage1_trial2_planB.push(repo_site + lr_triplet_2[i]);
+// }
+// for (var i = 0; i < frequent_nontrigger.length; i++) {
+//     sorting_stimuli_stage1_trial2_planB.push(repo_site + frequent_nontrigger[i]);
+// }
+// for (var i = 0; i < fillers_shapes_2.length; i++) {
+//     sorting_stimuli_stage1_trial2_planB.push(repo_site + fillers_shapes_2[i]);
+// } // add in the 4 filler shapes
+//
+// var sorting_stimuli_stage1_trial2_planB = shuffle(sorting_stimuli_stage1_trial2_planB);
+// //console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
+//
+// var sorting_stimuli_stage1_trial2_planB_rename = []
+// for (var i = 0; i < sorting_stimuli_stage1_trial2_planB.length; i++) {
+//     //sorting_stimuli_stage1_trial1_planA[i]
+//     var k = i + 49
+//     sorting_stimuli_stage1_trial2_planB_rename[i] = '"' + sorting_stimuli_stage1_trial2_planB[i] + '"'
+//     looseJsonParse("img" + k + "=" + sorting_stimuli_stage1_trial2_planB_rename[i])
+// }
+//
+// const sorting_stimuli_stage1_trial2_planB_string_01 =
+// '<p> <center> Please select <b>ANOTHER</b> 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
+// + '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img50}`
+// + '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img51}`
+// + '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img52}`
+// + '" /> <input name="img05" type= "checkbox" id="img05" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img53}`
+// + '" /> <input name="img06" type= "checkbox" id="img06" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img54}`
+// + '" /> <input name="img07" type= "checkbox" id="img07" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img55}` + '" /> '
+//
+// const sorting_stimuli_stage1_trial2_planB_string_02 =
+// '       <input name="img08" type= "checkbox" id="img08" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img56}`
+// + '" /> <input name="img09" type= "checkbox" id="img09" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img57}`
+// + '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img58}`
+// + '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img59}`
+// + '" /></label> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img60}`+ '" />'
+//
+// const sorting_stimuli_stage1_trial2_planB_string_03 =
+// '       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img61}`
+// + '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img62}`
+// + '" /> <input name="img15" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img63}`
+// + '" /> <input name="img16" type= "checkbox" id="img16" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img64}`
+// + '" /> <input name="img17" type= "checkbox" id="img17" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img65}`
+// + '" /> <input name="img18" type= "checkbox" id="img18" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img66}`
+// + '" /> <input name="img19" type= "checkbox" id="img19" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img67}` + '" /> <br><br><br>'
+//
+// var sort_trial_stage1_trial2_planB = {
+//     type: 'survey-multi-select', //'html-button-response'
+//       questions: [
+//         {
+//           //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
+//           prompt: sorting_stimuli_stage1_trial2_planB_string_01 + sorting_stimuli_stage1_trial2_planB_string_02 + sorting_stimuli_stage1_trial2_planB_string_03,
+//           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
+//           horizontal: true,
+//           required: true,
+//           name: 'stage1_trial2_planB'
+//         }
+//     ],
+//       required_message:'You must choose exactly 3 shapes for this question!',
+//       on_finish: function (data) {
+//           data.selection_stim = [`${img49}`,`${img50}`,`${img51}`,`${img52}`,`${img53}`,`${img54}`,`${img55}`,`${img56}`,`${img57}`,`${img58}`,`${img59}`,`${img60}`,`${img61}`,`${img62}`,`${img63}`,
+//               `${img64}`,`${img65}`,`${img66}`,`${img67}`]
+//       }
+//   };
+
+//timeline.push(sort_trial_stage1_trial2_planB);
+
+
+// Version C //
+var sorting_stimuli_stage1_trial1_planC= [];
+for (var i = 0; i < lr_triplet_full.length; i++) {
+    sorting_stimuli_stage1_trial1_planC.push(repo_site + lr_triplet_full[i]);
 }
 for (var i = 0; i < frequent_nontrigger.length; i++) {
-    sorting_stimuli_stage1_trial1_planB.push(repo_site + frequent_nontrigger[i]);
+    sorting_stimuli_stage1_trial1_planC.push(repo_site + frequent_nontrigger[i]);
 }
-for (var i = 0; i < fillers_shapes_1.length; i++) {
-    sorting_stimuli_stage1_trial1_planB.push(repo_site + fillers_shapes_1[i]);
-} // add in the 4 filler shapes
 
-var sorting_stimuli_stage1_trial1_planB = shuffle(sorting_stimuli_stage1_trial1_planB);
-//console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
-console.log('learning triplet one',lr_triplet_1)
-console.log('learning triplet two',lr_triplet_2)
-console.log('frequent nontrigger',frequent_nontrigger)
-console.log('learning filler one',fillers_shapes_1)
-console.log('learning filler two',fillers_shapes_2)
+var fillers_shapes_full = fillers_shapes_1.concat(fillers_shapes_2);
+for (var i = 0; i < fillers_shapes_full.length; i++) {
+    sorting_stimuli_stage1_trial1_planC.push(repo_site + fillers_shapes_full[i]);
+} // add in the 8 filler shapes
 
-var sorting_stimuli_stage1_trial1_planB_rename = []
-for (var i = 0; i < sorting_stimuli_stage1_trial1_planB.length; i++) {
+var sorting_stimuli_stage1_trial1_planC_rename = []
+for (var i = 0; i < sorting_stimuli_stage1_trial1_planC.length; i++) {
     //sorting_stimuli_stage1_trial1_planA[i]
-    var h = i + 30
-    sorting_stimuli_stage1_trial1_planB_rename[i] = '"' + sorting_stimuli_stage1_trial1_planB[i] + '"'
-    looseJsonParse("img" + h + "=" + sorting_stimuli_stage1_trial1_planB_rename[i])
+    sorting_stimuli_stage1_trial1_planC_rename[i] = '"' + sorting_stimuli_stage1_trial1_planC[i] + '"'
+    looseJsonParse("img" + x + "=" + sorting_stimuli_stage1_trial1_planC_rename[i])
 }
 
-const sorting_stimuli_stage1_trial1_planB_string_01 =
-'<p> <center> Please select 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img30}`
-+ '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img31}`
-+ '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img32}`
-+ '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img33}`
-+ '" /> <input name="img05" type= "checkbox" id="img05" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img34}`
-+ '" /> <input name="img06" type= "checkbox" id="img06" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img35}`
-+ '" /> <input name="img07" type= "checkbox" id="img07" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img36}` + '" /> '
+const sorting_stimuli_stage1_trial1_planC_string_01 =
+'<p> <center> Please select 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img1}`
++ '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img2}`
++ '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img3}`
++ '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img4}`
++ '" /> <input name="img05" type= "checkbox" id="img05" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img5}`
++ '" /> <input name="img06" type= "checkbox" id="img06" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img6}`
++ '" /> <input name="img07" type= "checkbox" id="img07" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img7}` + '" /> '
 
-const sorting_stimuli_stage1_trial1_planB_string_02 =
-'       <input name="img08" type= "checkbox" id="img08" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img37}`
-+ '" /> <input name="img09" type= "checkbox" id="img09" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img38}`
-+ '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img39}`
-+ '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img40}`
-+ '" /></label> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img41}`+ '" />'
+const sorting_stimuli_stage1_trial1_planC_string_02 =
+'       <input name="img08" type= "checkbox" id="img08" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img8}`
++ '" /> <input name="img09" type= "checkbox" id="img09" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img9}`
++ '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img10}`
++ '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img11}`
++ '" /></label> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img12}`+ '" />'
 
-const sorting_stimuli_stage1_trial1_planB_string_03 =
-'       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img42}`
-+ '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img43}`
-+ '" /> <input name="img15" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img44}`
-+ '" /> <input name="img16" type= "checkbox" id="img16" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img45}`
-+ '" /> <input name="img17" type= "checkbox" id="img17" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img46}`
-+ '" /> <input name="img18" type= "checkbox" id="img18" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img47}`
-+ '" /> <input name="img19" type= "checkbox" id="img19" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img48}` + '" /> <br><br><br>'
+const sorting_stimuli_stage1_trial1_planC_string_03 =
+'       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img13}`
++ '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img14}`
++ '" /> <input name="img15" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img15}`
++ '" /> <input name="img16" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img16}`
++ '" /> <input name="img17" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img17}`
++ '" /> <input name="img18" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img18}`
++ '" /> <input name="img19" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img19}`
++ '" /> <input name="img20" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img20}`
++ '" /> <input name="img21" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img21}`
++ '" /> <input name="img22" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img22}`
++ '" /> <input name="img23" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img23}`
++ '" /> <input name="img24" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img24}`
++ '" /> <input name="img25" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img25}`
++ '" /> <input name="img26" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img26}` + '" /> <br><br><br>'
 
-var sort_trial_stage1_trial1_planB = {
+var sort_trial_stage1_trial1_planC = {
     type: 'survey-multi-select', //'html-button-response'
       questions: [
         {
           //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
-          prompt: sorting_stimuli_stage1_trial1_planB_string_01 + sorting_stimuli_stage1_trial1_planB_string_02 + sorting_stimuli_stage1_trial1_planB_string_03,
+          prompt: sorting_stimuli_stage1_trial1_planC_string_01 + sorting_stimuli_stage1_trial1_planC_string_02 + sorting_stimuli_stage1_trial1_planC_string_03,
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
-          name: 'stage1_trial1_planB'
+          name: 'stage1_trial1_planC',
+          selection: '3'
         }
     ],
-      required_message:'You must choose exactly 3 shapes for this question!',
-      on_finish: function (data) {
-          data.selection_stim = [`${img30}`,`${img31}`,`${img32}`,`${img33}`,`${img34}`,`${img35}`,`${img36}`,`${img37}`,`${img38}`,`${img39}`,`${img40}`,`${img41}`,`${img42}`,`${img43}`,`${img44}`,
-              `${img45}`,`${img46}`,`${img47}`,`${img48}`]
-      }
+      required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial1_planB);
+timeline.push(sort_trial_stage1_trial1_planC);
 
 
-
-
-var sorting_stimuli_stage1_trial2_planB= [];
-for (var i = 0; i < lr_triplet_2.length; i++) {
-    sorting_stimuli_stage1_trial2_planB.push(repo_site + lr_triplet_2[i]);
-}
-for (var i = 0; i < frequent_nontrigger.length; i++) {
-    sorting_stimuli_stage1_trial2_planB.push(repo_site + frequent_nontrigger[i]);
-}
-for (var i = 0; i < fillers_shapes_2.length; i++) {
-    sorting_stimuli_stage1_trial2_planB.push(repo_site + fillers_shapes_2[i]);
-} // add in the 4 filler shapes
-
-var sorting_stimuli_stage1_trial2_planB = shuffle(sorting_stimuli_stage1_trial2_planB);
+var sorting_stimuli_stage1_trial2_planC = shuffle(sorting_stimuli_stage1_trial1_planC);
 //console.log(sorting_stimuli_stage1_trial1_planA); //length should be 15 (12 freq non-trigger + 3 fast trigger)
-
-var sorting_stimuli_stage1_trial2_planB_rename = []
-for (var i = 0; i < sorting_stimuli_stage1_trial2_planB.length; i++) {
+var sorting_stimuli_stage1_trial2_planC_rename = []
+for (var i = 0; i < sorting_stimuli_stage1_trial2_planC.length; i++) {
     //sorting_stimuli_stage1_trial1_planA[i]
-    var k = i + 49
-    sorting_stimuli_stage1_trial2_planB_rename[i] = '"' + sorting_stimuli_stage1_trial2_planB[i] + '"'
-    looseJsonParse("img" + k + "=" + sorting_stimuli_stage1_trial2_planB_rename[i])
+    var x = i + 26
+    sorting_stimuli_stage1_trial2_planC_rename[i] = '"' + sorting_stimuli_stage1_trial2_planC[i] + '"'
+    looseJsonParse("img" + x + "=" + sorting_stimuli_stage1_trial2_planC_rename[i])
 }
 
-const sorting_stimuli_stage1_trial2_planB_string_01 =
-'<p> <center> Please select <b>ANOTHER</b> 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
-+ '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img50}`
-+ '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img51}`
-+ '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img52}`
-+ '" /> <input name="img05" type= "checkbox" id="img05" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img53}`
-+ '" /> <input name="img06" type= "checkbox" id="img06" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img54}`
-+ '" /> <input name="img07" type= "checkbox" id="img07" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img55}` + '" /> '
 
-const sorting_stimuli_stage1_trial2_planB_string_02 =
-'       <input name="img08" type= "checkbox" id="img08" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img56}`
-+ '" /> <input name="img09" type= "checkbox" id="img09" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img57}`
-+ '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img58}`
-+ '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img59}`
-+ '" /></label> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img60}`+ '" />'
+const sorting_stimuli_stage1_trial2_planC_string_01 =
+'<p> <center> Please select <b>ANOTHER</b> 3 shapes that always occurred together one after another in the same order in the first part of the study. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on. </center></p> <br><br><br>   <input name="img01" type= "checkbox" id="img01" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img27}`
++ '" /> <input name="img02" type= "checkbox" id="img02" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img28}`
++ '" /> <input name="img03" type= "checkbox" id="img03" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img29}`
++ '" /> <input name="img04" type= "checkbox" id="img04" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img30}`
++ '" /> <input name="img05" type= "checkbox" id="img05" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img31}`
++ '" /> <input name="img06" type= "checkbox" id="img06" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img32}`
++ '" /> <input name="img07" type= "checkbox" id="img07" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img33}` + '" /> '
 
-const sorting_stimuli_stage1_trial2_planB_string_03 =
-'       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img61}`
-+ '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img62}`
-+ '" /> <input name="img15" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img63}`
-+ '" /> <input name="img16" type= "checkbox" id="img16" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img64}`
-+ '" /> <input name="img17" type= "checkbox" id="img17" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img65}`
-+ '" /> <input name="img18" type= "checkbox" id="img18" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img66}`
-+ '" /> <input name="img19" type= "checkbox" id="img19" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img67}` + '" /> <br><br><br>'
+const sorting_stimuli_stage1_trial2_planC_string_02 =
+'       <input name="img08" type= "checkbox" id="img08" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img34}`
++ '" /> <input name="img09" type= "checkbox" id="img09" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img35}`
++ '" /> <input name="img10" type= "checkbox" id="img10" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img36}`
++ '" /> <input name="img11" type= "checkbox" id="img11" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img37}`
++ '" /> <input name="img12" type= "checkbox" id="img12" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img38}`+ '" />'
 
-var sort_trial_stage1_trial2_planB = {
+const sorting_stimuli_stage1_trial2_planC_string_03 =
+'       <input name="img13" type= "checkbox" id="img13" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img39}`
++ '" /> <input name="img14" type= "checkbox" id="img14" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img40}`
++ '" /> <input name="img15" type= "checkbox" id="img15" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img41}`
++ '" /> <input name="img16" type= "checkbox" id="img16" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img42}`
++ '" /> <input name="img17" type= "checkbox" id="img17" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img43}`
++ '" /> <input name="img18" type= "checkbox" id="img18" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img44}`
++ '" /> <input name="img19" type= "checkbox" id="img19" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img45}`
++ '" /> <input name="img20" type= "checkbox" id="img20" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img46}`
++ '" /> <input name="img21" type= "checkbox" id="img21" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img47}`
++ '" /> <input name="img22" type= "checkbox" id="img22" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img48}`
++ '" /> <input name="img23" type= "checkbox" id="img23" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img49}`
++ '" /> <input name="img24" type= "checkbox" id="img24" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img50}`
++ '" /> <input name="img25" type= "checkbox" id="img25" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img51}`
++ '" /> <input name="img26" type= "checkbox" id="img26" style= "margin-left: 3em;  margin-right: 0em; margin-top: 2em;"> <label for="course"> <img style= "margin-left: 0em;  margin-right: 1em; margin-top: 2em; vertical-align: middle;" src="' + `${img52}` + '" /> <br><br><br>'
+
+var sort_trial_stage1_trial2_planC = {
     type: 'survey-multi-select', //'html-button-response'
       questions: [
         {
           //preamble: '<p> Please select 3 shapes that you remember seeing in a regular order from the first part of the experiment. <br> Click on the checkbox to select and unselect. <br> You must select exactly 3 shapes to move on.</p>',
-          prompt: sorting_stimuli_stage1_trial2_planB_string_01 + sorting_stimuli_stage1_trial2_planB_string_02 + sorting_stimuli_stage1_trial2_planB_string_03,
+          prompt: sorting_stimuli_stage1_trial2_planC_string_01 + sorting_stimuli_stage1_trial2_planC_string_02 + sorting_stimuli_stage2_trial1_planC_string_03,
           options: ["                  ","                  ", "                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  ","                  "],
           horizontal: true,
           required: true,
-          name: 'stage1_trial2_planB'
+          name: 'stage1_trial2_planC',
+          selection: '3'
         }
     ],
-      required_message:'You must choose exactly 3 shapes for this question!',
-      on_finish: function (data) {
-          data.selection_stim = [`${img49}`,`${img50}`,`${img51}`,`${img52}`,`${img53}`,`${img54}`,`${img55}`,`${img56}`,`${img57}`,`${img58}`,`${img59}`,`${img60}`,`${img61}`,`${img62}`,`${img63}`,
-              `${img64}`,`${img65}`,`${img66}`,`${img67}`]
-      }
+      required_message:'You must choose exactly 3 shapes for this question!'
   };
 
-timeline.push(sort_trial_stage1_trial2_planB);
-
+timeline.push(sort_trial_stage1_trial2_planC);
 
 /* ----- formal ordering trials ----- */
 var instruction8 = {
