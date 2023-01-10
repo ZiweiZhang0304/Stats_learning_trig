@@ -4141,7 +4141,7 @@ var interaction_data = jsPsych.data.getInteractionData();
 jsPsych.data.checks = interaction_data;
 
 //var timeline_full = [enter_full, consent, instruction, prac_block, debrief, instruction2, first3_block, at_test_procedure, instruction3, practice_presentation, instruction4, target_presentation, instruction6, sort_trial_stage1_trial1_planC, sort_trial_stage1_trial2_planC, instruction7, sort_trial_stage2_trial1, sort_trial_stage2_trial2, FR_Q1, multi_choice_Demo];
-var timeline_test = [instruction6, sort_trial_stage1_trial1_planC, sort_trial_stage1_trial2_planC, instruction7];
+timeline.push(instruction6, sort_trial_stage1_trial1_planC, sort_trial_stage1_trial2_planC, instruction7);
 //timeline.push(enter_full, consent, instruction, prac_block, debrief, instruction2, first3_block, at_test_procedure, instruction3, practice_presentation, instruction4, target_presentation, instruction6, sort_trial_stage1_trial1_planC, sort_trial_stage1_trial2_planC, instruction7, sort_trial_stage2_trial1, sort_trial_stage2_trial2, FR_Q1, multi_choice_Demo)
 
 
