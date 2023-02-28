@@ -244,7 +244,7 @@ var consent = {
 var iti_200 = {
   type: "image-keyboard-response",
   stimulus: repo_site + "img/Stim/gray_bdot.png",
-  choices: ['space'],//jsPsych.NO_KEYS,
+  choices: jsPsych.NO_KEYS,
   trial_duration: 200,
   response_ends_trial: false
 };
@@ -435,8 +435,8 @@ for (j = 0; j < repetition_prac.length; j++) {
 };
 
 /* -----Back to Selecting Main At_lr Trials----- */
-var repetition_1_attention = repetition_1.slice(0, 24); //120
-var repetition_attention = repetition.slice(3, 216); //1080
+var repetition_1_attention = repetition_1.slice(0, 120); //120
+var repetition_attention = repetition.slice(3, 1080); //1080
 //console.log(repetition_1_attention, repetition_attention)
 
 var at_stimuli = []
