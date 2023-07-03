@@ -842,7 +842,7 @@ var attention_first3 = {
               data.at_RunningMean = rt_mean
               data.sd = rt_sd
               data.slow = rt_mean +  rt_sd
-              data.fast = Math.abs(rt_mean - rt_sd)
+              data.fast = rt_mean - rt_sd
           }
       },
 
@@ -910,9 +910,9 @@ var attention = {
     data.at_RunningMean = rt_mean
     data.sd = rt_sd
     data.slow = rt_mean + rt_sd
-    data.fast = Math.abs(rt_mean - rt_sd)
+    data.fast = rt_mean - rt_sd
     console.log('this is running mean', rt_mean , 'this is running sd',rt_sd)
-    console.log('this is floor of RT range', Math.abs(rt_mean - rt_sd) , 'this is ceiling of RT range', rt_mean + rt_sd)
+    console.log('this is floor of RT range', rt_mean - rt_sd , 'this is ceiling of RT range', rt_mean + rt_sd)
 
     data.at_counter = at_counter
 
@@ -1113,14 +1113,14 @@ var attention = {
             lr_node = 1;
             data.diff = 'slow'
             console.log('slow')
-          } else if (rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == true && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false)
+          } else if (rt_three < rt_mean- rt_sd && initial_fast == true && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false)
           {
                 lr_node = 2;
                 data.diff = 'fast'
                 console.log('fast')
             }
             //else {lr_node = 0}
-            /*      else if (rt_three < rt_mean+ 0.2 * rt_sd && rt_three > Math.abs(rt_mean- 0.2 * rt_sd)){
+            /*      else if (rt_three < rt_mean+ 0.2 * rt_sd && rt_three > rt_mean- 0.2 * rt_sd){
                 lr_node = 3; //medium triggering should use three nodes...
                 console.log('lr_node = true')
             }*/
@@ -1164,37 +1164,37 @@ var attention = {
       }
 
       /* ----- fast control ----- */
-        else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && rt_three != 0 && fast_filler_num == true)){
+        else if ((fast_lr_counter >0 && slow_lr_counter >0 && rt_three < rt_mean- rt_sd && diff_restrict_fast == false && rt_three != 0 && fast_filler_num == true)){
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'diff_restrict'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && rt_three != 0 && fast_filler_num == true) ) {
+      } else if ((rt_three < rt_mean- rt_sd && last_fast == false && rt_three != 0 && fast_filler_num == true) ) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'consecutive'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && initial_fast == false && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && initial_fast == false && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'initial_fast'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_lr.includes('lr') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_lr'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_correct'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_infreq.includes('infrequent') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_infreq'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_rt.includes(true) && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_rt.includes(true) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_toofast'
@@ -1217,7 +1217,7 @@ var attention = {
             lr_node = 1;
             data.diff = 'slow'
             console.log('slow')
-          } else if (rt_three < Math.abs(rt_mean- rt_sd) && last_fast == true && diff_restrict_fast != false && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false)
+          } else if (rt_three < rt_mean- rt_sd && last_fast == true && diff_restrict_fast != false && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false)
           {
                 lr_node = 2;
                 data.diff = 'fast'
@@ -1263,32 +1263,32 @@ var attention = {
       }
 
       /* ----- fast control ----- */
-      else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_fast == false && rt_three != 0 && fast_filler_num == true)) {
+      else if ((rt_three < rt_mean- rt_sd && last_fast == false && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'consecutive'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && diff_restrict_fast == false && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && diff_restrict_fast == false && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'diff_restrict'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_lr.includes('lr') && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_lr.includes('lr') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_lr'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_correct.includes(false) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_correct'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_infreq.includes('infrequent') && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_infreq'
                 console.log('filler fast')
-      } else if ((rt_three < Math.abs(rt_mean- rt_sd) && last_rt.includes(true) && rt_three != 0 && fast_filler_num == true)) {
+      } else if ((rt_three < rt_mean- rt_sd && last_rt.includes(true) && rt_three != 0 && fast_filler_num == true)) {
                 filler_node = 2;
                 data.filler = 'fast'
                 //data.control_case = 'last_toofast'
@@ -1310,7 +1310,7 @@ var attention = {
             lr_node = 1;
             data.diff = 'slow'
             console.log('slow')
-          } else if (rt_three < Math.abs(rt_mean- rt_sd) && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false) {
+          } else if (rt_three < rt_mean- rt_sd && last_infreq.includes('infrequent') ==false && last_correct.includes(false) ==false && last_rt.includes(true) ==false && last_lr.includes('lr') ==false) {
                 lr_node = 2;
                 data.diff = 'fast'
                 console.log('fast')
